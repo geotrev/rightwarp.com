@@ -1,19 +1,18 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
+import daisyui from "daisyui"
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
+  theme: {},
+  daisyui: {
+    darkTheme: "sunset",
+    themes: ["sunset", "bumblebee"],
   },
-  plugins: [],
-};
-export default config;
+  plugins: [daisyui],
+  darkMode: ["class", '[data-theme="sunset"]'],
+}
+
+export default config

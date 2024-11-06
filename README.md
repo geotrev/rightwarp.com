@@ -4,8 +4,8 @@ Website for rightwarp.com.
 
 ## TODO
 
-- [ ] Setup dev environment (plugins, theming, linting, precommit hooks, etc)
-- [ ] Deploy
+- [x] Setup dev environment (plugins, theming, linting, precommit hooks, etc)
+- [x] Deploy
 - [ ] Scaffold UI components (daisy / radix)
 - [ ] Scaffold routes & page layouts
 - [ ] Refine visual design

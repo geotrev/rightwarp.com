@@ -27,20 +27,23 @@ export const Link = ({
 }: LinkProps) => {
   const variantCls = ButtonVariants[variant ?? ""]
   const basicVariant = asLinkVariant(variantCls)
+  const buttonStyles = {
+    btn: true,
+    [ButtonVariants[variant ?? ""]]: variant,
+    [ButtonSizes[size ?? "md"]]: size,
+    "btn-outline": isOutline,
+    "btn-block": isBlock,
+    "btn-circle": isCircle,
+    "btn-disabled": isDisabled,
+  }
 
   return (
     <NextLink
       href={href}
       className={cn("shadow-none", {
-        btn: !isBasic,
         link: isBasic,
         [basicVariant]: isBasic && variant,
-        [ButtonVariants[variant ?? ""]]: variant && !isBasic,
-        [ButtonSizes[size ?? "md"]]: size && !isBasic,
-        "btn-outline": isOutline && !isBasic,
-        "btn-block": isBlock && !isBasic,
-        "btn-circle": isCircle && !isBasic,
-        "btn-disabled": isDisabled && !isBasic,
+        ...(!isBasic && buttonStyles),
         [className ?? ""]: className,
       })}
       {...props}

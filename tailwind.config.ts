@@ -8,11 +8,11 @@ const config: Config = {
   ],
   theme: {},
   daisyui: {
-    darkTheme: "sunset",
-    themes: ["sunset", "bumblebee"],
+    darkTheme: "synthwave",
+    themes: ["synthwave", "winter"],
   },
   plugins: [daisyui],
-  darkMode: ["class", '[data-theme="sunset"]'],
+  darkMode: ["class", '[data-theme="synthwave"]'],
 }
 
 export default config

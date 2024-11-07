@@ -1,16 +1,16 @@
 "use client"
 
 import { PropsWithChildren, useCallback, useEffect, useState } from "react"
-import { ThemeContext, ThemeContextValue } from "./ThemeContext"
+import { ThemeContext, ThemeContextValue, Themes } from "./ThemeContext"
 
 export const ThemeProvider = ({ children }: PropsWithChildren) => {
-  const [theme, setTheme] = useState<ThemeContextValue["theme"]>("bumblebee")
+  const [theme, setTheme] = useState<ThemeContextValue["theme"]>(Themes.light)
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
     setIsMounted(true)
     const darkTheme = window.matchMedia("(prefers-color-scheme: dark)")
-    const detectedTheme = darkTheme ? "sunset" : "bumblebee"
+    const detectedTheme = darkTheme ? Themes.dark : Themes.light
     const localTheme = localStorage.getItem("theme") || detectedTheme
     setTheme(localTheme as ThemeContextValue["theme"])
   }, [])

@@ -2,9 +2,14 @@
 
 import { createContext, useContext } from "react"
 
+export const Themes = {
+  light: "winter",
+  dark: "synthwave",
+}
+
 export interface ThemeContextValue {
-  theme: "bumblebee" | "sunset"
-  changeTheme: (theme: "bumblebee" | "sunset") => void
+  theme: string
+  changeTheme: (theme: string) => void
 }
 
 export const ThemeContext = createContext<ThemeContextValue | undefined>(

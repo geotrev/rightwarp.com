@@ -11,7 +11,7 @@ export const ThemeController = () => {
   const initialTheme = useMemo(() => theme, [])
 
   return (
-    <label className="swap swap-rotate rounded-md p-1 hover:bg-base-200">
+    <label className="swap swap-rotate rounded-md p-1">
       <input
         type="checkbox"
         className="theme-controller rounded-md"
@@ -31,7 +31,9 @@ export const ThemeController = () => {
           <MoonStar size={24} className="swap-on" />
         </>
       )}
-      <span className="sr-only">Toggle theme</span>
+      <span className="sr-only">
+        Toggle theme: {theme === Themes.dark ? "light" : "dark"}
+      </span>
     </label>
   )
 }

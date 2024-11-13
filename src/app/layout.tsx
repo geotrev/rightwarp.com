@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/context/ThemeProvider"
-import { AppLayout } from "@/app/_components/AppLayout"
-import { ClientThemeWrapper } from "@/app/_components/ClientThemeWrapper"
+import { AppLayout } from "@/app/(frontend)/_components/AppLayout"
+import { ClientThemeWrapper } from "@/app/(frontend)/_components/ClientThemeWrapper"
 import "../styles/globals.css"
 
 const inter = Inter({

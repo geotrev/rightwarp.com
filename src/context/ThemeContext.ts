@@ -4,7 +4,7 @@ import { createContext, useContext } from "react"
 
 export const Themes = {
   light: "winter",
-  dark: "synthwave",
+  dark: "dark",
 }
 
 export interface ThemeContextValue {

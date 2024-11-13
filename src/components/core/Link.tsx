@@ -1,6 +1,6 @@
 import { default as NextLink } from "next/link"
 import cn from "classnames"
-import { ButtonPropsBase, ButtonSizes, ButtonVariants } from "@/utils/constants"
+import { ButtonPropsBase } from "@/utils/constants"
 
 interface LinkProps
   extends ButtonPropsBase,
@@ -9,28 +9,35 @@ interface LinkProps
   isBasic?: boolean
 }
 
-const asLinkVariant = (variant?: string) =>
-  variant ? variant.replace("btn", "link") : ""
-
 export const Link = ({
   href,
   children,
   className,
-  variant,
-  size,
-  isOutline,
-  isDisabled,
-  isBlock,
-  isCircle,
+  size = "md",
+  isPrimary = false,
+  isSecondary = false,
+  isAccent = false,
+  isGhost = false,
+  isOutline = false,
+  isDisabled = false,
+  isBlock = false,
+  isCircle = false,
   isBasic = false,
   ...props
 }: LinkProps) => {
-  const variantCls = ButtonVariants[variant ?? ""]
-  const basicVariant = asLinkVariant(variantCls)
+  const linkStyles = {
+    link: true,
+    "link-primary": isPrimary,
+    "link-secondary": isSecondary,
+    "link-accent": isAccent,
+  }
   const buttonStyles = {
     btn: true,
-    [ButtonVariants[variant ?? ""]]: variant,
-    [ButtonSizes[size ?? "md"]]: size,
+    [`btn-${size}`]: !!size,
+    "btn-primary": isPrimary,
+    "btn-secondary": isSecondary,
+    "btn-accent": isAccent,
+    "btn-ghost": isGhost,
     "btn-outline": isOutline,
     "btn-block": isBlock,
     "btn-circle": isCircle,
@@ -40,11 +47,10 @@ export const Link = ({
   return (
     <NextLink
       href={href}
-      className={cn("shadow-none", {
-        link: isBasic,
-        [basicVariant]: isBasic && variant,
+      className={cn({
+        ...(isBasic && linkStyles),
         ...(!isBasic && buttonStyles),
-        [className ?? ""]: className,
+        ...(className && { [className]: className }),
       })}
       {...props}
     >

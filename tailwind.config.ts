@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss"
 import daisyui from "daisyui"
+import themes from "daisyui/src/theming/themes"
 
 const config: Config = {
   content: [
@@ -8,11 +9,19 @@ const config: Config = {
   ],
   theme: {},
   daisyui: {
-    darkTheme: "synthwave",
-    themes: ["synthwave", "winter"],
+    darkTheme: "dark",
+    themes: [
+      {
+        dark: {
+          ...themes.dark,
+          "base-100": "#111111",
+        },
+      },
+      "winter",
+    ],
   },
   plugins: [daisyui],
-  darkMode: ["class", '[data-theme="synthwave"]'],
+  darkMode: ["class", '[data-theme="dark"]'],
 }
 
 export default config

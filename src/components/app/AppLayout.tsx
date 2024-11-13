@@ -1,4 +1,4 @@
-import { Header, Footer } from "@/components/composed"
+import { Header, Footer } from "."
 import React from "react"
 
 export const AppLayout = ({ children }: { children: React.ReactNode }) => {

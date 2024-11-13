@@ -1,3 +1,5 @@
 export * from "./ThemeSwitchButton"
 export * from "./Header"
 export * from "./Footer"
+export * from "./ClientThemeWrapper"
+export * from "./AppLayout"

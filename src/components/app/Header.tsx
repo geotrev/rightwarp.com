@@ -24,7 +24,7 @@ export const Header = () => {
     >
       <div className="me-auto inline-flex items-center gap-4">
         <Link href="/" isGhost className="!bg-transparent p-0">
-          <Image src={logo} alt="Logo" width={75} height={50} />
+          <Image src={logo} alt="Right Warp Logo" width={75} height={50} />
         </Link>
         <div className="hidden md:inline-flex">
           <ThemeController />

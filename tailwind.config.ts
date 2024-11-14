@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import TailwindTypographyPlugin from "@tailwindcss/typography"
 import daisyui from "daisyui"
 import themes from "daisyui/src/theming/themes"
 
@@ -6,6 +7,7 @@ const config: Config = {
   content: [
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/sanity/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {},
   daisyui: {
@@ -32,7 +34,7 @@ const config: Config = {
       },
     ],
   },
-  plugins: [daisyui],
+  plugins: [TailwindTypographyPlugin, daisyui],
   darkMode: ["class", '[data-theme="dark"]'],
 }
 

@@ -10,6 +10,7 @@
     "prettier:check": "prettier --config .prettierrc.json --check",
     "prettier:write": "prettier --config .prettierrc.json --write",
     "eslint:check": "eslint -c .eslintrc.json",
+    "typegen": "sanity schema extract --path=src/sanity/extract.json && sanity typegen generate",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -23,13 +24,18 @@
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "^5.8.1",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.64.1",
     "classnames": "^2.5.1",
     "lucide-react": "^0.454.0",
     "next": "14.2.16",
+    "next-sanity": "^9.8.13",
     "polished": "^4.3.1",
     "react": "^18",
     "react-dom": "^18",
+    "sanity": "^3.64.1",
     "sharp": "^0.33.5",
+    "styled-components": "^6.1.13",
     "theme-change": "^2.5.0"
   },
   "devDependencies": {

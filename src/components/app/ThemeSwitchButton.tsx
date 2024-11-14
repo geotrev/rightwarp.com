@@ -11,10 +11,10 @@ export const ThemeController = () => {
   const initialTheme = useMemo(() => theme, [])
 
   return (
-    <label className="swap swap-rotate rounded-md p-1">
+    <label className="btn btn-ghost swap swap-rotate size-16 transition-[background]">
       <input
         type="checkbox"
-        className="theme-controller rounded-md"
+        className="theme-controller"
         onChange={() =>
           changeTheme(theme === Themes.light ? Themes.dark : Themes.light)
         }

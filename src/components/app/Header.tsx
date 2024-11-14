@@ -17,7 +17,7 @@ export const Header = () => {
     <div className="pointer-events-none fixed inset-0 h-screen w-screen">
       <nav
         style={{ backdropFilter: "blur(12px)" }}
-        className="navbar pointer-events-auto absolute left-1/2 top-12 z-50 flex h-fit w-[85vw] -translate-x-1/2 gap-2 rounded-box border border-black/10 bg-white/20 shadow-2xl shadow-black/15 dark:border-white/15 dark:bg-black/20 dark:shadow-black/25"
+        className="navbar pointer-events-auto absolute left-1/2 top-4 z-50 flex h-fit w-[90vw] -translate-x-1/2 items-stretch gap-2 border border-black/10 bg-white/20 py-0 pe-0 ps-2 shadow-2xl shadow-black/15 dark:border-white/15 dark:bg-black/20 dark:shadow-black/25 sm:top-12 sm:w-[85vw]"
       >
         <div className="inline-flex items-center gap-8">
           <Link
@@ -28,12 +28,12 @@ export const Header = () => {
             <Image src={logo} alt="Right Warp Logo" fill />
           </Link>
         </div>
-        <div className="ms-auto gap-4">
-          <div className="hidden md:inline-flex">
+        <div className="ms-auto">
+          <div className="hidden md:flex">
             <ThemeController />
           </div>
           <HeaderLinks />
-          <WarpZoneButton />
+          <WarpZoneButton className="h-full" />
         </div>
       </nav>
     </div>

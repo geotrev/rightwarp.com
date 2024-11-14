@@ -1,12 +1,23 @@
 import { Link } from "@/components/core"
-import { ArrowBigRight } from "lucide-react"
+import cn from "classnames"
+import { Rocket } from "lucide-react"
+import { AnchorHTMLAttributes } from "react"
 
-export const WarpZoneButton = () => {
+export const WarpZoneButton = ({
+  className,
+}: AnchorHTMLAttributes<HTMLAnchorElement>) => {
   return (
-    <Link href="/contact" isPrimary className="px-3 text-white dark:text-black">
-      <span className="hidden md:block">Enter Warp Zone</span>
+    <Link
+      href="/contact"
+      isPrimary
+      className={cn("px-6 text-white dark:text-black", {
+        ...(className && { [className]: true }),
+      })}
+    >
+      <span className="hidden md:block">Warp Zone</span>
       <span className="md:hidden">
-        <ArrowBigRight size={28} strokeWidth={1} />
+        <Rocket size={28} strokeWidth={1} />
+        <span className="sr-only">Contact</span>
       </span>
     </Link>
   )

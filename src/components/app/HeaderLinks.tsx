@@ -6,10 +6,6 @@ const items = [
     label: "About",
   },
   {
-    href: "/services",
-    label: "Services",
-  },
-  {
     href: "/blog",
     label: "Blog",
   },
@@ -17,13 +13,13 @@ const items = [
 
 export const HeaderLinks = () => {
   return (
-    <div className="hidden items-center gap-4 md:inline-flex">
+    <div className="hidden items-center self-stretch md:flex">
       {items.map(({ href, label }) => (
         <Link
           key={label}
           href={href}
           isGhost
-          className="h-autoflex-col flex justify-center gap-2 px-4 py-2"
+          className="flex h-full flex-col justify-center gap-2 px-6 py-2"
         >
           {label}
         </Link>

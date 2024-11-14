@@ -7,23 +7,29 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    extend: {
-      scale: {
-        "300": "3",
-      },
-    },
-  },
+  theme: {},
   daisyui: {
     darkTheme: "dark",
     themes: [
       {
         dark: {
           ...themes.dark,
+          primary: themes.dark.secondary,
+          secondary: themes.dark.primary,
           "base-100": "#111111",
+          "--rounded-box": "0",
+          "--rounded-btn": "0",
         },
       },
-      "winter",
+      {
+        winter: {
+          ...themes.winter,
+          primary: themes.winter.accent,
+          accent: themes.winter.primary,
+          "--rounded-box": "0",
+          "--rounded-btn": "0",
+        },
+      },
     ],
   },
   plugins: [daisyui],

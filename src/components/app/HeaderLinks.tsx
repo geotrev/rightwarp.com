@@ -19,6 +19,7 @@ export const HeaderLinks = () => {
           key={label}
           href={href}
           isGhost
+          size="sm"
           className="flex h-full flex-col justify-center gap-2 px-6 py-2"
         >
           {label}

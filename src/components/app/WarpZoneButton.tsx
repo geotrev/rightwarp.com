@@ -10,6 +10,7 @@ export const WarpZoneButton = ({
     <Link
       href="/contact"
       isPrimary
+      size="sm"
       className={cn("px-6 text-white dark:text-black", {
         ...(className && { [className]: true }),
       })}

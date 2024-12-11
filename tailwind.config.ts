@@ -1,4 +1,7 @@
 import type { Config } from "tailwindcss";
+import TailwindTypography from "@tailwindcss/typography";
+import TailwindForms from "@tailwindcss/forms";
+import { PALETTE } from "@/theme/palette";
 
 export default {
   darkMode: "selector",
@@ -7,6 +10,10 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {},
-  plugins: [],
+  theme: {
+    extend: {
+      colors: PALETTE,
+    },
+  },
+  plugins: [TailwindTypography, TailwindForms],
 } satisfies Config;

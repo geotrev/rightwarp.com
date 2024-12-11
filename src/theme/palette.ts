@@ -1,4 +1,4 @@
-import { ThemeConfig } from "tailwindcss/types/config";
+import { ThemeConfig } from "tailwindcss/types/config"
 
 export const PALETTE: ThemeConfig["colors"] = {
   orange: {
@@ -29,4 +29,4 @@ export const PALETTE: ThemeConfig["colors"] = {
     1000: "#4D003E",
     1100: "#1A000B",
   },
-};
+}

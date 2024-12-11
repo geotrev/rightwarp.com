@@ -1,7 +1,7 @@
-import type { Config } from "tailwindcss";
-import TailwindTypography from "@tailwindcss/typography";
-import TailwindForms from "@tailwindcss/forms";
-import { PALETTE } from "@/theme/palette";
+import type { Config } from "tailwindcss"
+import TailwindTypography from "@tailwindcss/typography"
+import TailwindForms from "@tailwindcss/forms"
+import { PALETTE } from "./src/theme/palette"
 
 export default {
   darkMode: "selector",
@@ -16,4 +16,4 @@ export default {
     },
   },
   plugins: [TailwindTypography, TailwindForms],
-} satisfies Config;
+} satisfies Config

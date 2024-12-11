@@ -1,3 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* light */
+
+  .surface-default {
+    background-color: #fffcfc;
+  }
+
+  .surface-recessed {
+    background-color: #ecefff;
+  }
+
+  .surface-raised {
+    background-color: #d3daff;
+  }
+
+  .fg-body {
+    color: #800071;
+  }
+
+  .fg-heading {
+    color: #1a000b;
+  }
+
+  /* dark */
+
+  .dark .surface-default {
+    background-color: #180e0e;
+  }
+
+  .dark .surface-recessed {
+    background-color: #131417;
+  }
+
+  .dark .surface-raised {
+    background-color: #1e2237;
+  }
+
+  .dark .fg-body {
+    color: #ffb2fb;
+  }
+
+  .dark .fg-heading {
+    color: #ffe5fd;
+  }
+
+  /* fonts */
+
+  .display {
+    font-family: var(--font-krona-one);
+  }
+
+  /* global */
+
+  html,
+  body {
+    @apply surface-default;
+    @apply fg-body;
+  }
+
+  * {
+    transition: all 0.3s ease-in-out;
+  }
+}

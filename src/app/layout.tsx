@@ -33,7 +33,7 @@ export default function RootLayout({
         <div className="grid min-h-[100vh] lg:pt-20 lg:px-24">
           <div className="surface-recessed lg:rounded-t-[25px] relative">
             <Header />
-            {children}
+            <div className="p-24">{children}</div>
           </div>
         </div>
       </body>

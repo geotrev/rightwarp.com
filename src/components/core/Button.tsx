@@ -2,9 +2,7 @@ import { PropsWithChildren } from "react"
 
 interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    PropsWithChildren {
-  isPrimary?: boolean
-}
+    PropsWithChildren {}
 
 export const Button = ({ children, ...props }: ButtonProps) => {
   return (

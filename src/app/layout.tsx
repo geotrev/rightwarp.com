@@ -26,14 +26,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="min-h-[100vh] dark">
+    <html lang="en" className="min-h-[100vh]" data-theme="dark">
       <body
-        className={`${publicSans.className} ${publicSans.variable} ${kronaOne.variable} surface-default antialiased min-h-[100vh]`}
+        className={`${publicSans.className} ${publicSans.variable} ${kronaOne.variable} bg-base-100 fg-body antialiased min-h-[100vh]`}
       >
-        <div className="grid min-h-[100vh] lg:pt-20 lg:px-24">
-          <div className="surface-recessed lg:rounded-t-[25px] relative">
+        <div className="grid min-h-[100vh] lg:pt-12 lg:px-20 xl:pt-16 xl:px-24">
+          <div className="bg-base-200 lg:rounded-t-[25px] relative">
             <Header />
-            <div className="p-24">{children}</div>
+            <div className="lg:p-24 md:p-12 p-8">{children}</div>
           </div>
         </div>
       </body>

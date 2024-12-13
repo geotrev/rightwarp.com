@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  /* global */
+
+  html,
+  body {
+    @apply surface-default;
+    @apply fg-body;
+  }
+
+  * {
+    transition: all 0.3s ease-in-out;
+  }
+
   /* light */
 
   .surface-default {
@@ -51,17 +63,5 @@
 
   .display {
     font-family: var(--font-krona-one);
-  }
-
-  /* global */
-
-  html,
-  body {
-    @apply surface-default;
-    @apply fg-body;
-  }
-
-  * {
-    transition: all 0.3s ease-in-out;
   }
 }

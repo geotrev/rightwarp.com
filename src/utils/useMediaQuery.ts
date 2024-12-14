@@ -4,8 +4,7 @@ export const useIsSmall = () => useMediaQuery({ query: "(min-width: 640px)" })
 export const useIsMedium = () => useMediaQuery({ query: "(min-width: 768px)" })
 export const useIsLarge = () => useMediaQuery({ query: "(min-width: 1024px)" })
 export const useIsXLarge = () => useMediaQuery({ query: "(min-width: 1280px)" })
-export const useIs2XLarge = () =>
-  useMediaQuery({ query: "(min-width: 1536px)" })
+export const useIs2XLarge = () => useMediaQuery({ query: "(min-width: 1536px)" })
 
 export type UseMediaQueryProps = {
   query: string

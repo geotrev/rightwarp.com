@@ -2,9 +2,7 @@ import cn from "classnames"
 import { LucideIcon } from "lucide-react"
 import { PropsWithChildren } from "react"
 
-interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    PropsWithChildren {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, PropsWithChildren {
   variant?: "primary" | "secondary" | "accent" | "ghost"
   size?: "sm" | "md" | "lg"
   isCta?: boolean
@@ -63,11 +61,7 @@ export const Button = ({
   const iconSize = getIconSize(_size)
 
   return (
-    <button
-      type="button"
-      className={cn(`btn font-bold`, variant, size, className)}
-      {...props}
-    >
+    <button type="button" className={cn(`btn font-bold`, variant, size, className)} {...props}>
       {StartIcon && <StartIcon className={iconSize} />}
       {children}
       {EndIcon && <EndIcon className={iconSize} />}

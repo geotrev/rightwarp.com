@@ -7,7 +7,7 @@ import cn from "classnames"
 import LogoDark from "@/app/_assets/logo-dark.svg"
 import { Button } from "../core/Button"
 import { useIsLarge } from "@/utils/useMediaQuery"
-import { NavItems } from "@/utils/constants"
+import { NavItems } from "@/utils/helpers"
 
 const lastNavItemLabel = NavItems[NavItems.length - 1].label
 
@@ -15,7 +15,7 @@ export const Header = () => {
   const isLarge = useIsLarge()
 
   return (
-    <header className="sticky top-0 px-8 py-8 md:px-12 md:py-12 lg:px-24 lg:py-10">
+    <header className="sticky top-0 h-[1px] overflow-visible px-8 py-8 md:px-12 md:py-12 lg:px-24 lg:py-10">
       <div className="relative flex items-center justify-between">
         <div className="absolute left-0 rotate-0 lg:-left-[10.5rem] lg:-rotate-90">
           <Link
@@ -30,14 +30,12 @@ export const Header = () => {
         </div>
         <div className="ms-auto flex items-center justify-end gap-4 lg:ms-0 lg:w-full lg:justify-between">
           <div className="flex items-center">
-            <Button
-              className="md:me-2 lg:me-10"
-              variant="primary"
-              size={isLarge ? "lg" : "md"}
-              endIcon={ArrowRight}
+            <Link
+              href="/contact"
+              className={cn("btn btn-primary btn-md text-white md:me-2 lg:me-10 dark:text-black")}
             >
-              Warp Zone
-            </Button>
+              Warp Zone <ArrowRight size={isLarge ? 24 : 20} />
+            </Link>
             <div className="me-3 hidden text-sm xl:block">
               inquire about a project or just say hi
             </div>
@@ -60,7 +58,7 @@ export const Header = () => {
                         <Link
                           href={item.href}
                           className={cn(
-                            "pb-1 text-sm font-bold uppercase text-purple-950 hover:shadow-[0_3px_0_black] dark:text-white dark:hover:shadow-[0_3px_0_white]",
+                            "link rounded-sm pb-1 text-sm font-bold uppercase text-purple-950 no-underline hover:shadow-[0_3px_0_black] dark:text-white dark:hover:shadow-[0_3px_0_white]",
                             marginClass,
                           )}
                         >

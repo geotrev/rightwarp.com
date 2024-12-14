@@ -31,7 +31,7 @@ export default function RootLayout({
         className={`${publicSans.className} ${publicSans.variable} ${kronaOne.variable} bg-base-100 fg-body antialiased min-h-[100vh]`}
       >
         <div className="grid min-h-[100vh] lg:pt-12 lg:px-20 xl:pt-16 xl:px-24">
-          <div className="bg-base-200 lg:rounded-t-[25px] relative">
+          <div className="bg-base-200 lg:rounded-t-3xl relative">
             <Header />
             <div className="lg:p-24 md:p-12 p-8">{children}</div>
           </div>

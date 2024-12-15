@@ -1,8 +1,9 @@
 import type { Metadata } from "next"
+import { cookies } from "next/headers"
 import { Public_Sans } from "next/font/google"
 import { Krona_One } from "next/font/google"
-import "./globals.css"
 import { Header } from "@/components/app/Header"
+import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,19 +21,22 @@ const kronaOne = Krona_One({
   variable: "--font-krona-one",
 })
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const cookieValue = (await cookies()).get("theme")
+  const theme = cookieValue?.value ?? "dark"
+
   return (
-    <html lang="en" className="min-h-screen" data-theme="dark">
+    <html lang="en" className="min-h-screen" data-theme={theme}>
       <body
         className={`${publicSans.className} ${publicSans.variable} ${kronaOne.variable} fg-body min-h-screen bg-base-100 antialiased`}
       >
         <div className="grid min-h-screen lg:px-16 lg:pt-10 xl:px-24 xl:pt-16">
           <div className="relative bg-base-200 lg:rounded-t-3xl">
-            <Header />
+            <Header theme={theme} />
             <div className="p-8 md:p-12 lg:p-24">{children}</div>
           </div>
         </div>

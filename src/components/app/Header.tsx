@@ -2,16 +2,17 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Menu, MoonStar, Sparkle } from "lucide-react"
+import { ArrowRight, Menu, Sparkle } from "lucide-react"
 import cn from "classnames"
 import LogoDark from "@/app/_assets/logo-dark.svg"
 import { Button } from "../core/Button"
 import { useIsLarge } from "@/utils/useMediaQuery"
 import { NavItems } from "@/utils/helpers"
+import { ThemeSwitchButton } from "./ThemeSwitchButton"
 
 const lastNavItemLabel = NavItems[NavItems.length - 1].label
 
-export const Header = () => {
+export const Header = ({ theme }: { theme: string }) => {
   const isLarge = useIsLarge()
 
   return (
@@ -44,7 +45,10 @@ export const Header = () => {
           <div className="hidden flex-col gap-4 md:flex">
             <div className="flex w-full items-center gap-4">
               <span className="display text-[0.625rem] uppercase text-primary">Discover</span>
-              <hr className="w-full border-white/25" aria-hidden="true" />
+              <hr
+                className="w-full border-purple-950/25 dark:border-purple-100/25"
+                aria-hidden="true"
+              />
             </div>
             <div className="flex gap-6">
               <nav>
@@ -58,7 +62,7 @@ export const Header = () => {
                         <Link
                           href={item.href}
                           className={cn(
-                            "link rounded-sm pb-1 text-sm font-bold uppercase text-purple-950 no-underline hover:shadow-[0_3px_0_black] dark:text-white dark:hover:shadow-[0_3px_0_white]",
+                            "link pb-1 text-sm font-bold uppercase text-purple-950 no-underline hover:shadow-[0_3px_0_black] dark:text-white dark:hover:shadow-[0_3px_0_white]",
                             marginClass,
                           )}
                         >
@@ -76,7 +80,7 @@ export const Header = () => {
                   })}
                 </ul>
               </nav>
-              <MoonStar size={24} className="text-purple-950 dark:text-white" />
+              <ThemeSwitchButton theme={theme} />
             </div>
           </div>
           <div className="flex md:hidden">

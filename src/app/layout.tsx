@@ -1,8 +1,10 @@
 import type { Metadata } from "next"
-import { cookies } from "next/headers"
 import { Public_Sans } from "next/font/google"
 import { Krona_One } from "next/font/google"
+import { cookies } from "next/headers"
+
 import { Header } from "@/components/app/Header"
+
 import "./globals.css"
 
 export const metadata: Metadata = {

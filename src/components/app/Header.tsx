@@ -1,13 +1,16 @@
 "use client"
 
+import cn from "classnames"
+import { ArrowRight, Sparkle } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Menu, Sparkle } from "lucide-react"
-import cn from "classnames"
+
 import LogoDark from "@/app/_assets/logo-dark.svg"
-import { Button } from "../core/Button"
-import { useIsLarge } from "@/utils/useMediaQuery"
+
 import { NavItems } from "@/utils/helpers"
+import { useIsLarge } from "@/utils/useMediaQuery"
+
+import { MobileDialog } from "./MobileDialog"
 import { ThemeSwitchButton } from "./ThemeSwitchButton"
 
 const lastNavItemLabel = NavItems[NavItems.length - 1].label
@@ -51,7 +54,7 @@ export const Header = ({ theme }: { theme: string }) => {
               />
             </div>
             <div className="flex gap-6">
-              <nav>
+              <nav className="flex items-center">
                 <ul>
                   {NavItems.map((item) => {
                     const isLastItem = lastNavItemLabel !== item.label
@@ -62,7 +65,7 @@ export const Header = ({ theme }: { theme: string }) => {
                         <Link
                           href={item.href}
                           className={cn(
-                            "link pb-1 text-sm font-bold uppercase text-purple-950 no-underline hover:shadow-[0_3px_0_black] dark:text-white dark:hover:shadow-[0_3px_0_white]",
+                            "link pb-1 text-sm font-bold uppercase text-purple-950 no-underline hover:shadow-[0_3px_0_black] focus:transition-none dark:text-white dark:hover:shadow-[0_3px_0_white]",
                             marginClass,
                           )}
                         >
@@ -84,9 +87,7 @@ export const Header = ({ theme }: { theme: string }) => {
             </div>
           </div>
           <div className="flex md:hidden">
-            <Button size="md" variant="ghost" className="text-purple-950 dark:text-white">
-              <Menu />
-            </Button>
+            <MobileDialog />
           </div>
         </div>
       </div>

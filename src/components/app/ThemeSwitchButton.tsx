@@ -2,7 +2,7 @@
 
 import { MoonStar, Sun } from "lucide-react"
 
-import { handleThemeAction } from "@/actions/theme"
+import { handleThemeAction } from "@/server/actions"
 
 export const ThemeSwitchButton = ({ theme }: { theme?: string }) => {
   return (

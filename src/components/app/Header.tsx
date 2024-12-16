@@ -6,7 +6,6 @@ import Image from "next/image"
 import Link from "next/link"
 
 import LogoDark from "@/app/_assets/logo-dark.svg"
-
 import { NavItems } from "@/utils/helpers"
 import { useIsLarge } from "@/utils/useMediaQuery"
 

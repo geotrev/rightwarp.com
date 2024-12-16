@@ -1,6 +1,6 @@
 "use server"
 
-import { toggleTheme } from "@/utils/theme"
+import { toggleTheme } from "@/server/utils"
 
 export const handleThemeAction = async () => {
   await toggleTheme()

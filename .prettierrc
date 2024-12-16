@@ -4,14 +4,7 @@
   "singleQuote": false,
   "printWidth": 100,
   "tabWidth": 2,
-  "importOrder": [
-    "^@/app/(.*)$",
-    "^@/actions/(.*)$",
-    "^@/components/(.*)$",
-    "^@/utils/(.*)$",
-    "^../(.*)$",
-    "^./(.*)$"
-  ],
+  "importOrder": ["^@/(.*)$", "^../(.*)$", "^./(.*)$"],
   "importOrderSeparation": true,
   "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"]
 }

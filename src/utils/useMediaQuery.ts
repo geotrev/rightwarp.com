@@ -1,18 +1,12 @@
 import { useEffect, useState } from "react"
 
-export const useIsSmall = () => useMediaQuery({ query: "(min-width: 640px)" })
-export const useIsMedium = () => useMediaQuery({ query: "(min-width: 768px)" })
-export const useIsLarge = () => useMediaQuery({ query: "(min-width: 1024px)" })
-export const useIsXLarge = () => useMediaQuery({ query: "(min-width: 1280px)" })
-export const useIs2XLarge = () => useMediaQuery({ query: "(min-width: 1536px)" })
-
 export type UseMediaQueryProps = {
   query: string
 }
 
 export type UseMediaQueryReturnValue = boolean
 
-export function useMediaQuery({ query }: UseMediaQueryProps): boolean {
+export const useMediaQuery = ({ query }: UseMediaQueryProps): boolean => {
   const [matches, setMatches] = useState(false)
 
   useEffect(() => {
@@ -42,3 +36,9 @@ export function useMediaQuery({ query }: UseMediaQueryProps): boolean {
 
   return matches
 }
+
+export const useIsSmall = () => useMediaQuery({ query: "(min-width: 640px)" })
+export const useIsMedium = () => useMediaQuery({ query: "(min-width: 768px)" })
+export const useIsLarge = () => useMediaQuery({ query: "(min-width: 1024px)" })
+export const useIsXLarge = () => useMediaQuery({ query: "(min-width: 1280px)" })
+export const useIs2XLarge = () => useMediaQuery({ query: "(min-width: 1536px)" })

@@ -6,6 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import LogoDark from "@/app/_assets/logo-dark.svg"
+import LogoLight from "@/app/_assets/logo-light.svg"
 import { NavItems } from "@/utils/helpers"
 import { useIsLarge } from "@/utils/useMediaQuery"
 
@@ -25,14 +26,16 @@ export const Header = ({ theme }: { theme: string }) => {
             href="/"
             className="btn block h-7 w-[3.75rem] border-none !bg-transparent shadow-none md:h-10 md:w-[5.3125rem]"
           >
-            <Image src={LogoDark} alt="Right Warp logo" fill />
+            <Image src={theme === "dark" ? LogoDark : LogoLight} alt="Right Warp logo" fill />
           </Link>
         </div>
-        <div className="ms-auto flex items-center justify-end gap-4 lg:ms-0 lg:w-full lg:justify-between">
+        <div className="ms-auto flex items-center justify-end gap-2 sm:gap-4 lg:ms-0 lg:w-full lg:justify-between">
           <div className="flex items-center">
             <Link
               href="/contact"
-              className={cn("btn btn-primary btn-md text-white md:me-2 lg:me-10 dark:text-black")}
+              className={cn(
+                "btn btn-primary btn-sm text-white sm:btn-md md:me-2 lg:me-10 dark:text-black",
+              )}
             >
               Warp Zone <ArrowRight size={isLarge ? 24 : 20} />
             </Link>
@@ -83,7 +86,7 @@ export const Header = ({ theme }: { theme: string }) => {
             </div>
           </div>
           <div className="flex md:hidden">
-            <MobileDialog />
+            <MobileDialog theme={theme} />
           </div>
         </div>
       </div>

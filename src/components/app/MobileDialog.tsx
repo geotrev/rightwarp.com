@@ -45,12 +45,12 @@ export const MobileDialog = ({ theme }: { theme: string }) => {
               <span className="text-xs uppercase">Current theme: {theme}</span>
             </div>
 
-            <div className="mb-8 flex w-full items-center gap-4">
+            <div className="mb-4 flex w-full items-center gap-4">
               <hr
                 className="w-full border-purple-950/25 dark:border-purple-100/25"
                 aria-hidden="true"
               />
-              <span className="display text-[0.625rem] uppercase text-primary">Discover</span>
+              <span className="display text-xs uppercase text-primary">Discover</span>
               <hr
                 className="w-full border-purple-950/25 dark:border-purple-100/25"
                 aria-hidden="true"
@@ -81,10 +81,7 @@ export const MobileDialog = ({ theme }: { theme: string }) => {
               </ul>
             </nav>
 
-            <Link
-              href="/contact"
-              className="btn btn-primary btn-md btn-block text-white dark:text-black"
-            >
+            <Link href="/contact" className="btn btn-primary btn-block text-white dark:text-black">
               Warp Zone <ArrowRight size={20} />
             </Link>
           </div>

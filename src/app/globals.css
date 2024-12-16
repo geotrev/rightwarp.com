@@ -10,10 +10,6 @@
     @apply fg-body;
   }
 
-  * {
-    transition: all 250ms ease-in-out;
-  }
-
   .fg-body {
     @apply text-purple-950 dark:text-purple-300;
   }

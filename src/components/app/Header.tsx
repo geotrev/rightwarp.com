@@ -21,16 +21,13 @@ export const Header = ({ theme }: { theme: string }) => {
   return (
     <header className="sticky top-0 h-[1px] overflow-visible px-8 py-8 md:px-12 md:py-12 lg:px-24 lg:py-10">
       <div className="relative flex items-center justify-between">
-        <div className="absolute left-0 rotate-0 lg:-left-[10.5rem] lg:-rotate-90">
+        <div className="absolute left-0 rotate-0 transition-all duration-500 ease-in-out lg:-left-[10.5rem] lg:-rotate-90">
           <Link
             href="/"
             className="btn block h-7 w-[3.75rem] border-none !bg-transparent shadow-none md:h-10 md:w-[5.3125rem]"
           >
             <Image src={LogoDark} alt="Right Warp logo" fill />
           </Link>
-        </div>
-        <div className="absolute left-[6.5rem] hidden w-10 text-sm text-purple-600 md:flex lg:-left-36 lg:top-24 dark:text-purple-400">
-          Right Warp
         </div>
         <div className="ms-auto flex items-center justify-end gap-4 lg:ms-0 lg:w-full lg:justify-between">
           <div className="flex items-center">

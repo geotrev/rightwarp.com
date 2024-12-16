@@ -36,8 +36,8 @@ export default async function RootLayout({
       <body
         className={`${publicSans.className} ${publicSans.variable} ${kronaOne.variable} fg-body min-h-screen bg-base-100 antialiased`}
       >
-        <div className="grid min-h-screen lg:px-16 lg:pt-10 xl:px-24 xl:pt-16">
-          <div className="relative bg-base-200 lg:rounded-t-3xl">
+        <div className="grid min-h-screen transition-[padding] duration-500 ease-in-out lg:px-16 lg:pt-10 xl:px-24 xl:pt-16">
+          <div className="relative bg-base-200 transition-[border-radius] duration-500 ease-in-out lg:rounded-t-3xl">
             <Header theme={theme} />
             <div className="p-8 md:p-12 lg:p-24">{children}</div>
           </div>

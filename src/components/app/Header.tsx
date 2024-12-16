@@ -4,6 +4,7 @@ import cn from "classnames"
 import { ArrowRight, Sparkle } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useRef } from "react"
 
 import LogoDark from "@/app/_assets/logo-dark.svg"
 import LogoLight from "@/app/_assets/logo-light.svg"
@@ -16,10 +17,37 @@ import { ThemeSwitchButton } from "./ThemeSwitchButton"
 const lastNavItemLabel = NavItems[NavItems.length - 1].label
 
 export const Header = ({ theme }: { theme: string }) => {
+  const ref = useRef<HTMLElement | null>(null)
   const isLarge = useIsLarge()
 
+  useEffect(() => {
+    let observer: IntersectionObserver
+
+    if (ref.current) {
+      observer = new IntersectionObserver(
+        ([e]) => {
+          if (e.intersectionRatio < 1) {
+            e.target.classList.remove("lg:rounded-t-3xl")
+          } else {
+            e.target.classList.add("lg:rounded-t-3xl")
+          }
+        },
+        { threshold: [1] },
+      )
+
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      observer?.disconnect()
+    }
+  }, [ref])
+
   return (
-    <header className="sticky top-0 overflow-visible px-8 py-2 backdrop-blur-lg sm:px-8 sm:py-4 lg:px-24 lg:py-8">
+    <header
+      ref={ref}
+      className="sticky top-[-1px] bg-transparent px-8 py-2 backdrop-blur-lg transition-[border-radius] sm:px-8 md:px-12 md:py-4 lg:rounded-t-3xl lg:px-24 lg:py-8"
+    >
       <div className="relative flex items-center justify-between">
         <div className="absolute left-0 rotate-0 transition-all duration-300 ease-in-out lg:-left-[10.5rem] lg:-rotate-90">
           <Link
@@ -44,7 +72,7 @@ export const Header = ({ theme }: { theme: string }) => {
             </div>
             <span className="hidden text-2xl xl:block">👋</span>
           </div>
-          <div className="hidden flex-col gap-2 md:flex">
+          <div className="hidden flex-col gap-1 md:flex">
             <div className="flex w-full items-center gap-4">
               <span className="display text-[0.625rem] uppercase text-primary">Discover</span>
               <hr
@@ -53,7 +81,7 @@ export const Header = ({ theme }: { theme: string }) => {
               />
             </div>
             <div className="flex gap-6">
-              <nav className="flex items-center">
+              <nav className="flex items-end">
                 <ul>
                   {NavItems.map((item) => {
                     const isLastItem = lastNavItemLabel !== item.label

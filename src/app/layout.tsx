@@ -33,12 +33,12 @@ export default async function RootLayout({
   return (
     <html lang="en" className="min-h-screen" data-theme={theme}>
       <body
-        className={`${publicSans.className} ${publicSans.variable} ${kronaOne.variable} fg-body min-h-screen bg-base-100 antialiased transition-colors duration-500`}
+        className={`${publicSans.className} ${publicSans.variable} ${kronaOne.variable} fg-body min-h-screen bg-base-100 antialiased transition-colors duration-300`}
       >
-        <div className="grid min-h-screen transition-[padding] duration-500 ease-in-out lg:px-16 lg:pt-10 xl:px-24 xl:pt-16">
-          <div className="relative bg-base-200 transition-[border-radius,background-color] duration-500 ease-in-out lg:rounded-t-3xl">
+        <div className="grid min-h-screen transition-[padding] duration-300 ease-in-out lg:px-16 lg:pt-10 xl:px-24 xl:pt-16">
+          <div className="relative bg-base-200 transition-[border-radius,background-color] duration-300 ease-in-out lg:rounded-t-3xl">
             <Header theme={theme} />
-            <div className="p-8 transition-[padding] duration-500 md:p-12 lg:p-24">{children}</div>
+            <div className="p-8 transition-[padding] duration-300 md:p-12 lg:p-24">{children}</div>
           </div>
         </div>
       </body>

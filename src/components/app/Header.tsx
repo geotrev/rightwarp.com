@@ -20,7 +20,7 @@ export const Header = ({ theme }: { theme: string }) => {
   return (
     <header className="sticky top-0 h-[1px] overflow-visible px-8 py-8 md:px-12 md:py-12 lg:px-24 lg:py-10">
       <div className="relative flex items-center justify-between">
-        <div className="absolute left-0 rotate-0 transition-all duration-500 ease-in-out lg:-left-[10.5rem] lg:-rotate-90">
+        <div className="absolute left-0 rotate-0 transition-all duration-300 ease-in-out lg:-left-[10.5rem] lg:-rotate-90">
           <Link
             href="/"
             className="btn block h-7 w-[3.75rem] border-none !bg-transparent shadow-none md:h-10 md:w-[5.3125rem]"
@@ -41,7 +41,7 @@ export const Header = ({ theme }: { theme: string }) => {
             </div>
             <span className="hidden text-2xl xl:block">👋</span>
           </div>
-          <div className="hidden flex-col gap-4 md:flex">
+          <div className="hidden flex-col gap-2 md:flex">
             <div className="flex w-full items-center gap-4">
               <span className="display text-[0.625rem] uppercase text-primary">Discover</span>
               <hr

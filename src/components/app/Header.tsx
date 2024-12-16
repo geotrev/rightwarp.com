@@ -19,7 +19,7 @@ export const Header = ({ theme }: { theme: string }) => {
   const isLarge = useIsLarge()
 
   return (
-    <header className="sticky top-0 h-[1px] overflow-visible px-8 py-8 md:px-12 md:py-12 lg:px-24 lg:py-10">
+    <header className="sticky top-0 overflow-visible px-8 py-2 backdrop-blur-lg sm:px-8 sm:py-4 lg:px-24 lg:py-8">
       <div className="relative flex items-center justify-between">
         <div className="absolute left-0 rotate-0 transition-all duration-300 ease-in-out lg:-left-[10.5rem] lg:-rotate-90">
           <Link

@@ -8,7 +8,7 @@ import React from "react"
 import LogoDark from "@/app/_assets/logo-dark.svg"
 import LogoLight from "@/app/_assets/logo-light.svg"
 import { Button } from "@/components/core"
-import { NavItems } from "@/utils/helpers"
+import { NavItems, Routes } from "@/utils/helpers"
 
 import { ThemeSwitchButton } from "./ThemeSwitchButton"
 
@@ -33,7 +33,7 @@ export const MobileDialog = ({ theme }: { theme: string }) => {
             <div className="block">
               <Dialog.Close asChild>
                 <Link
-                  href="/"
+                  href={Routes.HOME}
                   className="btn relative block h-7 w-[3.75rem] border-none !bg-transparent p-0 shadow-none"
                 >
                   <Image src={theme === "dark" ? LogoDark : LogoLight} alt="Right Warp logo" fill />
@@ -95,7 +95,10 @@ export const MobileDialog = ({ theme }: { theme: string }) => {
               </ul>
             </nav>
 
-            <Link href="/contact" className="btn btn-primary btn-block text-white dark:text-black">
+            <Link
+              href={Routes.CONTACT}
+              className="btn btn-primary btn-block text-white dark:text-black"
+            >
               Warp Zone <ArrowRight size={20} />
             </Link>
           </div>

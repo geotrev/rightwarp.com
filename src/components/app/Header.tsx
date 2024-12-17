@@ -8,7 +8,7 @@ import { useEffect, useRef } from "react"
 
 import LogoDark from "@/app/_assets/logo-dark.svg"
 import LogoLight from "@/app/_assets/logo-light.svg"
-import { NavItems } from "@/utils/helpers"
+import { NavItems, Routes } from "@/utils/helpers"
 import { useIsLarge } from "@/utils/useMediaQuery"
 
 import { MobileDialog } from "./MobileDialog"
@@ -51,7 +51,7 @@ export const Header = ({ theme }: { theme: string }) => {
       <div className="relative flex items-center justify-between">
         <div className="absolute left-0 rotate-0 transition-all duration-300 ease-in-out lg:-left-[10.5rem] lg:-rotate-90">
           <Link
-            href="/"
+            href={Routes.HOME}
             className="btn block h-7 w-[3.75rem] border-none !bg-transparent shadow-none md:h-10 md:w-[5.3125rem]"
           >
             <Image src={theme === "dark" ? LogoDark : LogoLight} alt="Right Warp logo" fill />
@@ -60,7 +60,7 @@ export const Header = ({ theme }: { theme: string }) => {
         <div className="ms-auto flex items-center justify-end gap-2 sm:gap-2 md:gap-4 lg:ms-0 lg:w-full lg:justify-between">
           <div className="flex items-center">
             <Link
-              href="/contact"
+              href={Routes.CONTACT}
               className={cn(
                 "btn btn-primary btn-sm text-white sm:btn-md md:me-2 lg:me-10 dark:text-black",
               )}

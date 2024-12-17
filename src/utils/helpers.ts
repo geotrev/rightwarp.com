@@ -1,18 +1,26 @@
+export const Routes = {
+  HOME: "/",
+  ABOUT: "/about",
+  WORK: "/work",
+  BLOG: "/blog",
+  CONTACT: "/contact",
+}
+
 export const NavItems = [
   {
     label: "Home",
-    href: "/",
+    href: Routes.HOME,
   },
   {
     label: "About",
-    href: "/about",
+    href: Routes.ABOUT,
   },
   {
     label: "Work",
-    href: "/work",
+    href: Routes.WORK,
   },
   {
     label: "Blog",
-    href: "/blog",
+    href: Routes.BLOG,
   },
 ]

@@ -57,7 +57,7 @@ export const Header = ({ theme }: { theme: string }) => {
             <Image src={theme === "dark" ? LogoDark : LogoLight} alt="Right Warp logo" fill />
           </Link>
         </div>
-        <div className="ms-auto flex items-center justify-end gap-2 sm:gap-4 lg:ms-0 lg:w-full lg:justify-between">
+        <div className="ms-auto flex items-center justify-end gap-2 sm:gap-2 md:gap-4 lg:ms-0 lg:w-full lg:justify-between">
           <div className="flex items-center">
             <Link
               href="/contact"
@@ -72,7 +72,7 @@ export const Header = ({ theme }: { theme: string }) => {
             </div>
             <span className="hidden text-2xl xl:block">👋</span>
           </div>
-          <div className="hidden flex-col gap-1 md:flex">
+          <div className="hidden flex-col md:flex">
             <div className="flex w-full items-center gap-4">
               <span className="display text-[0.625rem] uppercase text-primary">Discover</span>
               <hr

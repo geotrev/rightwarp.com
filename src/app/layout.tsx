@@ -38,7 +38,8 @@ export default async function RootLayout({
         <div className="grid min-h-screen transition-[padding] duration-300 ease-in-out lg:px-16 lg:pt-10 xl:px-24 xl:pt-16">
           <div className="relative bg-base-200 transition-[border-radius,background-color] duration-300 ease-in-out lg:rounded-t-3xl">
             <Header theme={theme} />
-            <div className="p-8 transition-[padding] duration-300 md:p-12 lg:p-24">{children}</div>
+            {children}
+            {/* Footer + nav links */}
           </div>
         </div>
       </body>

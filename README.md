@@ -18,8 +18,8 @@ Right Warp is a Next JS application, deployed to Netlify, with Sanity CMS.
     - [x] Mobile nav popup
       - [x] Bare button
     - [x] Nav background (blur)
-  - [ ] Footer (+ links)
-  - [ ] Routing setup
+  - [x] Footer
+  - [x] Routing setup
   - [ ] Home
     - [x] Header style
     - [ ] Section container component

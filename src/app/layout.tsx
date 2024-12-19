@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Krona_One } from "next/font/google"
 import { Public_Sans } from "next/font/google"
 
+import { Footer } from "@/components/app/Footer"
 import { Header } from "@/components/app/Header"
 import { getTheme } from "@/server/utils"
 
@@ -39,7 +40,7 @@ export default async function RootLayout({
           <div className="relative bg-base-200 transition-[border-radius,background-color] duration-300 ease-in-out lg:rounded-t-3xl">
             <Header theme={theme} />
             {children}
-            {/* Footer + nav links */}
+            <Footer />
           </div>
         </div>
       </body>

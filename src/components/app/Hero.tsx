@@ -12,7 +12,8 @@ export const Hero = ({
   const headingStyles = {
     default:
       "mb-4 md:mb-8 text-xl md:text-3xl lg:text-5xl leading-8 md:leading-10 lg:leading-[4rem] md:tracking-tighter",
-    display: "mb-6 sm:mb-8 lg:mb-12 text-[6vw] leading-[9vw] md:tracking-tighter",
+    display:
+      "mb-6 sm:mb-8 lg:mb-12 text-[6vw] leading-[9vw] xl:leading-[7.5vw] md:tracking-tighter",
   }
 
   return (

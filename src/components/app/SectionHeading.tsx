@@ -10,9 +10,9 @@ export const SectionHeading = ({
   subheading: string
 }) => {
   return (
-    <div className="flex flex-col gap-4 md:gap-8 lg:gap-4 xl:flex-row xl:items-center">
+    <div className="flex flex-col gap-4 py-16 md:gap-8 md:py-32 lg:gap-4 lg:py-40 xl:flex-row xl:items-center">
       <div className="flex w-full flex-col gap-4 md:flex-row">
-        <h2 className="display text-3xl text-black lg:text-4xl 2xl:text-6xl dark:text-white">
+        <h2 className="display text-3xl tracking-tight text-black lg:text-4xl xl:tracking-tighter 2xl:text-6xl dark:text-white">
           {heading}
         </h2>
         <div className="flex w-full items-center gap-4">

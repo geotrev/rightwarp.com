@@ -7,6 +7,7 @@ import { handleThemeAction } from "@/server/actions"
 
 export const ThemeSwitchButton = ({ theme, isLarge }: { isLarge?: boolean; theme?: string }) => {
   const size = isLarge ? 32 : 24
+  const handleClick = () => handleThemeAction()
 
   return (
     <button
@@ -18,7 +19,7 @@ export const ThemeSwitchButton = ({ theme, isLarge }: { isLarge?: boolean; theme
           "p-4": isLarge,
         },
       )}
-      onClick={() => handleThemeAction()}
+      onClick={handleClick}
     >
       {theme === "dark" ? <MoonStar size={size} /> : <Sun size={size} />}
       <span className="sr-only">Toggle theme (current theme: {theme})</span>

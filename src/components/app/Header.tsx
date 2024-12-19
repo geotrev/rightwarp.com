@@ -45,7 +45,7 @@ export const Header = ({ theme }: { theme: string }) => {
   return (
     <header
       ref={ref}
-      className="sticky top-[-1px] bg-base-200/50 px-8 py-2 backdrop-blur-lg transition-colors duration-300 sm:px-8 md:px-12 md:py-4 lg:rounded-t-3xl lg:px-24 lg:py-8"
+      className="sticky top-[-1px] z-50 bg-base-200/50 px-8 py-2 backdrop-blur-lg transition-colors duration-300 sm:px-8 md:px-12 md:py-4 lg:rounded-t-3xl lg:px-24 lg:py-8"
     >
       <div className="relative flex items-center justify-between">
         <div className="absolute left-0 rotate-0 transition-all duration-300 ease-in-out lg:-left-[10.25rem] lg:-rotate-90">

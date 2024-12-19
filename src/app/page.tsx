@@ -11,6 +11,7 @@
  */
 import { Hero } from "@/components/app/Hero"
 import { LogoMarquee } from "@/components/app/LogoMarquee"
+import { Expertise } from "@/components/app/home/Expertise"
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         description="Accessible, scalable, and design-driven web development that brings your brand to life"
       />
       <LogoMarquee />
+      <Expertise />
     </>
   )
 }

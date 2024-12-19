@@ -11,17 +11,17 @@ export const Hero = ({
 }) => {
   const headingStyles = {
     default:
-      "mb-4 md:mb-8 text-xl md:text-3xl lg:text-5xl leading-8 md:leading-10 lg:leading-[4rem] md:tracking-tighter",
+      "mb-4 md:mb-8 text-xl md:text-3xl lg:text-5xl leading-8 md:leading-10 lg:leading-[4rem] tracking-tight md:tracking-tighter",
     display:
-      "mb-6 sm:mb-8 lg:mb-12 text-[6vw] leading-[9vw] xl:leading-[7.5vw] md:tracking-tighter",
+      "mb-6 sm:mb-8 lg:mb-12 text-[6vw] leading-[9vw] xl:leading-[7.5vw] tracking-tight md:tracking-tighter",
   }
 
   return (
     <div
       className={cn(
-        "flex flex-col px-8 py-16 transition-[padding] duration-300 sm:py-16 md:px-12 md:py-20 lg:px-24",
+        "flex flex-col justify-center px-8 py-20 transition-[padding] duration-300 sm:py-16 md:px-12 md:py-20 lg:px-24",
         {
-          "lg:py-48": isDisplay,
+          "sm:py-48 md:h-[50vh] lg:h-[75vh]": isDisplay,
         },
       )}
     >

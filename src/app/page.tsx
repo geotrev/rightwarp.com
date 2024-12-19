@@ -18,7 +18,7 @@ export default function Home() {
       <Hero
         isDisplay
         heading="Build Memorable Digital Experiences"
-        description="Accessible, scalable, and design-driven web development"
+        description="Accessible, scalable, and design-driven web development that brings your brand to life"
       />
       <LogoMarquee />
     </>

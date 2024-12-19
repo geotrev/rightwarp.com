@@ -35,8 +35,8 @@ export default {
         },
       },
       animation: {
-        "marquee-start": "marquee-start 20s linear infinite",
-        "marquee-end": "marquee-end 20s linear infinite",
+        "marquee-start": "marquee-start 30s linear infinite",
+        "marquee-end": "marquee-end 30s linear infinite",
         overlayShow: "overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
         contentShow: "contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
       },

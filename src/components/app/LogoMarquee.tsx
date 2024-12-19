@@ -1,8 +1,8 @@
-import Codecov from "@/app/_assets/codecov.svg"
-import Musicnotes from "@/app/_assets/musicnotes.svg"
-import Scribd from "@/app/_assets/scribd.svg"
-import ServiceNow from "@/app/_assets/servicenow.svg"
-import Zendesk from "@/app/_assets/zendesk.svg"
+import Codecov from "@/app/_assets/logos/codecov.svg"
+import Musicnotes from "@/app/_assets/logos/musicnotes.svg"
+import Scribd from "@/app/_assets/logos/scribd.svg"
+import ServiceNow from "@/app/_assets/logos/servicenow.svg"
+import Zendesk from "@/app/_assets/logos/zendesk.svg"
 
 const logos = [
   { name: "Codecov", Logo: Codecov },
@@ -14,7 +14,7 @@ const logos = [
 
 export const LogoMarquee = () => {
   return (
-    <div className="relative flex h-20 max-w-full items-center overflow-x-hidden text-purple-950 md:gap-3 lg:gap-12 dark:text-purple-100">
+    <div className="relative flex h-10 max-w-full items-center overflow-x-hidden text-purple-950 md:gap-3 lg:gap-12 dark:text-purple-100">
       {/* animation start */}
       <div className="animate-marquee-start absolute left-0 top-0 flex w-full min-w-[max-content] items-center justify-around">
         {logos.map(({ Logo, name }) => (

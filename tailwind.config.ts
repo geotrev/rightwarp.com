@@ -14,6 +14,14 @@ export default {
   theme: {
     extend: {
       keyframes: {
+        "marquee-start": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        "marquee-end": {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
         overlayShow: {
           from: { opacity: "0" },
           to: { opacity: "1" },
@@ -27,6 +35,8 @@ export default {
         },
       },
       animation: {
+        "marquee-start": "marquee-start 20s linear infinite",
+        "marquee-end": "marquee-end 20s linear infinite",
         overlayShow: "overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
         contentShow: "contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
       },

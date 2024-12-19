@@ -10,6 +10,7 @@
  * - Footer actions
  */
 import { Hero } from "@/components/app/Hero"
+import { LogoMarquee } from "@/components/app/LogoMarquee"
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         heading="Build Memorable Digital Experiences"
         description="Accessible, scalable, and design-driven web development"
       />
+      <LogoMarquee />
     </>
   )
 }

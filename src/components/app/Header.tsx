@@ -2,7 +2,6 @@
 
 import cn from "classnames"
 import { ArrowRight, Sparkle } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef } from "react"
 
@@ -23,7 +22,7 @@ export const Header = ({ theme }: { theme: string }) => {
   useEffect(() => {
     let observer: IntersectionObserver
 
-    if (ref.current) {
+    if (isLarge && ref.current) {
       observer = new IntersectionObserver(
         ([e]) => {
           if (e.intersectionRatio < 1) {
@@ -41,7 +40,7 @@ export const Header = ({ theme }: { theme: string }) => {
     return () => {
       observer?.disconnect()
     }
-  }, [ref])
+  }, [ref, isLarge])
 
   return (
     <header
@@ -49,12 +48,12 @@ export const Header = ({ theme }: { theme: string }) => {
       className="sticky top-[-1px] bg-transparent px-8 py-2 backdrop-blur-lg sm:px-8 md:px-12 md:py-4 lg:rounded-t-3xl lg:px-24 lg:py-8"
     >
       <div className="relative flex items-center justify-between">
-        <div className="absolute left-0 rotate-0 transition-all duration-300 ease-in-out lg:-left-[10.5rem] lg:-rotate-90">
+        <div className="absolute left-0 rotate-0 transition-all duration-300 ease-in-out lg:-left-[10.25rem] lg:-rotate-90">
           <Link
             href={Routes.HOME}
-            className="btn block h-7 w-[3.75rem] border-none !bg-transparent shadow-none md:h-10 md:w-[5.3125rem]"
+            className="btn flex h-auto min-h-0 w-16 items-center border-none !bg-transparent p-0 shadow-none md:w-20"
           >
-            <Image src={theme === "dark" ? LogoDark : LogoLight} alt="Right Warp logo" fill />
+            {theme === "dark" ? <LogoDark /> : <LogoLight />}
           </Link>
         </div>
         <div className="ms-auto flex items-center justify-end gap-2 sm:gap-2 md:gap-4 lg:ms-0 lg:w-full lg:justify-between">

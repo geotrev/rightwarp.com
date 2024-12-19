@@ -1,7 +1,6 @@
 import * as Dialog from "@radix-ui/react-dialog"
 import { ArrowRight, ChevronRight, X } from "lucide-react"
 import { Menu } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 
@@ -30,16 +29,14 @@ export const MobileDialog = ({ theme }: { theme: string }) => {
           <Dialog.Title className="sr-only">Navigation Dialog</Dialog.Title>
 
           <div className="mb-4 flex justify-between">
-            <div className="block">
-              <Dialog.Close asChild>
-                <Link
-                  href={Routes.HOME}
-                  className="btn relative block h-7 w-[3.75rem] border-none !bg-transparent p-0 shadow-none"
-                >
-                  <Image src={theme === "dark" ? LogoDark : LogoLight} alt="Right Warp logo" fill />
-                </Link>
-              </Dialog.Close>
-            </div>
+            <Dialog.Close asChild>
+              <Link
+                href={Routes.HOME}
+                className="btn flex h-auto min-h-0 w-16 items-center border-none !bg-transparent p-0 shadow-none md:w-20"
+              >
+                {theme === "dark" ? <LogoDark /> : <LogoLight />}
+              </Link>
+            </Dialog.Close>
 
             <Dialog.Close asChild>
               <Button

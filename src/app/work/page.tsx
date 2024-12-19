@@ -6,7 +6,7 @@ export default function About() {
       <Hero
         isDisplay
         heading="Work"
-        description="We focus on clear, accessible, and delightful digital design - from mockup to code"
+        description="From mockup to code, we focus on clear, accessible, and delightful digital design"
       />
     </>
   )

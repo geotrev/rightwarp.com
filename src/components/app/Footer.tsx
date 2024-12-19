@@ -13,7 +13,7 @@ const FooterLink = ({
 
 export const Footer = () => {
   return (
-    <Container tag="footer" className="grid gap-6 text-center">
+    <Container tag="footer" className="grid gap-6 py-16 text-center">
       <div>
         <div className="relative mx-auto mb-4 h-[1.6875rem] w-[3.75rem]">
           <svg

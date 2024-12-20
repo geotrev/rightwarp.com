@@ -1,9 +1,5 @@
 /**
  * sections:
- * - Hero
- * - Logos
- * - Services (heading + desc)
- *   - Service x6
  * - Thoughts (heading + desc)
  *   - Blog card x2
  *   - Read more cta

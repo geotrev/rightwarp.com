@@ -24,8 +24,8 @@ export const MobileDialog = ({ theme }: { theme: string }) => {
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-black/50 data-[state=open]:animate-overlayShow" />
-        <Dialog.Content className="fixed left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-white/75 p-5 backdrop-blur-md focus:outline-none data-[state=open]:animate-contentShow dark:bg-slate-950/50">
+        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/50 data-[state=open]:animate-overlayShow" />
+        <Dialog.Content className="fixed left-1/2 top-1/2 z-50 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-white/75 p-5 backdrop-blur-md focus:outline-none data-[state=open]:animate-contentShow dark:bg-slate-950/50">
           <Dialog.Title className="sr-only">Navigation Dialog</Dialog.Title>
 
           <div className="mb-4 flex justify-between">

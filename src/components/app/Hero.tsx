@@ -19,7 +19,7 @@ export const Hero = ({
   return (
     <div
       className={cn(
-        "flex flex-col justify-center px-8 py-20 transition-[padding] duration-300 sm:py-16 md:px-12 md:py-20 lg:px-24",
+        "flex flex-col justify-center px-8 py-20 transition-[padding] sm:py-16 md:px-12 md:py-20 lg:px-24",
         {
           "sm:py-48 md:h-[50vh] lg:h-[75vh]": isDisplay,
         },

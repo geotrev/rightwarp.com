@@ -13,6 +13,9 @@ export default {
   ],
   theme: {
     extend: {
+      transitionDuration: {
+        DEFAULT: "300ms",
+      },
       keyframes: {
         "marquee-start": {
           "0%": { transform: "translateX(0)" },

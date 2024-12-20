@@ -11,7 +11,7 @@ import { NavItems, Routes } from "@/utils/helpers"
 
 import { ThemeSwitchButton } from "./ThemeSwitchButton"
 
-export const MobileDialog = ({ theme }: { theme: string }) => {
+export const MobileNav = ({ theme }: { theme: string }) => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
@@ -27,7 +27,6 @@ export const MobileDialog = ({ theme }: { theme: string }) => {
         <Dialog.Overlay className="fixed inset-0 z-50 bg-black/50 data-[state=open]:animate-overlayShow" />
         <Dialog.Content className="fixed left-1/2 top-1/2 z-50 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-white/75 p-5 backdrop-blur-md focus:outline-none data-[state=open]:animate-contentShow dark:bg-slate-950/50">
           <Dialog.Title className="sr-only">Navigation Dialog</Dialog.Title>
-
           <div className="mb-4 flex justify-between">
             <Dialog.Close asChild>
               <Link
@@ -37,7 +36,6 @@ export const MobileDialog = ({ theme }: { theme: string }) => {
                 {theme === "dark" ? <LogoDark /> : <LogoLight />}
               </Link>
             </Dialog.Close>
-
             <Dialog.Close asChild>
               <Button
                 className="text-purple-950 dark:text-purple-100"
@@ -49,7 +47,6 @@ export const MobileDialog = ({ theme }: { theme: string }) => {
               </Button>
             </Dialog.Close>
           </div>
-
           <div className="flex flex-col items-center">
             <div className="mb-8 flex flex-col gap-2">
               <ThemeSwitchButton theme={theme} isLarge />
@@ -67,7 +64,6 @@ export const MobileDialog = ({ theme }: { theme: string }) => {
                 aria-hidden="true"
               />
             </div>
-
             <nav className="mb-8 w-full">
               <ul className="grid grid-cols-2 gap-4">
                 {NavItems.map((item) => {
@@ -76,7 +72,7 @@ export const MobileDialog = ({ theme }: { theme: string }) => {
                       <Dialog.Close asChild>
                         <Link
                           href={item.href}
-                          className="btn btn-block bg-purple-100 text-purple-950 hover:bg-purple-300 active:bg-purple-300 dark:bg-purple-950 dark:text-white dark:hover:bg-purple-800 dark:active:bg-purple-800"
+                          className="btn btn-block justify-between bg-purple-100 text-purple-950 hover:bg-purple-300 active:bg-purple-300 dark:bg-purple-950 dark:text-white dark:hover:bg-purple-800 dark:active:bg-purple-800"
                         >
                           {item.label}
                           <ChevronRight
@@ -91,7 +87,6 @@ export const MobileDialog = ({ theme }: { theme: string }) => {
                 })}
               </ul>
             </nav>
-
             <Link
               href={Routes.CONTACT}
               className="btn btn-primary btn-block text-white dark:text-black"

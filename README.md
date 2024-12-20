@@ -24,6 +24,7 @@ Right Warp is a Next JS application, deployed to Netlify, with Sanity CMS.
     - [x] Header style
     - [x] Section container component
       - [x] Callout variant (with serrated separators)
+    - [ ] Fix logo SVG (export as object from AF Designer, NOT on artboard)
   - [ ] About
   - [ ] Work
     - [ ] Work entry (template)
@@ -39,4 +40,4 @@ Right Warp is a Next JS application, deployed to Netlify, with Sanity CMS.
     - [ ] Work entry
   - [ ] Blog
     - [ ] Blog entry
-- [ ] Add light mode switching
+- Animations & pizzazz

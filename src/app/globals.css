@@ -20,3 +20,37 @@
     font-family: var(--font-krona-one);
   }
 }
+
+@layer components {
+  /* Badge */
+
+  .badge-category {
+    @apply badge-lg rounded bg-neutral-600 text-xs font-bold uppercase text-white dark:bg-neutral-400 dark:text-black;
+  }
+
+  /* Blog Card */
+
+  .blog-card {
+    @apply card rounded-xl border-2 border-base-300 p-4 sm:p-8 md:rounded-3xl;
+  }
+
+  .blog-card-image {
+    @apply relative mb-2 h-56 overflow-hidden rounded-md sm:mb-4 md:rounded-xl;
+  }
+
+  .blog-card-body {
+    @apply card-body gap-2 px-0 pb-0 pt-0 sm:gap-4;
+  }
+
+  .blog-card-title {
+    @apply card-title display text-xl leading-8 text-black sm:text-2xl sm:leading-10 dark:text-white;
+  }
+
+  .blog-card-description {
+    @apply pb-2 text-base sm:text-xl;
+  }
+
+  .blog-card-actions {
+    @apply card-actions;
+  }
+}

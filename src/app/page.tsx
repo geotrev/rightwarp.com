@@ -5,6 +5,7 @@
  *   - Read more cta
  * - Footer actions
  */
+import { BlogPreview } from "@/components/app/BlogPreview"
 import { Hero } from "@/components/app/Hero"
 import { LogoMarquee } from "@/components/app/LogoMarquee"
 import { Expertise } from "@/components/app/home/Expertise"
@@ -19,6 +20,7 @@ export default function Home() {
       />
       <LogoMarquee />
       <Expertise />
+      <BlogPreview />
     </>
   )
 }

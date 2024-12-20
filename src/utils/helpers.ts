@@ -24,3 +24,15 @@ export const NavItems = [
     href: Routes.BLOG,
   },
 ]
+
+export const Categories = {
+  DESIGN: "Design",
+  WEB_DEV: "Web Dev",
+  TECHNOLOGY: "Technology",
+}
+
+export const CategoryColors = {
+  [Categories.DESIGN]: "bg-red-600 dark:bg-red-400",
+  [Categories.WEB_DEV]: "bg-blue-600 dark:bg-blue-400",
+  [Categories.TECHNOLOGY]: "bg-green-600 dark:bg-green-400",
+}

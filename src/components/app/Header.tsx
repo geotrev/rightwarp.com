@@ -48,7 +48,7 @@ export const Header = ({ theme }: { theme: string }) => {
       className="sticky top-[-1px] z-30 bg-base-200/50 px-8 py-2 backdrop-blur-lg transition-colors sm:px-8 md:px-12 md:py-4 lg:rounded-t-3xl lg:px-24 lg:py-8"
     >
       <div className="relative flex items-center justify-between">
-        <div className="absolute left-0 rotate-0 transition-all ease-in-out lg:-left-[10.25rem] lg:-rotate-90">
+        <div className="left-0 rotate-0 transition-all ease-in-out md:absolute lg:-left-[10.25rem] lg:-rotate-90">
           <Link
             href={Routes.HOME}
             className="btn flex h-auto min-h-0 w-16 items-center border-none !bg-transparent p-0 shadow-none md:w-20"

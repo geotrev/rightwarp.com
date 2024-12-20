@@ -18,12 +18,10 @@ export const Hero = ({
 
   return (
     <div
-      className={cn(
-        "flex flex-col justify-center px-8 py-20 transition-[padding] sm:py-16 md:px-12 md:py-20 lg:px-24",
-        {
-          "sm:py-48 md:h-[50vh] lg:h-[75vh]": isDisplay,
-        },
-      )}
+      className={cn("flex flex-col justify-center px-8 transition-[padding] md:px-12 lg:px-24", {
+        "py-20 sm:py-24 md:py-28": !isDisplay,
+        "py-40 sm:py-48 md:py-56 lg:py-72": isDisplay,
+      })}
     >
       <h1
         className={cn("display text-black dark:text-white", {

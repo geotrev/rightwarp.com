@@ -33,7 +33,7 @@ export const EndActions = ({ theme }: { theme: string }) => {
               placeholder="mario@world.com"
               className="input input-secondary sm:flex-grow md:w-[50%] md:flex-grow-0 lg:w-[unset] lg:flex-grow"
             />
-            <Button type="submit" variant="secondary">
+            <Button type="submit" variant="secondary" className="btn-outline">
               Subscribe
             </Button>
           </form>

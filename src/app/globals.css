@@ -43,7 +43,7 @@
   }
 
   .blog-card-title {
-    @apply card-title display text-xl leading-8 text-black sm:text-2xl sm:leading-10 dark:text-white;
+    @apply card-title display text-xl tracking-tight leading-8 text-black sm:text-2xl sm:leading-10 dark:text-white;
   }
 
   .blog-card-description {

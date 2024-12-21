@@ -2,11 +2,12 @@
 
 import cn from "classnames"
 import { ArrowRight, Sparkle } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef } from "react"
 
-import LogoDark from "@/app/_assets/logo-dark.svg"
-import LogoLight from "@/app/_assets/logo-light.svg"
+import LogoDark from "@/app/_assets/logo-dark.png"
+import LogoLight from "@/app/_assets/logo-light.png"
 import { NavItems, Routes } from "@/utils/helpers"
 import { useIsLarge } from "@/utils/useMediaQuery"
 
@@ -51,9 +52,13 @@ export const Header = ({ theme }: { theme: string }) => {
         <div className="absolute left-0 rotate-0 transition-all ease-in-out lg:-left-[10.25rem] lg:-rotate-90">
           <Link
             href={Routes.HOME}
-            className="btn flex h-auto min-h-0 w-16 items-center border-none !bg-transparent p-0 shadow-none md:w-20"
+            className="btn relative flex h-9 min-h-0 w-16 items-center border-none !bg-transparent p-0 shadow-none md:w-20"
           >
-            {theme === "dark" ? <LogoDark /> : <LogoLight />}
+            {theme === "dark" ? (
+              <Image src={LogoDark} fill style={{ objectFit: "contain" }} alt="Right Warp" />
+            ) : (
+              <Image src={LogoLight} fill style={{ objectFit: "contain" }} alt="Right Warp" />
+            )}
           </Link>
         </div>
         <div className="ms-auto flex items-center justify-end gap-2 sm:gap-2 md:gap-4 lg:ms-0 lg:w-full lg:justify-between">

@@ -21,7 +21,7 @@ export const Expertise = async () => {
         <SectionHeading
           heading="Expertise"
           icon={PencilRuler}
-          subheading="Ten years of hardened, design-minded web development experience at your finger-tips"
+          subheading="10+ years of hardened, design-minded web development experience at your finger-tips"
         />
       </Container>
       <Container theme={theme} isRaised>

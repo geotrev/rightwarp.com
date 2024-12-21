@@ -1,11 +1,12 @@
 import * as Dialog from "@radix-ui/react-dialog"
 import { ArrowRight, ChevronRight, X } from "lucide-react"
 import { Menu } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 
-import LogoDark from "@/app/_assets/logo-dark.svg"
-import LogoLight from "@/app/_assets/logo-light.svg"
+import LogoDark from "@/app/_assets/logo-dark.png"
+import LogoLight from "@/app/_assets/logo-light.png"
 import { Button } from "@/components/core"
 import { NavItems, Routes } from "@/utils/helpers"
 
@@ -31,9 +32,13 @@ export const MobileNav = ({ theme }: { theme: string }) => {
             <Dialog.Close asChild>
               <Link
                 href={Routes.HOME}
-                className="btn flex h-auto min-h-0 w-16 items-center border-none !bg-transparent p-0 shadow-none md:w-20"
+                className="btn relative flex h-7 min-h-0 w-16 items-center border-none !bg-transparent p-0 shadow-none"
               >
-                {theme === "dark" ? <LogoDark /> : <LogoLight />}
+                {theme === "dark" ? (
+                  <Image src={LogoDark} fill style={{ objectFit: "contain" }} alt="Right Warp" />
+                ) : (
+                  <Image src={LogoLight} fill style={{ objectFit: "contain" }} alt="Right Warp" />
+                )}
               </Link>
             </Dialog.Close>
             <Dialog.Close asChild>

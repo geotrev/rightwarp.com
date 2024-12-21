@@ -39,7 +39,7 @@ export const Footer = () => {
         <p>
           This website is built with <FooterLink href="https://nextjs.org/">Next JS</FooterLink>,{" "}
           <FooterLink href="https://www.sanity.io/">Sanity CMS</FooterLink>, deployed on{" "}
-          <FooterLink href="https://www.netlify.com/">Netlify</FooterLink>, registered on{" "}
+          <FooterLink href="https://www.netlify.com/">Netlify</FooterLink>, and registered on{" "}
           <FooterLink href="https://www.namecheap.com/">NameCheap</FooterLink>. Type set with Krona
           One and Public Sans.
         </p>

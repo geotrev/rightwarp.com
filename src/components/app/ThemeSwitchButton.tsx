@@ -13,7 +13,7 @@ export const ThemeSwitchButton = ({ theme, isLarge }: { isLarge?: boolean; theme
     <button
       type="button"
       className={cn(
-        "btn h-auto min-h-0 border-none bg-transparent shadow-none hover:bg-transparent",
+        "btn h-auto min-h-0 border-none bg-transparent p-1 shadow-none hover:bg-transparent",
         {
           "p-1": !isLarge,
           "p-4": isLarge,

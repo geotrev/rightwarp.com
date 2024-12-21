@@ -1,16 +1,9 @@
-/**
- * sections:
- * - Thoughts (heading + desc)
- *   - Blog card x2
- *   - Read more cta
- * - Footer actions
- */
-import { BlogPreview } from "@/components/app/BlogPreview"
-import { Hero } from "@/components/app/Hero"
-import { LogoMarquee } from "@/components/app/LogoMarquee"
-import { Expertise } from "@/components/app/home/Expertise"
+import { BlogPreview, EndActions, Hero, LogoMarquee, Expertise } from "@/components/app"
+import { getTheme } from "@/server/utils"
 
-export default function Home() {
+export default async function Home() {
+  const theme = await getTheme()
+
   return (
     <>
       <Hero
@@ -21,6 +14,7 @@ export default function Home() {
       <LogoMarquee />
       <Expertise />
       <BlogPreview />
+      <EndActions theme={theme} />
     </>
   )
 }

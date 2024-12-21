@@ -64,7 +64,7 @@ export const Header = ({ theme }: { theme: string }) => {
                 "btn btn-primary btn-sm text-white sm:btn-md md:me-2 lg:me-10 dark:text-black",
               )}
             >
-              Warp Zone <ArrowRight size={isLarge ? 24 : 20} />
+              Warp Zone <ArrowRight className="size-5 lg:size-6" />
             </Link>
             <div className="me-3 hidden text-sm xl:block">
               inquire about a project or just say hi

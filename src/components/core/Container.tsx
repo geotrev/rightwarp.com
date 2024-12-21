@@ -30,10 +30,13 @@ export const Container = ({
         </div>
       )}
       <Tag
-        className={cn("flex flex-col px-8 transition-[padding,colors] md:px-12 lg:px-24", {
-          "bg-base-300": isRaised,
-          ...(className && { [className]: true }),
-        })}
+        className={cn(
+          "flex flex-col px-8 transition-[padding,colors] md:px-12 lg:px-24",
+          className,
+          {
+            "bg-base-300": isRaised,
+          },
+        )}
         {...props}
       >
         {children}

@@ -9,6 +9,7 @@ export const ClientBodyWrapper = ({ children }: { children: React.ReactNode }) =
 
   return (
     <body
+      suppressHydrationWarning
       data-theme={theme}
       className="fg-body min-h-screen bg-base-100 antialiased transition-colors"
     >
@@ -19,6 +20,25 @@ export const ClientBodyWrapper = ({ children }: { children: React.ReactNode }) =
           <Footer />
         </div>
       </div>
+
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+          (function() {
+            const localStorage = window?.localStorage
+            if (localStorage) {
+              const currentTheme = localStorage.getItem("__rw_theme__")
+              const body = document.body
+              if (currentTheme) {
+                body.dataset.theme = currentTheme
+              } else {
+                body.dataset.theme = "dark"
+              }
+            }
+          })();
+        `,
+        }}
+      />
     </body>
   )
 }

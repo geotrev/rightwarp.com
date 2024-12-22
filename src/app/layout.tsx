@@ -3,7 +3,6 @@ import { Krona_One } from "next/font/google"
 import { Public_Sans } from "next/font/google"
 
 import { ThemeProvider } from "@/components/context/ThemeProvider"
-import { getThemeCookie } from "@/server/utils"
 
 import { ClientBodyWrapper } from "./ClientBodyWrapper"
 import "./globals.css"
@@ -29,14 +28,12 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const theme = await getThemeCookie()
-
   return (
     <html
       lang="en"
       className={`${publicSans.className} ${publicSans.variable} ${kronaOne.variable} min-h-screen`}
     >
-      <ThemeProvider initialTheme={theme}>
+      <ThemeProvider>
         <ClientBodyWrapper>{children}</ClientBodyWrapper>
       </ThemeProvider>
     </html>

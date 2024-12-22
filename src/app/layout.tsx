@@ -4,7 +4,8 @@ import { Public_Sans } from "next/font/google"
 
 import { ThemeProvider } from "@/components/context/ThemeProvider"
 
-import { ClientBodyWrapper } from "./ClientBodyWrapper"
+import { ClientBodyWrapper } from "../components/app/layout/ClientBodyWrapper"
+
 import "./globals.css"
 
 export const metadata: Metadata = {

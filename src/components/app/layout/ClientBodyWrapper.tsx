@@ -1,7 +1,7 @@
 "use client"
 
 import { Header } from "@/components/app"
-import { Footer } from "@/components/app/Footer"
+import { Footer } from "@/components/app/layout/Footer"
 import { useTheme } from "@/utils/useThemeContext"
 
 export const ClientBodyWrapper = ({ children }: { children: React.ReactNode }) => {

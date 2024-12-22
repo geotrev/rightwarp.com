@@ -8,7 +8,7 @@ import ModulePuzzleIcon from "@/app/_assets/skill-icons/module-puzzle.svg"
 import SingleUserNeutralIcon from "@/app/_assets/skill-icons/single-user-neutral.svg"
 import WheelchairIcon from "@/app/_assets/skill-icons/wheelchair.svg"
 import WrenchIcon from "@/app/_assets/skill-icons/wrench.svg"
-import { SectionHeading } from "@/components/app/SectionHeading"
+import { SectionHeading } from "@/components/app/shared/SectionHeading"
 import { Container } from "@/components/core"
 import { useTheme } from "@/utils/useThemeContext"
 

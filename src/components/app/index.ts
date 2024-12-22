@@ -1,10 +1,16 @@
-export * from "./Header"
-export * from "./Hero"
-export * from "./ThemeSwitchButton"
-export * from "./EndActions"
-export * from "./LogoMarquee"
+// Layout
 
-// Home page
+export * from "./layout/Header"
+export * from "./layout/Footer"
+export * from "./layout/ThemeSwitchButton"
 
-export * from "./BlogPreview"
+// Shared
+
+export * from "./shared/Hero"
+export * from "./shared/EndActions"
+export * from "./shared/LogoMarquee"
+export * from "./shared/BlogPreview"
+
+// Home
+
 export * from "./home/Expertise"

@@ -4,10 +4,9 @@ import cn from "classnames"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
+import { Button, Container } from "@/components/core"
 import { Routes } from "@/utils/helpers"
 import { useTheme } from "@/utils/useThemeContext"
-
-import { Button, Container } from "../core"
 
 import { Action } from "./Action"
 

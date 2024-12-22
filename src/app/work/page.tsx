@@ -1,4 +1,4 @@
-import { Hero } from "@/components/app/Hero"
+import { Hero } from "@/components/app"
 
 export default function Work() {
   return (

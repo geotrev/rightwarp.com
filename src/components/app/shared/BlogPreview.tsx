@@ -3,10 +3,9 @@
 import { ArrowRight, NotebookText } from "lucide-react"
 import Link from "next/link"
 
+import { Container } from "@/components/core"
 import { Routes } from "@/utils/helpers"
 import { useIs2XLarge } from "@/utils/useMediaQuery"
-
-import { Container } from "../core"
 
 import { BlogCard } from "./BlogCard"
 import { SectionHeading } from "./SectionHeading"

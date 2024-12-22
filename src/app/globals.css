@@ -31,7 +31,7 @@
   /* Blog Card */
 
   .blog-card {
-    @apply card rounded-xl border-2 border-base-300 p-4 transition-colors sm:p-8 md:rounded-3xl;
+    @apply card rounded-xl border-2 border-base-300 bg-base-200 p-4 transition-colors sm:p-8 md:rounded-3xl;
   }
 
   .blog-card-image {
@@ -43,7 +43,7 @@
   }
 
   .blog-card-title {
-    @apply card-title display text-xl tracking-tight leading-8 text-black sm:text-2xl sm:leading-10 dark:text-white;
+    @apply card-title display text-xl leading-8 tracking-tight text-black sm:text-2xl sm:leading-10 dark:text-white;
   }
 
   .blog-card-description {

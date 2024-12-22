@@ -13,7 +13,7 @@ export const Hero = ({
     default:
       "mb-4 md:mb-8 text-xl md:text-3xl lg:text-5xl leading-8 md:leading-10 lg:leading-[4rem] tracking-tight md:tracking-tighter",
     display:
-      "mb-6 sm:mb-8 lg:mb-12 text-3xl sm:text-5xl md:text-[6vw] md:leading-[9vw] xl:leading-[7.5vw] tracking-tight md:tracking-tighter",
+      "mb-6 sm:mb-8 lg:mb-12 text-2xl sm:text-5xl md:text-[6vw] md:leading-[9vw] xl:leading-[7.5vw] tracking-tight md:tracking-tighter",
   }
 
   return (

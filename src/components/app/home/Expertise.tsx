@@ -1,3 +1,5 @@
+"use client"
+
 import { PencilRuler } from "lucide-react"
 
 import BrowserBuildIcon from "@/app/_assets/skill-icons/browser-build.svg"
@@ -8,12 +10,12 @@ import WheelchairIcon from "@/app/_assets/skill-icons/wheelchair.svg"
 import WrenchIcon from "@/app/_assets/skill-icons/wrench.svg"
 import { SectionHeading } from "@/components/app/SectionHeading"
 import { Container } from "@/components/core"
-import { getTheme } from "@/server/utils"
+import { useTheme } from "@/utils/useThemeContext"
 
 import { Skill } from "./Skill"
 
-export const Expertise = async () => {
-  const theme = await getTheme()
+export const Expertise = () => {
+  const { theme } = useTheme()
 
   return (
     <section>

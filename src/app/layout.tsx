@@ -2,10 +2,10 @@ import type { Metadata } from "next"
 import { Krona_One } from "next/font/google"
 import { Public_Sans } from "next/font/google"
 
-import { Footer } from "@/components/app/Footer"
-import { Header } from "@/components/app/Header"
-import { getTheme } from "@/server/utils"
+import { ThemeProvider } from "@/components/context/ThemeProvider"
+import { getThemeCookie } from "@/server/utils"
 
+import { ClientBodyWrapper } from "./ClientBodyWrapper"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -29,21 +29,16 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const theme = await getTheme()
+  const theme = await getThemeCookie()
 
   return (
-    <html lang="en" className="min-h-screen" data-theme={theme}>
-      <body
-        className={`${publicSans.className} ${publicSans.variable} ${kronaOne.variable} fg-body min-h-screen bg-base-100 antialiased transition-colors`}
-      >
-        <div className="grid min-h-screen transition-[padding] ease-in-out lg:px-16 lg:pt-10 xl:px-24 xl:pt-16">
-          <div className="relative bg-base-200 transition-[border-radius,background-color] ease-in-out lg:rounded-t-3xl">
-            <Header theme={theme} />
-            {children}
-            <Footer />
-          </div>
-        </div>
-      </body>
+    <html
+      lang="en"
+      className={`${publicSans.className} ${publicSans.variable} ${kronaOne.variable} min-h-screen`}
+    >
+      <ThemeProvider initialTheme={theme}>
+        <ClientBodyWrapper>{children}</ClientBodyWrapper>
+      </ThemeProvider>
     </html>
   )
 }

@@ -1,7 +1,7 @@
 "use server"
 
-import { toggleTheme } from "@/server/utils"
+import { setThemeCookie } from "@/server/utils"
 
-export const handleThemeAction = async () => {
-  await toggleTheme()
+export const handleThemeAction = async (theme: string) => {
+  await setThemeCookie(theme)
 }

@@ -1,6 +1,6 @@
 import { Hero } from "@/components/app/Hero"
 
-export default function About() {
+export default function Contact() {
   return (
     <>
       <Hero

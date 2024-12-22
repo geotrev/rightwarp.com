@@ -1,14 +1,19 @@
+"use client"
+
 import cn from "classnames"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 import { Routes } from "@/utils/helpers"
+import { useTheme } from "@/utils/useThemeContext"
 
 import { Button, Container } from "../core"
 
 import { Action } from "./Action"
 
-export const EndActions = ({ theme }: { theme: string }) => {
+export const EndActions = () => {
+  const { theme } = useTheme()
+
   return (
     <section>
       <Container theme={theme} isRaised className="gap-16 py-16 2xl:px-[15%]">

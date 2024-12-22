@@ -1,9 +1,6 @@
 import { BlogPreview, EndActions, Hero, LogoMarquee, Expertise } from "@/components/app"
-import { getTheme } from "@/server/utils"
 
-export default async function Home() {
-  const theme = await getTheme()
-
+export default function Home() {
   return (
     <>
       <Hero
@@ -14,7 +11,7 @@ export default async function Home() {
       <LogoMarquee />
       <Expertise />
       <BlogPreview />
-      <EndActions theme={theme} />
+      <EndActions />
     </>
   )
 }

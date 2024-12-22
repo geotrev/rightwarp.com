@@ -2,14 +2,13 @@
 
 import { cookies } from "next/headers"
 
-export const getTheme = async () => {
-  const theme = (await cookies()).get("theme")?.value ?? "dark"
+export const getThemeCookie = async () => {
+  const theme = (await cookies()).get("__rw_theme__")?.value ?? "dark"
   return theme
 }
 
-export const toggleTheme = async () => {
-  const theme = await getTheme()
-  return (await cookies()).set("theme", theme === "dark" ? "light" : "dark", {
+export const setThemeCookie = async (theme: string) => {
+  return (await cookies()).set("__rw_theme__", theme, {
     maxAge: 60 * 60 * 24 * 365,
   })
 }

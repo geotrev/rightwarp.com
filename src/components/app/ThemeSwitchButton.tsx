@@ -3,11 +3,13 @@
 import cn from "classnames"
 import { MoonStar, Sun } from "lucide-react"
 
-import { handleThemeAction } from "@/server/actions"
+import { useTheme } from "@/utils/useThemeContext"
 
-export const ThemeSwitchButton = ({ theme, isLarge }: { isLarge?: boolean; theme?: string }) => {
+export const ThemeSwitchButton = ({ isLarge }: { isLarge?: boolean; theme?: string }) => {
+  const { theme, toggleTheme } = useTheme()
   const size = isLarge ? 32 : 24
-  const handleClick = () => handleThemeAction()
+
+  const handleClick = () => toggleTheme()
 
   return (
     <button

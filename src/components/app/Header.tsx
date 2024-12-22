@@ -10,13 +10,15 @@ import LogoDark from "@/app/_assets/logo-dark.png"
 import LogoLight from "@/app/_assets/logo-light.png"
 import { NavItems, Routes } from "@/utils/helpers"
 import { useIsLarge } from "@/utils/useMediaQuery"
+import { useTheme } from "@/utils/useThemeContext"
 
 import { MobileNav } from "./MobileNav"
 import { ThemeSwitchButton } from "./ThemeSwitchButton"
 
 const lastNavItemLabel = NavItems[NavItems.length - 1].label
 
-export const Header = ({ theme }: { theme: string }) => {
+export const Header = () => {
+  const { theme } = useTheme()
   const ref = useRef<HTMLElement | null>(null)
   const isLarge = useIsLarge()
 

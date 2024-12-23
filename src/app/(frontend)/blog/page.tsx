@@ -4,7 +4,7 @@ export default function Blog() {
   return (
     <>
       <Hero
-        isDisplay
+        variant="display"
         heading="Thoughts"
         description="Ramblings about tech, web development, and design"
       />

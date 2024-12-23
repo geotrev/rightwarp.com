@@ -98,7 +98,7 @@ export const Header = () => {
                         <Link
                           href={item.href}
                           className={cn(
-                            "link pb-1 text-sm font-bold uppercase text-purple-950 no-underline hover:shadow-[0_3px_0_black] focus:transition-none dark:text-white dark:hover:shadow-[0_3px_0_white]",
+                            "btn btn-ghost btn-xs !bg-transparent px-0 text-sm uppercase",
                             marginClass,
                           )}
                         >

@@ -1,5 +1,3 @@
-"use client"
-
 import { PencilRuler } from "lucide-react"
 
 import BrowserBuildIcon from "@/app/_assets/skill-icons/browser-build.svg"
@@ -10,13 +8,10 @@ import WheelchairIcon from "@/app/_assets/skill-icons/wheelchair.svg"
 import WrenchIcon from "@/app/_assets/skill-icons/wrench.svg"
 import { SectionHeading } from "@/components/app/shared/SectionHeading"
 import { Container } from "@/components/core"
-import { useTheme } from "@/utils/useThemeContext"
 
 import { Skill } from "./Skill"
 
 export const Expertise = () => {
-  const { theme } = useTheme()
-
   return (
     <section>
       <Container className="py-16 md:py-24 lg:py-32">
@@ -26,7 +21,7 @@ export const Expertise = () => {
           subheading="10+ years of hardened, design-minded web development experience at your finger-tips"
         />
       </Container>
-      <Container theme={theme} isRaised>
+      <Container isRaised>
         <Skill
           isReversed
           heading="Design Systems"
@@ -41,7 +36,7 @@ export const Expertise = () => {
           icon={<WheelchairIcon />}
         />
       </Container>
-      <Container theme={theme} isRaised>
+      <Container isRaised>
         <Skill
           isReversed
           heading="Business Websites"
@@ -56,7 +51,7 @@ export const Expertise = () => {
           icon={<SingleUserNeutralIcon />}
         />
       </Container>
-      <Container theme={theme} isRaised>
+      <Container isRaised>
         <Skill
           isReversed
           heading="Audits, Testing & Quality"

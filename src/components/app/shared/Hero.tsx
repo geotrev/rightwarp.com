@@ -32,7 +32,7 @@ export const Hero = ({
         {heading}
       </h1>
       {description && (
-        <p className="text-md tracking-tight text-purple-950 sm:text-lg md:text-xl lg:text-3xl dark:text-purple-100">
+        <p className="text-md tracking-tight text-purple-950 sm:text-lg md:text-xl lg:text-3xl lg:leading-[3rem] dark:text-purple-100">
           {description}
         </p>
       )}

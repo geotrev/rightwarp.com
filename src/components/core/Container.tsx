@@ -14,20 +14,15 @@ export const Container = ({
   tag: Tag = "div",
   className,
   isRaised,
-  theme,
   ...props
 }: ContainerProps) => {
-  const divider = isRaised && (theme === "dark" ? "divider-dark.svg" : "divider-light.svg")
-
   return (
     <div className="transform-all">
       {isRaised && (
-        <div className="text-base-300">
-          <div
-            className="h-[0.875rem] rotate-180 bg-repeat-x"
-            style={{ background: `url('/${divider}') center/auto 100%` }}
-          />
-        </div>
+        <div
+          className="h-[0.875rem] rotate-180 bg-base-300 bg-repeat-x"
+          style={{ mask: `url('/divider.svg') center/auto 100%` }}
+        />
       )}
       <Tag
         className={cn(
@@ -42,12 +37,10 @@ export const Container = ({
         {children}
       </Tag>
       {isRaised && (
-        <div className="text-base-300">
-          <div
-            className="h-[0.875rem] bg-repeat-x"
-            style={{ background: `url('/${divider}') center/auto 100%` }}
-          />
-        </div>
+        <div
+          className="h-[0.875rem] bg-base-300 bg-repeat-x"
+          style={{ mask: `url('/divider.svg') center/auto 100%` }}
+        />
       )}
     </div>
   )

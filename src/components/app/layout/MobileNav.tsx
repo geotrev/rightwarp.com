@@ -35,9 +35,19 @@ export const MobileNav = ({ theme }: { theme: string }) => {
                 className="btn relative flex h-7 min-h-0 w-16 items-center border-none !bg-transparent p-0 shadow-none"
               >
                 {theme === "dark" ? (
-                  <Image src={LogoDark} fill style={{ objectFit: "contain" }} alt="Right Warp" />
+                  <Image
+                    src={LogoDark}
+                    fill
+                    style={{ objectFit: "contain" }}
+                    alt="Right Warp, home"
+                  />
                 ) : (
-                  <Image src={LogoLight} fill style={{ objectFit: "contain" }} alt="Right Warp" />
+                  <Image
+                    src={LogoLight}
+                    fill
+                    style={{ objectFit: "contain" }}
+                    alt="Right Warp, home"
+                  />
                 )}
               </Link>
             </Dialog.Close>

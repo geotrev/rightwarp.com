@@ -1,32 +1,35 @@
 import cn from "classnames"
 
-export const Hero = ({
-  heading,
-  description,
-  isDisplay = false,
-}: {
+export interface HeroProps {
   heading: string
   description?: string
-  isDisplay?: boolean
-}) => {
-  const headingStyles = {
-    default:
-      "mb-4 md:mb-8 text-xl md:text-3xl lg:text-5xl leading-8 md:leading-10 lg:leading-[4rem] tracking-tight md:tracking-tighter",
-    display:
-      "mb-6 sm:mb-8 lg:mb-12 text-2xl sm:text-5xl md:text-[6vw] md:leading-[9vw] xl:leading-[7.5vw] tracking-tight md:tracking-tighter",
+  variant?: "standard" | "display"
+}
+
+export const Hero = ({ heading, description, variant = "standard" }: HeroProps) => {
+  const fontStyles: Record<string, string> = {
+    standard: cn(
+      "mb-4 text-xl leading-8 tracking-tight md:mb-8 md:text-3xl md:leading-10 md:tracking-tighter lg:text-5xl lg:leading-[4rem]",
+    ),
+    display: cn(
+      "mb-6 text-2xl tracking-tight sm:mb-8 sm:text-5xl md:text-[6vw] md:leading-[9vw] md:tracking-tighter lg:mb-12 xl:leading-[7.5vw]",
+    ),
+  }
+
+  const sizeStyles: Record<string, string> = {
+    standard: cn("py-20 sm:py-24 md:py-28"),
+    display: cn("py-40 sm:py-48 md:py-56 lg:py-72"),
   }
 
   return (
-    <div
+    <section
       className={cn("flex flex-col justify-center px-8 transition-[padding] md:px-12 lg:px-24", {
-        "py-20 sm:py-24 md:py-28": !isDisplay,
-        "py-40 sm:py-48 md:py-56 lg:py-72": isDisplay,
+        [sizeStyles[variant]]: true,
       })}
     >
       <h1
         className={cn("display text-black dark:text-white", {
-          [headingStyles.display]: isDisplay,
-          [headingStyles.default]: !isDisplay,
+          [fontStyles[variant]]: true,
         })}
       >
         {heading}
@@ -36,6 +39,6 @@ export const Hero = ({
           {description}
         </p>
       )}
-    </div>
+    </section>
   )
 }

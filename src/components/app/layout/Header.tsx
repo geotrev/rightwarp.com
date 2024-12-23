@@ -57,9 +57,9 @@ export const Header = () => {
             className="btn relative flex h-9 min-h-0 w-16 items-center border-none !bg-transparent p-0 shadow-none md:w-20"
           >
             {theme === "dark" ? (
-              <Image src={LogoDark} fill style={{ objectFit: "contain" }} alt="Right Warp" />
+              <Image src={LogoDark} fill style={{ objectFit: "contain" }} alt="Right Warp, home" />
             ) : (
-              <Image src={LogoLight} fill style={{ objectFit: "contain" }} alt="Right Warp" />
+              <Image src={LogoLight} fill style={{ objectFit: "contain" }} alt="Right Warp, home" />
             )}
           </Link>
         </div>

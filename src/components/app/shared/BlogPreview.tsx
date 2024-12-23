@@ -10,55 +10,32 @@ import { useIs2XLarge } from "@/utils/useMediaQuery"
 import { BlogCard } from "./BlogCard"
 import { SectionHeading } from "./SectionHeading"
 
-export const BlogPreview = () => {
+export interface BlogPreviewProps {
+  heading: string
+  subheading: string
+  blogs: {
+    image: {
+      href: string
+      alt: string
+    }
+    title: string
+    description: string
+    categories: string[]
+  }[]
+}
+
+export const BlogPreview = ({ heading, subheading, blogs }: BlogPreviewProps) => {
   const is2XLarge = useIs2XLarge()
 
-  const blogPosts = [
-    {
-      image: {
-        href: "https://picsum.photos/500/300",
-        alt: "image",
-      },
-      title: "Lorem ipsum is placeholder text tool used in the print design days",
-      description:
-        "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
-      categories: ["Design", "Web Dev"],
-    },
-    {
-      image: {
-        href: "https://picsum.photos/500/300",
-        alt: "image",
-      },
-      title: "Lorem ipsum is a placeholder text used in the print design days",
-      description:
-        "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
-      categories: ["Technology"],
-    },
-    {
-      image: {
-        href: "https://picsum.photos/500/300",
-        alt: "image",
-      },
-      title: "Lorem ipsum is a placeholder text tool used in the print design days",
-      description:
-        "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
-      categories: ["Technology", "Web Dev"],
-    },
-  ]
-
-  const renderPosts = is2XLarge ? blogPosts : blogPosts.slice(0, 2)
+  const previews = is2XLarge ? blogs : blogs.slice(0, 2)
 
   return (
     <section className="pb-16">
       <Container className="py-16 md:py-24 lg:py-32">
-        <SectionHeading
-          heading="Thoughts"
-          icon={NotebookText}
-          subheading="Ramblings about tech, web development, and design"
-        />
+        <SectionHeading heading={heading} icon={NotebookText} subheading={subheading} />
       </Container>
       <Container className="grid gap-8 pb-8 md:grid-cols-2 2xl:grid-cols-3">
-        {renderPosts.map((post) => (
+        {previews.map((post) => (
           <BlogCard key={post.title} {...post} />
         ))}
       </Container>

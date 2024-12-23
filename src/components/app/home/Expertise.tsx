@@ -11,61 +11,47 @@ import { Container } from "@/components/core"
 
 import { Skill } from "./Skill"
 
-export const Expertise = () => {
+export interface ExpertiseProps {
+  heading: string
+  subheading: string
+  items: {
+    isRaised?: boolean
+    isReversed?: boolean
+    heading: string
+    description: string
+    icon: string
+  }[]
+}
+
+const skillIcons: Record<string, React.FC> = {
+  BrowserBuildIcon,
+  DesktopCheckIcon,
+  ModulePuzzleIcon,
+  SingleUserNeutralIcon,
+  WheelchairIcon,
+  WrenchIcon,
+}
+
+export const Expertise = ({ heading, subheading, items }: ExpertiseProps) => {
   return (
     <section>
       <Container className="py-16 md:py-24 lg:py-32">
-        <SectionHeading
-          heading="Expertise"
-          icon={PencilRuler}
-          subheading="10+ years of hardened, design-minded web development experience at your finger-tips"
-        />
+        <SectionHeading heading={heading} icon={PencilRuler} subheading={subheading} />
       </Container>
-      <Container isRaised>
-        <Skill
-          isReversed
-          heading="Design Systems"
-          description="Scale faster, impress users and developers alike with scalable design patterns, tokens, components, and consistent UX"
-          icon={<ModulePuzzleIcon />}
-        />
-      </Container>
-      <Container>
-        <Skill
-          heading="WCAG-Compliant Accessibility"
-          description="Expand revenue streams and market presence with inclusive experiences for people of all abilities"
-          icon={<WheelchairIcon />}
-        />
-      </Container>
-      <Container isRaised>
-        <Skill
-          isReversed
-          heading="Business Websites"
-          description="Expand your reach or breathe new life into your digital footprint with a renewed & modernized digital experience for customers"
-          icon={<BrowserBuildIcon />}
-        />
-      </Container>
-      <Container>
-        <Skill
-          heading="User Experience"
-          description="Delight customers with an intuitive product and research-driven design"
-          icon={<SingleUserNeutralIcon />}
-        />
-      </Container>
-      <Container isRaised>
-        <Skill
-          isReversed
-          heading="Audits, Testing & Quality"
-          description="Temper your product development with stronger testing infrastructure."
-          icon={<DesktopCheckIcon />}
-        />
-      </Container>
-      <Container>
-        <Skill
-          heading="Support & Maintenance"
-          description="Support an ongoing content strategy, performance, search engine optimization (SEO), security, and more."
-          icon={<WrenchIcon />}
-        />
-      </Container>
+      {items.map((item) => {
+        const Icon = skillIcons[item.icon]
+
+        return (
+          <Container key={item.heading} isRaised={item.isRaised}>
+            <Skill
+              isReversed={item.isReversed}
+              heading={item.heading}
+              description={item.description}
+              icon={<Icon />}
+            />
+          </Container>
+        )
+      })}
     </section>
   )
 }

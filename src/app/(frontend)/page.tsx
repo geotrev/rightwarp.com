@@ -88,6 +88,7 @@ export default function Home() {
           href: "https://picsum.photos/500/300",
           alt: "image",
         },
+        href: "#",
         title: "Lorem ipsum is placeholder text tool used in the print design days",
         description:
           "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
@@ -98,6 +99,7 @@ export default function Home() {
           href: "https://picsum.photos/500/300",
           alt: "image",
         },
+        href: "#",
         title: "Lorem ipsum is a placeholder text used in the print design days",
         description:
           "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
@@ -108,6 +110,7 @@ export default function Home() {
           href: "https://picsum.photos/500/300",
           alt: "image",
         },
+        href: "#",
         title: "Lorem ipsum is a placeholder text tool used in the print design days",
         description:
           "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",

@@ -7,21 +7,13 @@ import { Container } from "@/components/core"
 import { Routes } from "@/utils/helpers"
 import { useIs2XLarge } from "@/utils/useMediaQuery"
 
-import { BlogCard } from "./BlogCard"
+import { BlogCard, BlogCardProps } from "./BlogCard"
 import { SectionHeading } from "./SectionHeading"
 
 export interface BlogPreviewProps {
   heading: string
   subheading: string
-  blogs: {
-    image: {
-      href: string
-      alt: string
-    }
-    title: string
-    description: string
-    categories: string[]
-  }[]
+  blogs: BlogCardProps[]
 }
 
 export const BlogPreview = ({ heading, subheading, blogs }: BlogPreviewProps) => {

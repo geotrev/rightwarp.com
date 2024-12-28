@@ -5,14 +5,14 @@ import ServiceNow from "@/app/_assets/logos/servicenow.svg"
 import Zendesk from "@/app/_assets/logos/zendesk.svg"
 import {
   BlogPreview,
-  EndActions,
+  ActionList,
   Hero,
   LogoMarquee,
   Expertise,
   HeroProps,
   LogoMarqueeProps,
   ExpertiseProps,
-  EndActionsProps,
+  ActionListProps,
   BlogPreviewProps,
 } from "@/components/app"
 
@@ -118,7 +118,7 @@ export default function Home() {
       },
     ],
   }
-  const actionsProps: EndActionsProps = {
+  const actionsProps: ActionListProps = {
     actions: [
       {
         heading: "Need help on a project?",
@@ -139,7 +139,7 @@ export default function Home() {
       <LogoMarquee {...logoMarqueeProps} />
       <Expertise {...expertiseProps} />
       <BlogPreview {...blogProps} />
-      <EndActions {...actionsProps} />
+      <ActionList {...actionsProps} />
     </>
   )
 }

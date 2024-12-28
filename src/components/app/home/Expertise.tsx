@@ -1,3 +1,4 @@
+import cn from "classnames"
 import { PencilRuler } from "lucide-react"
 
 import BrowserBuildIcon from "@/app/_assets/skill-icons/browser-build.svg"
@@ -42,7 +43,11 @@ export const Expertise = ({ heading, subheading, items }: ExpertiseProps) => {
         const Icon = skillIcons[item.icon]
 
         return (
-          <Container key={item.heading} isRaised={item.isRaised}>
+          <Container
+            key={item.heading}
+            isRaised={item.isRaised}
+            className={cn({ "py-16": !item.isRaised })}
+          >
             <Skill
               isReversed={item.isReversed}
               heading={item.heading}

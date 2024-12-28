@@ -7,10 +7,14 @@ export * from "./layout/ThemeSwitchButton"
 // Shared
 
 export * from "./shared/Hero"
-export * from "./shared/EndActions"
+export * from "./shared/ActionList"
 export * from "./shared/LogoMarquee"
 export * from "./shared/BlogPreview"
 
 // Home
 
 export * from "./home/Expertise"
+
+// Contact
+
+export * from "./contact/ContactForm"

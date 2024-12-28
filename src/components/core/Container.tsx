@@ -5,7 +5,6 @@ interface ContainerProps extends PropsWithChildren<HTMLAttributes<HTMLElement>> 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tag?: any
   isRaised?: boolean
-  theme?: string
   children: React.ReactNode
 }
 
@@ -29,7 +28,7 @@ export const Container = ({
           "flex flex-col px-6 transition-[padding,colors] md:px-12 lg:px-24",
           className,
           {
-            "bg-base-300": isRaised,
+            "gap-16 bg-base-300 py-16 2xl:px-[15%]": isRaised,
           },
         )}
         {...props}

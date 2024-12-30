@@ -49,7 +49,7 @@ export const ContactForm = (props: ContactFormProps) => {
           {props.heading}
         </SectionHeading>
       </Container>
-      <Container className="mb-16 2xl:px-[15%]">
+      <Container className="mb-16" isConstrained>
         <p className="mb-8 flex items-center gap-4 italic">
           <Asterisk size="20" className="dark:text-white" />
           <span className="opacity-75">Fields with an asterisk are required</span>

@@ -37,7 +37,7 @@ export const actionTypes = {
     </Link>
   ),
   newsletter: (
-    <form className="flex w-full flex-col gap-2 sm:flex-row sm:gap-4">
+    <form className="flex w-full gap-2 sm:gap-4">
       <input
         type="email"
         placeholder="mario@world.com"
@@ -52,7 +52,7 @@ export const actionTypes = {
 
 export const ActionList = ({ actions }: ActionListProps) => {
   return (
-    <Container isRaised tag="section">
+    <Container isRaised isConstrained tag="section">
       {actions.map(({ heading, description, action }) => (
         <Action key={heading} {...{ heading, description }}>
           {actionTypes[action]}

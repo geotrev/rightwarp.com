@@ -12,7 +12,7 @@ export const SectionHeading = ({
   return (
     <div className="flex flex-col gap-4 py-16 md:gap-8 md:py-32 lg:gap-4 lg:py-40 xl:flex-row xl:items-center">
       <div className="flex w-full flex-col gap-4 md:flex-row">
-        <h2 className="display whitespace-nowrap text-3xl tracking-tight text-black sm:text-4xl xl:tracking-tighter 2xl:text-6xl dark:text-white">
+        <h2 className="display whitespace-nowrap text-2xl tracking-tight text-black sm:text-4xl xl:tracking-tighter 2xl:text-6xl dark:text-white">
           {children}
         </h2>
         {Icon && subheading && (
@@ -29,7 +29,7 @@ export const SectionHeading = ({
           </div>
         )}
       </div>
-      <p className="sm:text-2xl xl:text-4xl">{subheading}</p>
+      <p className="tracking-tight sm:text-2xl xl:text-4xl">{subheading}</p>
     </div>
   )
 }

@@ -5,6 +5,7 @@ interface ContainerProps extends PropsWithChildren<HTMLAttributes<HTMLElement>> 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tag?: any
   isRaised?: boolean
+  isConstrained?: boolean
   children: React.ReactNode
 }
 
@@ -13,10 +14,11 @@ export const Container = ({
   tag: Tag = "div",
   className,
   isRaised,
+  isConstrained,
   ...props
 }: ContainerProps) => {
   return (
-    <div>
+    <>
       {isRaised && (
         <div
           className="h-[0.875rem] rotate-180 bg-base-300 bg-repeat-x"
@@ -28,7 +30,8 @@ export const Container = ({
           "flex flex-col px-6 transition-[padding,colors] md:px-12 lg:px-24",
           className,
           {
-            "gap-16 bg-base-300 py-16 2xl:px-[15%]": isRaised,
+            "gap-16 bg-base-300 py-16": isRaised,
+            "2xl:px-[15%]": isConstrained,
           },
         )}
         {...props}
@@ -41,6 +44,6 @@ export const Container = ({
           style={{ mask: `url('/divider.svg') center/auto 100%` }}
         />
       )}
-    </div>
+    </>
   )
 }

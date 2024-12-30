@@ -18,8 +18,8 @@ export interface IntroProps {
 
 export const Intro = (props: IntroProps) => {
   return (
-    <Container tag="section">
-      <div className="flex flex-col gap-8 lg:flex-row 2xl:px-[15%]">
+    <Container tag="section" isConstrained className="mb-24 sm:mb-36">
+      <div className="flex flex-col gap-8 lg:flex-row">
         <figure className="relative h-48 w-48 overflow-hidden rounded-full lg:h-[19.125rem] lg:w-[19.125rem] lg:flex-shrink-0">
           <Image src={props.bioImage.src} fill alt="" />
           <figcaption className="sr-only">{props.bioImage.alt}</figcaption>

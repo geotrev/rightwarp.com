@@ -36,7 +36,7 @@ const skillIcons: Record<string, React.FC> = {
 export const Expertise = ({ heading, subheading, items }: ExpertiseProps) => {
   return (
     <section>
-      <Container className="py-16 md:py-24 lg:py-32">
+      <Container>
         <SectionHeading icon={PencilRuler} subheading={subheading}>
           {heading}
         </SectionHeading>
@@ -47,6 +47,7 @@ export const Expertise = ({ heading, subheading, items }: ExpertiseProps) => {
         return (
           <Container
             key={item.heading}
+            isConstrained
             isRaised={item.isRaised}
             className={cn({ "py-16": !item.isRaised })}
           >

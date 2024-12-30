@@ -1,3 +1,5 @@
+import { Brain, CodeXml, HammerIcon, PaintRoller } from "lucide-react"
+
 import SelfImage from "@/app/_assets/its-a-me.jpg"
 import Codecov from "@/app/_assets/logos/codecov.svg"
 import Musicnotes from "@/app/_assets/logos/musicnotes.svg"
@@ -11,6 +13,10 @@ import {
   SkillCategories,
   LogoMarquee,
   LogoMarqueeProps,
+  BlogPreview,
+  BlogPreviewProps,
+  ActionListProps,
+  ActionList,
 } from "@/components/app"
 import { Link } from "@/components/core"
 
@@ -92,11 +98,55 @@ export default function About() {
       { name: "Zendesk", Logo: Zendesk },
     ],
   }
-
   const skillProps: SkillCategoriesProps = {
+    heading: "Skills",
+    icon: HammerIcon,
+    subheading:
+      "We bring a combination of domain expertise to ensure project success; if a domain's not here, ask us about it!",
     categories: [
       {
+        title: "Strategy",
+        color: "border-emerald-600 dark:border-emerald-400",
+        icon: Brain,
+        items: [
+          "Project Management",
+          "User Research",
+          "Content Planning",
+          "Agile",
+          "Scrum",
+          "Technical Design",
+        ],
+      },
+      {
+        title: "Development",
+        color: "border-amber-600 dark:border-amber-400",
+        icon: CodeXml,
+        items: [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "TypeScript",
+          "Unit & E2E Testing",
+          "Bash",
+          "Ruby",
+          "Search Engine Optimization",
+          "Performance",
+          "Open Source",
+          "Monorepos",
+          "Content Management Systems",
+          "React",
+          "Ruby on Rails",
+          "Tailwind",
+          "Styled Components",
+          "Node",
+          "Next JS",
+          "VCS / Git",
+        ],
+      },
+      {
         title: "Design",
+        color: "border-amber-600 dark:border-fuchsia-400",
+        icon: PaintRoller,
         items: [
           "User Experience",
           "User Interface Design",
@@ -109,27 +159,58 @@ export default function About() {
           "Theming",
         ],
       },
+    ],
+  }
+  const blogProps: BlogPreviewProps = {
+    heading: "Thoughts",
+    subheading: "Ramblings about tech, web development, and design",
+    blogs: [
       {
-        title: "Development",
-        items: [
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "TypeScript",
-          "Bash",
-          "Ruby",
-          "Search Engine Optimization",
-          "Performance",
-          "Open Source",
-          "Monorepos",
-          "Content Management Systems",
-          "React",
-          "Tailwind",
-          "Styled Components",
-          "Node",
-          "Next JS",
-          "VCS / Git",
-        ],
+        image: {
+          href: "https://picsum.photos/500/300",
+          alt: "image",
+        },
+        href: "#",
+        title: "Lorem ipsum is placeholder text tool used in the print design days",
+        description:
+          "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
+        categories: ["Design", "Web Dev"],
+      },
+      {
+        image: {
+          href: "https://picsum.photos/500/300",
+          alt: "image",
+        },
+        href: "#",
+        title: "Lorem ipsum is a placeholder text used in the print design days",
+        description:
+          "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
+        categories: ["Technology"],
+      },
+      {
+        image: {
+          href: "https://picsum.photos/500/300",
+          alt: "image",
+        },
+        href: "#",
+        title: "Lorem ipsum is a placeholder text tool used in the print design days",
+        description:
+          "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
+        categories: ["Technology", "Web Dev"],
+      },
+    ],
+  }
+  const actionsProps: ActionListProps = {
+    actions: [
+      {
+        heading: "Need help on a project?",
+        description: "Whether it’s a brand new or needs some renewed attention, we can help",
+        action: "button",
+      },
+      {
+        heading: "Subscribe to the newsletter",
+        description: "Get occasional emails about blog posts & industry happenings",
+        action: "newsletter",
       },
     ],
   }
@@ -138,12 +219,10 @@ export default function About() {
     <>
       <Hero variant="display" heading="About Us" description="Right Warp / raɪt-wɔrp" />
       <Intro {...introProps} />
-      <div className="my-32">
-        <LogoMarquee {...marqueeProps} />
-      </div>
+      <LogoMarquee {...marqueeProps} />
       <SkillCategories {...skillProps} />
-      {/* Thoughts */}
-      {/* EndActions */}
+      <BlogPreview {...blogProps} />
+      <ActionList {...actionsProps} />
     </>
   )
 }

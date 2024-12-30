@@ -23,7 +23,7 @@ export const BlogPreview = ({ heading, subheading, blogs }: BlogPreviewProps) =>
 
   return (
     <section className="pb-16">
-      <Container className="py-16 md:py-24 lg:py-32">
+      <Container>
         <SectionHeading icon={NotebookText} subheading={subheading}>
           {heading}
         </SectionHeading>

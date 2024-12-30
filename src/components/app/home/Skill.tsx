@@ -12,7 +12,7 @@ export const Skill = ({ isReversed, heading, description, icon }: SkillProps) =>
   return (
     <div
       className={cn(
-        "flex flex-col items-center gap-8 transition-[padding] sm:gap-12 lg:justify-center lg:gap-32 2xl:px-[15%]",
+        "flex flex-col items-center gap-8 transition-[padding] sm:gap-12 lg:justify-center lg:gap-32",
         {
           "sm:flex-row-reverse": isReversed,
           "sm:flex-row": !isReversed,

@@ -16,7 +16,7 @@ export const Container = ({
   ...props
 }: ContainerProps) => {
   return (
-    <div className="transform-all">
+    <div>
       {isRaised && (
         <div
           className="h-[0.875rem] rotate-180 bg-base-300 bg-repeat-x"

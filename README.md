@@ -35,8 +35,6 @@ Right Warp is a Next JS application, deployed to Netlify, with Sanity CMS.
 - [ ] Add Posthog (tracking)
 - [ ] Migrate content to Sanity
   - [ ] Globals (SEO & metadata)
-  - [ ] Home
-  - [ ] About
   - [ ] Work
     - [ ] Work entry
   - [ ] Blog

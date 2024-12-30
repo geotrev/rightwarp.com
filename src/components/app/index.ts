@@ -18,3 +18,7 @@ export * from "./home/Expertise"
 // Contact
 
 export * from "./contact/ContactForm"
+
+// About
+
+export * from "./about/Intro"

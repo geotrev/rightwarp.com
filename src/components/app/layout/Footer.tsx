@@ -1,15 +1,4 @@
-import { AnchorHTMLAttributes, PropsWithChildren } from "react"
-
-import { Container } from "@/components/core"
-
-const FooterLink = ({
-  children,
-  ...props
-}: PropsWithChildren<AnchorHTMLAttributes<HTMLAnchorElement>>) => (
-  <a {...props} rel="noreferrer noopener" className="link">
-    {children}
-  </a>
-)
+import { Container, Link } from "@/components/core"
 
 export const Footer = () => {
   return (
@@ -35,16 +24,28 @@ export const Footer = () => {
         </div>
         <p className="mb-2">&copy; 2024 Right Warp LLC / Madison, Wisconsin</p>
         <p>
-          <FooterLink href="mailto:wave@rightwarp.com">wave@rightwarp.com</FooterLink>
+          <Link href="mailto:wave@rightwarp.com">wave@rightwarp.com</Link>
         </p>
       </div>
       <div>
         <p>
-          This website is built with <FooterLink href="https://nextjs.org/">Next JS</FooterLink>,{" "}
-          <FooterLink href="https://www.sanity.io/">Sanity CMS</FooterLink>, deployed on{" "}
-          <FooterLink href="https://www.netlify.com/">Netlify</FooterLink>, and registered on{" "}
-          <FooterLink href="https://www.namecheap.com/">NameCheap</FooterLink>. Type set with Krona
-          One and Public Sans.
+          This website is built with{" "}
+          <Link isExternal href="https://nextjs.org/">
+            Next JS
+          </Link>
+          ,{" "}
+          <Link isExternal href="https://www.sanity.io/">
+            Sanity CMS
+          </Link>
+          , deployed on{" "}
+          <Link isExternal href="https://www.netlify.com/">
+            Netlify
+          </Link>
+          , and registered on{" "}
+          <Link isExternal href="https://www.namecheap.com/">
+            NameCheap
+          </Link>
+          . Type set with Krona One and Public Sans.
         </p>
       </div>
     </Container>

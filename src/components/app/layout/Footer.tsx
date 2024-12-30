@@ -33,7 +33,10 @@ export const Footer = () => {
             />
           </svg>
         </div>
-        <p>&copy; 2024 Right Warp LLC / Madison, Wisconsin</p>
+        <p className="mb-2">&copy; 2024 Right Warp LLC / Madison, Wisconsin</p>
+        <p>
+          <FooterLink href="mailto:wave@rightwarp.com">wave@rightwarp.com</FooterLink>
+        </p>
       </div>
       <div>
         <p>

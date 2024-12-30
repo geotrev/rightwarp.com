@@ -22,3 +22,4 @@ export * from "./contact/ContactForm"
 // About
 
 export * from "./about/Intro"
+export * from "./about/SkillCategories"

@@ -4,7 +4,14 @@ import Musicnotes from "@/app/_assets/logos/musicnotes.svg"
 import Scribd from "@/app/_assets/logos/scribd.svg"
 import ServiceNow from "@/app/_assets/logos/servicenow.svg"
 import Zendesk from "@/app/_assets/logos/zendesk.svg"
-import { Hero, Intro } from "@/components/app"
+import {
+  Hero,
+  Intro,
+  SkillCategoriesProps,
+  SkillCategories,
+  LogoMarquee,
+  LogoMarqueeProps,
+} from "@/components/app"
 import { Link } from "@/components/core"
 
 export default function About() {
@@ -16,7 +23,8 @@ export default function About() {
     heading: "Hello from Wisconsin!",
     textStart:
       "Right Warp is a boutique design & development studio currently operated by one person: George Treviranus. Let's switch to first person for a few moments: I've been designing and building digital products for a little over 10 years (longer if you count photoshopping in high school). I've worked at and helped scale som pretty cool websites and tools, including:",
-    textEnd: "",
+    textEnd:
+      "Right Warp is guided by principles of empathy, inclusivity, and sustainability. All projects are approached with a focus on custom-tailored user experience. In other words, no two projects will look the same, ensuring brand recognition and attention to detail.",
     experienceItems: [
       {
         id: "zendesk",
@@ -74,22 +82,66 @@ export default function About() {
         ),
       },
     ],
-    marqueeProps: {
-      logos: [
-        { name: "Codecov", Logo: Codecov },
-        { name: "Musicnotes", Logo: Musicnotes },
-        { name: "Scribd", Logo: Scribd },
-        { name: "ServiceNow", Logo: ServiceNow },
-        { name: "Zendesk", Logo: Zendesk },
-      ],
-    },
+  }
+  const marqueeProps: LogoMarqueeProps = {
+    logos: [
+      { name: "Codecov", Logo: Codecov },
+      { name: "Musicnotes", Logo: Musicnotes },
+      { name: "Scribd", Logo: Scribd },
+      { name: "ServiceNow", Logo: ServiceNow },
+      { name: "Zendesk", Logo: Zendesk },
+    ],
+  }
+
+  const skillProps: SkillCategoriesProps = {
+    categories: [
+      {
+        title: "Design",
+        items: [
+          "User Experience",
+          "User Interface Design",
+          "Design Systems",
+          "Branding & Graphic Design",
+          "Quality Assurance",
+          "Iconography",
+          "Typography",
+          "Layout Design",
+          "Theming",
+        ],
+      },
+      {
+        title: "Development",
+        items: [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "TypeScript",
+          "Bash",
+          "Ruby",
+          "Search Engine Optimization",
+          "Performance",
+          "Open Source",
+          "Monorepos",
+          "Content Management Systems",
+          "React",
+          "Tailwind",
+          "Styled Components",
+          "Node",
+          "Next JS",
+          "VCS / Git",
+        ],
+      },
+    ],
   }
 
   return (
     <>
       <Hero variant="display" heading="About Us" description="Right Warp / raɪt-wɔrp" />
       <Intro {...introProps} />
-      {/* Skills */}
+      <div className="my-32">
+        <LogoMarquee {...marqueeProps} />
+      </div>
+      <SkillCategories {...skillProps} />
       {/* Thoughts */}
       {/* EndActions */}
     </>

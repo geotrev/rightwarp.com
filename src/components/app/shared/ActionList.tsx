@@ -52,14 +52,12 @@ export const actionTypes = {
 
 export const ActionList = ({ actions }: ActionListProps) => {
   return (
-    <section>
-      <Container isRaised>
-        {actions.map(({ heading, description, action }) => (
-          <Action key={heading} {...{ heading, description }}>
-            {actionTypes[action]}
-          </Action>
-        ))}
-      </Container>
-    </section>
+    <Container isRaised tag="section">
+      {actions.map(({ heading, description, action }) => (
+        <Action key={heading} {...{ heading, description }}>
+          {actionTypes[action]}
+        </Action>
+      ))}
+    </Container>
   )
 }

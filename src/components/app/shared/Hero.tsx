@@ -12,13 +12,13 @@ export const Hero = ({ heading, description, variant = "standard" }: HeroProps) 
       "mb-4 text-xl leading-8 tracking-tight md:mb-8 md:text-3xl md:leading-10 md:tracking-tighter lg:text-5xl lg:leading-[4rem]",
     ),
     display: cn(
-      "mb-6 text-2xl tracking-tight sm:mb-8 sm:text-5xl md:text-[6vw] md:leading-[9vw] md:tracking-tighter lg:mb-12 xl:leading-[7.5vw]",
+      "mb-6 text-2xl tracking-tight sm:mb-8 sm:text-5xl sm:leading-[7vw] md:text-[6vw] md:tracking-tighter lg:mb-12",
     ),
   }
 
   const sizeStyles: Record<string, string> = {
     standard: cn("py-20 sm:py-24 md:py-28"),
-    display: cn("py-40 sm:py-48 md:py-56 lg:py-72"),
+    display: cn("py-40 sm:py-48 md:py-56 lg:h-[80vh] lg:py-[unset]"),
   }
 
   return (

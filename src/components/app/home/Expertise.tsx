@@ -37,7 +37,9 @@ export const Expertise = ({ heading, subheading, items }: ExpertiseProps) => {
   return (
     <section>
       <Container className="py-16 md:py-24 lg:py-32">
-        <SectionHeading heading={heading} icon={PencilRuler} subheading={subheading} />
+        <SectionHeading icon={PencilRuler} subheading={subheading}>
+          {heading}
+        </SectionHeading>
       </Container>
       {items.map((item) => {
         const Icon = skillIcons[item.icon]

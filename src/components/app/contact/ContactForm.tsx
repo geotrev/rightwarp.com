@@ -45,7 +45,9 @@ export const ContactForm = (props: ContactFormProps) => {
   return (
     <section>
       <Container>
-        <SectionHeading heading={props.heading} icon={Send} subheading={props.subheading} />
+        <SectionHeading icon={Send} subheading={props.subheading}>
+          {props.heading}
+        </SectionHeading>
       </Container>
       <Container className="mb-16 2xl:px-[15%]">
         <p className="mb-8 flex items-center gap-4 italic">

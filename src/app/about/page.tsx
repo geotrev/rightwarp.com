@@ -17,10 +17,16 @@ import {
   BlogPreviewProps,
   ActionListProps,
   ActionList,
+  HeroProps,
 } from "@/components/app"
 import { Link } from "@/components/core"
 
 export default function About() {
+  const heroProps: HeroProps = {
+    variant: "display",
+    heading: "About Us",
+    description: "Right Warp / raɪt-wɔrp",
+  }
   const introProps = {
     bioImage: {
       src: SelfImage,
@@ -170,18 +176,18 @@ export default function About() {
           href: "https://picsum.photos/500/300",
           alt: "image",
         },
-        href: "#",
+        slug: "/blog/lorem-ipsum",
         title: "Lorem ipsum is placeholder text tool used in the print design days",
         description:
           "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
-        categories: ["Design", "Web Dev"],
+        categories: ["Design", "Development"],
       },
       {
         image: {
           href: "https://picsum.photos/500/300",
           alt: "image",
         },
-        href: "#",
+        slug: "/blog/lorem-ipsum",
         title: "Lorem ipsum is a placeholder text used in the print design days",
         description:
           "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
@@ -192,11 +198,11 @@ export default function About() {
           href: "https://picsum.photos/500/300",
           alt: "image",
         },
-        href: "#",
+        slug: "/blog/lorem-ipsum",
         title: "Lorem ipsum is a placeholder text tool used in the print design days",
         description:
           "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
-        categories: ["Technology", "Web Dev"],
+        categories: ["Technology", "Development"],
       },
     ],
   }
@@ -217,7 +223,7 @@ export default function About() {
 
   return (
     <>
-      <Hero variant="display" heading="About Us" description="Right Warp / raɪt-wɔrp" />
+      <Hero {...heroProps} />
       <Intro {...introProps} />
       <LogoMarquee {...marqueeProps} />
       <SkillCategories {...skillProps} />

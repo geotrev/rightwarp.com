@@ -1,6 +1,18 @@
-import { ActionList, ActionListProps, ContactForm, ContactFormProps, Hero } from "@/components/app"
+import {
+  ActionList,
+  ActionListProps,
+  ContactForm,
+  ContactFormProps,
+  Hero,
+  HeroProps,
+} from "@/components/app"
 
 export default function Contact() {
+  const heroProps: HeroProps = {
+    variant: "display",
+    heading: "Let's Chat",
+    description: "Start your next project on the right foot",
+  }
   const scheduleActionsProps: ActionListProps = {
     actions: [
       {
@@ -38,8 +50,8 @@ export default function Contact() {
       },
     ],
     topics: [
-      { label: "Web Design", name: "topic-web-design" },
-      { label: "Web Development", name: "topic-web-dev" },
+      { label: "Design", name: "topic-design" },
+      { label: "Development", name: "topic-development" },
       { label: "UI / UX", name: "topic-ui-ux" },
       { label: "Design Systems", name: "topic-design-systems" },
       { label: "Accessibility", name: "topic-a11y" },
@@ -64,11 +76,7 @@ export default function Contact() {
 
   return (
     <>
-      <Hero
-        variant="display"
-        heading="Let's Chat"
-        description="We can help with your next project"
-      />
+      <Hero {...heroProps} />
       <ActionList {...scheduleActionsProps} />
       <ContactForm {...contactFormProps} />
       <ActionList {...endActionsProps} />

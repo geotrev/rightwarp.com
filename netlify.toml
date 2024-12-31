@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/studio/*"
+  to = "/studio"
+  status = 301
+  force = true

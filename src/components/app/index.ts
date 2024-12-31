@@ -23,3 +23,7 @@ export * from "./contact/ContactForm"
 
 export * from "./about/Intro"
 export * from "./about/SkillCategories"
+
+// Work
+
+export * from "./work/WorkList"

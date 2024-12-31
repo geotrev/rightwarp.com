@@ -34,8 +34,8 @@ export const Footer = () => {
             Next JS
           </Link>
           ,{" "}
-          <Link isExternal href="https://www.sanity.io/">
-            Sanity CMS
+          <Link isExternal href="https://www.tina.io/">
+            Tina CMS
           </Link>
           , deployed on{" "}
           <Link isExternal href="https://www.netlify.com/">

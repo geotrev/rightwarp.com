@@ -1,4 +1,4 @@
-Right Warp is a Next JS application, deployed to Netlify, with Sanity CMS.
+Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
 
 ## TODO
 
@@ -33,10 +33,15 @@ Right Warp is a Next JS application, deployed to Netlify, with Sanity CMS.
     - [ ] Blog entry (template)
 - [ ] Add opengraph, favicon, SEO
 - [ ] Add Posthog (tracking)
-- [ ] Migrate content to Sanity
+- [ ] Create Tina & content models
   - [ ] Globals (SEO & metadata)
   - [ ] Work
     - [ ] Work entry
   - [ ] Blog
     - [ ] Blog entry
+- Add SEO/metadata:
+  - og images
+  - favicon
+  - metadata keywords
+  - dynamic metadata (work/blog posts)
 - Animations & pizzazz

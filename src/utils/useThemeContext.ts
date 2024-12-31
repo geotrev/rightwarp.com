@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, use } from "react"
+import { createContext, useContext } from "react"
 
 export const ThemeContext = createContext<
   | {
@@ -11,7 +11,7 @@ export const ThemeContext = createContext<
 >(undefined)
 
 export const useTheme = () => {
-  const context = use(ThemeContext)
+  const context = useContext(ThemeContext)
 
   if (!context) {
     throw new Error("useTheme must be used within a ThemeProvider")

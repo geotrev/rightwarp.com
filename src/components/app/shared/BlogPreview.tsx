@@ -7,13 +7,13 @@ import { Container } from "@/components/core"
 import { Routes } from "@/utils/helpers"
 import { useIs2XLarge } from "@/utils/useMediaQuery"
 
-import { BlogCard, BlogCardProps } from "./BlogCard"
+import { MediaCard, MediaCardProps } from "./MediaCard"
 import { SectionHeading } from "./SectionHeading"
 
 export interface BlogPreviewProps {
   heading: string
   subheading: string
-  blogs: BlogCardProps[]
+  blogs: MediaCardProps[]
 }
 
 export const BlogPreview = ({ heading, subheading, blogs }: BlogPreviewProps) => {
@@ -30,7 +30,7 @@ export const BlogPreview = ({ heading, subheading, blogs }: BlogPreviewProps) =>
       </Container>
       <Container className="grid gap-8 pb-8 md:grid-cols-2 2xl:grid-cols-3">
         {previews.map((post) => (
-          <BlogCard key={post.title} {...post} />
+          <MediaCard key={post.title} {...post} />
         ))}
       </Container>
       <Container>

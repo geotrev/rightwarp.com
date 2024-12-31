@@ -25,12 +25,14 @@ export const NavItems = [
   },
 ]
 
+// This will be replaced with a list of categories from the CMS
 export const Categories = {
   DESIGN: "Design",
-  WEB_DEV: "Web Dev",
+  WEB_DEV: "Development",
   TECHNOLOGY: "Technology",
 }
 
+// This will be replaced with a color set from the CMS
 export const CategoryColors = {
   [Categories.DESIGN]: "bg-red-600 dark:bg-red-400",
   [Categories.WEB_DEV]: "bg-blue-600 dark:bg-blue-400",

@@ -17,7 +17,7 @@ import {
 } from "@/components/app"
 
 export default function Home() {
-  const heroContent: HeroProps = {
+  const heroprops: HeroProps = {
     variant: "display",
     heading: "Build Memorable Digital Experiences",
     description:
@@ -88,18 +88,18 @@ export default function Home() {
           href: "https://picsum.photos/500/300",
           alt: "image",
         },
-        href: "#",
+        slug: "/blog/lorem-ipsum",
         title: "Lorem ipsum is placeholder text tool used in the print design days",
         description:
           "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
-        categories: ["Design", "Web Dev"],
+        categories: ["Design", "Development"],
       },
       {
         image: {
           href: "https://picsum.photos/500/300",
           alt: "image",
         },
-        href: "#",
+        slug: "/blog/lorem-ipsum",
         title: "Lorem ipsum is a placeholder text used in the print design days",
         description:
           "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
@@ -110,11 +110,11 @@ export default function Home() {
           href: "https://picsum.photos/500/300",
           alt: "image",
         },
-        href: "#",
+        slug: "/blog/lorem-ipsum",
         title: "Lorem ipsum is a placeholder text tool used in the print design days",
         description:
           "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
-        categories: ["Technology", "Web Dev"],
+        categories: ["Technology", "Development"],
       },
     ],
   }
@@ -122,7 +122,7 @@ export default function Home() {
     actions: [
       {
         heading: "Need help on a project?",
-        description: "Whether it’s a brand new or needs some renewed attention, we can help",
+        description: "Whether it's a brand new or needs some renewed attention, we can help",
         action: "button",
       },
       {
@@ -135,7 +135,7 @@ export default function Home() {
 
   return (
     <>
-      <Hero {...heroContent} />
+      <Hero {...heroprops} />
       <LogoMarquee {...logoMarqueeProps} />
       <Expertise {...expertiseProps} />
       <BlogPreview {...blogProps} />

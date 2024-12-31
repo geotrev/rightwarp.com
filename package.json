@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\"",
+    "build": "tinacms build && next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --check --ignore-path .gitignore .",
@@ -19,7 +19,7 @@
     "next": "15.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "styled-components": "^6.1.13"
+    "tinacms": "^2.5.2"
   },
   "devDependencies": {
     "@commitlint/cli": "19.6.0",
@@ -27,8 +27,9 @@
     "@svgr/webpack": "8.1.0",
     "@tailwindcss/forms": "0.5.9",
     "@tailwindcss/typography": "0.5.15",
+    "@tinacms/cli": "^1.7.0",
     "@trivago/prettier-plugin-sort-imports": "5.2.0",
-    "@types/node": "20.17.10",
+    "@types/node": "^20.17.10",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@typescript-eslint/eslint-plugin": "8.18.0",

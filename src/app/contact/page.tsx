@@ -38,12 +38,12 @@ export default function Contact() {
       },
     ],
     topics: [
-      { label: "Web Design", name: "web-design" },
-      { label: "Web Development", name: "web-dev" },
-      { label: "UI / UX", name: "ui-ux" },
-      { label: "Design Systems", name: "design-systems" },
-      { label: "Accessibility", name: "a11y" },
-      { label: "Other", name: "other" },
+      { label: "Web Design", name: "topic-web-design" },
+      { label: "Web Development", name: "topic-web-dev" },
+      { label: "UI / UX", name: "topic-ui-ux" },
+      { label: "Design Systems", name: "topic-design-systems" },
+      { label: "Accessibility", name: "topic-a11y" },
+      { label: "Other", name: "topic-other" },
     ],
     details: {
       label: "Details",

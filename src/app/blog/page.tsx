@@ -1,14 +1,10 @@
-import { Hero, HeroProps } from "@/components/app"
+import { blogProps } from "@/app/_static/blogProps"
+import { Hero } from "@/components/app"
 
 export default function Blog() {
-  const heroProps: HeroProps = {
-    variant: "display",
-    heading: "Thoughts",
-    description: "Ramblings about tech, web development, and design",
-  }
   return (
     <>
-      <Hero {...heroProps} />
+      <Hero {...blogProps.heroProps} />
     </>
   )
 }

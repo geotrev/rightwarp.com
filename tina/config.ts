@@ -1,7 +1,10 @@
 import { defineConfig } from "tinacms"
 
+import { Category } from "./schemas/category"
+import { Page } from "./schemas/page"
 import { Post } from "./schemas/post"
 import { SiteSettings } from "./schemas/site-settings"
+import { Work } from "./schemas/work"
 
 const branch =
   process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main"
@@ -17,7 +20,7 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "",
+      mediaRoot: "uploads",
       publicFolder: "public",
     },
   },
@@ -25,14 +28,16 @@ export default defineConfig({
     collections: [
       // Singletons
       SiteSettings,
-      // // Blocks
-      // Categories,
+
+      // Blocks
+      Category,
       // Authors,
-      // Components,
-      // // Documents
-      // Page,
+      // Component,
+
+      // Documents
+      Page,
       Post,
-      // Work,
+      Work,
     ],
   },
 })

@@ -1,6 +1,7 @@
 import { defineConfig } from "tinacms"
 
 import { Post } from "./schemas/post"
+import { SiteSettings } from "./schemas/site-settings"
 
 const branch =
   process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main"
@@ -22,16 +23,16 @@ export default defineConfig({
   },
   schema: {
     collections: [
-      // // Singletons
-      // SiteSettings,
+      // Singletons
+      SiteSettings,
       // // Blocks
-      // Categories
-      // Authors
-      // Components
+      // Categories,
+      // Authors,
+      // Components,
       // // Documents
       // Page,
       Post,
-      // Work
+      // Work,
     ],
   },
 })

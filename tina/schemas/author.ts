@@ -2,18 +2,18 @@ import { Collection } from "tinacms"
 
 import { slugify } from "../plugins/slugify"
 
-export const Service: Collection = {
-  name: "service",
-  label: "Services",
-  path: "src/content/services",
+export const Author: Collection = {
+  name: "author",
+  label: "Authors",
+  path: "src/content/authors",
   format: "json",
   ui: {
-    ...slugify("serviceName"),
+    ...slugify("authorName"),
   },
   fields: [
     {
       type: "string",
-      name: "serviceSlug",
+      name: "categorySlug",
       label: "Slug",
       required: true,
       ui: {
@@ -25,9 +25,21 @@ export const Service: Collection = {
       },
     },
     {
+      type: "image",
+      name: "authorImage",
+      label: "Author Image",
+      required: true,
+    },
+    {
       type: "string",
-      name: "serviceName",
-      label: "Name",
+      name: "authorName",
+      label: "Author Name",
+      required: true,
+    },
+    {
+      type: "string",
+      name: "authorBio",
+      label: "Author Bio",
       required: true,
     },
   ],

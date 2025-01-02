@@ -1,13 +1,16 @@
 import { Collection } from "tinacms"
 
+import { slugify } from "../plugins/slugify"
+
 export const Work: Collection = {
   name: "work",
   label: "Work",
   path: "src/content/work",
   format: "json",
-  // ui: {
-  //   router: ({ document }) => `/work/${document._sys.filename}`,
-  // },
+  ui: {
+    // router: ({ document }) => `/work/${document._sys.filename}`,
+    ...slugify("workTitle"),
+  },
   fields: [
     {
       type: "string",

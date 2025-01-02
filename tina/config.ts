@@ -1,5 +1,6 @@
 import { defineConfig } from "tinacms"
 
+import { Author } from "./schemas/author"
 import { Category } from "./schemas/category"
 import { Page } from "./schemas/page"
 import { Post } from "./schemas/post"
@@ -41,7 +42,7 @@ export default defineConfig({
       // Blocks
       Category,
       Service,
-      // Author,
+      Author,
       // Component,
 
       // Documents

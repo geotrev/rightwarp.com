@@ -1,10 +1,21 @@
 import { Collection } from "tinacms"
 
+import { slugify } from "../plugins/slugify"
+
 export const Page: Collection = {
   name: "page",
   label: "Pages",
   path: "src/content/pages",
   format: "json",
+  ui: {
+    // router: (props) => {
+    //   if (props.document._sys.filename === "home") {
+    //     return "/"
+    //   }
+    //   return props.document._sys.filename
+    // },
+    ...slugify("pageTitle"),
+  },
   fields: [
     {
       type: "string",
@@ -19,13 +30,4 @@ export const Page: Collection = {
       required: true,
     },
   ],
-  // ui: {
-  //   router: (props) => {
-  //     if (props.document._sys.filename === "home") {
-  //       return "/"
-  //     }
-
-  //     return props.document._sys.filename
-  //   },
-  // },
 }

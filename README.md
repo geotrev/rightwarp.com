@@ -31,14 +31,14 @@ Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
     - [ ] Work entry (template)
   - [ ] Blog
     - [ ] Blog entry (template)
+- [x] Create Tina & content models
+  - [x] Globals (SEO & metadata)
+  - [x] Work
+    - [x] Work entry
+  - [x] Blog
+    - [x] Blog entry
 - [ ] Add opengraph, favicon, SEO
 - [ ] Add Posthog (tracking)
-- [ ] Create Tina & content models
-  - [ ] Globals (SEO & metadata)
-  - [ ] Work
-    - [ ] Work entry
-  - [ ] Blog
-    - [ ] Blog entry
 - Add SEO/metadata:
   - og images
   - favicon

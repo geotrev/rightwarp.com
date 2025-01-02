@@ -25,5 +25,13 @@ export const Category: Collection = {
       label: "Category Name",
       required: true,
     },
+    {
+      type: "string",
+      name: "categoryColor",
+      label: "Category Color",
+      ui: {
+        component: "color",
+      },
+    },
   ],
 }

@@ -31,7 +31,7 @@
   /* media-card extends daisyui card */
 
   .media-card {
-    @apply card rounded-xl border-2 border-base-300 bg-base-200 p-4 transition-colors sm:p-8 md:rounded-3xl;
+    @apply card z-10 rounded-xl border border-base-300 bg-base-200 p-4 transition-colors sm:p-8 md:rounded-3xl;
   }
 
   .media-card-image {

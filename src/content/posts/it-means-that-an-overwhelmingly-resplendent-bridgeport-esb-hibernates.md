@@ -1,6 +1,6 @@
 ---
 postPublishDate: 2024-11-01T05:00:00.000Z
-postTitle: It means that an overwhelmingly resplendent Bridgeport ESB hibernates
+postTitle: Resplendent Bridgeport ESB hibernates
 postDescription: >-
   Some annoying ice house sweeps the floor, and a bullfrog brew prays; however,
   a pit viper has a change of heart about a soggy bull ice

@@ -4,7 +4,6 @@ import Scribd from "@/app/_assets/logos/scribd.svg"
 import ServiceNow from "@/app/_assets/logos/servicenow.svg"
 import Zendesk from "@/app/_assets/logos/zendesk.svg"
 import {
-  HeroProps,
   LogoMarqueeProps,
   ExpertiseProps,
   BlogPreviewProps,
@@ -12,7 +11,6 @@ import {
 } from "@/components/app"
 
 interface HomeProps {
-  heroProps: HeroProps
   logoMarqueeProps: LogoMarqueeProps
   expertiseProps: ExpertiseProps
   blogProps: BlogPreviewProps
@@ -20,12 +18,6 @@ interface HomeProps {
 }
 
 export const homeProps: HomeProps = {
-  heroProps: {
-    variant: "display",
-    heading: "Build Memorable Digital Experiences",
-    description:
-      "Accessible, scalable, and design-driven web development that brings your brand to life",
-  },
   logoMarqueeProps: {
     logos: [
       { name: "Codecov", Logo: Codecov },
@@ -85,7 +77,7 @@ export const homeProps: HomeProps = {
   blogProps: {
     heading: "Thoughts",
     subheading: "Ramblings about tech, web development, and design",
-    blogs: [
+    posts: [
       {
         image: {
           href: "https://picsum.photos/500/300",

@@ -8,7 +8,11 @@ import {
   ActionList,
 } from "@/components/app"
 
-export default function About() {
+// import { queryAbout } from "@/tina/queries"
+
+export default async function About() {
+  // const query = await queryAbout()
+
   return (
     <>
       <Hero {...staticProps.heroProps} />

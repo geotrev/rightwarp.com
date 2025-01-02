@@ -174,7 +174,7 @@ export const staticProps: AboutPageProps = {
   blogProps: {
     heading: "Thoughts",
     subheading: "Ramblings about tech, web development, and design",
-    blogs: [
+    posts: [
       {
         image: {
           href: "https://picsum.photos/500/300",

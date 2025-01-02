@@ -7,19 +7,21 @@ import { Container } from "@/components/core"
 import { Routes } from "@/utils/helpers"
 import { useIs2XLarge } from "@/utils/useMediaQuery"
 
-import { MediaCard, MediaCardProps } from "./MediaCard"
+import { PostConnectionEdges } from "../../../../tina/__generated__/types"
+
+import { MediaCard } from "./MediaCard"
 import { SectionHeading } from "./SectionHeading"
 
 export interface BlogPreviewProps {
   heading: string
   subheading: string
-  blogs: MediaCardProps[]
+  posts?: PostConnectionEdges["node"][]
 }
 
-export const BlogPreview = ({ heading, subheading, blogs }: BlogPreviewProps) => {
+export const BlogPreview = ({ heading, subheading, posts }: BlogPreviewProps) => {
   const is2XLarge = useIs2XLarge()
 
-  const previews = is2XLarge ? blogs : blogs.slice(0, 2)
+  const previews = is2XLarge ? posts : posts?.slice(0, 2)
 
   return (
     <section className="pb-16">
@@ -29,9 +31,7 @@ export const BlogPreview = ({ heading, subheading, blogs }: BlogPreviewProps) =>
         </SectionHeading>
       </Container>
       <Container className="grid gap-8 pb-8 md:grid-cols-2 2xl:grid-cols-3">
-        {previews.map((post) => (
-          <MediaCard key={post.title} {...post} />
-        ))}
+        {previews?.map((post) => post && <MediaCard key={post.postTitle} {...post!} />)}
       </Container>
       <Container>
         <Link href={Routes.BLOG} className="btn btn-outline btn-secondary mx-auto max-w-56">

@@ -1,5 +1,6 @@
 import { Collection } from "tinacms"
 
+import { toReferenceLabel } from "../plugins/referenceLabel"
 import { slugify } from "../plugins/slugify"
 
 export const Work: Collection = {
@@ -31,7 +32,7 @@ export const Work: Collection = {
       label: "Categories",
       list: true,
       ui: {
-        itemProps: (item) => ({ label: item.workCategoryName }),
+        itemProps: (item) => ({ ...toReferenceLabel(item.workCategoryName) }),
       },
       fields: [
         {
@@ -49,7 +50,7 @@ export const Work: Collection = {
       label: "Services",
       list: true,
       ui: {
-        itemProps: (item) => ({ label: item.workServiceName }),
+        itemProps: (item) => ({ ...toReferenceLabel(item.workServiceName) }),
       },
       fields: [
         {

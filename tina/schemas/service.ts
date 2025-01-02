@@ -1,5 +1,6 @@
 import { Collection } from "tinacms"
 
+import { slugValidation } from "../plugins/slugValidation"
 import { slugify } from "../plugins/slugify"
 
 export const Service: Collection = {
@@ -16,13 +17,7 @@ export const Service: Collection = {
       name: "serviceSlug",
       label: "Slug",
       required: true,
-      ui: {
-        validate: (input) => {
-          if (input && !input.match(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)) {
-            return `Must be dash-separated, lowercase words`
-          }
-        },
-      },
+      ui: { ...slugValidation },
     },
     {
       type: "string",

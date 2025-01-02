@@ -1,0 +1,27 @@
+{
+  "workTitle": "Musicnotes",
+  "workDescription": "eCommerce & Music",
+  "workCategories": [
+    {
+      "workCategoryName": "src/content/categories/design.json"
+    },
+    {
+      "workCategoryName": "src/content/categories/development.json"
+    }
+  ],
+  "workServices": [
+    {
+      "workServiceName": "src/content/services/ui-ux.json"
+    },
+    {
+      "workServiceName": "src/content/services/front-end-development.json"
+    },
+    {
+      "workServiceName": "src/content/services/information-architecture.json"
+    }
+  ],
+  "workDateStart": "2014-06-15T05:00:00.000Z",
+  "workDateEnd": "2016-07-15T05:00:00.000Z",
+  "workImageOne": "/uploads/2025-01-01 21_12_10-Sheet Music Downloads at Musicnotes.com - Brave.png",
+  "workBody": "Body here\n"
+}

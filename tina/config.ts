@@ -3,6 +3,7 @@ import { defineConfig } from "tinacms"
 import { Category } from "./schemas/category"
 import { Page } from "./schemas/page"
 import { Post } from "./schemas/post"
+import { Service } from "./schemas/service"
 import { SiteSettings } from "./schemas/site-settings"
 import { Work } from "./schemas/work"
 
@@ -24,6 +25,14 @@ export default defineConfig({
       publicFolder: "public",
     },
   },
+  search: {
+    tina: {
+      indexerToken: process.env.TINA_SEARCH_TOKEN,
+      stopwordLanguages: ["eng"],
+    },
+    indexBatchSize: 100,
+    maxSearchIndexFieldLength: 100,
+  },
   schema: {
     collections: [
       // Singletons
@@ -31,7 +40,8 @@ export default defineConfig({
 
       // Blocks
       Category,
-      // Authors,
+      Service,
+      // Author,
       // Component,
 
       // Documents

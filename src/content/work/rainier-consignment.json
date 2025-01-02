@@ -1,0 +1,36 @@
+{
+  "workTitle": "Rainier Consignment",
+  "workDescription": "Marketing & Consignment",
+  "workCategories": [
+    {
+      "workCategoryName": "src/content/categories/development.json"
+    },
+    {
+      "workCategoryName": "src/content/categories/design.json"
+    },
+    {
+      "workCategoryName": "src/content/categories/content-strategy.json"
+    },
+    {
+      "workCategoryName": "src/content/categories/consulting.json"
+    }
+  ],
+  "workServices": [
+    {
+      "workServiceName": "src/content/services/content-management-integration.json"
+    },
+    {
+      "workServiceName": "src/content/services/front-end-development.json"
+    },
+    {
+      "workServiceName": "src/content/services/information-architecture.json"
+    },
+    {
+      "workServiceName": "src/content/services/ui-ux.json"
+    }
+  ],
+  "workDateStart": "2024-10-15T05:00:00.000Z",
+  "workDateEnd": "2024-11-15T06:00:00.000Z",
+  "workImageOne": "/uploads/2025-01-01 21_04_47-Rainier Consignment _ Home - Brave.png",
+  "workBody": "Body here\n"
+}

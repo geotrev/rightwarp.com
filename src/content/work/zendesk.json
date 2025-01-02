@@ -1,0 +1,24 @@
+{
+  "workTitle": "Zendesk",
+  "workDescription": "Design Systems",
+  "workCategories": [
+    {
+      "workCategoryName": "src/content/categories/design.json"
+    }
+  ],
+  "workServices": [
+    {
+      "workServiceName": "src/content/services/front-end-development.json"
+    },
+    {
+      "workServiceName": "src/content/services/information-architecture.json"
+    },
+    {
+      "workServiceName": "src/content/services/accessibility.json"
+    }
+  ],
+  "workDateStart": "2022-09-09T05:00:00.000Z",
+  "workDateEnd": "2024-11-01T05:00:00.000Z",
+  "workImageOne": "/uploads/2025-01-01 13_44_37-Menu _ Components _ Zendesk Garden - Brave.png",
+  "workBody": "Body here\n"
+}

@@ -5,6 +5,9 @@ export const Work: Collection = {
   label: "Work",
   path: "src/content/work",
   format: "json",
+  // ui: {
+  //   router: ({ document }) => `/work/${document._sys.filename}`,
+  // },
   fields: [
     {
       type: "string",
@@ -38,6 +41,24 @@ export const Work: Collection = {
       ],
     },
     {
+      type: "object",
+      name: "workServices",
+      label: "Services",
+      list: true,
+      ui: {
+        itemProps: (item) => ({ label: item.workServiceName }),
+      },
+      fields: [
+        {
+          type: "reference",
+          name: "workServiceName",
+          label: "Category",
+          collections: ["service"],
+          required: true,
+        },
+      ],
+    },
+    {
       type: "datetime",
       name: "workDateStart",
       label: "Date Start",
@@ -65,9 +86,4 @@ export const Work: Collection = {
       required: true,
     },
   ],
-  // ui: {
-  //   router: (props) => {
-  //     return `/work/$props.document._sys.filename}`
-  //   },
-  // },
 }

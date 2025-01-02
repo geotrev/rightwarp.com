@@ -1,0 +1,30 @@
+{
+  "workTitle": "Scribd",
+  "workDescription": "User-Generated Content, eBooks, Audiobooks",
+  "workCategories": [
+    {
+      "workCategoryName": "src/content/categories/development.json"
+    },
+    {
+      "workCategoryName": "src/content/categories/design.json"
+    }
+  ],
+  "workServices": [
+    {
+      "workServiceName": "src/content/services/ui-ux.json"
+    },
+    {
+      "workServiceName": "src/content/services/user-research.json"
+    },
+    {
+      "workServiceName": "src/content/services/front-end-development.json"
+    },
+    {
+      "workServiceName": "src/content/services/accessibility.json"
+    }
+  ],
+  "workDateStart": "2017-05-15T05:00:00.000Z",
+  "workDateEnd": "2019-09-15T05:00:00.000Z",
+  "workImageOne": "/uploads/2025-01-01 21_01_34-scribd-about-home.png.png",
+  "workBody": "Body here\n"
+}

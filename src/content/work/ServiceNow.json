@@ -1,0 +1,24 @@
+{
+  "workTitle": "ServiceNow",
+  "workDescription": "Design Systems",
+  "workCategories": [
+    {
+      "workCategoryName": "src/content/categories/development.json"
+    }
+  ],
+  "workServices": [
+    {
+      "workServiceName": "src/content/services/information-architecture.json"
+    },
+    {
+      "workServiceName": "src/content/services/front-end-development.json"
+    },
+    {
+      "workServiceName": "src/content/services/accessibility.json"
+    }
+  ],
+  "workDateStart": "2019-09-15T05:00:00.000Z",
+  "workDateEnd": "2022-11-15T06:00:00.000Z",
+  "workImageOne": "/uploads/2025-01-01 20_59_26-Date-Time _ Horizon Design System - Brave.png",
+  "workBody": "Body here\n"
+}

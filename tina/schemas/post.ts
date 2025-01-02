@@ -4,6 +4,9 @@ export const Post: Collection = {
   name: "post",
   label: "Posts",
   path: "src/content/posts",
+  // ui: {
+  //   router: ({ document }) => `/blog/${document._sys.filename}`,
+  // },
   fields: [
     {
       type: "string",
@@ -19,7 +22,4 @@ export const Post: Collection = {
       isBody: true,
     },
   ],
-  // ui: {
-  //   router: ({ document }) => `/blog/${document._sys.filename}`,
-  // },
 }

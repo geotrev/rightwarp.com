@@ -12,9 +12,7 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/utils/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    extend: TAILWIND_THEME,
-  },
+  theme: { extend: TAILWIND_THEME },
   plugins: [TailwindTypography, TailwindForms, DaisyUI],
   daisyui: {
     themes: [{ dark: DARK_THEME }, { light: LIGHT_THEME }],

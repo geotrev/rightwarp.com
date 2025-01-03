@@ -1,6 +1,5 @@
 import { Collection } from "tinacms"
 
-import { slugValidation } from "../plugins/slugValidation"
 import { slugify } from "../plugins/slugify"
 
 export const Service: Collection = {
@@ -14,15 +13,8 @@ export const Service: Collection = {
   fields: [
     {
       type: "string",
-      name: "serviceSlug",
-      label: "Slug",
-      required: true,
-      ui: { ...slugValidation },
-    },
-    {
-      type: "string",
       name: "serviceName",
-      label: "Name",
+      label: "Service Name",
       required: true,
     },
   ],

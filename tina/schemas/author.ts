@@ -1,6 +1,5 @@
 import { Collection } from "tinacms"
 
-import { slugValidation } from "../plugins/slugValidation"
 import { slugify } from "../plugins/slugify"
 
 export const Author: Collection = {
@@ -12,13 +11,6 @@ export const Author: Collection = {
     ...slugify("authorName"),
   },
   fields: [
-    {
-      type: "string",
-      name: "categorySlug",
-      label: "Slug",
-      required: true,
-      ui: { ...slugValidation },
-    },
     {
       type: "image",
       name: "authorImage",

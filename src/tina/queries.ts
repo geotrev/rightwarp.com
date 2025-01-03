@@ -48,26 +48,35 @@ export const queryContact = async () => {
   return { page }
 }
 
-// work
+// work index
 
 export const queryWorkIndex = async () => {
   const _page = await client.queries.page({ relativePath: "work.json" })
   const page = getPageData(_page.data.page)
-  const _entries = await client.queries.workConnection()
-
-  const entries = _entries.data.workConnection.edges?.map((edge) => {
-    const entry = edge?.node
-    return {
-      title: entry?.title,
-      description: entry?.description,
-      categories: toWorkCategories(entry?.categories as WorkCategories[]),
-      images: toImages(entry?.images as WorkImages[]),
-      slug: toSlug(entry!._sys.filename, "work"),
-    }
+  const _entries = await client.queries.workConnection({
+    sort: "date",
   })
+
+  const entries = _entries.data.workConnection.edges
+    ?.map((edge) => {
+      const entry = edge?.node
+      return {
+        title: entry!.title,
+        description: entry!.description,
+        categories: toWorkCategories(entry!.categories as WorkCategories[]),
+        image: {
+          src: entry!.images![0]!.src,
+          alt: entry!.images![0]!.alt,
+        },
+        slug: toSlug(entry!._sys.filename, "work"),
+      }
+    })
+    .reverse()
 
   return { page, entries }
 }
+
+// work entry
 
 export const queryWorkEntry = async (slug: string) => {
   try {
@@ -102,20 +111,24 @@ export const queryBlogIndex = async () => {
   const postsResponse = await client.queries.postConnection({
     sort: "publishDate",
   })
-  const posts = postsResponse.data.postConnection.edges?.map((edge) => {
-    const entry = edge?.node
-    return {
-      title: entry?.title,
-      description: entry?.description,
-      authors: toAuthors(entry!.authors as PostAuthors[]),
-      date: toPublishDate(entry!.publishDate),
-      categories: toPostCategories(entry!.categories as PostCategories[]),
-      slug: toSlug(entry!._sys.filename, "blog"),
-    }
-  })
+  const posts = postsResponse.data.postConnection.edges
+    ?.map((edge) => {
+      const entry = edge?.node
+      return {
+        title: entry?.title,
+        description: entry?.description,
+        authors: toAuthors(entry!.authors as PostAuthors[]),
+        date: toPublishDate(entry!.publishDate),
+        categories: toPostCategories(entry!.categories as PostCategories[]),
+        slug: toSlug(entry!._sys.filename, "blog"),
+      }
+    })
+    .reverse()
 
   return { page, categories, posts }
 }
+
+// blog post
 
 export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
   try {
@@ -132,13 +145,15 @@ export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
     const posts = await client.queries.postConnection({
       sort: "publishDate",
     })
-    const categories: string[] = post.categories.map((category) => category.name)
+    const categories = post.categories.map((category) => category.name)
     const relatedPosts = posts.data.postConnection.edges
       ?.filter((edge) => {
         const _post = edge?.node
+
         if (_post?.categories?.length) {
-          for (let i = 0; i < _post?.categories.length; i++) {
-            const category = _post?.categories[i].categoryRef.name
+          for (let i = 0; i < _post.categories.length; i++) {
+            const category = _post.categories[i].categoryRef.name
+
             if (categories.includes(category)) {
               return true
             }
@@ -148,11 +163,16 @@ export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
         }
       })
       .slice(0, relatedPostLimit)
-      .map((edge) => ({
-        title: edge!.node!.title,
-        slug: toSlug(edge!.node!._sys.filename, "blog"),
-        date: toPublishDate(edge!.node!.publishDate),
-      }))
+      .map((edge) => {
+        const post = edge?.node
+
+        return {
+          title: post!.title,
+          slug: toSlug(post!._sys.filename, "blog"),
+          date: toPublishDate(post!.publishDate),
+        }
+      })
+      .reverse()
 
     return { post, relatedPosts }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

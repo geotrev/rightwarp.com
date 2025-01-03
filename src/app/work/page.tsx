@@ -8,7 +8,7 @@ export default async function Work() {
   return (
     <>
       <Hero {...query.page} variant="display" />
-      <WorkList {...workProps.workListProps} />
+      <WorkList {...workProps.workListProps} items={query.entries} />
       <ActionList {...workProps.actionsProps} />
     </>
   )

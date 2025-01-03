@@ -14,6 +14,12 @@ export const Work: Collection = {
   },
   fields: [
     {
+      type: "datetime",
+      name: "date",
+      label: "Date",
+      required: true,
+    },
+    {
       type: "string",
       name: "title",
       label: "Title",

@@ -62,16 +62,19 @@ export const getPostPreviews = async () => {
     sort: "publishDate",
   })
 
-  return posts.data?.postConnection?.edges?.slice(0, PREVIEW_LIMIT)?.map((edge) => {
-    const post = edge?.node
+  return posts.data?.postConnection?.edges
+    ?.slice(0, PREVIEW_LIMIT)
+    ?.map((edge) => {
+      const post = edge?.node
 
-    return {
-      title: post!.title,
-      description: post!.description,
-      categories: toPostCategories(post!.categories as PostCategories[]),
-      slug: toSlug(post!._sys.filename, "blog"),
-      authors: toAuthors(post!.authors as PostAuthors[]),
-      date: toPublishDate(post!.publishDate),
-    }
-  })
+      return {
+        title: post!.title,
+        description: post!.description,
+        categories: toPostCategories(post!.categories as PostCategories[]),
+        slug: toSlug(post!._sys.filename, "blog"),
+        authors: toAuthors(post!.authors as PostAuthors[]),
+        date: toPublishDate(post!.publishDate),
+      }
+    })
+    .reverse()
 }

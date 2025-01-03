@@ -3,7 +3,7 @@ import { CSSProperties } from "react"
 
 export type MediaCardProps = {
   image?: {
-    href: string
+    src: string
     alt: string
   }
   authors?: {
@@ -45,7 +45,7 @@ export const MediaCard = ({
       {image && (
         <figure className="media-card-image">
           <Image
-            src={image.href}
+            src={image.src}
             alt={image.alt}
             style={{ objectFit: "cover", height: "100%" }}
             fill

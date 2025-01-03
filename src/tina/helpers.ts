@@ -11,8 +11,8 @@ import {
 const PREVIEW_LIMIT = 3
 
 export const getPageData = (pageData: PageQuery["page"]) => ({
-  heading: pageData.pageTitle,
-  description: pageData.pageDescription,
+  heading: pageData.title,
+  description: pageData.description,
 })
 
 export const toPublishDate = (date: string) => {

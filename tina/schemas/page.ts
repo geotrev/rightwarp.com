@@ -12,20 +12,23 @@ export const Page: Collection = {
     //   if (props.document._sys.filename === "home") {
     //     return "/"
     //   }
-    //   return props.document._sys.filename
+
+    //   if (!["work/", "blog/"].includes(props.document._sys.path)) {
+    //     return props.document._sys.filename
+    //   }
     // },
-    ...slugify("pageTitle"),
+    ...slugify("title"),
   },
   fields: [
     {
       type: "string",
-      name: "pageTitle",
+      name: "title",
       label: "Page Title",
       required: true,
     },
     {
       type: "string",
-      name: "pageDescription",
+      name: "description",
       label: "Page Description",
       required: true,
     },

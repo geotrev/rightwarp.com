@@ -7,11 +7,7 @@ export default async function Work() {
 
   return (
     <>
-      <Hero
-        variant="display"
-        heading={query.page.pageTitle}
-        description={query.page.pageDescription}
-      />
+      <Hero {...query.page} variant="display" />
       <WorkList {...workProps.workListProps} />
       <ActionList {...workProps.actionsProps} />
     </>

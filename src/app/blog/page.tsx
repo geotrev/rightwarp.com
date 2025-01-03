@@ -6,11 +6,7 @@ export default async function Blog() {
 
   return (
     <>
-      <Hero
-        variant="display"
-        heading={query.page.pageTitle}
-        description={query.page.pageDescription}
-      />
+      <Hero {...query.page} variant="display" />
     </>
   )
 }

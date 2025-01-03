@@ -7,11 +7,7 @@ export default async function Contact() {
 
   return (
     <>
-      <Hero
-        variant="display"
-        heading={query.page.pageTitle}
-        description={query.page.pageDescription}
-      />
+      <Hero {...query.page} variant="display" />
       <ActionList {...contactProps.scheduleActionsProps} />
       <ContactForm {...contactProps.contactFormProps} />
       <ActionList {...contactProps.endActionsProps} />

@@ -2,7 +2,7 @@ import cn from "classnames"
 
 export interface HeroProps {
   heading: string
-  description?: string
+  description: string
   variant?: "standard" | "display"
 }
 

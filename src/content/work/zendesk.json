@@ -17,8 +17,11 @@
       "workServiceName": "src/content/services/accessibility.json"
     }
   ],
-  "workDateStart": "2022-09-09T05:00:00.000Z",
-  "workDateEnd": "2024-11-01T05:00:00.000Z",
-  "workImageOne": "/uploads/2025-01-01 13_44_37-Menu _ Components _ Zendesk Garden - Brave.png",
+  "workImages": [
+    {
+      "workImageSrc": "/uploads/2025-01-01 13_44_37-Menu _ Components _ Zendesk Garden - Brave.png",
+      "workImageAlt": "Garden design system menu component preview"
+    }
+  ],
   "workBody": "Body here\n"
 }

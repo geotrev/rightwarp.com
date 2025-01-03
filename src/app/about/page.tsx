@@ -14,11 +14,7 @@ export default async function About() {
 
   return (
     <>
-      <Hero
-        variant="display"
-        heading={query.page.pageTitle}
-        description={query.page.pageDescription}
-      />
+      <Hero {...query.page} variant="display" />
       <Intro {...staticProps.introProps} />
       <LogoMarquee {...staticProps.marqueeProps} />
       <SkillCategories {...staticProps.skillProps} />

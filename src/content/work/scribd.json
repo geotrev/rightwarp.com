@@ -23,8 +23,11 @@
       "workServiceName": "src/content/services/accessibility.json"
     }
   ],
-  "workDateStart": "2017-05-15T05:00:00.000Z",
-  "workDateEnd": "2019-09-15T05:00:00.000Z",
-  "workImageOne": "/uploads/2025-01-01 21_01_34-scribd-about-home.png.png",
+  "workImages": [
+    {
+      "workImageSrc": "/uploads/2025-01-01 21_01_34-scribd-about-home.png.png",
+      "workImageAlt": "Scribd company subsite home page "
+    }
+  ],
   "workBody": "Body here\n"
 }

@@ -20,8 +20,11 @@
       "workServiceName": "src/content/services/information-architecture.json"
     }
   ],
-  "workDateStart": "2014-06-15T05:00:00.000Z",
-  "workDateEnd": "2016-07-15T05:00:00.000Z",
-  "workImageOne": "/uploads/2025-01-01 21_12_10-Sheet Music Downloads at Musicnotes.com - Brave.png",
+  "workImages": [
+    {
+      "workImageSrc": "/uploads/2025-01-01 21_12_10-Sheet Music Downloads at Musicnotes.com - Brave.png",
+      "workImageAlt": "Musicnotes home page"
+    }
+  ],
   "workBody": "Body here\n"
 }

@@ -63,25 +63,27 @@ export const Work: Collection = {
       ],
     },
     {
-      type: "datetime",
-      name: "workDateStart",
-      label: "Date Start",
-    },
-    {
-      type: "datetime",
-      name: "workDateEnd",
-      label: "Date End",
-    },
-    {
-      type: "image",
-      name: "workImageOne",
-      label: "Display Image One",
-      required: true,
-    },
-    {
-      type: "image",
-      name: "workImageTwo",
-      label: "Display Image Two",
+      type: "object",
+      name: "workImages",
+      label: "Images",
+      list: true,
+      ui: {
+        itemProps: (item) => ({ label: item.workImageAlt }),
+      },
+      fields: [
+        {
+          type: "image",
+          name: "workImageSrc",
+          label: "Image",
+          required: true,
+        },
+        {
+          type: "string",
+          name: "workImageAlt",
+          label: "Alt Text",
+          required: true,
+        },
+      ],
     },
     {
       type: "rich-text",

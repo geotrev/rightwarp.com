@@ -29,8 +29,11 @@
       "workServiceName": "src/content/services/ui-ux.json"
     }
   ],
-  "workDateStart": "2024-10-15T05:00:00.000Z",
-  "workDateEnd": "2024-11-15T06:00:00.000Z",
-  "workImageOne": "/uploads/2025-01-01 21_04_47-Rainier Consignment _ Home - Brave.png",
+  "workImages": [
+    {
+      "workImageSrc": "/uploads/2025-01-01 21_04_47-Rainier Consignment _ Home - Brave.png",
+      "workImageAlt": "Rainier Consignment home page"
+    }
+  ],
   "workBody": "Body here\n"
 }

@@ -7,11 +7,7 @@ export default async function Home() {
 
   return (
     <>
-      <Hero
-        heading={query.page.pageTitle}
-        description={query.page.pageDescription}
-        variant="display"
-      />
+      <Hero {...query.page} variant="display" />
       <LogoMarquee {...homeProps.logoMarqueeProps} />
       <Expertise {...homeProps.expertiseProps} />
       <BlogPreview {...homeProps.blogProps} posts={query.posts} />

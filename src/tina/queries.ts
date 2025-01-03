@@ -2,9 +2,9 @@ import client from "../../tina/__generated__/client"
 import {
   PostPostAuthors,
   PostPostCategories,
-  WorkWorkCategories,
-  WorkWorkImages,
-  WorkWorkServices,
+  WorkCategories,
+  WorkImages,
+  WorkServices,
 } from "../../tina/__generated__/types"
 
 import {
@@ -55,17 +55,16 @@ export const queryWorkIndex = async () => {
   const page = getPageData(_page.data.page)
   const _entries = await client.queries.workConnection()
 
-  const entries = _entries.data.workConnection.edges
-    ?.map((edge) => edge?.node)
-    .map((entry) => {
-      return {
-        title: entry?.workTitle,
-        description: entry?.workDescription,
-        categories: toWorkCategories(entry?.workCategories as WorkWorkCategories[]),
-        images: toImages(entry?.workImages as WorkWorkImages[]),
-        slug: toSlug(entry!._sys.filename, "work"),
-      }
-    })
+  const entries = _entries.data.workConnection.edges?.map((edge) => {
+    const entry = edge?.node
+    return {
+      title: entry?.title,
+      description: entry?.description,
+      categories: toWorkCategories(entry?.categories as WorkCategories[]),
+      images: toImages(entry?.images as WorkImages[]),
+      slug: toSlug(entry!._sys.filename, "work"),
+    }
+  })
 
   return { page, entries }
 }
@@ -74,11 +73,11 @@ export const queryWorkEntry = async (slug: string) => {
   try {
     const _page = await client.queries.work({ relativePath: `${slug}.md` })
     const page = {
-      title: _page.data.work.workTitle,
-      description: _page.data.work.workDescription,
-      categories: toWorkCategories(_page.data.work.workCategories! as WorkWorkCategories[]),
-      services: toServices(_page.data.work.workServices! as WorkWorkServices[]),
-      images: toImages(_page.data.work.workImages! as WorkWorkImages[]),
+      title: _page.data.work.title,
+      description: _page.data.work.description,
+      categories: toWorkCategories(_page.data.work.categories! as WorkCategories[]),
+      services: toServices(_page.data.work.services! as WorkServices[]),
+      images: toImages(_page.data.work.images! as WorkImages[]),
     }
 
     return { page }
@@ -95,28 +94,25 @@ export const queryBlogIndex = async () => {
   const page = getPageData(_page.data.page)
 
   const categoriesResponse = await client.queries.categoryConnection()
-  const categories = categoriesResponse.data.categoryConnection.edges
-    ?.map((edge) => edge?.node)
-    .map((category) => ({
-      name: category?.categoryName,
-      color: category?.categoryColor,
-    }))
+  const categories = categoriesResponse.data.categoryConnection.edges?.map((edge) => ({
+    name: edge?.node?.categoryName,
+    color: edge?.node?.categoryColor,
+  }))
 
   const postsResponse = await client.queries.postConnection({
     sort: "postPublishDate",
   })
-  const posts = postsResponse.data.postConnection.edges
-    ?.map((edge) => edge?.node)
-    .map((entry) => {
-      return {
-        title: entry?.postTitle,
-        description: entry?.postDescription,
-        authors: toAuthors(entry!.postAuthors as PostPostAuthors[]),
-        date: toPublishDate(entry!.postPublishDate),
-        categories: toPostCategories(entry!.postCategories as PostPostCategories[]),
-        slug: toSlug(entry!._sys.filename, "blog"),
-      }
-    })
+  const posts = postsResponse.data.postConnection.edges?.map((edge) => {
+    const entry = edge?.node
+    return {
+      title: entry?.postTitle,
+      description: entry?.postDescription,
+      authors: toAuthors(entry!.postAuthors as PostPostAuthors[]),
+      date: toPublishDate(entry!.postPublishDate),
+      categories: toPostCategories(entry!.postCategories as PostPostCategories[]),
+      slug: toSlug(entry!._sys.filename, "blog"),
+    }
+  })
 
   return { page, categories, posts }
 }
@@ -138,8 +134,8 @@ export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
     })
     const postCategories: string[] = post.categories.map((category) => category.name)
     const relatedPosts = posts.data.postConnection.edges
-      ?.map((edge) => edge?.node)
-      .filter((_post) => {
+      ?.filter((edge) => {
+        const _post = edge?.node
         if (_post?.postCategories?.length) {
           for (let i = 0; i < _post?.postCategories.length; i++) {
             const category = _post?.postCategories[i].postCategoryName.categoryName
@@ -151,12 +147,12 @@ export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
           return false
         }
       })
-      .map((post) => ({
-        title: post!.postTitle,
-        slug: toSlug(post!._sys.filename, "blog"),
-        date: toPublishDate(post!.postPublishDate),
-      }))
       .slice(0, relatedPostLimit)
+      .map((edge) => ({
+        title: edge!.node!.postTitle,
+        slug: toSlug(edge!.node!._sys.filename, "blog"),
+        date: toPublishDate(edge!.node!.postPublishDate),
+      }))
 
     return { post, relatedPosts }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

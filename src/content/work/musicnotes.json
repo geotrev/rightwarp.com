@@ -1,30 +1,30 @@
 {
-  "workTitle": "Musicnotes",
-  "workDescription": "eCommerce & Music",
-  "workCategories": [
+  "title": "Musicnotes",
+  "description": "eCommerce & Music",
+  "categories": [
     {
-      "workCategoryName": "src/content/categories/design.json"
+      "categoryRef": "src/content/categories/design.json"
     },
     {
-      "workCategoryName": "src/content/categories/development.json"
+      "categoryRef": "src/content/categories/development.json"
     }
   ],
-  "workServices": [
+  "services": [
     {
-      "workServiceName": "src/content/services/ui-ux.json"
+      "serviceRef": "src/content/services/ui-ux.json"
     },
     {
-      "workServiceName": "src/content/services/front-end-development.json"
+      "serviceRef": "src/content/services/front-end-development.json"
     },
     {
-      "workServiceName": "src/content/services/information-architecture.json"
+      "serviceRef": "src/content/services/information-architecture.json"
     }
   ],
-  "workImages": [
+  "images": [
     {
-      "workImageSrc": "/uploads/2025-01-01 21_12_10-Sheet Music Downloads at Musicnotes.com - Brave.png",
-      "workImageAlt": "Musicnotes home page"
+      "src": "/uploads/2025-01-01 21_12_10-Sheet Music Downloads at Musicnotes.com - Brave.png",
+      "alt": "Musicnotes home page"
     }
   ],
-  "workBody": "Body here\n"
+  "body": "Body here\n"
 }

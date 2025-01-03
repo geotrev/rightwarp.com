@@ -1,39 +1,39 @@
 {
-  "workTitle": "Rainier Consignment",
-  "workDescription": "Marketing & Consignment",
-  "workCategories": [
+  "title": "Rainier Consignment",
+  "description": "Marketing & Consignment",
+  "categories": [
     {
-      "workCategoryName": "src/content/categories/development.json"
+      "categoryRef": "src/content/categories/development.json"
     },
     {
-      "workCategoryName": "src/content/categories/design.json"
+      "categoryRef": "src/content/categories/design.json"
     },
     {
-      "workCategoryName": "src/content/categories/content-strategy.json"
+      "categoryRef": "src/content/categories/content-strategy.json"
     },
     {
-      "workCategoryName": "src/content/categories/consulting.json"
+      "categoryRef": "src/content/categories/consulting.json"
     }
   ],
-  "workServices": [
+  "services": [
     {
-      "workServiceName": "src/content/services/content-management-integration.json"
+      "serviceRef": "src/content/services/content-management-integration.json"
     },
     {
-      "workServiceName": "src/content/services/front-end-development.json"
+      "serviceRef": "src/content/services/front-end-development.json"
     },
     {
-      "workServiceName": "src/content/services/information-architecture.json"
+      "serviceRef": "src/content/services/information-architecture.json"
     },
     {
-      "workServiceName": "src/content/services/ui-ux.json"
+      "serviceRef": "src/content/services/ui-ux.json"
     }
   ],
-  "workImages": [
+  "images": [
     {
-      "workImageSrc": "/uploads/2025-01-01 21_04_47-Rainier Consignment _ Home - Brave.png",
-      "workImageAlt": "Rainier Consignment home page"
+      "src": "/uploads/2025-01-01 21_04_47-Rainier Consignment _ Home - Brave.png",
+      "alt": "Rainier Consignment home page"
     }
   ],
-  "workBody": "Body here\n"
+  "body": "Body here\n"
 }

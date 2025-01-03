@@ -10,34 +10,34 @@ export const Work: Collection = {
   format: "json",
   ui: {
     // router: ({ document }) => `/work/${document._sys.filename}`,
-    ...slugify("workTitle"),
+    ...slugify("title"),
   },
   fields: [
     {
       type: "string",
-      name: "workTitle",
+      name: "title",
       label: "Title",
       isTitle: true,
       required: true,
     },
     {
       type: "string",
-      name: "workDescription",
+      name: "description",
       label: "Description",
       required: true,
     },
     {
       type: "object",
-      name: "workCategories",
+      name: "categories",
       label: "Categories",
       list: true,
       ui: {
-        itemProps: (item) => ({ ...toReferenceLabel(item.workCategoryName) }),
+        itemProps: (item) => ({ ...toReferenceLabel(item.categoryRef) }),
       },
       fields: [
         {
           type: "reference",
-          name: "workCategoryName",
+          name: "categoryRef",
           label: "Category",
           collections: ["category"],
           required: true,
@@ -46,16 +46,16 @@ export const Work: Collection = {
     },
     {
       type: "object",
-      name: "workServices",
+      name: "services",
       label: "Services",
       list: true,
       ui: {
-        itemProps: (item) => ({ ...toReferenceLabel(item.workServiceName) }),
+        itemProps: (item) => ({ ...toReferenceLabel(item.serviceRef) }),
       },
       fields: [
         {
           type: "reference",
-          name: "workServiceName",
+          name: "serviceRef",
           label: "Category",
           collections: ["service"],
           required: true,
@@ -64,22 +64,22 @@ export const Work: Collection = {
     },
     {
       type: "object",
-      name: "workImages",
+      name: "images",
       label: "Images",
       list: true,
       ui: {
-        itemProps: (item) => ({ label: item.workImageAlt }),
+        itemProps: (item) => ({ label: item.alt }),
       },
       fields: [
         {
           type: "image",
-          name: "workImageSrc",
+          name: "src",
           label: "Image",
           required: true,
         },
         {
           type: "string",
-          name: "workImageAlt",
+          name: "alt",
           label: "Alt Text",
           required: true,
         },
@@ -87,7 +87,7 @@ export const Work: Collection = {
     },
     {
       type: "rich-text",
-      name: "workBody",
+      name: "body",
       label: "Body",
       required: true,
     },

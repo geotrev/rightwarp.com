@@ -1,27 +1,27 @@
 {
-  "workTitle": "Zendesk",
-  "workDescription": "Design Systems",
-  "workCategories": [
+  "title": "Zendesk",
+  "description": "Design Systems",
+  "categories": [
     {
-      "workCategoryName": "src/content/categories/design.json"
+      "categoryRef": "src/content/categories/design.json"
     }
   ],
-  "workServices": [
+  "services": [
     {
-      "workServiceName": "src/content/services/front-end-development.json"
+      "serviceRef": "src/content/services/front-end-development.json"
     },
     {
-      "workServiceName": "src/content/services/information-architecture.json"
+      "serviceRef": "src/content/services/information-architecture.json"
     },
     {
-      "workServiceName": "src/content/services/accessibility.json"
+      "serviceRef": "src/content/services/accessibility.json"
     }
   ],
-  "workImages": [
+  "images": [
     {
-      "workImageSrc": "/uploads/2025-01-01 13_44_37-Menu _ Components _ Zendesk Garden - Brave.png",
-      "workImageAlt": "Garden design system menu component preview"
+      "src": "/uploads/2025-01-01 13_44_37-Menu _ Components _ Zendesk Garden - Brave.png",
+      "alt": "Garden design system menu component preview"
     }
   ],
-  "workBody": "Body here\n"
+  "body": "Body here\n"
 }

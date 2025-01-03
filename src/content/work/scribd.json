@@ -1,33 +1,33 @@
 {
-  "workTitle": "Scribd",
-  "workDescription": "User-Generated Content, eBooks, Audiobooks",
-  "workCategories": [
+  "title": "Scribd",
+  "description": "User-Generated Content, eBooks, Audiobooks",
+  "categories": [
     {
-      "workCategoryName": "src/content/categories/development.json"
+      "categoryRef": "src/content/categories/development.json"
     },
     {
-      "workCategoryName": "src/content/categories/design.json"
+      "categoryRef": "src/content/categories/design.json"
     }
   ],
-  "workServices": [
+  "services": [
     {
-      "workServiceName": "src/content/services/ui-ux.json"
+      "serviceRef": "src/content/services/ui-ux.json"
     },
     {
-      "workServiceName": "src/content/services/user-research.json"
+      "serviceRef": "src/content/services/user-research.json"
     },
     {
-      "workServiceName": "src/content/services/front-end-development.json"
+      "serviceRef": "src/content/services/front-end-development.json"
     },
     {
-      "workServiceName": "src/content/services/accessibility.json"
+      "serviceRef": "src/content/services/accessibility.json"
     }
   ],
-  "workImages": [
+  "images": [
     {
-      "workImageSrc": "/uploads/2025-01-01 21_01_34-scribd-about-home.png.png",
-      "workImageAlt": "Scribd company subsite home page "
+      "src": "/uploads/2025-01-01 21_01_34-scribd-about-home.png.png",
+      "alt": "Scribd company subsite home page "
     }
   ],
-  "workBody": "Body here\n"
+  "body": "Body here\n"
 }

@@ -3,9 +3,9 @@ import {
   PageQuery,
   PostPostAuthors,
   PostPostCategories,
-  WorkWorkCategories,
-  WorkWorkImages,
-  WorkWorkServices,
+  WorkCategories,
+  WorkImages,
+  WorkServices,
 } from "../../tina/__generated__/types"
 
 const PREVIEW_LIMIT = 3
@@ -30,10 +30,10 @@ export const toPostCategories = (categories: PostPostCategories[]) => {
   }))
 }
 
-export const toWorkCategories = (categories: WorkWorkCategories[]) => {
+export const toWorkCategories = (categories: WorkCategories[]) => {
   return categories.map((category) => ({
-    color: category!.workCategoryName.categoryColor!,
-    name: category!.workCategoryName.categoryName!,
+    color: category!.categoryRef.categoryColor!,
+    name: category!.categoryRef.categoryName!,
   }))
 }
 
@@ -44,16 +44,16 @@ export const toAuthors = (authors: PostPostAuthors[]) => {
   }))
 }
 
-export const toServices = (services: WorkWorkServices[]) => {
+export const toServices = (services: WorkServices[]) => {
   return services.map((service) => ({
-    name: service!.workServiceName.serviceName,
+    name: service!.serviceRef.serviceName,
   }))
 }
 
-export const toImages = (images: WorkWorkImages[]) => {
+export const toImages = (images: WorkImages[]) => {
   return images.map((image) => ({
-    src: image!.workImageSrc,
-    alt: image!.workImageAlt,
+    src: image!.src,
+    alt: image!.alt,
   }))
 }
 

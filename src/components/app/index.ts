@@ -10,6 +10,7 @@ export * from "./shared/Hero"
 export * from "./shared/ActionList"
 export * from "./shared/LogoMarquee"
 export * from "./shared/BlogPreview"
+export * from "./shared/CategoryList"
 
 // Home
 
@@ -27,3 +28,4 @@ export * from "./about/SkillCategories"
 // Work
 
 export * from "./work/WorkList"
+export * from "./work/WorkEntry"

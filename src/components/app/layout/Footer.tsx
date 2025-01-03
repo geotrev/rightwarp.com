@@ -28,7 +28,7 @@ export const Footer = () => {
         </p>
       </div>
       <div>
-        <p>
+        <p className="opacity-75">
           This website is built with{" "}
           <Link isExternal href="https://nextjs.org/">
             Next JS

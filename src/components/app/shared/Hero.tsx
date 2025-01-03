@@ -4,9 +4,10 @@ export interface HeroProps {
   heading: string
   description: string
   variant?: "standard" | "display"
+  details?: React.ReactNode
 }
 
-export const Hero = ({ heading, description, variant = "standard" }: HeroProps) => {
+export const Hero = ({ heading, description, details, variant = "standard" }: HeroProps) => {
   const fontStyles: Record<string, string> = {
     standard: cn(
       "mb-4 text-xl leading-8 tracking-tight md:mb-8 md:text-3xl md:leading-10 md:tracking-tighter lg:text-5xl lg:leading-[4rem]",
@@ -35,10 +36,18 @@ export const Hero = ({ heading, description, variant = "standard" }: HeroProps) 
         {heading}
       </h1>
       {description && (
-        <p className="text-md tracking-tight text-purple-950 sm:text-lg md:text-xl lg:text-3xl lg:leading-[3rem] dark:text-purple-100">
+        <p
+          className={cn(
+            "text-md tracking-tight text-purple-950 sm:text-lg md:text-xl lg:text-3xl lg:leading-[3rem] dark:text-purple-100",
+            {
+              "mb-8": !!details,
+            },
+          )}
+        >
           {description}
         </p>
       )}
+      {details}
     </section>
   )
 }

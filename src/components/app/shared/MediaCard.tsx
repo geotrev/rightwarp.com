@@ -1,5 +1,6 @@
 import Image from "next/image"
-import { CSSProperties } from "react"
+
+import { CategoryList } from "./CategoryList"
 
 export type MediaCardProps = {
   image?: {
@@ -71,24 +72,7 @@ export const MediaCard = ({
           </div>
         )}
         <div className="media-card-actions">
-          {categories.map((category) => {
-            const color = category.color
-            return (
-              <div
-                key={category.name}
-                style={
-                  color
-                    ? ({
-                        backgroundColor: color,
-                      } as CSSProperties)
-                    : undefined
-                }
-                className={`badge-category badge`}
-              >
-                {category.name}
-              </div>
-            )
-          })}
+          <CategoryList categories={categories} />
         </div>
       </div>
     </div>

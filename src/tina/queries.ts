@@ -1,20 +1,12 @@
 import client from "../../tina/__generated__/client"
-import {
-  PostAuthors,
-  PostCategories,
-  WorkCategories,
-  WorkImages,
-  WorkServices,
-} from "../../tina/__generated__/types"
+import { PostAuthors, PostCategories, WorkCategories } from "../../tina/__generated__/types"
 
 import {
   getPageData,
   getPostPreviews,
   toAuthors,
-  toImages,
   toPostCategories,
   toPublishDate,
-  toServices,
   toSlug,
   toWorkCategories,
 } from "./helpers"
@@ -78,16 +70,18 @@ export const queryWorkIndex = async () => {
 
 // work entry
 
+export const queryWorkRoutes = async () => {
+  const pages = await client.queries.workConnection()
+  const paths = pages.data?.workConnection?.edges?.map((edge) => ({
+    slug: edge?.node?._sys.breadcrumbs,
+  }))
+
+  return paths || []
+}
+
 export const queryWorkEntry = async (slug: string) => {
   try {
-    const _page = await client.queries.work({ relativePath: `${slug}.md` })
-    const page = {
-      title: _page.data.work.title,
-      description: _page.data.work.description,
-      categories: toWorkCategories(_page.data.work.categories! as WorkCategories[]),
-      services: toServices(_page.data.work.services! as WorkServices[]),
-      images: toImages(_page.data.work.images! as WorkImages[]),
-    }
+    const page = await client.queries.work({ relativePath: `${slug}.md` })
 
     return { page }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -132,20 +126,12 @@ export const queryBlogIndex = async () => {
 
 export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
   try {
-    const _post = await client.queries.post({ relativePath: `${slug}.md` })
-    const post = {
-      title: _post.data.post.title,
-      description: _post.data.post.description,
-      body: _post.data.post.body,
-      authors: toAuthors(_post.data.post.authors as PostAuthors[]),
-      date: toPublishDate(_post.data.post.publishDate),
-      categories: toPostCategories(_post.data.post.categories as PostCategories[]),
-    }
+    const post = await client.queries.post({ relativePath: `${slug}.md` })
 
     const posts = await client.queries.postConnection({
       sort: "publishDate",
     })
-    const categories = post.categories.map((category) => category.name)
+    const categories = post.data.post.categories.map((category) => category.categoryRef.name)
     const relatedPosts = posts.data.postConnection.edges
       ?.filter((edge) => {
         const _post = edge?.node
@@ -164,12 +150,12 @@ export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
       })
       .slice(0, relatedPostLimit)
       .map((edge) => {
-        const post = edge?.node
+        const _post = edge?.node
 
         return {
-          title: post!.title,
-          slug: toSlug(post!._sys.filename, "blog"),
-          date: toPublishDate(post!.publishDate),
+          title: _post!.title,
+          slug: toSlug(_post!._sys.filename, "blog"),
+          date: toPublishDate(_post!.publishDate),
         }
       })
       .reverse()

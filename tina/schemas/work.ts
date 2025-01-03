@@ -7,9 +7,9 @@ export const Work: Collection = {
   name: "work",
   label: "Work",
   path: "src/content/work",
-  format: "json",
+  format: "md",
   ui: {
-    // router: ({ document }) => `/work/${document._sys.filename}`,
+    router: ({ document }) => `/work/${document._sys.filename}`,
     ...slugify("title"),
   },
   fields: [
@@ -95,6 +95,7 @@ export const Work: Collection = {
       type: "rich-text",
       name: "body",
       label: "Body",
+      isBody: true,
       required: true,
     },
   ],

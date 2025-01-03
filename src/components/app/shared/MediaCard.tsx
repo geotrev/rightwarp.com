@@ -65,21 +65,21 @@ export const MediaCard = ({
                 <div className="mask mask-squircle relative size-10">
                   <Image src={author.image} fill alt="" />
                 </div>
-                <span className="author-name">{author.name}</span>
+                <span className="text-black dark:text-white">{author.name}</span>
               </div>
             ))}
           </div>
         )}
         <div className="media-card-actions">
           {categories.map((category) => {
-            const categoryColor = category.color
+            const color = category.color
             return (
               <div
                 key={category.name}
                 style={
-                  categoryColor
+                  color
                     ? ({
-                        backgroundColor: categoryColor,
+                        backgroundColor: color,
                       } as CSSProperties)
                     : undefined
                 }

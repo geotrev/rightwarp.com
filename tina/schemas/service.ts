@@ -8,12 +8,12 @@ export const Service: Collection = {
   path: "src/content/services",
   format: "json",
   ui: {
-    ...slugify("serviceName"),
+    ...slugify("name"),
   },
   fields: [
     {
       type: "string",
-      name: "serviceName",
+      name: "name",
       label: "Service Name",
       required: true,
     },

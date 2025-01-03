@@ -25,28 +25,28 @@ export const toSlug = (filename: string, subpath?: string) => {
 
 export const toPostCategories = (categories: PostCategories[]) => {
   return categories.map((category) => ({
-    color: category!.categoryRef.categoryColor!,
-    name: category!.categoryRef.categoryName!,
+    color: category!.categoryRef.color!,
+    name: category!.categoryRef.name!,
   }))
 }
 
 export const toWorkCategories = (categories: WorkCategories[]) => {
   return categories.map((category) => ({
-    color: category!.categoryRef.categoryColor!,
-    name: category!.categoryRef.categoryName!,
+    color: category!.categoryRef.color!,
+    name: category!.categoryRef.name!,
   }))
 }
 
 export const toAuthors = (authors: PostAuthors[]) => {
   return authors.map((author) => ({
-    image: author!.authorRef.authorImage,
-    name: author!.authorRef.authorName,
+    image: author!.authorRef.image,
+    name: author!.authorRef.name,
   }))
 }
 
 export const toServices = (services: WorkServices[]) => {
   return services.map((service) => ({
-    name: service!.serviceRef.serviceName,
+    name: service!.serviceRef.name,
   }))
 }
 

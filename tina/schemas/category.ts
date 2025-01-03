@@ -8,18 +8,18 @@ export const Category: Collection = {
   path: "src/content/categories",
   format: "json",
   ui: {
-    ...slugify("categoryName"),
+    ...slugify("name"),
   },
   fields: [
     {
       type: "string",
-      name: "categoryName",
+      name: "name",
       label: "Category Name",
       required: true,
     },
     {
       type: "string",
-      name: "categoryColor",
+      name: "color",
       label: "Category Color",
       ui: {
         component: "color",

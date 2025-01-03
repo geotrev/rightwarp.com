@@ -95,8 +95,8 @@ export const queryBlogIndex = async () => {
 
   const categoriesResponse = await client.queries.categoryConnection()
   const categories = categoriesResponse.data.categoryConnection.edges?.map((edge) => ({
-    name: edge?.node?.categoryName,
-    color: edge?.node?.categoryColor,
+    name: edge?.node?.name,
+    color: edge?.node?.color,
   }))
 
   const postsResponse = await client.queries.postConnection({
@@ -138,7 +138,7 @@ export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
         const _post = edge?.node
         if (_post?.categories?.length) {
           for (let i = 0; i < _post?.categories.length; i++) {
-            const category = _post?.categories[i].categoryRef.categoryName
+            const category = _post?.categories[i].categoryRef.name
             if (categories.includes(category)) {
               return true
             }

@@ -8,24 +8,24 @@ export const Author: Collection = {
   path: "src/content/authors",
   format: "json",
   ui: {
-    ...slugify("authorName"),
+    ...slugify("name"),
   },
   fields: [
     {
       type: "image",
-      name: "authorImage",
+      name: "image",
       label: "Author Image",
       required: true,
     },
     {
       type: "string",
-      name: "authorName",
+      name: "name",
       label: "Author Name",
       required: true,
     },
     {
       type: "string",
-      name: "authorBio",
+      name: "bio",
       label: "Author Bio",
       required: true,
     },

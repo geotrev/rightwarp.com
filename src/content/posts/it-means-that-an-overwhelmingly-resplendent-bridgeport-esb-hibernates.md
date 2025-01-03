@@ -1,14 +1,14 @@
 ---
-postPublishDate: 2024-11-01T05:00:00.000Z
-postTitle: Resplendent Bridgeport ESB hibernates
-postDescription: >-
+publishDate: 2024-11-01T05:00:00.000Z
+title: Resplendent Bridgeport ESB hibernates
+description: >-
   Some annoying ice house sweeps the floor, and a bullfrog brew prays; however,
   a pit viper has a change of heart about a soggy bull ice
-postAuthors:
-  - postAuthorName: src/content/authors/george-treviranus.json
-postCategories:
-  - postCategoryName: src/content/categories/consulting.json
-  - postCategoryName: src/content/categories/design.json
+authors:
+  - authorRef: src/content/authors/george-treviranus.json
+categories:
+  - categoryRef: src/content/categories/consulting.json
+  - categoryRef: src/content/categories/design.json
 ---
 
 #### Introduction

@@ -1,7 +1,7 @@
 import client from "../../tina/__generated__/client"
 import {
-  PostPostAuthors,
-  PostPostCategories,
+  PostAuthors,
+  PostCategories,
   WorkCategories,
   WorkImages,
   WorkServices,
@@ -100,16 +100,16 @@ export const queryBlogIndex = async () => {
   }))
 
   const postsResponse = await client.queries.postConnection({
-    sort: "postPublishDate",
+    sort: "publishDate",
   })
   const posts = postsResponse.data.postConnection.edges?.map((edge) => {
     const entry = edge?.node
     return {
-      title: entry?.postTitle,
-      description: entry?.postDescription,
-      authors: toAuthors(entry!.postAuthors as PostPostAuthors[]),
-      date: toPublishDate(entry!.postPublishDate),
-      categories: toPostCategories(entry!.postCategories as PostPostCategories[]),
+      title: entry?.title,
+      description: entry?.description,
+      authors: toAuthors(entry!.authors as PostAuthors[]),
+      date: toPublishDate(entry!.publishDate),
+      categories: toPostCategories(entry!.categories as PostCategories[]),
       slug: toSlug(entry!._sys.filename, "blog"),
     }
   })
@@ -121,25 +121,25 @@ export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
   try {
     const _post = await client.queries.post({ relativePath: `${slug}.md` })
     const post = {
-      title: _post.data.post.postTitle,
-      description: _post.data.post.postDescription,
-      body: _post.data.post.postBody,
-      authors: toAuthors(_post.data.post.postAuthors as PostPostAuthors[]),
-      date: toPublishDate(_post.data.post.postPublishDate),
-      categories: toPostCategories(_post.data.post.postCategories as PostPostCategories[]),
+      title: _post.data.post.title,
+      description: _post.data.post.description,
+      body: _post.data.post.body,
+      authors: toAuthors(_post.data.post.authors as PostAuthors[]),
+      date: toPublishDate(_post.data.post.publishDate),
+      categories: toPostCategories(_post.data.post.categories as PostCategories[]),
     }
 
     const posts = await client.queries.postConnection({
-      sort: "postPublishDate",
+      sort: "publishDate",
     })
-    const postCategories: string[] = post.categories.map((category) => category.name)
+    const categories: string[] = post.categories.map((category) => category.name)
     const relatedPosts = posts.data.postConnection.edges
       ?.filter((edge) => {
         const _post = edge?.node
-        if (_post?.postCategories?.length) {
-          for (let i = 0; i < _post?.postCategories.length; i++) {
-            const category = _post?.postCategories[i].postCategoryName.categoryName
-            if (postCategories.includes(category)) {
+        if (_post?.categories?.length) {
+          for (let i = 0; i < _post?.categories.length; i++) {
+            const category = _post?.categories[i].categoryRef.categoryName
+            if (categories.includes(category)) {
               return true
             }
           }
@@ -149,9 +149,9 @@ export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
       })
       .slice(0, relatedPostLimit)
       .map((edge) => ({
-        title: edge!.node!.postTitle,
+        title: edge!.node!.title,
         slug: toSlug(edge!.node!._sys.filename, "blog"),
-        date: toPublishDate(edge!.node!.postPublishDate),
+        date: toPublishDate(edge!.node!.publishDate),
       }))
 
     return { post, relatedPosts }

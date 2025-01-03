@@ -9,41 +9,41 @@ export const Post: Collection = {
   path: "src/content/posts",
   ui: {
     // router: ({ document }) => `/blog/${document._sys.filename}`,
-    ...slugify("postTitle"),
+    ...slugify("title"),
   },
   fields: [
     {
       type: "datetime",
-      name: "postPublishDate",
+      name: "publishDate",
       label: "Publish Date",
       required: true,
     },
     {
       type: "string",
-      name: "postTitle",
+      name: "title",
       label: "Title",
       isTitle: true,
       required: true,
     },
     {
       type: "string",
-      name: "postDescription",
+      name: "description",
       label: "Description",
       required: true,
     },
     {
       type: "object",
-      name: "postAuthors",
+      name: "authors",
       label: "Authors",
       list: true,
       required: true,
       ui: {
-        itemProps: (item) => ({ ...toReferenceLabel(item.postAuthorName) }),
+        itemProps: (item) => ({ ...toReferenceLabel(item.authorRef) }),
       },
       fields: [
         {
           type: "reference",
-          name: "postAuthorName",
+          name: "authorRef",
           label: "Author",
           collections: ["author"],
           required: true,
@@ -52,17 +52,17 @@ export const Post: Collection = {
     },
     {
       type: "object",
-      name: "postCategories",
+      name: "categories",
       label: "Categories",
       list: true,
       required: true,
       ui: {
-        itemProps: (item) => ({ ...toReferenceLabel(item.postCategoryName) }),
+        itemProps: (item) => ({ ...toReferenceLabel(item.categoryRef) }),
       },
       fields: [
         {
           type: "reference",
-          name: "postCategoryName",
+          name: "categoryRef",
           label: "Category",
           collections: ["category"],
           required: true,
@@ -71,7 +71,7 @@ export const Post: Collection = {
     },
     {
       type: "rich-text",
-      name: "postBody",
+      name: "body",
       label: "Body",
       isBody: true,
     },

@@ -1,8 +1,8 @@
 import client from "../../tina/__generated__/client"
 import {
   PageQuery,
-  PostPostAuthors,
-  PostPostCategories,
+  PostAuthors,
+  PostCategories,
   WorkCategories,
   WorkImages,
   WorkServices,
@@ -23,10 +23,10 @@ export const toSlug = (filename: string, subpath?: string) => {
   return `/${subpath}/${filename}`
 }
 
-export const toPostCategories = (categories: PostPostCategories[]) => {
+export const toPostCategories = (categories: PostCategories[]) => {
   return categories.map((category) => ({
-    color: category!.postCategoryName.categoryColor!,
-    name: category!.postCategoryName.categoryName!,
+    color: category!.categoryRef.categoryColor!,
+    name: category!.categoryRef.categoryName!,
   }))
 }
 
@@ -37,10 +37,10 @@ export const toWorkCategories = (categories: WorkCategories[]) => {
   }))
 }
 
-export const toAuthors = (authors: PostPostAuthors[]) => {
+export const toAuthors = (authors: PostAuthors[]) => {
   return authors.map((author) => ({
-    image: author!.postAuthorName.authorImage,
-    name: author!.postAuthorName.authorName,
+    image: author!.authorRef.authorImage,
+    name: author!.authorRef.authorName,
   }))
 }
 
@@ -59,18 +59,19 @@ export const toImages = (images: WorkImages[]) => {
 
 export const getPostPreviews = async () => {
   const posts = await client.queries.postConnection({
-    sort: "postPublishDate",
+    sort: "publishDate",
   })
 
-  return posts.data?.postConnection?.edges
-    ?.slice(0, PREVIEW_LIMIT)
-    .map((edge) => edge?.node)
-    ?.map((post) => ({
-      title: post!.postTitle,
-      description: post!.postDescription,
-      categories: toPostCategories(post!.postCategories as PostPostCategories[]),
+  return posts.data?.postConnection?.edges?.slice(0, PREVIEW_LIMIT)?.map((edge) => {
+    const post = edge?.node
+
+    return {
+      title: post!.title,
+      description: post!.description,
+      categories: toPostCategories(post!.categories as PostCategories[]),
       slug: toSlug(post!._sys.filename, "blog"),
-      authors: toAuthors(post!.postAuthors as PostPostAuthors[]),
-      date: toPublishDate(post!.postPublishDate),
-    }))
+      authors: toAuthors(post!.authors as PostAuthors[]),
+      date: toPublishDate(post!.publishDate),
+    }
+  })
 }

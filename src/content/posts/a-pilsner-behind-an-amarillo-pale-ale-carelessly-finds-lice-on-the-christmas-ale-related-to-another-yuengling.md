@@ -1,16 +1,16 @@
 ---
-postPublishDate: 2024-11-04T06:00:00.000Z
-postTitle: >-
+publishDate: 2024-11-04T06:00:00.000Z
+title: >-
   A Pilsner behind an Amarillo Pale Ale carelessly finds lice on the Christmas
   Ale related to another Yuengling
-postDescription: >-
+description: >-
   Any Christmas Ale can eat the Lone Star around a coors light, but it takes a
   real colt 45 to slurly give the last beer to the grizzly beer over a Miller
-postAuthors:
-  - postAuthorName: src/content/authors/george-treviranus.json
-postCategories:
-  - postCategoryName: src/content/categories/consulting.json
-  - postCategoryName: src/content/categories/development.json
+authors:
+  - authorRef: src/content/authors/george-treviranus.json
+categories:
+  - categoryRef: src/content/categories/consulting.json
+  - categoryRef: src/content/categories/development.json
 ---
 
 #### Introduction

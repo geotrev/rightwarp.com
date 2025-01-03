@@ -7,19 +7,22 @@ import {
   BlogPreview,
   ActionList,
 } from "@/components/app"
-
-// import { queryAbout } from "@/tina/queries"
+import { queryAbout } from "@/tina/queries"
 
 export default async function About() {
-  // const query = await queryAbout()
+  const query = await queryAbout()
 
   return (
     <>
-      <Hero {...staticProps.heroProps} />
+      <Hero
+        variant="display"
+        heading={query.page.pageTitle}
+        description={query.page.pageDescription}
+      />
       <Intro {...staticProps.introProps} />
       <LogoMarquee {...staticProps.marqueeProps} />
       <SkillCategories {...staticProps.skillProps} />
-      <BlogPreview {...staticProps.blogProps} />
+      <BlogPreview {...staticProps.blogProps} posts={query.posts} />
       <ActionList {...staticProps.actionsProps} />
     </>
   )

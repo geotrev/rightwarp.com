@@ -1,18 +1,12 @@
-import { ActionListProps, ContactFormProps, HeroProps } from "@/components/app"
+import { ActionListProps, ContactFormProps } from "@/components/app"
 
 interface ContactProps {
-  heroProps: HeroProps
   scheduleActionsProps: ActionListProps
   contactFormProps: ContactFormProps
   endActionsProps: ActionListProps
 }
 
 export const contactProps: ContactProps = {
-  heroProps: {
-    variant: "display",
-    heading: "Let's Chat",
-    description: "Start your next project on the right foot",
-  },
   scheduleActionsProps: {
     actions: [
       {

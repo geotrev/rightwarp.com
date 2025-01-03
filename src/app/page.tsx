@@ -2,8 +2,6 @@ import { homeProps } from "@/app/_static/homePage"
 import { BlogPreview, ActionList, Hero, LogoMarquee, Expertise } from "@/components/app"
 import { queryHome } from "@/tina/queries"
 
-import { PostConnectionEdges } from "../../tina/__generated__/types"
-
 export default async function Home() {
   const query = await queryHome()
 
@@ -16,7 +14,7 @@ export default async function Home() {
       />
       <LogoMarquee {...homeProps.logoMarqueeProps} />
       <Expertise {...homeProps.expertiseProps} />
-      <BlogPreview {...homeProps.blogProps} posts={query.posts as PostConnectionEdges["node"][]} />
+      <BlogPreview {...homeProps.blogProps} posts={query.posts} />
       <ActionList {...homeProps.actionsProps} />
     </>
   )

@@ -11,13 +11,11 @@ import {
   LogoMarqueeProps,
   BlogPreviewProps,
   ActionListProps,
-  HeroProps,
   IntroProps,
 } from "@/components/app"
 import { Link } from "@/components/core"
 
 interface AboutPageProps {
-  heroProps: HeroProps
   introProps: IntroProps
   marqueeProps: LogoMarqueeProps
   skillProps: SkillCategoriesProps
@@ -26,11 +24,6 @@ interface AboutPageProps {
 }
 
 export const staticProps: AboutPageProps = {
-  heroProps: {
-    variant: "display",
-    heading: "About Us",
-    description: "Right Warp / raɪt-wɔrp",
-  },
   introProps: {
     bioImage: {
       src: SelfImage,
@@ -174,41 +167,6 @@ export const staticProps: AboutPageProps = {
   blogProps: {
     heading: "Thoughts",
     subheading: "Ramblings about tech, web development, and design",
-    posts: [
-      {
-        image: {
-          href: "https://picsum.photos/500/300",
-          alt: "image",
-        },
-        slug: "/blog/lorem-ipsum",
-        title: "Lorem ipsum is placeholder text tool used in the print design days",
-        description:
-          "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
-        categories: ["Design", "Development"],
-      },
-      {
-        image: {
-          href: "https://picsum.photos/500/300",
-          alt: "image",
-        },
-        slug: "/blog/lorem-ipsum",
-        title: "Lorem ipsum is a placeholder text used in the print design days",
-        description:
-          "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
-        categories: ["Technology"],
-      },
-      {
-        image: {
-          href: "https://picsum.photos/500/300",
-          alt: "image",
-        },
-        slug: "/blog/lorem-ipsum",
-        title: "Lorem ipsum is a placeholder text tool used in the print design days",
-        description:
-          "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
-        categories: ["Technology", "Development"],
-      },
-    ],
   },
   actionsProps: {
     actions: [

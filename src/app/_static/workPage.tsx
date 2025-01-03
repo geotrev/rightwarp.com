@@ -1,18 +1,11 @@
-import { HeroProps, WorkListProps, ActionListProps } from "@/components/app"
+import { WorkListProps, ActionListProps } from "@/components/app"
 
 interface WorkProps {
-  heroProps: HeroProps
   workListProps: WorkListProps
   actionsProps: ActionListProps
 }
 
 export const workProps: WorkProps = {
-  heroProps: {
-    variant: "display",
-    heading: "Work",
-    description:
-      "From mockup to code, we focus on clear, accessible, and delightful digital design",
-  },
   workListProps: {
     items: [
       {
@@ -22,7 +15,7 @@ export const workProps: WorkProps = {
         },
         title: "Zendesk",
         description: "Customer Service",
-        categories: ["Development"],
+        categories: [{ name: "Development", color: "#666" }],
         slug: "/work/zendesk",
       },
       {
@@ -32,7 +25,7 @@ export const workProps: WorkProps = {
         },
         title: "ServiceNow",
         description: "Customer & IT Service Management",
-        categories: ["Development"],
+        categories: [{ name: "Development", color: "#666" }],
         slug: "/work/servicenow",
       },
       {
@@ -42,7 +35,10 @@ export const workProps: WorkProps = {
         },
         title: "Rainier Consignment",
         description: "Marketing & eCommerce",
-        categories: ["Design", "Development"],
+        categories: [
+          { name: "Design", color: "#666" },
+          { name: "Development", color: "#666" },
+        ],
         slug: "/work/rainier-consignment",
       },
       {
@@ -52,7 +48,10 @@ export const workProps: WorkProps = {
         },
         title: "Scribd",
         description: "User-Generated Content, Audiobooks, eBooks",
-        categories: ["Design", "Development"],
+        categories: [
+          { name: "Design", color: "#666" },
+          { name: "Development", color: "#666" },
+        ],
         slug: "/work/scribd",
       },
     ],

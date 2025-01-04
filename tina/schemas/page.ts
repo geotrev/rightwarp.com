@@ -8,15 +8,6 @@ export const Page: Collection = {
   path: "src/content/pages",
   format: "json",
   ui: {
-    // router: (props) => {
-    //   if (props.document._sys.filename === "home") {
-    //     return "/"
-    //   }
-
-    //   if (!["work/", "blog/"].includes(props.document._sys.path)) {
-    //     return props.document._sys.filename
-    //   }
-    // },
     ...slugify("title"),
   },
   fields: [

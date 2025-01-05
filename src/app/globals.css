@@ -31,15 +31,15 @@
   /* media-card extends daisyui card */
 
   .media-card {
-    @apply card z-10 rounded-xl bg-base-300 p-4 transition-colors sm:p-8 md:rounded-3xl;
+    @apply card z-10 overflow-hidden rounded-xl bg-base-300 transition-colors md:rounded-3xl;
   }
 
   .media-card-image {
-    @apply relative mb-2 h-56 overflow-hidden rounded-md sm:mb-4 md:rounded-xl;
+    @apply relative h-56;
   }
 
   .media-card-body {
-    @apply card-body gap-2 px-0 pb-0 pt-0 sm:gap-4;
+    @apply card-body p-6 sm:p-8;
   }
 
   .media-card-title {
@@ -47,7 +47,7 @@
   }
 
   .media-card-description {
-    @apply pb-2 text-base sm:text-xl;
+    @apply mb-4 pb-2 text-base sm:text-xl;
   }
 
   .media-card-actions {

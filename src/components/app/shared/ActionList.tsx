@@ -31,13 +31,15 @@ export const actionTypes = {
   button: (
     <Link
       href={Routes.CONTACT}
-      className={cn("btn btn-primary w-full text-white lg:btn-lg md:w-[75%] dark:text-black")}
+      className={cn(
+        "btn btn-primary w-full text-white lg:btn-lg md:w-[50%] lg:w-full dark:text-black",
+      )}
     >
       Warp Zone <ArrowRight className="size-5 lg:size-6" />
     </Link>
   ),
   newsletter: (
-    <form className="flex w-full gap-2 sm:gap-4">
+    <form className="flex w-full flex-col gap-2 sm:flex-row sm:gap-4">
       <input
         type="email"
         placeholder="mario@world.com"

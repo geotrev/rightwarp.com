@@ -6,6 +6,7 @@ interface ContainerProps extends PropsWithChildren<HTMLAttributes<HTMLElement>> 
   tag?: any
   isRaised?: boolean
   isConstrained?: boolean
+  collapseHorizontalPadding?: boolean
   children: React.ReactNode
 }
 
@@ -15,6 +16,7 @@ export const Container = ({
   className,
   isRaised,
   isConstrained,
+  collapseHorizontalPadding,
   ...props
 }: ContainerProps) => {
   return (
@@ -26,14 +28,11 @@ export const Container = ({
         />
       )}
       <Tag
-        className={cn(
-          "flex flex-col px-6 transition-[padding,colors] md:px-12 lg:px-24",
-          className,
-          {
-            "gap-16 bg-base-300 py-16": isRaised,
-            "2xl:px-[15%]": isConstrained,
-          },
-        )}
+        className={cn("flex flex-col transition-[colors,padding]", className, {
+          "gap-16 bg-base-300 py-16 lg:py-24": isRaised,
+          "2xl:px-[15%]": isConstrained && !collapseHorizontalPadding,
+          "px-6 md:px-12 lg:px-24": !collapseHorizontalPadding,
+        })}
         {...props}
       >
         {children}
@@ -45,5 +44,27 @@ export const Container = ({
         />
       )}
     </>
+  )
+}
+
+// used within a collapsed outer Container to ensure content has horizontal spacing
+
+export const SubContainer = ({
+  children,
+  isConstrained,
+  className,
+}: {
+  children: React.ReactNode
+  isConstrained?: boolean
+  className?: string
+}) => {
+  return (
+    <div
+      className={cn("px-6 transition-[padding] md:px-12 lg:px-24", className, {
+        "2xl:px-[15%]": isConstrained,
+      })}
+    >
+      {children}
+    </div>
   )
 }

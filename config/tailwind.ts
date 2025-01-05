@@ -4,8 +4,16 @@ import { CustomThemeConfig } from "tailwindcss/types/config"
 // Tailwind Theme overrides & additions
 
 export const TAILWIND_THEME: Partial<CustomThemeConfig> = {
+  typography: {
+    DEFAULT: {
+      css: {
+        color: "inherit",
+        maxWidth: "100%",
+      },
+    },
+  },
   transitionDuration: {
-    DEFAULT: "300ms",
+    DEFAULT: "400ms",
   },
   keyframes: {
     "marquee-start": {

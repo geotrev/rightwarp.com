@@ -9,11 +9,11 @@ export const CategoryList = ({
   }[]
 }) => {
   return (
-    <div className="flex flex-wrap gap-2">
+    <ul className="flex flex-wrap gap-2">
       {categories.map((category) => {
         const color = category.color
         return (
-          <div
+          <li
             key={category.name}
             style={
               color
@@ -25,9 +25,9 @@ export const CategoryList = ({
             className={`badge-category badge`}
           >
             {category.name}
-          </div>
+          </li>
         )
       })}
-    </div>
+    </ul>
   )
 }

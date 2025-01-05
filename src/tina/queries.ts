@@ -57,8 +57,8 @@ export const queryWorkIndex = async () => {
         description: entry!.description,
         categories: toWorkCategories(entry!.categories as WorkCategories[]),
         image: {
-          src: entry!.images![0]!.src,
-          alt: entry!.images![0]!.alt,
+          src: entry!.images[0].src,
+          alt: entry!.images[0].alt,
         },
         slug: toSlug(entry!._sys.filename, "work"),
       }

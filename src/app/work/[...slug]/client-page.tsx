@@ -2,7 +2,9 @@
 
 import { useTina } from "tinacms/dist/react"
 
-import { CategoryList, Hero, WorkEntry } from "@/components/app"
+import { workProps } from "@/app/_static/workPage"
+import { ActionList, Hero, WorkEntry } from "@/components/app"
+import { CallToAction } from "@/components/app/shared/CallToAction"
 
 import { Work, WorkQuery } from "../../../../tina/__generated__/types"
 
@@ -18,19 +20,12 @@ export const ClientPage = (props: PageProps) => {
   const { data: _data } = useTina(props)
   const { work: data } = _data
 
-  const categoryProps = data.categories?.map((category) => ({
-    name: category!.categoryRef.name!,
-    color: category!.categoryRef.color!,
-  }))
-
   return (
     <>
-      <Hero
-        heading={data.title}
-        description={data.description}
-        details={categoryProps && <CategoryList categories={categoryProps} />}
-      />
+      <Hero heading={data.title} description={data.description} />
       <WorkEntry {...(data as Omit<Work, "values">)} />
+      <CallToAction {...workProps.callToActionProps} />
+      <ActionList {...workProps.actionsProps} />
     </>
   )
 }

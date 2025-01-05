@@ -11,6 +11,7 @@ export * from "./shared/ActionList"
 export * from "./shared/LogoMarquee"
 export * from "./shared/BlogPreview"
 export * from "./shared/CategoryList"
+export * from "./shared/CallToAction"
 
 // Home
 

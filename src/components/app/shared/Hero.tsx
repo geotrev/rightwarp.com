@@ -24,7 +24,7 @@ export const Hero = ({ heading, description, details, variant = "standard" }: He
 
   return (
     <section
-      className={cn("flex flex-col justify-center px-8 transition-[padding] md:px-12 lg:px-24", {
+      className={cn("flex flex-col justify-center px-6 transition-[padding] md:px-12 lg:px-24", {
         [sizeStyles[variant]]: true,
       })}
     >

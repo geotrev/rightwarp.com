@@ -49,7 +49,7 @@ export const Expertise = ({ heading, subheading, items }: ExpertiseProps) => {
             key={item.heading}
             isConstrained
             isRaised={item.isRaised}
-            className={cn({ "py-16": !item.isRaised })}
+            className={cn({ "py-16 lg:py-24": !item.isRaised })}
           >
             <Skill
               isReversed={item.isReversed}

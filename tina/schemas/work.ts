@@ -73,6 +73,7 @@ export const Work: Collection = {
       name: "images",
       label: "Images",
       list: true,
+      required: true,
       ui: {
         itemProps: (item) => ({ label: item.alt }),
       },
@@ -90,6 +91,12 @@ export const Work: Collection = {
           required: true,
         },
       ],
+    },
+    {
+      type: "rich-text",
+      name: "bodyIntro",
+      label: "Body Intro",
+      required: true,
     },
     {
       type: "rich-text",

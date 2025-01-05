@@ -1,10 +1,25 @@
-import { ActionListProps } from "@/components/app"
+import { ActionListProps, CallToActionProps } from "@/components/app"
 
 interface WorkProps {
   actionsProps: ActionListProps
+  callToActionProps: CallToActionProps
 }
 
 export const workProps: WorkProps = {
+  callToActionProps: {
+    actions: [
+      {
+        type: "primary",
+        label: "Browse More Work",
+        href: "/work",
+      },
+      {
+        type: "secondary",
+        label: "Browse Blog",
+        href: "/blog",
+      },
+    ],
+  },
   actionsProps: {
     actions: [
       {

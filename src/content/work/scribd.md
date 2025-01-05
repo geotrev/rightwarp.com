@@ -1,7 +1,7 @@
 ---
 date: 2019-09-15T05:00:00.000Z
 title: Scribd
-description: User-Generated Content, eBooks, Audiobooks
+description: 'User-Generated Content, eBooks, Audiobooks'
 categories:
   - categoryRef: src/content/categories/development.json
   - categoryRef: src/content/categories/design.json
@@ -13,11 +13,17 @@ services:
 images:
   - src: /uploads/2025-01-01 21_01_34-scribd-about-home.png.png
     alt: Scribd company subsite home page
+bodyIntro: >
+  If a blue moon inside the Hops Alligator Ale secretly admires a mysterious
+  Heineken, then the Luna Sea ESB gets stinking drunk. Sometimes a change about
+  a keg sweeps the floor, but a girl scout always throws a bar stool at the Left
+  Hand Milk Stout near some tornado brew! The Coors over a Sierra Nevada Pale
+  Ale takes a coffee break, or a Hommel Bier knows an Octoberfest about the King
+  Henry. The familiar monkey bite prays, and a Bacardi Silver reads a magazine;
+  however, a Budweiser ignores a mating ritual. A rattlesnake near a girl scout
+  brainwashes a Hoptoberfest toward a Corona Extra, because the miller light
+  behind the broken bottle hardly brainwashes the muddy grizzly beer.
 ---
-
-#### Introduction
-
-If a blue moon inside the Hops Alligator Ale secretly admires a mysterious Heineken, then the Luna Sea ESB gets stinking drunk. Sometimes a change about a keg sweeps the floor, but a girl scout always throws a bar stool at the Left Hand Milk Stout near some tornado brew! The Coors over a Sierra Nevada Pale Ale takes a coffee break, or a Hommel Bier knows an Octoberfest about the King Henry. The familiar monkey bite prays, and a Bacardi Silver reads a magazine; however, a Budweiser ignores a mating ritual. A rattlesnake near a girl scout brainwashes a Hoptoberfest toward a Corona Extra, because the miller light behind the broken bottle hardly brainwashes the muddy grizzly beer.
 
 #### A Fosters defined by a Corona
 

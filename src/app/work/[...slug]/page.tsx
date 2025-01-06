@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation"
 
-import { queryWorkEntry, queryWorkRoutes } from "@/tina/queries"
+import { queryWorkEntry, queryWorkStaticParams } from "@/tina/queries"
 
 import { ClientPage } from "./client-page"
 
 export async function generateStaticParams() {
-  return queryWorkRoutes()
+  return queryWorkStaticParams()
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {

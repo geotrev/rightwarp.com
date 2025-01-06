@@ -70,7 +70,7 @@ export const queryWorkIndex = async () => {
 
 // work entry
 
-export const queryWorkRoutes = async () => {
+export const queryWorkStaticParams = async () => {
   const pages = await client.queries.workConnection()
   const paths = pages.data?.workConnection?.edges?.map((edge) => ({
     slug: edge?.node?._sys.breadcrumbs,
@@ -124,9 +124,19 @@ export const queryBlogIndex = async () => {
 
 // blog post
 
+export const queryPostStaticParams = async () => {
+  const pages = await client.queries.postConnection()
+  const paths = pages.data?.postConnection?.edges?.map((edge) => ({
+    slug: edge?.node?._sys.breadcrumbs,
+  }))
+
+  return paths || []
+}
+
 export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
   try {
     const post = await client.queries.post({ relativePath: `${slug}.md` })
+    const postFilename = post.data.post._sys.filename
 
     const posts = await client.queries.postConnection({
       sort: "publishDate",
@@ -136,6 +146,12 @@ export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
       ?.filter((edge) => {
         const _post = edge?.node
 
+        // Ignore the current post
+        if (_post?._sys.filename === postFilename) {
+          return false
+        }
+
+        // Compare other post categories to current post categories
         if (_post?.categories?.length) {
           for (let i = 0; i < _post.categories.length; i++) {
             const category = _post.categories[i].categoryRef.name
@@ -143,6 +159,8 @@ export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
             if (categories.includes(category)) {
               return true
             }
+
+            return false
           }
         } else {
           return false

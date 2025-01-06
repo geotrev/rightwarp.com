@@ -2,7 +2,6 @@ import client from "../../tina/__generated__/client"
 import { PostAuthors, PostCategories, WorkCategories } from "../../tina/__generated__/types"
 
 import {
-  getPageData,
   getPostPreviews,
   toAuthors,
   toPostCategories,
@@ -89,13 +88,13 @@ export const queryWorkEntry = async (slug: string) => {
 // blog
 
 export const queryBlogIndex = async () => {
-  const _page = await client.queries.page({ relativePath: "blog.json" })
-  const page = getPageData(_page.data.page)
+  const page = await client.queries.page({ relativePath: "blog.json" })
 
   const categoriesResponse = await client.queries.categoryConnection()
   const categories = categoriesResponse.data.categoryConnection.edges?.map((edge) => ({
     name: edge?.node?.name,
     color: edge?.node?.color,
+    // slug: toSlug(edge!._sys.filename, "category"),
   }))
 
   const postsResponse = await client.queries.postConnection({
@@ -105,8 +104,8 @@ export const queryBlogIndex = async () => {
     ?.map((edge) => {
       const entry = edge?.node
       return {
-        title: entry?.title,
-        description: entry?.description,
+        title: entry!.title,
+        description: entry!.description,
         authors: toAuthors(entry!.authors as PostAuthors[]),
         date: toPublishDate(entry!.publishDate),
         categories: toPostCategories(entry!.categories as PostCategories[]),

@@ -1,6 +1,5 @@
 import client from "../../tina/__generated__/client"
 import {
-  PageQuery,
   PostAuthors,
   PostCategories,
   WorkCategories,
@@ -9,11 +8,6 @@ import {
 } from "../../tina/__generated__/types"
 
 const PREVIEW_LIMIT = 3
-
-export const getPageData = (pageData: PageQuery["page"]) => ({
-  heading: pageData.title,
-  description: pageData.description,
-})
 
 export const toPublishDate = (date: string) => {
   return new Date(date).toLocaleDateString()

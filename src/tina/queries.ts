@@ -23,8 +23,7 @@ export const queryHome = async () => {
 // about
 
 export const queryAbout = async () => {
-  const _page = await client.queries.page({ relativePath: "about.json" })
-  const page = getPageData(_page.data.page)
+  const page = await client.queries.page({ relativePath: "about.json" })
   const posts = await getPostPreviews()
 
   return { page, posts }

@@ -32,8 +32,7 @@ export const queryAbout = async () => {
 // contact
 
 export const queryContact = async () => {
-  const _page = await client.queries.page({ relativePath: "contact.json" })
-  const page = getPageData(_page.data.page)
+  const page = await client.queries.page({ relativePath: "contact.json" })
 
   return { page }
 }

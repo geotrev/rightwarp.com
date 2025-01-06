@@ -14,7 +14,7 @@ export const toPublishDate = (date: string) => {
 }
 
 export const toSlug = (filename: string, subpath?: string) => {
-  return `/${subpath}/${filename}`
+  return subpath ? `/${subpath}/${filename}` : `/${filename}`
 }
 
 export const toPostCategories = (categories: PostCategories[]) => {

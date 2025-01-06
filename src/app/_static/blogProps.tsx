@@ -1,3 +1,22 @@
-// interface BlogProps {}
+import { ActionListProps } from "@/components/app"
 
-export const blogProps = {}
+interface BlogProps {
+  actionsProps: ActionListProps
+}
+
+export const blogProps: BlogProps = {
+  actionsProps: {
+    actions: [
+      {
+        heading: "Need help on a project?",
+        description: "Whether it's a brand new or needs some renewed attention, we can help",
+        action: "button",
+      },
+      {
+        heading: "Subscribe to the newsletter",
+        description: "Get occasional emails about blog posts & industry happenings",
+        action: "newsletter",
+      },
+    ],
+  },
+}

@@ -1,3 +1,5 @@
+import { PostHistoryItem } from "@/components/app"
+
 import client from "../../tina/__generated__/client"
 import { PostAuthors, PostCategories, WorkCategories } from "../../tina/__generated__/types"
 
@@ -87,6 +89,8 @@ export const queryWorkEntry = async (slug: string) => {
 
 // blog
 
+const toMonth = (date: Date) => date.toLocaleString("en", { month: "long" })
+
 export const queryBlogIndex = async () => {
   const page = await client.queries.page({ relativePath: "blog.json" })
 
@@ -94,7 +98,7 @@ export const queryBlogIndex = async () => {
   const categories = categoriesResponse.data.categoryConnection.edges?.map((edge) => ({
     name: edge!.node!.name,
     color: edge!.node!.color!,
-    slug: toSlug(edge!.node!._sys.filename, "category"),
+    slug: toSlug(edge!.node!._sys.filename),
   }))
 
   const postsResponse = await client.queries.postConnection({
@@ -114,7 +118,52 @@ export const queryBlogIndex = async () => {
     })
     .reverse()
 
-  return { page, categories, posts }
+  const history = postsResponse.data.postConnection.edges
+    ?.reduce<PostHistoryItem[]>((entries, edge) => {
+      const entry = edge?.node
+      const entryDate = new Date(entry!.publishDate)
+      const entryYear = entryDate.getFullYear()
+      const entryMonth = entryDate.getMonth()
+      const entryMonthLabel = toMonth(entryDate)
+
+      const match = entries.find((item) => item.year === entryYear)
+
+      if (match) {
+        const matchMonth = match.months.find((item) => item.month === entryMonth)
+
+        if (!matchMonth) {
+          match.months.push({
+            label: entryMonthLabel,
+            month: entryMonth,
+            count: 1,
+          })
+        } else {
+          matchMonth.count++
+        }
+      } else {
+        entries.push({
+          year: entryYear,
+          months: [
+            {
+              label: entryMonthLabel,
+              month: entryMonth,
+              count: 1,
+            },
+          ],
+        })
+      }
+
+      return entries
+    }, [])
+    // sort year
+    .sort((prev, next) => next.year - prev.year)
+    // sort month
+    .map((entry) => ({
+      ...entry,
+      months: entry.months.sort((prev, next) => next.month - prev.month),
+    }))
+
+  return { page, categories, posts, history }
 }
 
 // blog post

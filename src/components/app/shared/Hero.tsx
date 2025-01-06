@@ -19,7 +19,7 @@ export const Hero = ({ heading, description, details, variant = "standard" }: He
 
   const sizeStyles: Record<string, string> = {
     standard: cn("py-20 sm:py-24 md:py-28"),
-    display: cn("py-40 sm:py-48 md:py-56 lg:h-[70vh] lg:py-[unset]"),
+    display: cn("py-20 sm:py-32 md:py-56 lg:py-72"),
   }
 
   return (

@@ -31,3 +31,8 @@ export * from "./about/SkillCategories"
 
 export * from "./work/WorkList"
 export * from "./work/WorkEntry"
+
+// Blog
+
+export * from "./blog/PostIndex"
+export * from "./blog/PostHistory"

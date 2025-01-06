@@ -25,6 +25,7 @@ export const Container = ({
         <div
           className="h-[0.875rem] rotate-180 bg-base-300 bg-repeat-x"
           style={{ mask: `url('/divider.svg') center/auto 100%` }}
+          aria-hidden="true"
         />
       )}
       <Tag
@@ -41,6 +42,7 @@ export const Container = ({
         <div
           className="h-[0.875rem] bg-base-300 bg-repeat-x"
           style={{ mask: `url('/divider.svg') center/auto 100%` }}
+          aria-hidden="true"
         />
       )}
     </>

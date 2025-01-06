@@ -3,14 +3,18 @@ import { CSSProperties } from "react"
 export const CategoryList = ({
   categories,
 }: {
-  categories: {
+  categories?: {
     name: string
     color?: string
   }[]
 }) => {
+  if (!categories) {
+    return null
+  }
+
   return (
     <ul className="flex flex-wrap gap-2">
-      {categories.map((category) => {
+      {categories?.map((category) => {
         const color = category.color
         return (
           <li

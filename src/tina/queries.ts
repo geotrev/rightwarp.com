@@ -92,9 +92,9 @@ export const queryBlogIndex = async () => {
 
   const categoriesResponse = await client.queries.categoryConnection()
   const categories = categoriesResponse.data.categoryConnection.edges?.map((edge) => ({
-    name: edge?.node?.name,
-    color: edge?.node?.color,
-    // slug: toSlug(edge!._sys.filename, "category"),
+    name: edge!.node!.name,
+    color: edge!.node!.color!,
+    slug: toSlug(edge!.node!._sys.filename, "category"),
   }))
 
   const postsResponse = await client.queries.postConnection({

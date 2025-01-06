@@ -60,7 +60,7 @@ export const MediaCard = ({
         </HeadingTag>
         <p className="media-card-description">{description}</p>
         {authors && (
-          <div className="flex flex-row flex-wrap gap-4">
+          <div className="mb-2 flex flex-row flex-wrap gap-4">
             {authors.map((author) => (
               <div className="avatar flex items-center gap-2" key={author.name}>
                 <div className="mask mask-squircle relative size-10">

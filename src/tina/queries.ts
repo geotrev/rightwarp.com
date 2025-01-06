@@ -41,8 +41,7 @@ export const queryContact = async () => {
 // work index
 
 export const queryWorkIndex = async () => {
-  const _page = await client.queries.page({ relativePath: "work.json" })
-  const page = getPageData(_page.data.page)
+  const page = await client.queries.page({ relativePath: "work.json" })
   const _entries = await client.queries.workConnection({
     sort: "date",
   })

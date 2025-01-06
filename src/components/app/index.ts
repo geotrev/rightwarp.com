@@ -12,6 +12,7 @@ export * from "./shared/LogoMarquee"
 export * from "./shared/BlogPreview"
 export * from "./shared/CategoryList"
 export * from "./shared/CallToAction"
+export * from "./shared/MediaCard"
 
 // Home
 

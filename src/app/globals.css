@@ -22,12 +22,6 @@
 }
 
 @layer components {
-  /* Badge */
-
-  .badge-category {
-    @apply badge-lg rounded bg-neutral-600 text-xs font-bold uppercase text-white dark:bg-neutral-400 dark:text-black;
-  }
-
   /* media-card extends daisyui card */
 
   .media-card {

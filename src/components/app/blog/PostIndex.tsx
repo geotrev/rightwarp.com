@@ -19,8 +19,6 @@ interface PostIndexProps {
 export const PostIndex = ({ posts, categories, history }: PostIndexProps) => {
   const isLarge = useIsLarge()
 
-  console.log("postindex", history)
-
   return (
     <>
       <Container className="mb-16 lg:mb-24" tag="section">
@@ -28,7 +26,7 @@ export const PostIndex = ({ posts, categories, history }: PostIndexProps) => {
           <aside className="order-1 col-span-4 lg:order-2 lg:col-span-1">
             <div>
               <h3 className="display mb-4 text-black lg:text-2xl dark:text-white">Categories</h3>
-              <CategoryList categories={categories} />
+              <CategoryList categories={categories} isSelectable />
             </div>
             {isLarge && history && (
               <>

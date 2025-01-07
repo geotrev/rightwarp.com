@@ -11,8 +11,8 @@ services:
   - serviceRef: src/content/services/front-end-development.json
   - serviceRef: src/content/services/accessibility.json
 images:
-  - src: /uploads/2025-01-01 21_01_34-scribd-about-home.png.png
-    alt: Scribd company subsite home page
+  - src: /uploads/scribd-work-image.jpg
+    alt: Scribd corporate site
 bodyIntro: >
   If a blue moon inside the Hops Alligator Ale secretly admires a mysterious
   Heineken, then the Luna Sea ESB gets stinking drunk. Sometimes a change about

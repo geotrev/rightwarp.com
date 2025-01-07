@@ -10,10 +10,10 @@ services:
   - serviceRef: src/content/services/front-end-development.json
   - serviceRef: src/content/services/information-architecture.json
 images:
-  - src: >-
-      /uploads/2025-01-01 21_12_10-Sheet Music Downloads at Musicnotes.com -
-      Brave.png
-    alt: Musicnotes home page
+  - src: /uploads/musicnotes-thumb.jpg
+    alt: Musicnotes
+  - src: /uploads/cover-image.jpg
+    alt: Musicnotes all apps
 bodyIntro: >
   If a blue moon inside the Hops Alligator Ale secretly admires a mysterious
   Heineken, then the Luna Sea ESB gets stinking drunk. Sometimes a change about

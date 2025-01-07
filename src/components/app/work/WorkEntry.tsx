@@ -26,14 +26,14 @@ export const WorkEntry = (props: Work) => {
       <SubContainer isConstrained>
         <WorkMetadata services={services} categories={categories} />
       </SubContainer>
-      <div className="relative h-52 w-full lg:h-96">
+      <div className="relative h-96 w-full lg:h-[40rem]">
         <Image src={leadImage.src} alt={leadImage.alt} fill style={{ objectFit: "cover" }} />
       </div>
       <SubContainer isConstrained className="prose">
         <TinaMarkdown content={props.bodyIntro} components={BodyIntroComponents} />
       </SubContainer>
       {secondaryImage && (
-        <div className="relative h-52 w-full lg:h-96">
+        <div className="relative h-96 w-full lg:h-[40rem]">
           <Image
             src={secondaryImage.src}
             alt={secondaryImage.alt}
@@ -47,7 +47,7 @@ export const WorkEntry = (props: Work) => {
       </SubContainer>
       {restImages.length > 0 &&
         restImages.map((image) => (
-          <div key={image.alt} className="relative h-52 w-full lg:h-96">
+          <div key={image.alt} className="relative h-96 w-full lg:h-[40rem]">
             <Image src={leadImage.src} alt={leadImage.alt} fill style={{ objectFit: "cover" }} />
           </div>
         ))}

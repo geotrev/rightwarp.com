@@ -7,7 +7,7 @@ import {
   WorkServices,
 } from "../../tina/__generated__/types"
 
-const PREVIEW_LIMIT = 3
+const PREVIEW_LIMIT = 2
 
 export const toPublishDate = (date: string) => {
   return new Date(date).toLocaleDateString()

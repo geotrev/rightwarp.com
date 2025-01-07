@@ -9,8 +9,8 @@ services:
   - serviceRef: src/content/services/front-end-development.json
   - serviceRef: src/content/services/accessibility.json
 images:
-  - src: /uploads/2025-01-01 20_59_26-Date-Time _ Horizon Design System - Brave.png
-    alt: Horizon design system component preview
+  - src: /uploads/servicenow-image.jpg
+    alt: ServiceNow components
 bodyIntro: >
   If a blue moon inside the Hops Alligator Ale secretly admires a mysterious
   Heineken, then the Luna Sea ESB gets stinking drunk. Sometimes a change about

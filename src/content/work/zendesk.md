@@ -9,14 +9,8 @@ services:
   - serviceRef: src/content/services/information-architecture.json
   - serviceRef: src/content/services/accessibility.json
 images:
-  - src: >-
-      /uploads/2025-01-01 13_44_37-Menu _ Components _ Zendesk Garden -
-      Brave.png
-    alt: Garden design system menu component preview
-  - src: >-
-      /uploads/2025-01-05 14_03_00-Pagination _ Components _ Zendesk Garden -
-      Brave.png
-    alt: Dark mode pagination
+  - src: /uploads/zendesk-work-image.jpg
+    alt: Zendesk components
 bodyIntro: >
   If a blue moon inside the Hops Alligator Ale secretly admires a mysterious
   Heineken, then the Luna Sea ESB gets stinking drunk. Sometimes a change about

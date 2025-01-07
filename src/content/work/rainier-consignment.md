@@ -13,8 +13,8 @@ services:
   - serviceRef: src/content/services/information-architecture.json
   - serviceRef: src/content/services/ui-ux.json
 images:
-  - src: /uploads/2025-01-01 21_04_47-Rainier Consignment _ Home - Brave.png
-    alt: Rainier Consignment home page
+  - src: /uploads/rainier-work-image.jpg
+    alt: Rainier Consignment
 bodyIntro: >
   If a blue moon inside the Hops Alligator Ale secretly admires a mysterious
   Heineken, then the Luna Sea ESB gets stinking drunk. Sometimes a change about

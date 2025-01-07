@@ -19,10 +19,10 @@ export const NavItems = [
     label: "Work",
     href: Routes.WORK,
   },
-  // {
-  //   label: "Blog",
-  //   href: Routes.BLOG,
-  // },
+  {
+    label: "Blog",
+    href: Routes.BLOG,
+  },
 ]
 
 // This will be replaced with a list of categories from the CMS

@@ -30,4 +30,4 @@ When creating a new website, a major goal was set early to showcase Rainier Cons
 
 The new website can direct new and existing consignors through a simple but standardized intake process while showcasing their superior service. 
 
-Right Warp was able to create a good starting point to continue driving growth in the form of consignors and revenue (they just crossed a major milestone in 2024). They're now in an ideal position to expand in the coming years as new service features become necessary to track consignor orders.
+Right Warp was able to create a good starting point to continue driving growth in the form of consignors and revenue (they just crossed a major milestone in 2024). They're now in an ideal position to expand in the coming years as new service features become necessary to track consignments for customers in real time.

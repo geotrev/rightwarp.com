@@ -19,6 +19,7 @@ interface PageProps {
   categories?: {
     name: string
     color: string
+    slug: string
   }[]
   posts?: MediaCardProps[]
   history?: PostHistoryProps["history"]

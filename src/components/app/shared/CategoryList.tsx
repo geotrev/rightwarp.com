@@ -1,29 +1,16 @@
-import cn from "classnames"
-import { X } from "lucide-react"
-import { CSSProperties, MouseEventHandler, useCallback } from "react"
+import { CSSProperties } from "react"
 
 export const CategoryList = ({
-  isSelectable = false,
-  onClick,
+  asLinks = false,
   categories,
 }: {
-  isSelectable?: boolean
-  onClick?: (category: string) => void
+  asLinks?: boolean
   categories?: {
     name: string
-    color?: string
-    isSelected?: boolean
+    slug?: string
+    color: string
   }[]
 }) => {
-  const handleClick = useCallback<MouseEventHandler<HTMLButtonElement>>(
-    (e) => {
-      e.preventDefault()
-
-      if (onClick) onClick(e.currentTarget.innerText)
-    },
-    [onClick],
-  )
-
   const categoryListItems = categories?.map(({ name, color }) => {
     return (
       <li
@@ -42,27 +29,22 @@ export const CategoryList = ({
     )
   })
 
-  const categoryButtons = categories?.map(({ color, isSelected, name }) => {
+  const categoryButtons = categories?.map(({ color, slug, name }) => {
     return (
       <li key={name}>
-        <button
-          aria-pressed={isSelected}
-          onClick={handleClick}
+        <a
+          href={slug}
           style={
             color
               ? ({
                   borderColor: color,
-                  ...(isSelected && { backgroundColor: color }),
                 } as CSSProperties)
               : undefined
           }
-          className={cn("btn btn-sm", {
-            "text-black dark:text-white": !isSelected,
-            "text-white dark:text-black": isSelected,
-          })}
+          className="btn btn-sm text-black dark:text-white"
         >
-          {name} {isSelected && <X size={16} />}
-        </button>
+          {name}
+        </a>
       </li>
     )
   })
@@ -71,7 +53,5 @@ export const CategoryList = ({
     return null
   }
 
-  return (
-    <ul className="flex flex-wrap gap-2">{isSelectable ? categoryButtons : categoryListItems}</ul>
-  )
+  return <ul className="flex flex-wrap gap-2">{asLinks ? categoryButtons : categoryListItems}</ul>
 }

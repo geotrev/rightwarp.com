@@ -18,7 +18,7 @@ export type MediaCardProps = {
   description: string
   categories: {
     name: string
-    color?: string
+    color: string
   }[]
   slug: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

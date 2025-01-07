@@ -104,6 +104,26 @@ export const Work: Collection = {
       label: "Body",
       isBody: true,
       required: true,
+      templates: [
+        {
+          name: "anchorButton",
+          label: "Anchor Button",
+          fields: [
+            {
+              type: "string",
+              name: "label",
+              label: "Label",
+              required: true,
+            },
+            {
+              type: "string",
+              name: "url",
+              label: "href",
+              required: true,
+            },
+          ],
+        },
+      ],
     },
   ],
 }

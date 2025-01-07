@@ -1,4 +1,5 @@
 import cn from "classnames"
+import * as motion from "motion/react-client"
 import React, { HTMLAttributes, PropsWithChildren } from "react"
 
 interface ContainerProps extends PropsWithChildren<HTMLAttributes<HTMLElement>> {
@@ -7,6 +8,7 @@ interface ContainerProps extends PropsWithChildren<HTMLAttributes<HTMLElement>> 
   isRaised?: boolean
   isConstrained?: boolean
   collapseHorizontalPadding?: boolean
+  animationDisabled?: boolean
   children: React.ReactNode
 }
 
@@ -17,10 +19,17 @@ export const Container = ({
   isRaised,
   isConstrained,
   collapseHorizontalPadding,
+  animationDisabled,
   ...props
 }: ContainerProps) => {
   return (
-    <>
+    <motion.div
+      {...(!animationDisabled && {
+        initial: { opacity: 0, y: 200 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true },
+      })}
+    >
       {isRaised && (
         <div
           className="h-[0.875rem] rotate-180 bg-base-300 bg-repeat-x"
@@ -45,7 +54,7 @@ export const Container = ({
           aria-hidden="true"
         />
       )}
-    </>
+    </motion.div>
   )
 }
 

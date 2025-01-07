@@ -1,5 +1,7 @@
 import { ActionListProps, CallToActionProps } from "@/components/app"
 
+// import { Routes } from "@/utils/helpers"
+
 interface WorkProps {
   actionsProps: ActionListProps
   callToActionProps: CallToActionProps
@@ -13,11 +15,11 @@ export const workProps: WorkProps = {
         label: "Browse More Work",
         href: "/work",
       },
-      {
-        type: "secondary",
-        label: "Browse Blog",
-        href: "/blog",
-      },
+      // {
+      //   type: "secondary",
+      //   label: "Browse Blog",
+      //   href: Routes.BLOG,
+      // },
     ],
   },
   actionsProps: {

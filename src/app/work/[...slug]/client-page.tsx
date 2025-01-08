@@ -4,7 +4,7 @@ import { useTina } from "tinacms/dist/react"
 
 import { workProps } from "@/app/_static/workPage"
 import { ActionList, Hero, WorkEntry } from "@/components/app"
-import { CallToAction } from "@/components/app/shared/CallToAction"
+import { BrowseButtons } from "@/components/app/shared/BrowseButtons"
 
 import { Work, WorkQuery } from "../../../../tina/__generated__/types"
 
@@ -24,7 +24,7 @@ export const ClientPage = (props: PageProps) => {
     <>
       <Hero heading={data.title} description={data.description} />
       <WorkEntry {...(data as Omit<Work, "values">)} />
-      <CallToAction {...workProps.callToActionProps} />
+      <BrowseButtons {...workProps.callToActionProps} />
       <ActionList {...workProps.actionsProps} />
     </>
   )

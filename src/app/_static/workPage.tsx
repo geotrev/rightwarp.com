@@ -1,9 +1,9 @@
-import { ActionListProps, CallToActionProps } from "@/components/app"
+import { ActionListProps, BrowseButtonsProps } from "@/components/app"
 import { Routes } from "@/utils/helpers"
 
 interface WorkProps {
   actionsProps: ActionListProps
-  callToActionProps: CallToActionProps
+  callToActionProps: BrowseButtonsProps
 }
 
 export const workProps: WorkProps = {

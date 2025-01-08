@@ -7,7 +7,7 @@ export const Work: Collection = {
   name: "work",
   label: "Work",
   path: "src/content/work",
-  format: "md",
+  format: "mdx",
   ui: {
     router: ({ document }) => `/work/${document._sys.filename}`,
     ...slugify("title"),
@@ -106,8 +106,8 @@ export const Work: Collection = {
       required: true,
       templates: [
         {
-          name: "anchorButton",
-          label: "Anchor Button",
+          name: "CallToAction",
+          label: "Call To Action",
           fields: [
             {
               type: "string",
@@ -117,8 +117,8 @@ export const Work: Collection = {
             },
             {
               type: "string",
-              name: "url",
-              label: "href",
+              name: "href",
+              label: "URL",
               required: true,
             },
           ],

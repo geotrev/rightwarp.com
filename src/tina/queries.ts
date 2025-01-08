@@ -78,7 +78,7 @@ export const queryWorkStaticParams = async () => {
 
 export const queryWorkEntry = async (slug: string) => {
   try {
-    const page = await client.queries.work({ relativePath: `${slug}.md` })
+    const page = await client.queries.work({ relativePath: `${slug}.mdx` })
 
     return { page }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

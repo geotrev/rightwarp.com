@@ -71,7 +71,7 @@ export const Header = () => {
                 "btn btn-primary btn-sm text-white sm:btn-md md:me-2 lg:me-10 dark:text-black",
               )}
             >
-              Warp Zone <ArrowRight className="size-5 lg:size-6" />
+              Warp Zone <ArrowRight className="size-4 lg:size-5" />
             </Link>
             <div className="me-3 hidden text-sm xl:block">
               inquire about a project or just say hi

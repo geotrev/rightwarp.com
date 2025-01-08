@@ -4,7 +4,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text"
 import { Container, SubContainer } from "@/components/core"
 
 import { Work } from "../../../../tina/__generated__/types"
-import { BodyIntroComponents } from "../shared/MarkdownComponents"
+import { WorkComponentsBody, WorkComponentsBodyIntro } from "../shared/MarkdownComponents"
 
 import { WorkMetadata } from "./WorkMetadata"
 
@@ -30,7 +30,7 @@ export const WorkEntry = (props: Work) => {
         <Image src={leadImage.src} alt={leadImage.alt} fill style={{ objectFit: "cover" }} />
       </div>
       <SubContainer isConstrained className="prose">
-        <TinaMarkdown content={props.bodyIntro} components={BodyIntroComponents} />
+        <TinaMarkdown content={props.bodyIntro} components={WorkComponentsBodyIntro} />
       </SubContainer>
       {secondaryImage && (
         <div className="relative h-96 w-full lg:h-[40rem]">
@@ -43,7 +43,7 @@ export const WorkEntry = (props: Work) => {
         </div>
       )}
       <SubContainer isConstrained className="prose">
-        <TinaMarkdown content={props.body} />
+        <TinaMarkdown content={props.body} components={WorkComponentsBody} />
       </SubContainer>
       {restImages.length > 0 &&
         restImages.map((image) => (

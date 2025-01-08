@@ -3,22 +3,22 @@ import { Routes } from "@/utils/helpers"
 
 interface WorkProps {
   actionsProps: ActionListProps
-  callToActionProps: BrowseButtonsProps
+  browseButtonsProps: BrowseButtonsProps
 }
 
 export const workProps: WorkProps = {
-  callToActionProps: {
+  browseButtonsProps: {
     actions: [
       {
         type: "primary",
         label: "Browse More Work",
-        href: "/work",
+        href: Routes.WORK,
       },
-      {
-        type: "secondary",
-        label: "Browse Blog",
-        href: Routes.BLOG,
-      },
+      // {
+      //   type: "secondary",
+      //   label: "Browse Blog",
+      //   href: Routes.BLOG,
+      // },
     ],
   },
   actionsProps: {

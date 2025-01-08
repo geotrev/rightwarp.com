@@ -18,7 +18,7 @@ export const BrowseButtons = ({ actions }: BrowseButtonsProps) => {
   }
 
   return (
-    <Container tag="section" className="py-16 lg:py-24">
+    <Container tag="section">
       <div className="mx-auto flex w-fit flex-col gap-4 sm:flex-row lg:gap-8">
         {actions.map(({ type, label, href }) => (
           <Link key={label} href={href} className={styles[type]}>

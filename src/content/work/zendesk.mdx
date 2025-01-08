@@ -46,15 +46,15 @@ Menu is backed by a robust [useMenu](https://github.com/zendeskgarden/react-cont
 
 ## Dark mode
 
-Enabling system-wide theming on any platform can be challenging. Thankfully, there are great industry patterns (e.g., [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) with [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)) to lean on to inspire various architectural directions.
+Enabling system-wide theming on any platform can be challenging. Thankfully, there are great industry patterns (e.g., [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) with [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)) to inspire architectural directions.
 
-\<View Theming Documentation> [https://garden.zendesk.com/components/theme-provider](https://garden.zendesk.com/components/theme-provider) 
+<CallToAction href="https://garden.zendesk.com/components/theme-provider " label="View Theming Documentation" />
 
-In Garden’s case, a v1 for dark & light mode enablement meant leaning into Styled Components theming capabilities, along with powerful custom-written theming utilities, to allow all of Garden’s components to utilize either color scheme. Each component was rewritten to enable various buckets of colors to receive the correct colors depending on the chosen theme.
+In Garden’s case, a v1 for dark & light mode meant leaning into Styled Components theming capabilities, along with powerful custom-written theming utilities, to allow all of Garden’s components to utilize either color scheme. Each component was rewritten to enable various buckets of colors to receive the correct colors depending on the chosen theme.
 
 Variable buckets included border, foreground (e.g., text, icons), background, and shadows.
 
-\<View Theming Variables> [https://garden.zendesk.com/components/theme-object](https://garden.zendesk.com/components/theme-object) 
+<CallToAction href="https://garden.zendesk.com/components/theme-object" label="View Theme Variables" />
 
 From the start, the team decided to avoid specifying excessive numbers of variables to cover things like interactive states. Having too wide of a token surface area can easily spell death for a design system by overwhelming consumers and creating pitfalls and bottlenecks, causing a maintenance nightmare.
 

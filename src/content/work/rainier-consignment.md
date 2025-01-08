@@ -20,14 +20,8 @@ bodyIntro: >
   presence to support its fast-accelerating growth targets.
 ---
 
-## Context
+Helping customers find a trusted consignment service can be challenging, especially one that can retain personalized service. Rainier Consignment, until recently, has been using a less-than-ideal website in the form of a GoDaddy page builder. While it got the job done, it didn't help the business standout among its peers.
 
-Helping customers find a trusted consignment service can be challenging. Most operate at a scale that makes personalized service difficult. They operated with a less-than-ideal marketing presence in the form of a Go Daddy template website, hindering their ability to scale with a personalized branding and marketing strategy.
+A major goal was set early to showcase Rainier Consignment's commitment to consignors. The new website can direct new and existing consignors through a simple but standardized intake process while showcasing their highlighting their assortment of services.
 
-## Solution
-
-When creating a new website, a major goal was set early to showcase Rainier Consignment's commitment to consignors.
-
-The new website can direct new and existing consignors through a simple but standardized intake process while showcasing their superior service. 
-
-Right Warp was able to create a good starting point to continue driving growth in the form of consignors and revenue (they just crossed a major milestone in 2024). They're now in an ideal position to expand in the coming years as new service features become necessary to track consignments for customers in real time.
+Now, Rainier Consignment is in an ideal position to expand in the coming years as new services become necessary to track consignments for customers in real time, without sacrificing marketing capabilities today.

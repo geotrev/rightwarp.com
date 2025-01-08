@@ -4,7 +4,7 @@ import { useTina } from "tinacms/dist/react"
 
 import {
   ActionList,
-  BlogPreview,
+  CardGrid,
   Expertise,
   Hero,
   LogoMarquee,
@@ -23,10 +23,15 @@ interface PageProps {
     }
     query: string
   }
+  work?: MediaCardProps[]
   posts?: MediaCardProps[]
 }
 
-export const ClientPage = ({ page, posts }: PageProps) => {
+export const ClientPage = ({
+  page,
+  work,
+  // posts
+}: PageProps) => {
   const { data: _data } = useTina(page)
   const data = _data.page
 
@@ -34,8 +39,9 @@ export const ClientPage = ({ page, posts }: PageProps) => {
     <>
       <Hero heading={data.title} description={data.description} variant="display" />
       <LogoMarquee {...homeProps.logoMarqueeProps} />
+      <CardGrid {...homeProps.workProps} entries={work} />
       <Expertise {...homeProps.expertiseProps} />
-      <BlogPreview {...homeProps.blogProps} posts={posts} />
+      {/* <CardGrid {...homeProps.blogProps} entries={posts} /> */}
       <ActionList {...homeProps.actionsProps} />
     </>
   )

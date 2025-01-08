@@ -10,7 +10,7 @@ export const SectionHeading = ({
   children?: React.ReactNode
 }) => {
   return (
-    <div className="flex flex-col gap-4 py-16 md:gap-8 md:py-32 lg:gap-4 lg:py-52 xl:flex-row xl:items-center">
+    <div className="my-8 flex flex-col gap-4 md:my-12 md:gap-8 lg:gap-4 xl:flex-row xl:items-center">
       <div className="flex w-full flex-col gap-4 md:flex-row">
         <h2 className="display whitespace-nowrap text-2xl tracking-tight text-black sm:text-4xl xl:tracking-tighter 2xl:text-6xl dark:text-white">
           {children}

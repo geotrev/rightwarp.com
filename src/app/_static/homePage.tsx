@@ -1,19 +1,23 @@
+import { Hammer, NotebookText } from "lucide-react"
+
 import Codecov from "@/app/_assets/logos/codecov.svg"
 import Musicnotes from "@/app/_assets/logos/musicnotes.svg"
 import Scribd from "@/app/_assets/logos/scribd.svg"
 import ServiceNow from "@/app/_assets/logos/servicenow.svg"
 import Zendesk from "@/app/_assets/logos/zendesk.svg"
-import {
+import type {
   LogoMarqueeProps,
   ExpertiseProps,
-  BlogPreviewProps,
+  CardGridProps,
   ActionListProps,
 } from "@/components/app"
+import { Routes } from "@/utils/helpers"
 
 interface HomeProps {
   logoMarqueeProps: LogoMarqueeProps
   expertiseProps: ExpertiseProps
-  blogProps: BlogPreviewProps
+  blogProps: CardGridProps
+  workProps: CardGridProps
   actionsProps: ActionListProps
 }
 
@@ -77,6 +81,16 @@ export const homeProps: HomeProps = {
   blogProps: {
     heading: "Thoughts",
     subheading: "Ramblings about tech, web development, and design",
+    actionLabel: "More Posts",
+    actionHref: Routes.BLOG,
+    icon: NotebookText,
+  },
+  workProps: {
+    heading: "Work",
+    subheading: "Previous work to inspire your next project, always updating",
+    actionLabel: "More Work",
+    actionHref: Routes.WORK,
+    icon: Hammer,
   },
   actionsProps: {
     actions: [

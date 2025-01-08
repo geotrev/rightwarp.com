@@ -29,6 +29,7 @@ export const Container = ({
         whileInView: { opacity: 1, y: 0 },
         viewport: { once: true },
       })}
+      className="my-16 lg:my-24"
     >
       {isRaised && (
         <div

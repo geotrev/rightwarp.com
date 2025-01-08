@@ -14,6 +14,11 @@ export const Work: Collection = {
   },
   fields: [
     {
+      type: "boolean",
+      name: "isHidden",
+      label: "Hidden",
+    },
+    {
       type: "datetime",
       name: "date",
       label: "Date",

@@ -17,14 +17,7 @@ export const toSlug = (filename: string, subpath?: string) => {
   return subpath ? `/${subpath}/${filename}` : `/${filename}`
 }
 
-export const toPostCategories = (categories: PostCategories[]) => {
-  return categories.map((category) => ({
-    color: category!.categoryRef.color!,
-    name: category!.categoryRef.name!,
-  }))
-}
-
-export const toWorkCategories = (categories: WorkCategories[]) => {
+export const toCategories = (categories: (WorkCategories | PostCategories)[]) => {
   return categories.map((category) => ({
     color: category!.categoryRef.color!,
     name: category!.categoryRef.name!,
@@ -58,17 +51,42 @@ export const getPostPreviews = async () => {
 
   return posts.data?.postConnection?.edges
     ?.slice(0, PREVIEW_LIMIT)
+    ?.reverse()
     ?.map((edge) => {
       const post = edge?.node
 
       return {
         title: post!.title,
         description: post!.description,
-        categories: toPostCategories(post!.categories as PostCategories[]),
+        categories: toCategories(post!.categories as PostCategories[]),
         slug: toSlug(post!._sys.filename, "blog"),
         authors: toAuthors(post!.authors as PostAuthors[]),
         date: toPublishDate(post!.publishDate),
       }
     })
-    .reverse()
+}
+
+export const getWorkPreviews = async () => {
+  const entries = await client.queries.workConnection({
+    sort: "date",
+  })
+
+  return entries.data?.workConnection?.edges
+    ?.filter((edge) => !edge?.node?.isHidden)
+    ?.reverse()
+    ?.slice(0, PREVIEW_LIMIT)
+    ?.map((edge) => {
+      const entry = edge?.node
+
+      return {
+        title: entry!.title,
+        description: entry!.description,
+        categories: toCategories(entry!.categories as WorkCategories[]),
+        image: {
+          src: entry!.images[0].src,
+          alt: entry!.images[0].alt,
+        },
+        slug: toSlug(entry!._sys.filename, "work"),
+      }
+    })
 }

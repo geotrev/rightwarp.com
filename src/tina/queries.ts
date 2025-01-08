@@ -4,30 +4,40 @@ import client from "../../tina/__generated__/client"
 import { PostAuthors, PostCategories, WorkCategories } from "../../tina/__generated__/types"
 
 import {
-  getPostPreviews,
+  // getPostPreviews,
   toAuthors,
-  toPostCategories,
   toPublishDate,
   toSlug,
-  toWorkCategories,
+  toCategories,
+  getWorkPreviews,
 } from "./helpers"
 
 // home
 
 export const queryHome = async () => {
   const page = await client.queries.page({ relativePath: "home.json" })
-  const posts = await getPostPreviews()
+  // const posts = await getPostPreviews()
+  const work = await getWorkPreviews()
 
-  return { page, posts }
+  return {
+    page,
+    work,
+    // posts
+  }
 }
 
 // about
 
 export const queryAbout = async () => {
   const page = await client.queries.page({ relativePath: "about.json" })
-  const posts = await getPostPreviews()
+  // const posts = await getPostPreviews()
+  const work = await getWorkPreviews()
 
-  return { page, posts }
+  return {
+    page,
+    work,
+    // posts
+  }
 }
 
 // contact
@@ -47,12 +57,13 @@ export const queryWorkIndex = async () => {
   })
 
   const entries = _entries.data.workConnection.edges
+    ?.filter((edge) => !edge?.node?.isHidden)
     ?.map((edge) => {
       const entry = edge?.node
       return {
         title: entry!.title,
         description: entry!.description,
-        categories: toWorkCategories(entry!.categories as WorkCategories[]),
+        categories: toCategories(entry!.categories as WorkCategories[]),
         image: {
           src: entry!.images[0].src,
           alt: entry!.images[0].alt,
@@ -112,7 +123,7 @@ export const queryBlogIndex = async () => {
         description: entry!.description,
         authors: toAuthors(entry!.authors as PostAuthors[]),
         date: toPublishDate(entry!.publishDate),
-        categories: toPostCategories(entry!.categories as PostCategories[]),
+        categories: toCategories(entry!.categories as PostCategories[]),
         slug: toSlug(entry!._sys.filename, "blog"),
       }
     })

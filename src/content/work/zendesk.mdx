@@ -20,7 +20,7 @@ bodyIntro: >
 
 In 2022, Garden was in the midst of updating its design system offering to meet accessibility standards (WCAG 2.1), which means creating and rewriting a significant portion of its codebase to meet the needs of Zendesk’s future.
 
-Their primary deliverable consisted of a suite of meticulously designed React components, many of which were backed by custom React hooks providing the bulk of the business logic. For instance, Garden’s Tabs component has a useTabs hook that provides key accessibility attributes and handlers for user interactions.
+Their primary deliverable consists of a suite of meticulously developed React component packages ([available on npm](https://www.npmjs.com/~zendesk-garden)). Many of these are backed by [custom React hooks](https://github.com/zendeskgarden/react-containers) providing the bulk of component business logic.
 
 There were three focus areas that needed close attention:
 
@@ -32,6 +32,14 @@ There were three focus areas that needed close attention:
 
 As a customer service platform, drag and drop is a prolific UI pattern used by agents in their day-to-day Zendesk workflows. At the time, drag and drop libraries saw only a few popular options. Instead of implementing its own drag and drop library, Garden instead focused on library interoperability. This way a developer can use Garden for the right UI experience, and choose their own implementation to suit their specific use case.
 
-\<View Drag and Drop Component>
+<CallToAction href="https://garden.zendesk.com/components/draggable" label="View Drag and Drop Component" />
 
 Interactive examples use [dnd-kit](https://dndkit.com/).
+
+## Menu
+
+Menus are one of the most popular UI patterns on the internet. Getting the pattern right meant understanding WCAG requirements to their fullest. Especially when 50 million interactions each month were with menus in some capacity across Zendesk’s products. The result is an intuitive component that developers understand and follows the same patterns as Garden’s other dropdown-like components (such as [Combobox](https://garden.zendesk.com/components/combobox)). The resulting component is also capable of dropping into other components wherever a button can be used as a menu, increasing composability.
+
+<CallToAction href="https://garden.zendesk.com/components/menu " label="View Menu Component" />
+
+Menu is backed by a robust [useMenu](https://github.com/zendeskgarden/react-containers/tree/main/packages/menu) React hook that enables complex interactions, such as check and radio menu items, and even nested menus. The component is available in both controlled and uncontrolled environments.

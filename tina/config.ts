@@ -5,7 +5,7 @@ import { Category } from "./schemas/category"
 import { Page } from "./schemas/page"
 import { Post } from "./schemas/post"
 import { Service } from "./schemas/service"
-import { SiteSettings } from "./schemas/site-settings"
+import { Settings } from "./schemas/settings"
 import { Work } from "./schemas/work"
 
 const branch =
@@ -37,7 +37,7 @@ export default defineConfig({
   schema: {
     collections: [
       // Singletons
-      SiteSettings,
+      Settings,
 
       // Blocks
       Category,

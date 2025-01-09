@@ -23,5 +23,11 @@ export const Page: Collection = {
       label: "Page Description",
       required: true,
     },
+    {
+      type: "rich-text",
+      name: "richDescription",
+      label: "Rich Description",
+      description: "A rich text alternative that supersedes the base description (visual only)",
+    },
   ],
 }

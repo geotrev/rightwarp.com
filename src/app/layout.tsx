@@ -1,16 +1,11 @@
-import type { Metadata } from "next"
-import { Krona_One } from "next/font/google"
-import { Public_Sans } from "next/font/google"
+import { Metadata } from "next"
+import { Public_Sans, Krona_One } from "next/font/google"
 
 import { ClientBodyWrapper } from "@/components/app/layout/ClientBodyWrapper"
 import { ThemeProvider } from "@/components/context/ThemeProvider"
+import { generatePageMeta } from "@/utils/generatePageMetadata"
 
 import "./globals.css"
-
-export const metadata: Metadata = {
-  title: "Right Warp",
-  description: "Web design and development",
-}
 
 const publicSans = Public_Sans({
   subsets: ["latin"],
@@ -22,6 +17,13 @@ const kronaOne = Krona_One({
   subsets: ["latin"],
   variable: "--font-krona-one",
 })
+
+/**
+ * Root site metadata
+ */
+export async function generateMetadata(): Promise<Metadata> {
+  return generatePageMeta()
+}
 
 export default async function RootLayout({
   children,

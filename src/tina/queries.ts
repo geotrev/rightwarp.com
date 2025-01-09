@@ -12,6 +12,14 @@ import {
   getWorkPreviews,
 } from "./helpers"
 
+// site settings
+
+export const querySiteSettings = async () => {
+  const settings = await client.queries.settings({ relativePath: "settings.json" })
+
+  return settings
+}
+
 // home
 
 export const queryHome = async () => {

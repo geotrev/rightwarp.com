@@ -1,6 +1,17 @@
 {
-  "seoTitle": "Right Warp",
-  "seoDescription": "Accessible, scalable, and design-driven web development that brings your brand to life",
-  "seoKeywords": "design, development, user experience, user interface design, graphic design, software development, web development, web design",
-  "seoCanonicalUrl": "https://rightwarp.com"
+  "siteName": "Right Warp",
+  "title": "Build Memorable Digital Experiences",
+  "description": "Accessible, scalable, and design-driven web development",
+  "keywords": "design, development, user experience, user interface, graphic design, software development, web development, web design",
+  "canonicalUrl": "https://www.rightwarp.com",
+  "ogImage": {
+    "image": "/uploads/og-image.jpg",
+    "type": "website"
+  },
+  "icons": {
+    "baseIcon": "/uploads/favicon.ico",
+    "denseIcon": "/uploads/favicon-96x96.png",
+    "svgIcon": "/uploads/favicon.svg",
+    "appleIcon": "/uploads/apple-touch-icon.png"
+  }
 }

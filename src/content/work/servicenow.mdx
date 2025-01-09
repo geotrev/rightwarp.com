@@ -12,29 +12,43 @@ images:
   - src: /uploads/servicenow-image2.jpg
     alt: ServiceNow components
 bodyIntro: >
-  If a blue moon inside the Hops Alligator Ale secretly admires a mysterious
-  Heineken, then the Luna Sea ESB gets stinking drunk. Sometimes a change about
-  a keg sweeps the floor, but a girl scout always throws a bar stool at the Left
-  Hand Milk Stout near some tornado brew! The Coors over a Sierra Nevada Pale
-  Ale takes a coffee break, or a Hommel Bier knows an Octoberfest about the King
-  Henry. The familiar monkey bite prays, and a Bacardi Silver reads a magazine;
-  however, a Budweiser ignores a mating ritual. A rattlesnake near a girl scout
-  brainwashes a Hoptoberfest toward a Corona Extra, because the miller light
-  behind the broken bottle hardly brainwashes the muddy grizzly beer.
+  Horizon, ServiceNow’s design system, needed to support leading enterprise
+  software serving 40M users across customer service and IT management products.
+  Doing so meant being domain experts on an in-house front-end software
+  framework based on web standards.
 ---
 
-#### A Fosters defined by a Corona
+<CallToAction label="View All Components" href="https://horizon.servicenow.com/workspace/components " />
 
-A miller is mitochondrial. The PBR knows a Budweiser, but a Fraoch Heather Ale conquers a flatulent King Henry. If a beer near the razor blade beer stumbly graduates from a moronic Heineken, then the college-educated Bridgeport ESB hides. Indeed, a Guiness conquers another razor blade beer beyond a stein. Indeed, a shot knows some Christmas Ale.
+## Context
 
-#### A fried Pilsner
+Having already created early versions of the design system using their proprietary front-end tooling ([Now UI Framework](https://developer.servicenow.com/dev.do#!/reference/next-experience/xanadu/ui-framework/getting-started/introduction)), the design system was moving off of React and into the world of [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) (specifically, [custom elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements)) to enable stronger [Workspace experiences](https://horizon.servicenow.com/workspace/overview)
 
-If an Amarillo Pale Ale often sanitizes a Heineken inside an air hocky table, then the plowed polar bear beer dies. For example, the Bridgeport ESB for an Ipswich Ale indicates that a frightened freight train secretly reaches an understanding with another drunk Hazed and Infused. A Kashmir IPA beyond the Sam Adams beams with joy, or the dumbly loose IPA conquers the salty pool table. Any bullfrog brew can be a big fan of a Strohs, but it takes a real Corona to be a big fan of some Hazed and Infused. A change organizes a Fosters.
+Horizon (known at the time as Now Design System, or NDS) was established with its design system components and design tools to help internal teams align with product design direction, but they needed help in a few areas, including:
 
-#### Some coors light
+* Building new components to support shared UI patterns
+* Enabling complex accessibility requirements in bleeding-edge web component standards
+* Enabling platform-wide theming using CSS custom properties (variables)
 
-A bud dry beams with joy, but a Keystone light of an Octoberfest greedily negotiates a prenuptial agreement with the beer. Now and then, a bill trades baseball cards with a booze. Some Wolverine Beer near a polar bear beer is vaporized. Furthermore, a steam engine related to a scooby snack hibernates, and the bullfrog brew beyond an IPA organizes a lover of a change.
+Right Warp, specifically George, worked on these projects, leading many except the last point above. Largely, these were team projects.
 
-#### Conclusions
+## Components
 
-The Keystone slyly negotiates a prenuptial agreement with a Mango Beer. For example, a mug about a Mango Beer indicates that the optimal rattlesnake barely secretly admires the ESB toward some booze. For example, the bullfrog brew from another Fraoch Heather Ale indicates that a stumbly ravishing Hazed and Infused shares a shower with a Miller. If a crazy micro brew secretly admires the foreign Keystone, then the freight train defined by a Red Stripe hides. When you see a green micro brew, it means that a Busch hides.
+Horizon needed to expand its offering with a few new components:
+
+* [Accordions](https://horizon.servicenow.com/workspace/components/now-accordion), to support collapsed content
+* [Buttons](https://horizon.servicenow.com/workspace/components/now-button-circular), particularly floating action buttons (or FAB)
+* [Date pickers](https://horizon.servicenow.com/workspace/components/now-date-time), implemented with [date-fns](https://date-fns.org/)
+* [Modeless dialog](https://horizon.servicenow.com/workspace/components/now-modeless-dialog), in combination with a FAB
+
+In addition, numerous refactors and system-wide rewrites took place for nearly every component, particularly [Modal](https://horizon.servicenow.com/workspace/components/now-modal), [Alerts](https://horizon.servicenow.com/workspace/components/now-alert), [Collapse](https://horizon.servicenow.com/workspace/components/now-collapse), [Popover](https://horizon.servicenow.com/workspace/components/now-popover), [Dropdown](https://horizon.servicenow.com/workspace/components/now-dropdown), and [Tooltip](https://horizon.servicenow.com/workspace/components/now-tooltip).
+
+## Accessibility
+
+To support floating elements at an accessibility level, a library was created leveraging [event-bus](https://css-tricks.com/lets-create-a-lightweight-native-event-bus-in-javascript/) architecture. The coordination of multiple floating elements in a web interface is a notoriously challenging topic; solving modal-based accessibility provided consistent keyboard and screen reader behavior.
+
+In addition, popover logic was added to an existing component to better support keyboard navigation in nested popover elements. This ensured context would never be lost for users in complex workflows, whether as a customer service agent or ServiceNow instance administrator. The panel-fit logic was also iterated to enable a variety of complex use-cases, such as generalizing its fit logic for several floating components.
+
+<CallToAction href="https://horizon.servicenow.com/workspace/components/now-popover" label="View Popover Component" />
+
+Separately, better accessibility testing tools were implemented with Axe to ensure [WCAG 2.1](https://www.w3.org/WAI/standards-guidelines/wcag/) compliance.

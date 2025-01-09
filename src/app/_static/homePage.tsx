@@ -47,7 +47,7 @@ export const homeProps: HomeProps = {
       {
         heading: "WCAG-Compliant Accessibility",
         description:
-          "Expand revenue streams and market presence with inclusive experiences for people of all abilities",
+          "Enshrine customer trust and market presence with inclusive experiences for people of all abilities",
         icon: "WheelchairIcon",
       },
       {

@@ -54,7 +54,7 @@ export const ContactForm = (props: ContactFormProps) => {
           <Asterisk size="20" className="dark:text-white" />
           <span className="opacity-75">Fields with an asterisk are required</span>
         </p>
-        <form className="grid gap-12 sm:mb-16 lg:mb-32" onSubmit={handleSubmit}>
+        <form className="grid gap-12" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {props.contact.map(({ label, name, type, placeholder, required }) => (
               <div key={name} className="form-control">

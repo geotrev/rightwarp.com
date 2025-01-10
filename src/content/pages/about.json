@@ -1,4 +1,9 @@
 {
   "title": "About Us",
-  "description": "Right Warp / raɪt-wɔrp"
+  "description": "Right Warp / raɪt-wɔrp",
+  "seo": {
+    "title": "About Us",
+    "description": "Right Warp / raɪt-wɔrp",
+    "canonicalUrl": "/about"
+  }
 }

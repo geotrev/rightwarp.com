@@ -1,5 +1,7 @@
 import { Collection } from "tinacms"
 
+import { OpenGraphField } from "../fields/openGraph"
+import { SEOField } from "../fields/seo"
 import { toReferenceLabel } from "../plugins/referenceLabel"
 import { slugify } from "../plugins/slugify"
 
@@ -37,6 +39,8 @@ export const Work: Collection = {
       label: "Description",
       required: true,
     },
+    SEOField,
+    OpenGraphField,
     {
       type: "object",
       name: "categories",

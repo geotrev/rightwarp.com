@@ -1,5 +1,7 @@
 import { Collection } from "tinacms"
 
+import { OpenGraphField } from "../fields/openGraph"
+import { SEOField } from "../fields/seo"
 import { slugify } from "../plugins/slugify"
 
 export const Page: Collection = {
@@ -23,5 +25,7 @@ export const Page: Collection = {
       label: "Page Description",
       required: true,
     },
+    SEOField,
+    OpenGraphField,
   ],
 }

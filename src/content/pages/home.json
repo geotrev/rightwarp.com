@@ -1,4 +1,9 @@
 {
   "title": "Build Memorable Digital Experiences",
-  "description": "Accessible, scalable, and design-driven web development"
+  "description": "Accessible, scalable, and design-driven web development",
+  "seo": {
+    "title": "Build Memorable Digital Experiences",
+    "description": "Accessible, scalable, and design-driven web development",
+    "canonicalUrl": "/"
+  }
 }

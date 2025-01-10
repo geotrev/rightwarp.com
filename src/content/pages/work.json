@@ -1,4 +1,9 @@
 {
   "title": "Work",
-  "description": "Clear, accessible, and delightful digital design"
+  "description": "Clear, accessible, and delightful digital design",
+  "seo": {
+    "title": "Work",
+    "description": "Clear, accessible, and delightful digital design",
+    "canonicalUrl": "/work"
+  }
 }

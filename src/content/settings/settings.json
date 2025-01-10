@@ -1,10 +1,12 @@
 {
   "siteName": "Right Warp",
-  "title": "Build Memorable Digital Experiences",
-  "description": "Accessible, scalable, and design-driven web development",
-  "keywords": "design, development, user experience, user interface, graphic design, software development, web development, web design",
-  "canonicalUrl": "https://www.rightwarp.com",
-  "ogImage": {
+  "seo": {
+    "title": "Build Memorable Digital Experiences",
+    "description": "Accessible, scalable, and design-driven web development",
+    "keywords": "design, development, user experience, user interface, graphic design, software development, web development, web design",
+    "canonicalUrl": "https://www.rightwarp.com"
+  },
+  "openGraph": {
     "image": "/uploads/og-image.jpg",
     "type": "website"
   },

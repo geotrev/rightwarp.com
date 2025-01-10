@@ -1,6 +1,7 @@
 import { Collection } from "tinacms"
 
-const KEYWORD_MIN = 3
+import { OpenGraphField } from "../fields/openGraph"
+import { SEOField } from "../fields/seo"
 
 export const Settings: Collection = {
   name: "settings",
@@ -22,86 +23,8 @@ export const Settings: Collection = {
       type: "string",
       required: true,
     },
-    {
-      name: "title",
-      label: "Default Title",
-      description: "Used if a page title isn't provided",
-      type: "string",
-      required: true,
-    },
-    {
-      name: "description",
-      label: "Default Description",
-      description: "Used if a page description isn't provided",
-      type: "string",
-      required: true,
-    },
-    {
-      name: "keywords",
-      label: "SEO Keywords (comma separated)",
-      type: "string",
-      ui: {
-        validate: (input) => {
-          const keywords = input?.split(",")
-          if (keywords && keywords.length < KEYWORD_MIN) {
-            return `At least ${KEYWORD_MIN} keywords are required`
-          }
-        },
-      },
-      required: true,
-    },
-    {
-      name: "canonicalUrl",
-      label: "Canonical URL",
-      type: "string",
-      ui: {
-        validate: (input) => {
-          if (input && !input.startsWith("https://") && !input.startsWith("http://")) {
-            return "Must be a valid URL"
-          }
-        },
-      },
-      required: true,
-    },
-    {
-      name: "ogImage",
-      label: "OpenGraph",
-      type: "object",
-      fields: [
-        {
-          name: "image",
-          label: "Image",
-          description: "Must be 1200x630 pixels. Learn more: https://ogp.me/",
-          type: "image",
-          required: true,
-        },
-        {
-          name: "type",
-          label: "Type",
-          type: "string",
-          options: ["website", "article", "product"],
-          required: true,
-        },
-        {
-          name: "title",
-          label: "Title",
-          description: "Defaults to site title",
-          type: "string",
-        },
-        {
-          name: "description",
-          label: "Description",
-          description: "Defaults to site description",
-          type: "string",
-        },
-        {
-          name: "url",
-          label: "URL",
-          description: "Defaults to canonical URL",
-          type: "string",
-        },
-      ],
-    },
+    SEOField,
+    OpenGraphField,
     {
       name: "icons",
       label: "Icons",

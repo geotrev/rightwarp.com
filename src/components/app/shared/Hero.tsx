@@ -1,13 +1,10 @@
 import cn from "classnames"
 import React from "react"
-import { TinaMarkdown } from "tinacms/dist/rich-text"
-
-import { HeroDescriptionComponents } from "./MarkdownComponents"
 
 export interface HeroProps {
   heading: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  description?: any | null
+  description: string
   variant?: "standard" | "display"
   details?: React.ReactNode
 }
@@ -41,9 +38,9 @@ export const Hero = ({ heading, description, details, variant = "standard" }: He
         {heading}
       </h1>
       {description && (
-        <div className="prose">
-          <TinaMarkdown content={description} components={HeroDescriptionComponents} />
-        </div>
+        <p className="text-md tracking-tight text-purple-950 sm:text-lg md:text-xl lg:text-3xl lg:leading-[3rem] dark:text-purple-100">
+          {description}
+        </p>
       )}
       {details}
     </section>

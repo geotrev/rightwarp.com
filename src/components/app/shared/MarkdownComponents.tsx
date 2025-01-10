@@ -14,11 +14,3 @@ export const WorkComponentsBody = {
     </div>
   ),
 }
-
-export const HeroDescriptionComponents = {
-  p: (props?: PropsWithChildren) => (
-    <p className="text-md tracking-tight text-purple-950 sm:text-lg md:text-xl lg:text-3xl lg:leading-[3rem] dark:text-purple-100">
-      {props?.children}
-    </p>
-  ),
-}

@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import { Public_Sans, Krona_One } from "next/font/google"
 
 import { ClientBodyWrapper } from "@/components/app/layout/ClientBodyWrapper"
-import { CSPostHogProvider } from "@/components/context/PostHogProvider"
+import { PostHogProvider } from "@/components/context/PostHogProvider"
 import { ThemeProvider } from "@/components/context/ThemeProvider"
 import { generatePageMeta } from "@/utils/generatePageMetadata"
 
@@ -32,7 +32,7 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <CSPostHogProvider>
+    <PostHogProvider>
       <html
         lang="en"
         className={`${publicSans.className} ${publicSans.variable} ${kronaOne.variable} min-h-screen`}
@@ -41,6 +41,6 @@ export default async function RootLayout({
           <ClientBodyWrapper>{children}</ClientBodyWrapper>
         </ThemeProvider>
       </html>
-    </CSPostHogProvider>
+    </PostHogProvider>
   )
 }

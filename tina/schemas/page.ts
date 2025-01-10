@@ -18,9 +18,10 @@ export const Page: Collection = {
       required: true,
     },
     {
-      type: "rich-text",
+      type: "string",
       name: "description",
       label: "Page Description",
+      required: true,
     },
   ],
 }

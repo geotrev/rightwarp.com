@@ -4,6 +4,8 @@ interface BlogProps {
   actionsProps: ActionListProps
 }
 
+// WIP should be block components
+
 export const blogProps: BlogProps = {
   actionsProps: {
     actions: [

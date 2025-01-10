@@ -21,6 +21,8 @@ interface HomeProps {
   actionsProps: ActionListProps
 }
 
+// WIP should be block components
+
 export const homeProps: HomeProps = {
   logoMarqueeProps: {
     logos: [

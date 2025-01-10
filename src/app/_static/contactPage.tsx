@@ -6,6 +6,8 @@ interface ContactProps {
   endActionsProps: ActionListProps
 }
 
+// WIP should be block components
+
 export const contactProps: ContactProps = {
   scheduleActionsProps: {
     actions: [

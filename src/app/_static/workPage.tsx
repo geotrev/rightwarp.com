@@ -6,6 +6,8 @@ interface WorkProps {
   browseButtonsProps: BrowseButtonsProps
 }
 
+// WIP should be block components
+
 export const workProps: WorkProps = {
   browseButtonsProps: {
     actions: [

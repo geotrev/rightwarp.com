@@ -25,6 +25,8 @@ interface AboutPageProps {
   actionsProps: ActionListProps
 }
 
+// WIP should be block components
+
 export const staticProps: AboutPageProps = {
   introProps: {
     bioImage: {

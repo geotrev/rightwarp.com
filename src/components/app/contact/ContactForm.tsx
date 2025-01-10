@@ -1,7 +1,7 @@
 "use client"
 
 import cn from "classnames"
-import { Asterisk, Send } from "lucide-react"
+import { Asterisk, CheckCircle, Send } from "lucide-react"
 import { useState } from "react"
 
 import { Button, Container } from "@/components/core"
@@ -38,7 +38,7 @@ export const ContactForm = (props: ContactFormProps) => {
     props.topics.reduce((acc, { name }) => ({ ...acc, [name]: false }), {}),
   )
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     if (state === ContactFormStatus.PENDING) return
@@ -47,16 +47,19 @@ export const ContactForm = (props: ContactFormProps) => {
 
     const formData = new FormData(e.currentTarget)
 
-    fetch("/api/contact", {
+    const res = await fetch("/api/contact", {
       method: "post",
+      cache: "no-cache",
       body: formData,
-    }).then((result) => {
-      if (result.ok) {
-        setState(ContactFormStatus.SUCCESS)
-      } else {
-        setState(ContactFormStatus.ERROR)
-      }
     })
+
+    if (res.ok) {
+      const data = await res.json()
+
+      setState(data.status)
+    } else {
+      setState(ContactFormStatus.ERROR)
+    }
   }
 
   return (
@@ -154,8 +157,13 @@ export const ContactForm = (props: ContactFormProps) => {
           </>
         )}
         {state === ContactFormStatus.SUCCESS && (
-          <p className="text-green-500 dark:text-green-400">
-            Your message has been sent and we&apos;ll be in touch soon!
+          <p className="flex items-center justify-center gap-4">
+            <span className="text-green-500 dark:text-green-400">
+              <CheckCircle size={24} />{" "}
+            </span>
+            <span className="text-black dark:text-white">
+              Your message has been sent and we&apos;ll be in touch soon!
+            </span>
           </p>
         )}
       </Container>

@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { Public_Sans, Krona_One } from "next/font/google"
 
 import { ClientBodyWrapper } from "@/components/app/layout/ClientBodyWrapper"
+import { CSPostHogProvider } from "@/components/context/PostHogProvider"
 import { ThemeProvider } from "@/components/context/ThemeProvider"
 import { generatePageMeta } from "@/utils/generatePageMetadata"
 
@@ -35,9 +36,11 @@ export default async function RootLayout({
       lang="en"
       className={`${publicSans.className} ${publicSans.variable} ${kronaOne.variable} min-h-screen`}
     >
-      <ThemeProvider>
-        <ClientBodyWrapper>{children}</ClientBodyWrapper>
-      </ThemeProvider>
+      <CSPostHogProvider>
+        <ThemeProvider>
+          <ClientBodyWrapper>{children}</ClientBodyWrapper>
+        </ThemeProvider>
+      </CSPostHogProvider>
     </html>
   )
 }

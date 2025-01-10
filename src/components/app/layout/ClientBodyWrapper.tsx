@@ -1,9 +1,11 @@
 "use client"
 
 import { MotionConfig } from "motion/react"
+import { Suspense } from "react"
 
 import { Header } from "@/components/app"
 import { Footer } from "@/components/app/layout/Footer"
+import PostHogPageView from "@/components/context/PostHogPageView"
 import { useTheme } from "@/utils/useThemeContext"
 
 export const ClientBodyWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -42,6 +44,10 @@ export const ClientBodyWrapper = ({ children }: { children: React.ReactNode }) =
               `,
           }}
         />
+
+        <Suspense>
+          <PostHogPageView />
+        </Suspense>
       </body>
     </MotionConfig>
   )

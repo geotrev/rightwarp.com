@@ -1,9 +1,7 @@
 import { Metadata } from "next"
 import { Public_Sans, Krona_One } from "next/font/google"
-import { Suspense } from "react"
 
 import { ClientBodyWrapper } from "@/components/app/layout/ClientBodyWrapper"
-import PostHogPageView from "@/components/context/PostHogPageView"
 import { PostHogProvider } from "@/components/context/PostHogProvider"
 import { ThemeProvider } from "@/components/context/ThemeProvider"
 import { generatePageMeta } from "@/utils/generatePageMetadata"
@@ -42,10 +40,6 @@ export default async function RootLayout({
         <ThemeProvider>
           <ClientBodyWrapper>{children}</ClientBodyWrapper>
         </ThemeProvider>
-
-        <Suspense>
-          <PostHogPageView />
-        </Suspense>
       </html>
     </PostHogProvider>
   )

@@ -32,15 +32,15 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${publicSans.className} ${publicSans.variable} ${kronaOne.variable} min-h-screen`}
-    >
-      <CSPostHogProvider>
+    <CSPostHogProvider>
+      <html
+        lang="en"
+        className={`${publicSans.className} ${publicSans.variable} ${kronaOne.variable} min-h-screen`}
+      >
         <ThemeProvider>
           <ClientBodyWrapper>{children}</ClientBodyWrapper>
         </ThemeProvider>
-      </CSPostHogProvider>
-    </html>
+      </html>
+    </CSPostHogProvider>
   )
 }

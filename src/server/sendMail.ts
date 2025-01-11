@@ -9,8 +9,8 @@ const transporter = nodemailer.createTransport({
   port: parseInt(process.env.CONTACT_EMAIL_PORT!),
   secure: true,
   auth: {
-    user: process.env.CONTACT_SEND_EMAIL_ADDRESS,
-    pass: process.env.CONTACT_SEND_EMAIL_PASSWORD,
+    user: process.env.CONTACT_EMAIL_SEND_ADDRESS,
+    pass: process.env.CONTACT_EMAIL_SEND_PASSWORD,
   },
 })
 
@@ -24,8 +24,8 @@ export const sendEmail = async (data: MailData) => {
   `
 
   const mailOptions: MailOptions = {
-    from: `Right Warp Contact Form ${process.env.CONTACT_SEND_EMAIL_ADDRESS!}`,
-    to: process.env.CONTACT_RECEIVE_EMAIL_ADDRESS!,
+    from: `Right Warp Contact Form ${process.env.CONTACT_EMAIL_SEND_ADDRESS!}`,
+    to: process.env.CONTACT_EMAIL_RECEIVE_ADDRESS!,
     subject: `Contact from ${data.name} (${data.email})`,
     text: Object.values(data).join("\n"),
     html,

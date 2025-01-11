@@ -44,20 +44,20 @@ export async function POST(req: Request) {
     } as MailData,
   )
 
-  // if (process.env.NODE_ENV === "production") {
-  try {
-    const isOk = await sendEmail(data)
+  if (process.env.NODE_ENV === "production" || process.env.CONTACT_EMAIL_ENABLE_DEV === "true") {
+    try {
+      const isOk = await sendEmail(data)
 
-    if (isOk) {
-      return NextResponse.json({ status: ContactFormStatus.SUCCESS })
-    } else {
+      if (isOk) {
+        return NextResponse.json({ status: ContactFormStatus.SUCCESS })
+      } else {
+        return NextResponse.json({ status: ContactFormStatus.ERROR })
+      }
+    } catch (e) {
+      console.error(e)
       return NextResponse.json({ status: ContactFormStatus.ERROR })
     }
-  } catch (e) {
-    console.error(e)
-    return NextResponse.json({ status: ContactFormStatus.ERROR })
+  } else {
+    return NextResponse.json({ status: ContactFormStatus.SUCCESS })
   }
-  // } else {
-  //   return NextResponse.json({ status: ContactFormStatus.SUCCESS })
-  // }
 }

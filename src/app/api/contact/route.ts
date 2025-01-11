@@ -28,7 +28,7 @@ export async function POST(req: Request) {
       const isTopic = key.startsWith("topic-")
 
       if (isTopic) {
-        ;(acc["topics"] as string[]).push(key)
+        ;(acc["topics"] as string[]).push(key.replace("topic-", ""))
       } else {
         acc[key] = value
       }
@@ -44,20 +44,20 @@ export async function POST(req: Request) {
     } as MailData,
   )
 
-  if (process.env.NODE_ENV === "production") {
-    try {
-      const isOk = await sendEmail(data)
+  // if (process.env.NODE_ENV === "production") {
+  try {
+    const isOk = await sendEmail(data)
 
-      if (isOk) {
-        return NextResponse.json({ status: ContactFormStatus.SUCCESS })
-      } else {
-        return NextResponse.json({ status: ContactFormStatus.ERROR })
-      }
-    } catch (e) {
-      console.error(e)
+    if (isOk) {
+      return NextResponse.json({ status: ContactFormStatus.SUCCESS })
+    } else {
       return NextResponse.json({ status: ContactFormStatus.ERROR })
     }
-  } else {
-    return NextResponse.json({ status: ContactFormStatus.SUCCESS })
+  } catch (e) {
+    console.error(e)
+    return NextResponse.json({ status: ContactFormStatus.ERROR })
   }
+  // } else {
+  //   return NextResponse.json({ status: ContactFormStatus.SUCCESS })
+  // }
 }

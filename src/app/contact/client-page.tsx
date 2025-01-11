@@ -2,7 +2,7 @@
 
 import { useTina } from "tinacms/dist/react"
 
-import { ActionList, ContactForm, Hero } from "@/components/app"
+import { ActionList, ContactForm, Hero, RecaptchaVerifyWrapper } from "@/components/app"
 
 import { PageQuery } from "../../../tina/__generated__/types"
 import { contactProps } from "../_static/contactPage"
@@ -25,7 +25,9 @@ export const ClientPage = ({ page }: PageProps) => {
     <>
       <Hero heading={data.title} description={data.description} variant="display" />
       <ActionList {...contactProps.scheduleActionsProps} />
-      <ContactForm {...contactProps.contactFormProps} />
+      <RecaptchaVerifyWrapper>
+        <ContactForm {...contactProps.contactFormProps} />
+      </RecaptchaVerifyWrapper>
       <ActionList {...contactProps.endActionsProps} />
     </>
   )

@@ -2,7 +2,8 @@
 
 import cn from "classnames"
 import { Asterisk, CheckCircle, Send } from "lucide-react"
-import { useState } from "react"
+import { useCallback, useState } from "react"
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
 import { Button, Container } from "@/components/core"
 import { ContactFormStatus } from "@/utils/helpers"
@@ -37,30 +38,45 @@ export const ContactForm = (props: ContactFormProps) => {
   const [selectedTopics, setSelectedTopics] = useState<Record<string, boolean>>(
     props.topics.reduce((acc, { name }) => ({ ...acc, [name]: false }), {}),
   )
+  const { executeRecaptcha } = useGoogleReCaptcha()
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  const verifyRecaptcha = useCallback(async () => {
+    if (!executeRecaptcha) return false
 
-    if (state === ContactFormStatus.PENDING) return
+    const token = await executeRecaptcha("rw_contact_form")
 
-    setState(ContactFormStatus.PENDING)
+    return token
+  }, [executeRecaptcha])
 
-    const formData = new FormData(e.currentTarget)
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
 
-    const res = await fetch("/api/contact", {
-      method: "post",
-      cache: "no-cache",
-      body: formData,
-    })
+      if (state === ContactFormStatus.PENDING) return
 
-    if (res.ok) {
-      const data = await res.json()
+      setState(ContactFormStatus.PENDING)
 
-      setState(data.status)
-    } else {
-      setState(ContactFormStatus.ERROR)
-    }
-  }
+      const gRecaptchaToken = await verifyRecaptcha()
+      const formData = new FormData(e.target as HTMLFormElement)
+      const formValues = [...formData.entries()].map(([key, value]) => [key, value.toString()])
+
+      const res = await fetch("/api/contact", {
+        method: "post",
+        cache: "no-cache",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ gRecaptchaToken, formValues }),
+      })
+
+      if (res.ok) {
+        const data = await res.json()
+
+        setState(data.status)
+      } else {
+        setState(ContactFormStatus.ERROR)
+      }
+    },
+    [state, verifyRecaptcha],
+  )
 
   return (
     <section>

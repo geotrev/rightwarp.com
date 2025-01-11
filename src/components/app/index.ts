@@ -21,6 +21,7 @@ export * from "./home/Expertise"
 // Contact
 
 export * from "./contact/ContactForm"
+export * from "./contact/RecaptchaVerifyWrapper"
 
 // About
 

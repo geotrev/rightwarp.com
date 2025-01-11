@@ -4,7 +4,8 @@ import "server-only"
 export type MailData = Record<string, string | string[]>
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
+  service: "gmail",
+  host: process.env.CONTACT_EMAIL_HOST,
   port: 587,
   secure: false,
   auth: {
@@ -14,7 +15,6 @@ const transporter = nodemailer.createTransport({
 })
 
 export const sendEmail = async (data: MailData) => {
-  console.log("sendEmail")
   const html = `
     <h1>Contact form details</h1>
     <p>Name: ${data.name}</p>
@@ -27,7 +27,7 @@ export const sendEmail = async (data: MailData) => {
   const mailOptions = {
     to: process.env.CONTACT_RECEIVE_EMAIL_ADDRESS,
     from: process.env.CONTACT_SEND_EMAIL_ADDRESS,
-    subject: "Contact from rightwarp.com",
+    subject: `Contact from ${data.name} (${data.email})`,
     html,
   }
 

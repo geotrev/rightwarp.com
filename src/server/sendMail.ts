@@ -1,10 +1,13 @@
 import nodemailer from "nodemailer"
 import "server-only"
 
+import { generateEmailHtml } from "./generateEmailHtml"
+
 export type MailData = Record<string, string | string[]>
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
+  name: "www.rightwarp.com",
   host: process.env.CONTACT_EMAIL_HOST,
   port: 587,
   secure: false,
@@ -15,18 +18,20 @@ const transporter = nodemailer.createTransport({
 })
 
 export const sendEmail = async (data: MailData) => {
-  const html = `
-    <h1>Contact form details</h1>
+  const html = generateEmailHtml(`
     <p>Name: ${data.name}</p>
     <p>Email: ${data.email}</p>
     <p>Phone: ${data.phone ?? ""}</p>
     <p>Topics: ${(data?.topics as string[])?.join(", ") ?? ""}</p>
     <p>Message: ${data?.details ?? ""}</p>
-  `
+  `)
 
   const mailOptions = {
+    from: {
+      name: "RightWarp Contact Form",
+      address: process.env.CONTACT_SEND_EMAIL_ADDRESS,
+    },
     to: process.env.CONTACT_RECEIVE_EMAIL_ADDRESS,
-    from: process.env.CONTACT_SEND_EMAIL_ADDRESS,
     subject: `Contact from ${data.name} (${data.email})`,
     html,
   }

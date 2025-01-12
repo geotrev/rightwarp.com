@@ -8,7 +8,7 @@ export const OpenGraphField: TinaField = {
     {
       name: "image",
       label: "Image",
-      description: "Must be 1200x630 pixels. Learn more: https://ogp.me/. Defaults to OG image.",
+      description: "Must be 1200x630 pixels. Learn more: https://ogp.me/",
       type: "image",
       required: true,
     },

@@ -152,7 +152,7 @@ export const staticProps: AboutPageProps = {
       },
       {
         title: "Design",
-        color: "border-amber-600 dark:border-fuchsia-400",
+        color: "border-fuchsia-600 dark:border-fuchsia-400",
         icon: PaintRoller,
         items: [
           "User Experience",

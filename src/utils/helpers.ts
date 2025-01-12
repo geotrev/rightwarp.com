@@ -1,4 +1,6 @@
-export const ContactFormStatus = {
+export type FormState = "idle" | "pending" | "success" | "error"
+
+export const FormStatus: Record<string, FormState> = {
   IDLE: "idle",
   PENDING: "pending",
   SUCCESS: "success",
@@ -31,6 +33,9 @@ export const NavItems = [
   //   href: Routes.BLOG,
   // },
 ]
+
+export const EMAIL_REGEXP: RegExp =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 // This will be replaced with a list of categories from the CMS
 export const Categories = {

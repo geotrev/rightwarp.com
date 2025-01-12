@@ -4,10 +4,11 @@ import cn from "classnames"
 import { ArrowRight, SquareArrowOutUpRight } from "lucide-react"
 import Link from "next/link"
 
-import { Button, Container } from "@/components/core"
+import { Container } from "@/components/core"
 import { Routes } from "@/utils/helpers"
 
 import { Action } from "./Action"
+import { SubscribeForm } from "./Subscribe"
 
 export interface ActionListProps {
   actions: {
@@ -38,18 +39,7 @@ export const actionTypes = {
       Warp Zone <ArrowRight className="size-5 lg:size-6" />
     </Link>
   ),
-  newsletter: (
-    <form className="flex w-full flex-col gap-2 sm:flex-row sm:gap-4">
-      <input
-        type="email"
-        placeholder="mario@world.com"
-        className="input input-secondary sm:flex-grow md:w-[50%] md:flex-grow-0 lg:w-[unset] lg:flex-grow"
-      />
-      <Button type="submit" variant="secondary" className="btn-outline">
-        Subscribe
-      </Button>
-    </form>
-  ),
+  newsletter: <SubscribeForm />,
 }
 
 export const ActionList = ({ actions }: ActionListProps) => {

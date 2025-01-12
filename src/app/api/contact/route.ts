@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 
 import { MailData, sendEmail } from "@/server/sendMail"
-import { ContactFormStatus } from "@/utils/helpers"
+import { FormStatus } from "@/utils/helpers"
 
 export async function POST(req: Request) {
   const formData = await req.json()
@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     ).then((res) => res.json())
 
     if (!recaptchaResults.success) {
-      return NextResponse.json({ status: ContactFormStatus.ERROR })
+      return NextResponse.json({ status: FormStatus.ERROR })
     }
   }
 
@@ -49,15 +49,15 @@ export async function POST(req: Request) {
       const isOk = await sendEmail(data)
 
       if (isOk) {
-        return NextResponse.json({ status: ContactFormStatus.SUCCESS })
+        return NextResponse.json({ status: FormStatus.SUCCESS })
       } else {
-        return NextResponse.json({ status: ContactFormStatus.ERROR })
+        return NextResponse.json({ status: FormStatus.ERROR })
       }
     } catch (e) {
       console.error(e)
-      return NextResponse.json({ status: ContactFormStatus.ERROR })
+      return NextResponse.json({ status: FormStatus.ERROR })
     }
   } else {
-    return NextResponse.json({ status: ContactFormStatus.SUCCESS })
+    return NextResponse.json({ status: FormStatus.SUCCESS })
   }
 }

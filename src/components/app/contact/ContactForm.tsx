@@ -6,7 +6,7 @@ import { useCallback, useState } from "react"
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
 import { Button, Container } from "@/components/core"
-import { ContactFormStatus } from "@/utils/helpers"
+import { FormStatus } from "@/utils/helpers"
 
 import { SectionHeading } from "../shared/SectionHeading"
 
@@ -30,7 +30,7 @@ export interface ContactFormProps {
 }
 
 export const ContactForm = (props: ContactFormProps) => {
-  const [state, setState] = useState(ContactFormStatus.IDLE)
+  const [state, setState] = useState(FormStatus.IDLE)
   const [fieldValues, setFieldValues] = useState<Record<string, string>>({
     ...props.contact.reduce((acc, { name }) => ({ ...acc, [name]: "" }), {}),
     [props.details.name]: "",
@@ -52,9 +52,9 @@ export const ContactForm = (props: ContactFormProps) => {
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
 
-      if (state === ContactFormStatus.PENDING) return
+      if (state === FormStatus.PENDING) return
 
-      setState(ContactFormStatus.PENDING)
+      setState(FormStatus.PENDING)
 
       const gRecaptchaToken = await verifyRecaptcha()
       const formData = new FormData(e.target as HTMLFormElement)
@@ -72,7 +72,7 @@ export const ContactForm = (props: ContactFormProps) => {
 
         setState(data.status)
       } else {
-        setState(ContactFormStatus.ERROR)
+        setState(FormStatus.ERROR)
       }
     },
     [state, verifyRecaptcha],
@@ -86,7 +86,7 @@ export const ContactForm = (props: ContactFormProps) => {
         </SectionHeading>
       </Container>
       <Container className="mb-16" isConstrained>
-        {state !== ContactFormStatus.SUCCESS && (
+        {state !== FormStatus.SUCCESS && (
           <>
             <p className="mb-8 flex items-center gap-4 italic">
               <Asterisk size="20" className="dark:text-white" />
@@ -103,6 +103,7 @@ export const ContactForm = (props: ContactFormProps) => {
                       </span>
                     </label>
                     <input
+                      readOnly={state === FormStatus.PENDING}
                       id={name}
                       name={name}
                       type={type}
@@ -125,6 +126,7 @@ export const ContactForm = (props: ContactFormProps) => {
                     <div key={name} className="form-control">
                       <label className="label cursor-pointer justify-start gap-4">
                         <input
+                          readOnly={state === FormStatus.PENDING}
                           type="checkbox"
                           name={name}
                           checked={selectedTopics[name]}
@@ -150,6 +152,7 @@ export const ContactForm = (props: ContactFormProps) => {
                   <span className="label-text text-xs">{props.details.hint}</span>
                 </p>
                 <textarea
+                  readOnly={state === FormStatus.PENDING}
                   id={props.details.name}
                   name={props.details.name}
                   aria-describedby={`${props.details.name}-hint`}
@@ -165,14 +168,14 @@ export const ContactForm = (props: ContactFormProps) => {
                 type="submit"
                 variant="primary"
                 className={cn("lg:btn-lg")}
-                disabled={state === ContactFormStatus.PENDING}
+                disabled={state === FormStatus.PENDING}
               >
                 Send {<Send size={20} />}
               </Button>
             </form>
           </>
         )}
-        {state === ContactFormStatus.SUCCESS && (
+        {state === FormStatus.SUCCESS && (
           <p className="flex items-center justify-center gap-4">
             <span className="text-green-500 dark:text-green-400">
               <CheckCircle size={24} />{" "}

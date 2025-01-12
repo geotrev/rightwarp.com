@@ -109,7 +109,7 @@ export const staticProps: AboutPageProps = {
     heading: "Skills",
     icon: HammerIcon,
     subheading:
-      "We bring a combination of domain expertise to ensure project success; if a domain's not here, ask us about it!",
+      "We bring a combination of expertise to ensure project success; if a subject isn't here, ask us about it!",
     categories: [
       {
         title: "Strategy",

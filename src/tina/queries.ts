@@ -1,3 +1,5 @@
+import "server-only"
+
 import { PostHistoryItem } from "@/components/app"
 
 import client from "../../tina/__generated__/client"
@@ -11,6 +13,7 @@ import {
   toCategories,
   getWorkPreviews,
   PostVisibility,
+  POST_PAGE_SIZE,
 } from "./helpers"
 
 // site settings
@@ -114,6 +117,8 @@ const toMonth = (date: Date) => date.toLocaleString("en", { month: "long" })
 export const queryBlogIndex = async () => {
   const page = await client.queries.page({ relativePath: "blog.json" })
 
+  // All categories
+
   const categoriesResponse = await client.queries.categoryConnection()
   const categories = categoriesResponse.data.categoryConnection.edges?.map((edge) => ({
     name: edge!.node!.name,
@@ -121,10 +126,21 @@ export const queryBlogIndex = async () => {
     slug: toSlug(edge!.node!._sys.filename, "blog/category"),
   }))
 
-  const postsResponse = await client.queries.postConnection({
+  // Info for all posts
+
+  const allPosts = await client.queries.postConnection({
     sort: "publishDate",
   })
-  const posts = postsResponse.data.postConnection.edges
+  const postCount = allPosts.data.postConnection.edges?.length
+  const pages = postCount ? Math.ceil(postCount / POST_PAGE_SIZE) : 0
+
+  // Info for visible pages & pagination
+
+  const indexPostsResponse = await client.queries.postConnection({
+    sort: "publishDate",
+    last: POST_PAGE_SIZE,
+  })
+  const pagePosts = indexPostsResponse.data.postConnection.edges
     ?.filter((edge) => edge?.node?.visibility === PostVisibility.LIVE)
     .map((edge) => {
       const entry = edge?.node
@@ -137,9 +153,11 @@ export const queryBlogIndex = async () => {
         slug: toSlug(entry!._sys.filename, "blog"),
       }
     })
-    .reverse()
+  const pageInfo = indexPostsResponse.data.postConnection.pageInfo
 
-  const history = postsResponse.data.postConnection.edges
+  // History & archive data
+
+  const history = allPosts.data.postConnection.edges
     ?.reduce<PostHistoryItem[]>((entries, edge) => {
       const entry = edge?.node
       const entryDate = new Date(entry!.publishDate)
@@ -184,7 +202,7 @@ export const queryBlogIndex = async () => {
       months: entry.months.sort((prev, next) => next.month - prev.month),
     }))
 
-  return { page, categories, posts, history }
+  return { page, categories, pages, posts: pagePosts, pageInfo, history }
 }
 
 // blog post

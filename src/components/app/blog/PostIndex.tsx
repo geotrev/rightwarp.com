@@ -3,6 +3,7 @@ import { MouseEventHandler, useCallback, useState } from "react"
 import { Container } from "@/components/core"
 import { useIsLarge } from "@/utils/useMediaQuery"
 
+import { PageInfo } from "../../../../tina/__generated__/types"
 import { CategoryList } from "../shared/CategoryList"
 import { MediaCard, MediaCardProps } from "../shared/MediaCard"
 
@@ -18,6 +19,7 @@ interface PostIndexProps {
   posts?: MediaCardProps[]
   history?: PostHistoryProps["history"]
   pages?: number
+  pageInfo: PageInfo
 }
 
 export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps) => {

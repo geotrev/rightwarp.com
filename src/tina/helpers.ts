@@ -9,6 +9,8 @@ import {
 
 const PREVIEW_LIMIT = 2
 
+export const POST_PAGE_SIZE = 4
+
 export const PostVisibility = {
   LIVE: "Live",
   DRAFT: "Draft",

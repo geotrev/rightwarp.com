@@ -11,7 +11,7 @@ import {
   Scalars,
 } from "../../tina/__generated__/types"
 
-import { toAuthors, toCategories, toPublishDate, toSlug } from "./helpers"
+import { PostVisibility, toAuthors, toCategories, toPublishDate, toSlug } from "./helpers"
 
 // Queries posts from TinaCMS on the client to support pagination
 
@@ -25,7 +25,12 @@ export async function queryPosts(
     filter?: InputMaybe<PostFilter>
   }>,
 ): Promise<{ pageInfo: PageInfo; posts: MediaCardProps[] }> {
-  const pages = await client.queries.postConnection({ ...options })
+  const pages = await client.queries.postConnection({
+    ...options,
+    filter: {
+      visibility: { eq: PostVisibility.PUBLIC },
+    },
+  })
 
   // Shape the essay data into a format the UI expects
   // Cursor must be included for pagination

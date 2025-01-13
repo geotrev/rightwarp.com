@@ -1,10 +1,10 @@
 ---
-visibility: Live
+visibility: Public
 date: 2022-11-15T06:00:00.000Z
 title: ServiceNow
 description: Design Systems
 seo:
-  title: 'Case Study: ServiceNow'
+  title: "Case Study: ServiceNow"
   description: Design Systems
   canonicalUrl: /work/servicenow
 categories:
@@ -25,7 +25,10 @@ bodyIntro: >
   framework based on web standards.
 ---
 
-<CallToAction label="View Component Documentation" href="https://horizon.servicenow.com/workspace/components " />
+<CallToAction
+  label="View Component Documentation"
+  href="https://horizon.servicenow.com/workspace/components "
+/>
 
 ## Context
 
@@ -33,9 +36,9 @@ Having already created early versions of the design system using their proprieta
 
 Horizon (known at the time as Now Design System, or NDS) was established with its design system components and design tools to help internal teams align with product design direction, but they needed help in a few areas, including:
 
-* Building new components to support shared UI patterns
-* Enabling complex accessibility requirements in bleeding-edge web component standards
-* Enabling platform-wide theming using CSS custom properties (variables)
+- Building new components to support shared UI patterns
+- Enabling complex accessibility requirements in bleeding-edge web component standards
+- Enabling platform-wide theming using CSS custom properties (variables)
 
 Right Warp, specifically George, worked on these projects, leading many except the last point above. Largely, these were team projects.
 
@@ -43,10 +46,10 @@ Right Warp, specifically George, worked on these projects, leading many except t
 
 Horizon needed to expand its offering with a few new components:
 
-* [Accordions](https://horizon.servicenow.com/workspace/components/now-accordion), to support collapsed content
-* [Buttons](https://horizon.servicenow.com/workspace/components/now-button-circular), particularly floating action buttons (or FAB)
-* [Date pickers](https://horizon.servicenow.com/workspace/components/now-date-time), implemented with [date-fns](https://date-fns.org/)
-* [Modeless dialog](https://horizon.servicenow.com/workspace/components/now-modeless-dialog), in combination with a FAB
+- [Accordions](https://horizon.servicenow.com/workspace/components/now-accordion), to support collapsed content
+- [Buttons](https://horizon.servicenow.com/workspace/components/now-button-circular), particularly floating action buttons (or FAB)
+- [Date pickers](https://horizon.servicenow.com/workspace/components/now-date-time), implemented with [date-fns](https://date-fns.org/)
+- [Modeless dialog](https://horizon.servicenow.com/workspace/components/now-modeless-dialog), in combination with a FAB
 
 In addition, numerous refactors and system-wide rewrites took place for nearly every component, particularly [Modal](https://horizon.servicenow.com/workspace/components/now-modal), [Alerts](https://horizon.servicenow.com/workspace/components/now-alert), [Collapse](https://horizon.servicenow.com/workspace/components/now-collapse), [Popover](https://horizon.servicenow.com/workspace/components/now-popover), [Dropdown](https://horizon.servicenow.com/workspace/components/now-dropdown), and [Tooltip](https://horizon.servicenow.com/workspace/components/now-tooltip).
 
@@ -56,7 +59,10 @@ To support floating elements at an accessibility level, a library was created le
 
 In addition, popover logic was added to an existing component to better support keyboard navigation in nested popover elements. This ensured context would never be lost for users in complex workflows, whether as a customer service agent or ServiceNow instance administrator. The panel-fit logic was also iterated to enable a variety of complex use-cases, such as generalizing its fit logic for several floating components.
 
-<CallToAction href="https://horizon.servicenow.com/workspace/components/now-popover" label="View Popover Documentation" />
+<CallToAction
+  href="https://horizon.servicenow.com/workspace/components/now-popover"
+  label="View Popover Documentation"
+/>
 
 Separately, better accessibility testing tools were implemented with Axe to ensure [WCAG 2.1](https://www.w3.org/WAI/standards-guidelines/wcag/) compliance.
 
@@ -64,7 +70,10 @@ Separately, better accessibility testing tools were implemented with Axe to ensu
 
 To enable a transition for platform-wide theming, Horizon was able to achieve it using an architecture consisting of CSS custom properties, enabling customers the ability to modify their UI for brand-fit and custom, accessible themes as needed.
 
-<CallToAction href="https://horizon.servicenow.com/workspace/foundations/color/color-overview" label="View Theming Documentation" />
+<CallToAction
+  href="https://horizon.servicenow.com/workspace/foundations/color/color-overview"
+  label="View Theming Documentation"
+/>
 
 The solution didn't just enable light and dark modes, but really any custom theme you can imagine. Its robust system- and component-specific variable architecture provides the means for truly deep customizations by administrators and designers alike.
 

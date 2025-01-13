@@ -1,13 +1,13 @@
 import cn from "classnames"
 import { ChevronFirst, ChevronLast, ChevronLeft, ChevronRight } from "lucide-react"
-import { MouseEventHandler, useMemo } from "react"
+import { MouseEvent, MouseEventHandler, useCallback, useMemo } from "react"
 
 export interface PaginationProps {
   totalPages: number
   currentPage: number
   handleNewestClick: MouseEventHandler<HTMLButtonElement>
   handlePreviousClick: MouseEventHandler<HTMLButtonElement>
-  handlePageClick: MouseEventHandler<HTMLButtonElement>
+  handlePageClick: (e: MouseEvent<HTMLButtonElement>, page: number) => void
   handleNextClick: MouseEventHandler<HTMLButtonElement>
   handleOldestClick: MouseEventHandler<HTMLButtonElement>
 }
@@ -17,7 +17,7 @@ export const Pagination = ({
   currentPage,
   handleNewestClick,
   handlePreviousClick,
-  handlePageClick,
+  handlePageClick: _handlePageClick,
   handleNextClick,
   handleOldestClick,
 }: PaginationProps) => {
@@ -38,9 +38,20 @@ export const Pagination = ({
     return [1, "...", currentPage - 1, currentPage, currentPage + 1, "...", totalPages]
   }, [totalPages, currentPage])
 
+  const handlePageClick: MouseEventHandler<HTMLButtonElement> = useCallback(
+    (e) => {
+      if (_handlePageClick) {
+        _handlePageClick(e, parseInt((e.target as HTMLButtonElement).dataset.page!))
+      }
+    },
+    [_handlePageClick],
+  )
+
   return (
     <nav className="mt-4">
-      <div className="mb-4 flex justify-center">Page 1 of 4</div>
+      <div className="mb-4 flex justify-center">
+        Page {currentPage + 1} of {totalPages}
+      </div>
       <div className="flex items-center justify-center gap-4">
         <button className="btn btn-outline" type="button" onClick={handleNewestClick}>
           <span className="sr-only">Newest posts</span> <ChevronFirst size={20} />
@@ -59,6 +70,7 @@ export const Pagination = ({
               })}
               type="button"
               onClick={handlePageClick}
+              data-page={page + 1}
             >
               {page + 1}
             </button>

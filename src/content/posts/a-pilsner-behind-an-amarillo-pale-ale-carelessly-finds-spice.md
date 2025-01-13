@@ -1,5 +1,5 @@
 ---
-visibility: Live
+visibility: Public
 publishDate: 2024-11-04T06:00:00.000Z
 title: >-
   A Pilsner behind an Amarillo Pale Ale carelessly finds spice

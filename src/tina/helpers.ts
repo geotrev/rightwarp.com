@@ -12,7 +12,7 @@ export const PREVIEW_LIMIT = 2
 export const POST_PAGE_SIZE = 4
 
 export const PostVisibility = {
-  LIVE: "Live",
+  PUBLIC: "Public",
   DRAFT: "Draft",
 }
 
@@ -56,7 +56,7 @@ export const getPostPreviews = async () => {
     sort: "publishDate",
     last: PREVIEW_LIMIT,
     filter: {
-      visibility: { eq: PostVisibility.LIVE },
+      visibility: { eq: PostVisibility.PUBLIC },
     },
   })
 
@@ -79,7 +79,7 @@ export const getWorkPreviews = async () => {
     sort: "date",
     last: PREVIEW_LIMIT,
     filter: {
-      visibility: { eq: PostVisibility.LIVE },
+      visibility: { eq: PostVisibility.PUBLIC },
     },
   })
 

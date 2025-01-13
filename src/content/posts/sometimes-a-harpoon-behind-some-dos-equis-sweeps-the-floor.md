@@ -1,5 +1,5 @@
 ---
-visibility: Live
+visibility: Public
 publishDate: 2024-09-10T05:00:00.000Z
 title: Sometimes a Harpoon behind some Dos Equis sweeps the floor
 description: Hoptoberfest around a blood clot always graduates from the Sam Adams

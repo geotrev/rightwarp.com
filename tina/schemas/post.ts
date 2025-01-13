@@ -19,7 +19,7 @@ export const Post: Collection = {
       type: "string",
       name: "visibility",
       label: "Visibility",
-      options: ["Live", "Draft"],
+      options: ["Public", "Draft"],
       ui: { defaultValue: "Draft" },
     },
     {

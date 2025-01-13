@@ -23,7 +23,7 @@ interface PageProps {
   }[]
   posts?: MediaCardProps[]
   history?: PostHistoryProps["history"]
-  pages?: number
+  pages?: string[][]
   pageInfo: PageInfo
 }
 

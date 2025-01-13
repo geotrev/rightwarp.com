@@ -14,7 +14,6 @@ import {
   getWorkPreviews,
   PostVisibility,
   POST_PAGE_SIZE,
-  PREVIEW_LIMIT,
 } from "./helpers"
 
 // site settings
@@ -67,25 +66,26 @@ export const queryWorkIndex = async () => {
   const page = await client.queries.page({ relativePath: "work.json" })
   const _entries = await client.queries.workConnection({
     sort: "date",
-    last: PREVIEW_LIMIT,
     filter: {
-      visibility: { eq: PostVisibility.LIVE },
+      visibility: { eq: PostVisibility.PUBLIC },
     },
   })
 
-  const entries = _entries.data.workConnection.edges?.map((edge) => {
-    const entry = edge?.node
-    return {
-      title: entry!.title,
-      description: entry!.description,
-      categories: toCategories(entry!.categories as WorkCategories[]),
-      image: {
-        src: entry!.images[0].src,
-        alt: entry!.images[0].alt,
-      },
-      slug: toSlug(entry!._sys.filename, "work"),
-    }
-  })
+  const entries = _entries.data.workConnection.edges
+    ?.map((edge) => {
+      const entry = edge?.node
+      return {
+        title: entry!.title,
+        description: entry!.description,
+        categories: toCategories(entry!.categories as WorkCategories[]),
+        image: {
+          src: entry!.images[0].src,
+          alt: entry!.images[0].alt,
+        },
+        slug: toSlug(entry!._sys.filename, "work"),
+      }
+    })
+    .reverse()
 
   return { page, entries }
 }
@@ -116,6 +116,14 @@ export const queryWorkEntry = async (slug: string) => {
 
 const toMonth = (date: Date) => date.toLocaleString("en", { month: "long" })
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const chunk = (size: number, arr?: any[]) =>
+  arr
+    ? Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
+        arr.slice(i * size, i * size + size),
+      )
+    : []
+
 export const queryBlogIndex = async () => {
   const page = await client.queries.page({ relativePath: "blog.json" })
 
@@ -133,8 +141,8 @@ export const queryBlogIndex = async () => {
   const allPosts = await client.queries.postConnection({
     sort: "publishDate",
   })
-  const postCount = allPosts.data.postConnection.edges?.length
-  const pages = postCount ? Math.ceil(postCount / POST_PAGE_SIZE) : 0
+  const cursors = allPosts.data.postConnection.edges?.map((edge) => edge?.cursor)
+  const pages = chunk(POST_PAGE_SIZE, cursors)
 
   // Info for visible pages & pagination
 
@@ -142,7 +150,7 @@ export const queryBlogIndex = async () => {
     sort: "publishDate",
     last: POST_PAGE_SIZE,
     filter: {
-      visibility: { eq: PostVisibility.LIVE },
+      visibility: { eq: PostVisibility.PUBLIC },
     },
   })
   const pagePosts = indexPostsResponse.data.postConnection.edges?.map((edge) => {
@@ -229,7 +237,7 @@ export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
     const allPosts = await client.queries.postConnection({
       sort: "publishDate",
       filter: {
-        visibility: { eq: PostVisibility.LIVE },
+        visibility: { eq: PostVisibility.PUBLIC },
       },
     })
     const categories = post.data.post.categories.map((category) => category.categoryRef.name)

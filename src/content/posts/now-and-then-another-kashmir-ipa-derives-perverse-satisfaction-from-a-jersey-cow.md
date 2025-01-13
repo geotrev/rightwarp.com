@@ -1,5 +1,5 @@
 ---
-visibility: Live
+visibility: Public
 publishDate: 2024-06-12T05:00:00.000Z
 title: >-
   Now and then, another Kashmir IPA derives perverse satisfaction from a jersey

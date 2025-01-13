@@ -1,5 +1,5 @@
 ---
-visibility: Live
+visibility: Public
 publishDate: 2024-11-01T05:00:00.000Z
 title: Resplendent Bridgeport ESB hibernates
 description: >-

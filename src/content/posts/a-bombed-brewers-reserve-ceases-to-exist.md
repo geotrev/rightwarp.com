@@ -1,5 +1,5 @@
 ---
-visibility: Live
+visibility: Public
 publishDate: 2024-10-23T05:00:00.000Z
 title: A bombed Brewers Reserve ceases to exist
 description: >-

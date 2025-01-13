@@ -1,4 +1,4 @@
-import { MouseEventHandler, useCallback, useState } from "react"
+import { MouseEvent, MouseEventHandler, useCallback, useState } from "react"
 
 import { Container } from "@/components/core"
 import { useIsLarge } from "@/utils/useMediaQuery"
@@ -18,7 +18,7 @@ interface PostIndexProps {
   }[]
   posts?: MediaCardProps[]
   history?: PostHistoryProps["history"]
-  pages?: number
+  pages?: string[][]
   pageInfo: PageInfo
 }
 
@@ -32,7 +32,12 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
     currentPage: 0,
   })
 
-  const handlePageClick: MouseEventHandler<HTMLButtonElement> = useCallback(() => {}, [])
+  const handlePageClick: (e: MouseEvent<HTMLButtonElement>, page: number) => void = useCallback(
+    (e, page) => {
+      console.log(page)
+    },
+    [],
+  )
 
   const handleNewestClick: MouseEventHandler<HTMLButtonElement> = useCallback(() => {}, [])
 
@@ -72,7 +77,7 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
             {pages && (
               <Pagination
                 currentPage={pageData.currentPage}
-                totalPages={pages}
+                totalPages={pages?.length}
                 handlePageClick={handlePageClick}
                 handleNewestClick={handleNewestClick}
                 handlePreviousClick={handlePreviousClick}

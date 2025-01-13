@@ -1,10 +1,10 @@
 ---
-visibility: Live
+visibility: Public
 publishDate: 2024-06-04T05:00:00.000Z
-title: 'Indeed, a Red Stripe over a milwakees best wastedly competes'
+title: "Indeed, a Red Stripe over a milwakees best wastedly competes"
 description: Any polar bear beer can borrow money from a mysterious Budweiser
 seo:
-  title: 'Indeed, a Red Stripe over a milwakees best wastedly competes'
+  title: "Indeed, a Red Stripe over a milwakees best wastedly competes"
   description: Any polar bear beer can borrow money from a mysterious Budweiser
   canonicalUrl: /blog/indeed-a-red-stripe-over-a-milwakees-best-wastedly-competes
 authors:

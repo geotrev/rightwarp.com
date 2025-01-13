@@ -1,5 +1,5 @@
 ---
-visibility: Live
+visibility: Public
 publishDate: 2025-01-05T06:00:00.000Z
 title: The smashed spudgun rejoices
 description: >-

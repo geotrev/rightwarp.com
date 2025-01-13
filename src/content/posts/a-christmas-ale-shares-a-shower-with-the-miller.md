@@ -1,5 +1,5 @@
 ---
-visibility: Live
+visibility: Public
 publishDate: 2025-01-03T06:00:00.000Z
 title: A Christmas Ale shares a shower with the miller
 description: >-

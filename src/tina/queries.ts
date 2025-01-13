@@ -14,6 +14,7 @@ import {
   getWorkPreviews,
   PostVisibility,
   POST_PAGE_SIZE,
+  PREVIEW_LIMIT,
 } from "./helpers"
 
 // site settings
@@ -66,24 +67,25 @@ export const queryWorkIndex = async () => {
   const page = await client.queries.page({ relativePath: "work.json" })
   const _entries = await client.queries.workConnection({
     sort: "date",
+    last: PREVIEW_LIMIT,
+    filter: {
+      visibility: { eq: PostVisibility.LIVE },
+    },
   })
 
-  const entries = _entries.data.workConnection.edges
-    ?.filter((edge) => edge?.node?.visibility === PostVisibility.LIVE)
-    ?.map((edge) => {
-      const entry = edge?.node
-      return {
-        title: entry!.title,
-        description: entry!.description,
-        categories: toCategories(entry!.categories as WorkCategories[]),
-        image: {
-          src: entry!.images[0].src,
-          alt: entry!.images[0].alt,
-        },
-        slug: toSlug(entry!._sys.filename, "work"),
-      }
-    })
-    .reverse()
+  const entries = _entries.data.workConnection.edges?.map((edge) => {
+    const entry = edge?.node
+    return {
+      title: entry!.title,
+      description: entry!.description,
+      categories: toCategories(entry!.categories as WorkCategories[]),
+      image: {
+        src: entry!.images[0].src,
+        alt: entry!.images[0].alt,
+      },
+      slug: toSlug(entry!._sys.filename, "work"),
+    }
+  })
 
   return { page, entries }
 }
@@ -139,20 +141,21 @@ export const queryBlogIndex = async () => {
   const indexPostsResponse = await client.queries.postConnection({
     sort: "publishDate",
     last: POST_PAGE_SIZE,
+    filter: {
+      visibility: { eq: PostVisibility.LIVE },
+    },
   })
-  const pagePosts = indexPostsResponse.data.postConnection.edges
-    ?.filter((edge) => edge?.node?.visibility === PostVisibility.LIVE)
-    .map((edge) => {
-      const entry = edge?.node
-      return {
-        title: entry!.title,
-        description: entry!.description,
-        authors: toAuthors(entry!.authors as PostAuthors[]),
-        date: toPublishDate(entry!.publishDate),
-        categories: toCategories(entry!.categories as PostCategories[]),
-        slug: toSlug(entry!._sys.filename, "blog"),
-      }
-    })
+  const pagePosts = indexPostsResponse.data.postConnection.edges?.map((edge) => {
+    const entry = edge?.node
+    return {
+      title: entry!.title,
+      description: entry!.description,
+      authors: toAuthors(entry!.authors as PostAuthors[]),
+      date: toPublishDate(entry!.publishDate),
+      categories: toCategories(entry!.categories as PostCategories[]),
+      slug: toSlug(entry!._sys.filename, "blog"),
+    }
+  })
   const pageInfo = indexPostsResponse.data.postConnection.pageInfo
 
   // History & archive data
@@ -221,11 +224,16 @@ export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
     const post = await client.queries.post({ relativePath: `${slug}.md` })
     const postFilename = post.data.post._sys.filename
 
-    const posts = await client.queries.postConnection({
+    // Related posts
+
+    const allPosts = await client.queries.postConnection({
       sort: "publishDate",
+      filter: {
+        visibility: { eq: PostVisibility.LIVE },
+      },
     })
     const categories = post.data.post.categories.map((category) => category.categoryRef.name)
-    const relatedPosts = posts.data.postConnection.edges
+    const relatedPosts = allPosts.data.postConnection.edges
       ?.filter((edge) => {
         const _post = edge?.node
 

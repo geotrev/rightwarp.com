@@ -7,7 +7,7 @@ import {
   WorkServices,
 } from "../../tina/__generated__/types"
 
-const PREVIEW_LIMIT = 2
+export const PREVIEW_LIMIT = 2
 
 export const POST_PAGE_SIZE = 4
 
@@ -54,47 +54,47 @@ export const toImages = (images: WorkImages[]) => {
 export const getPostPreviews = async () => {
   const posts = await client.queries.postConnection({
     sort: "publishDate",
+    last: PREVIEW_LIMIT,
+    filter: {
+      visibility: { eq: PostVisibility.LIVE },
+    },
   })
 
-  return posts.data?.postConnection?.edges
-    ?.filter((edge) => edge?.node?.visibility === PostVisibility.LIVE)
-    ?.slice(0, PREVIEW_LIMIT)
-    ?.reverse()
-    ?.map((edge) => {
-      const post = edge?.node
+  return posts.data?.postConnection?.edges?.map((edge) => {
+    const post = edge?.node
 
-      return {
-        title: post!.title,
-        description: post!.description,
-        categories: toCategories(post!.categories as PostCategories[]),
-        slug: toSlug(post!._sys.filename, "blog"),
-        authors: toAuthors(post!.authors as PostAuthors[]),
-        date: toPublishDate(post!.publishDate),
-      }
-    })
+    return {
+      title: post!.title,
+      description: post!.description,
+      categories: toCategories(post!.categories as PostCategories[]),
+      slug: toSlug(post!._sys.filename, "blog"),
+      authors: toAuthors(post!.authors as PostAuthors[]),
+      date: toPublishDate(post!.publishDate),
+    }
+  })
 }
 
 export const getWorkPreviews = async () => {
   const entries = await client.queries.workConnection({
     sort: "date",
+    last: PREVIEW_LIMIT,
+    filter: {
+      visibility: { eq: PostVisibility.LIVE },
+    },
   })
 
-  return entries.data?.workConnection?.edges
-    ?.filter((edge) => edge?.node?.visibility === PostVisibility.LIVE)
-    ?.reverse()
-    ?.slice(0, PREVIEW_LIMIT)
-    ?.map((edge) => {
-      const entry = edge?.node
+  return entries.data?.workConnection?.edges?.map((edge) => {
+    const entry = edge?.node
 
-      return {
-        title: entry!.title,
-        description: entry!.description,
-        categories: toCategories(entry!.categories as WorkCategories[]),
-        image: {
-          src: entry!.images[0].src,
-          alt: entry!.images[0].alt,
-        },
-        slug: toSlug(entry!._sys.filename, "work"),
-      }
-    })
+    return {
+      title: entry!.title,
+      description: entry!.description,
+      categories: toCategories(entry!.categories as WorkCategories[]),
+      image: {
+        src: entry!.images[0].src,
+        alt: entry!.images[0].alt,
+      },
+      slug: toSlug(entry!._sys.filename, "work"),
+    }
+  })
 }

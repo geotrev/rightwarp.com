@@ -9,6 +9,11 @@ import {
 
 const PREVIEW_LIMIT = 2
 
+export const PostVisibility = {
+  LIVE: "Live",
+  DRAFT: "Draft",
+}
+
 export const toPublishDate = (date: string) => {
   return new Date(date).toLocaleDateString()
 }
@@ -50,6 +55,7 @@ export const getPostPreviews = async () => {
   })
 
   return posts.data?.postConnection?.edges
+    ?.filter((edge) => edge?.node?.visibility === PostVisibility.LIVE)
     ?.slice(0, PREVIEW_LIMIT)
     ?.reverse()
     ?.map((edge) => {
@@ -72,7 +78,7 @@ export const getWorkPreviews = async () => {
   })
 
   return entries.data?.workConnection?.edges
-    ?.filter((edge) => !edge?.node?.isHidden)
+    ?.filter((edge) => edge?.node?.visibility === PostVisibility.LIVE)
     ?.reverse()
     ?.slice(0, PREVIEW_LIMIT)
     ?.map((edge) => {

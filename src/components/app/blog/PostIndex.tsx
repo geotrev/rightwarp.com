@@ -1,3 +1,5 @@
+import { MouseEventHandler, useCallback, useState } from "react"
+
 import { Container } from "@/components/core"
 import { useIsLarge } from "@/utils/useMediaQuery"
 
@@ -15,10 +17,28 @@ interface PostIndexProps {
   }[]
   posts?: MediaCardProps[]
   history?: PostHistoryProps["history"]
+  pages?: number
 }
 
-export const PostIndex = ({ posts, categories, history }: PostIndexProps) => {
+export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps) => {
   const isLarge = useIsLarge()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [isLoading, setIsLoading] = useState(false)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [pageData, setPageData] = useState({
+    posts,
+    currentPage: 0,
+  })
+
+  const handlePageClick: MouseEventHandler<HTMLButtonElement> = useCallback(() => {}, [])
+
+  const handleNewestClick: MouseEventHandler<HTMLButtonElement> = useCallback(() => {}, [])
+
+  const handlePreviousClick: MouseEventHandler<HTMLButtonElement> = useCallback(() => {}, [])
+
+  const handleNextClick: MouseEventHandler<HTMLButtonElement> = useCallback(() => {}, [])
+
+  const handleOldestClick: MouseEventHandler<HTMLButtonElement> = useCallback(() => {}, [])
 
   return (
     <>
@@ -40,10 +60,24 @@ export const PostIndex = ({ posts, categories, history }: PostIndexProps) => {
             )}
           </aside>
           <div className="order-2 col-span-3 grid lg:order-1">
-            <div className="mb-8 grid gap-6 lg:mb-16 2xl:grid-cols-2">
-              {posts?.map((post) => <MediaCard key={post.slug} {...post} />)}
-            </div>
-            <Pagination />
+            {isLoading ? (
+              <div>Loading...</div>
+            ) : (
+              <div className="mb-8 grid gap-6 lg:mb-16 2xl:grid-cols-2">
+                {posts?.map((post) => <MediaCard key={post.slug} {...post} />)}
+              </div>
+            )}
+            {pages && (
+              <Pagination
+                currentPage={pageData.currentPage}
+                totalPages={pages}
+                handlePageClick={handlePageClick}
+                handleNewestClick={handleNewestClick}
+                handlePreviousClick={handlePreviousClick}
+                handleNextClick={handleNextClick}
+                handleOldestClick={handleOldestClick}
+              />
+            )}
           </div>
         </div>
       </Container>

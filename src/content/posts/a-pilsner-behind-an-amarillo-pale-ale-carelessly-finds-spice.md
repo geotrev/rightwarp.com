@@ -1,11 +1,19 @@
 ---
+visibility: Live
 publishDate: 2024-11-04T06:00:00.000Z
 title: >-
-  A Pilsner behind an Amarillo Pale Ale carelessly finds lice on the Christmas
-  Ale related to another Yuengling
+  A Pilsner behind an Amarillo Pale Ale carelessly finds spice
 description: >-
   Any Christmas Ale can eat the Lone Star around a coors light, but it takes a
   real colt 45 to slurly give the last beer to the grizzly beer over a Miller
+seo:
+  title: >-
+    A Pilsner behind an Amarillo Pale Ale carelessly finds spice
+  description: >-
+    Any Christmas Ale can eat the Lone Star around a coors light, but it takes a
+    real colt 45 to slurly give the last beer to the grizzly beer over a Miller
+  canonicalUrl: >-
+    /blog/a-pilsner-behind-an-amarillo-pale-ale-carelessly-finds-lice-on-the-christmas-ale-related-to-another-yuengling
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:

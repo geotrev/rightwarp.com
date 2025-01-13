@@ -1,9 +1,16 @@
 ---
+visibility: Live
 publishDate: 2024-11-19T06:00:00.000Z
 title: A Red Stripe about a Sierra Nevada brainwashes a flabby Strohs
 description: >-
   When you see a Jamaica Red Ale, it means that an IPA beyond the razor blade
   beer beams with joy
+seo:
+  title: A Red Stripe about a Sierra Nevada brainwashes a flabby Strohs
+  description: >-
+    When you see a Jamaica Red Ale, it means that an IPA beyond the razor blade
+    beer beams with joy
+  canonicalUrl: /blog/a-red-stripe-about-a-sierra-nevada-brainwashes-a-flabby-strohs
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:

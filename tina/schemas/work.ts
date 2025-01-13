@@ -16,9 +16,11 @@ export const Work: Collection = {
   },
   fields: [
     {
-      type: "boolean",
-      name: "isHidden",
-      label: "Hidden",
+      type: "string",
+      name: "visibility",
+      label: "Visibility",
+      options: ["Live", "Draft"],
+      ui: { defaultValue: "Draft" },
     },
     {
       type: "datetime",

@@ -1,9 +1,16 @@
 ---
+visibility: Live
 publishDate: 2024-10-08T05:00:00.000Z
-title: "A Fosters beyond a booze meditates, miller light hits"
+title: 'A Fosters beyond a booze meditates, miller light hits'
 description: >-
   A bar tab falls in love with the micro brew of a porter, a Yuengling trades
   baseball cards with the milwakees best
+seo:
+  title: 'A Fosters beyond a booze meditates, miller light hits'
+  description: >-
+    A bar tab falls in love with the micro brew of a porter, a Yuengling trades
+    baseball cards with the milwakees best
+  canonicalUrl: /blog/a-fosters-beyond-a-booze-meditates-miller-light-hits
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:

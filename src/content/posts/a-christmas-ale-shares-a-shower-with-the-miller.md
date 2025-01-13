@@ -1,14 +1,21 @@
 ---
+visibility: Live
 publishDate: 2025-01-03T06:00:00.000Z
 title: A Christmas Ale shares a shower with the miller
 description: >-
   Sometimes the Labatts beyond another bottle hides, but a familiar keg always
   competes
+seo:
+  title: A Christmas Ale shares a shower with the miller
+  description: >-
+    Sometimes the Labatts beyond another bottle hides, but a familiar keg always
+    competes
+  canonicalUrl: /blog/a-christmas-ale-shares-a-shower-with-the-miller
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:
-  - categoryRef: src/content/categories/development.json
   - categoryRef: src/content/categories/design.json
+  - categoryRef: src/content/categories/development.json
 ---
 
 #### The frozen chain saw

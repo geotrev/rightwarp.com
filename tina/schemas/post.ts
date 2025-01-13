@@ -16,6 +16,13 @@ export const Post: Collection = {
   },
   fields: [
     {
+      type: "string",
+      name: "visibility",
+      label: "Visibility",
+      options: ["Live", "Draft"],
+      ui: { defaultValue: "Draft" },
+    },
+    {
       type: "datetime",
       name: "publishDate",
       label: "Publish Date",

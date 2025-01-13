@@ -23,16 +23,17 @@ interface PageProps {
   }[]
   posts?: MediaCardProps[]
   history?: PostHistoryProps["history"]
+  pages?: number
 }
 
-export const ClientPage = ({ page, posts, categories, history }: PageProps) => {
+export const ClientPage = ({ page, pages, posts, categories, history }: PageProps) => {
   const { data: _data } = useTina(page)
   const data = _data.page
 
   return (
     <>
       <Hero heading={data.title} description={data.description} variant="display" />
-      <PostIndex posts={posts} categories={categories} history={history} />
+      <PostIndex posts={posts} categories={categories} history={history} pages={pages} />
       <ActionList {...blogProps.actionsProps} />
     </>
   )

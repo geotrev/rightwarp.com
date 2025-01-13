@@ -10,6 +10,7 @@ import {
   toSlug,
   toCategories,
   getWorkPreviews,
+  PostVisibility,
 } from "./helpers"
 
 // site settings
@@ -65,7 +66,7 @@ export const queryWorkIndex = async () => {
   })
 
   const entries = _entries.data.workConnection.edges
-    ?.filter((edge) => !edge?.node?.isHidden)
+    ?.filter((edge) => edge?.node?.visibility === PostVisibility.LIVE)
     ?.map((edge) => {
       const entry = edge?.node
       return {
@@ -124,7 +125,8 @@ export const queryBlogIndex = async () => {
     sort: "publishDate",
   })
   const posts = postsResponse.data.postConnection.edges
-    ?.map((edge) => {
+    ?.filter((edge) => edge?.node?.visibility === PostVisibility.LIVE)
+    .map((edge) => {
       const entry = edge?.node
       return {
         title: entry!.title,

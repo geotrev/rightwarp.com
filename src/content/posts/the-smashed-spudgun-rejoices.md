@@ -1,9 +1,16 @@
 ---
+visibility: Live
 publishDate: 2025-01-05T06:00:00.000Z
 title: The smashed spudgun rejoices
 description: >-
   A sake bomb from the pool table indicates that the malt from some Sierra
   Nevada
+seo:
+  title: The smashed spudgun rejoices
+  description: >-
+    A sake bomb from the pool table indicates that the malt from some Sierra
+    Nevada
+  canonicalUrl: /blog/the-smashed-spudgun-rejoices
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:

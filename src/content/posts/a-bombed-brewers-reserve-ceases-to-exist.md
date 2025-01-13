@@ -1,9 +1,16 @@
 ---
+visibility: Live
 publishDate: 2024-10-23T05:00:00.000Z
 title: A bombed Brewers Reserve ceases to exist
 description: >-
   Another Coors, a seldom precise bottle, and a barely sloshed ice house are
   what made America great!
+seo:
+  title: A bombed Brewers Reserve ceases to exist
+  description: >-
+    Another Coors, a seldom precise bottle, and a barely sloshed ice house are
+    what made America great!
+  canonicalUrl: /blog/a-bombed-brewers-reserve-ceases-to-exist
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:

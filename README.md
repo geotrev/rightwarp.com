@@ -4,11 +4,11 @@ Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
 
 ### v2
 
-- [ ] Blog
-  - [ ] Blog index pagination
-    - [ ] Blog post (with placeholder)
-  - [ ] Category subpage
-  - [ ] Archive subpage
+- [ ] Blog index
+  - [ ] Pagination
+- [ ] Blog post (with placeholder)
+- [ ] Blog category subpage
+- [ ] Blog archive subpage
 - [ ] Content
 - [ ] Add at least three (relatively simple) blog posts (to start)
 

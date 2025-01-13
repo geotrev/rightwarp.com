@@ -45,7 +45,11 @@ export const MediaCard = ({
     <MotionConfig transition={{ duration: 0.2 }}>
       <motion.div className="media-card relative w-full" whileHover={{ y: -10 }}>
         {/* [1] */}
-        <a href={slug} aria-labelledby={postId} className="absolute inset-0 z-10"></a>
+        <a
+          href={slug}
+          aria-labelledby={postId}
+          className="absolute inset-0 z-10 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-purple-800 md:rounded-3xl dark:focus-visible:ring-purple-100"
+        ></a>
         {image && (
           <figure className="media-card-image">
             <Image

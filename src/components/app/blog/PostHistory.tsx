@@ -24,7 +24,7 @@ export const PostHistory = ({ history }: PostHistoryProps) => {
               {item.months.map((month, index) => (
                 <a
                   key={index}
-                  className="flex items-center gap-2"
+                  className="link flex items-center gap-2 no-underline transition-[gap] hover:gap-3 hover:underline"
                   href={`/blog/archive/${item.year}/${month.label.toLowerCase()}`}
                 >
                   {month.label} ({month.count}){" "}

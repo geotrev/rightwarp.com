@@ -12,7 +12,7 @@ export interface HeroProps {
 export const Hero = ({ heading, description, details, variant = "standard" }: HeroProps) => {
   const fontStyles: Record<string, string> = {
     standard: cn(
-      "mb-4 text-xl leading-8 tracking-tight md:mb-8 md:text-3xl md:leading-10 md:tracking-tighter lg:text-5xl lg:leading-[4rem]",
+      "mb-4 text-3xl leading-8 tracking-tight md:mb-8 md:text-4xl md:leading-10 md:tracking-tighter lg:text-[4rem] lg:leading-[4rem]",
     ),
     display: cn(
       "mb-6 text-2xl tracking-tight sm:mb-8 sm:text-5xl sm:leading-[7vw] md:text-[6vw] md:tracking-tighter lg:mb-12",

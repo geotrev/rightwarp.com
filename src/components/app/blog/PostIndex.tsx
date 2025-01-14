@@ -34,17 +34,15 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
 
   const handlePageClick: (e: MouseEvent<HTMLButtonElement>, page: number) => void = useCallback(
     async (e, page) => {
-      if (pageData.currentPage === page) {
-        return
-      }
+      if (pageData.currentPage === page) return
 
       setIsLoading(true)
 
-      const after = page > 0 ? { before: pages?.[page - 1]?.end } : undefined
+      const position = page > 0 ? { before: pages?.[page - 1]?.end } : undefined
       const result = await queryPosts({
         sort: "publishDate",
         last: POST_PAGE_SIZE,
-        ...after,
+        ...position,
       })
 
       if (result.posts) {
@@ -59,13 +57,50 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
     [pageData.currentPage, pages],
   )
 
-  const handleNewestClick: MouseEventHandler<HTMLButtonElement> = useCallback(() => {}, [])
+  const handleNewestClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {
+    if (pageData.currentPage === 0) return
 
-  const handlePreviousClick: MouseEventHandler<HTMLButtonElement> = useCallback(() => {}, [])
+    setIsLoading(true)
 
-  const handleNextClick: MouseEventHandler<HTMLButtonElement> = useCallback(() => {}, [])
+    const result = await queryPosts({
+      sort: "publishDate",
+      last: POST_PAGE_SIZE,
+    })
 
-  const handleOldestClick: MouseEventHandler<HTMLButtonElement> = useCallback(() => {}, [])
+    if (result.posts) {
+      setPageData({
+        ...result,
+        currentPage: 0,
+      })
+    }
+
+    setIsLoading(false)
+  }, [pageData.currentPage])
+
+  const handlePreviousClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {}, [])
+
+  const handleNextClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {}, [])
+
+  const handleOldestClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {
+    if (pages?.length && pageData.currentPage === pages.length - 1) return
+
+    setIsLoading(true)
+
+    const result = await queryPosts({
+      sort: "publishDate",
+      last: POST_PAGE_SIZE,
+      before: pages?.[pages!.length - 2]?.end,
+    })
+
+    if (result.posts) {
+      setPageData({
+        ...result,
+        currentPage: pages!.length - 1,
+      })
+    }
+
+    setIsLoading(false)
+  }, [pageData.currentPage, pages])
 
   return (
     <>

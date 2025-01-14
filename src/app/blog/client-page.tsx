@@ -5,7 +5,7 @@ import { useTina } from "tinacms/dist/react"
 import { ActionList, Hero, MediaCardProps, PostHistoryProps } from "@/components/app"
 import { PostIndex } from "@/components/app/blog/PostIndex"
 
-import { PageInfo, PageQuery } from "../../../tina/__generated__/types"
+import { PageQuery } from "../../../tina/__generated__/types"
 import { blogProps } from "../_static/blogProps"
 
 interface PageProps {
@@ -23,24 +23,17 @@ interface PageProps {
   }[]
   posts?: MediaCardProps[]
   history?: PostHistoryProps["history"]
-  pages?: string[][]
-  pageInfo: PageInfo
+  pages?: { start: string; end: string }[]
 }
 
-export const ClientPage = ({ page, pages, pageInfo, posts, categories, history }: PageProps) => {
+export const ClientPage = ({ page, pages, posts, categories, history }: PageProps) => {
   const { data: _data } = useTina(page)
   const data = _data.page
 
   return (
     <>
       <Hero heading={data.title} description={data.description} variant="display" />
-      <PostIndex
-        posts={posts}
-        categories={categories}
-        history={history}
-        pages={pages}
-        pageInfo={pageInfo}
-      />
+      <PostIndex posts={posts} categories={categories} history={history} pages={pages} />
       <ActionList {...blogProps.actionsProps} />
     </>
   )

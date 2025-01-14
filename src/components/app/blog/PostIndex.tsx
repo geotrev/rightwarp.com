@@ -1,9 +1,10 @@
 import { MouseEvent, MouseEventHandler, useCallback, useState } from "react"
 
 import { Container } from "@/components/core"
+import { queryPosts } from "@/tina/client-queries"
+import { POST_PAGE_SIZE } from "@/tina/helpers"
 import { useIsLarge } from "@/utils/useMediaQuery"
 
-import { PageInfo } from "../../../../tina/__generated__/types"
 import { CategoryList } from "../shared/CategoryList"
 import { MediaCard, MediaCardProps } from "../shared/MediaCard"
 
@@ -18,8 +19,7 @@ interface PostIndexProps {
   }[]
   posts?: MediaCardProps[]
   history?: PostHistoryProps["history"]
-  pages?: string[][]
-  pageInfo: PageInfo
+  pages?: { start: string; end: string }[]
 }
 
 export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps) => {
@@ -33,10 +33,30 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
   })
 
   const handlePageClick: (e: MouseEvent<HTMLButtonElement>, page: number) => void = useCallback(
-    (e, page) => {
-      console.log(page)
+    async (e, page) => {
+      if (pageData.currentPage === page) {
+        return
+      }
+
+      setIsLoading(true)
+
+      const after = page > 0 ? { before: pages?.[page - 1]?.end } : undefined
+      const result = await queryPosts({
+        sort: "publishDate",
+        last: POST_PAGE_SIZE,
+        ...after,
+      })
+
+      if (result.posts) {
+        setPageData({
+          ...result,
+          currentPage: page,
+        })
+      }
+
+      setIsLoading(false)
     },
-    [],
+    [pageData.currentPage, pages],
   )
 
   const handleNewestClick: MouseEventHandler<HTMLButtonElement> = useCallback(() => {}, [])
@@ -71,7 +91,7 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
               <div>Loading...</div>
             ) : (
               <div className="mb-8 grid gap-6 lg:mb-16 2xl:grid-cols-2">
-                {posts?.map((post) => <MediaCard key={post.slug} {...post} />)}
+                {pageData.posts?.map((post) => <MediaCard key={post.slug} {...post} />)}
               </div>
             )}
             {pages && (

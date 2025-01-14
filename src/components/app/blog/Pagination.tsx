@@ -78,7 +78,7 @@ export const Pagination = ({
               })}
               type="button"
               onClick={handlePageClick}
-              data-page={page + 1}
+              data-page={page}
             >
               {page + 1}
             </button>

@@ -39,9 +39,14 @@ export const queryBlogIndex = async () => {
 
   const allPosts = await client.queries.postConnection({
     sort: "publishDate",
+    filter: {
+      visibility: { eq: PostVisibility.PUBLIC },
+    },
   })
-  const cursors = allPosts.data.postConnection.edges?.map((edge) => edge?.cursor)
-  const pages = chunk(POST_PAGE_SIZE, cursors)
+  const cursors = allPosts.data.postConnection.edges?.map((edge) => edge?.cursor).reverse()
+  const pages = chunk(POST_PAGE_SIZE, cursors).map((group) => {
+    return { start: group[0], end: group[group.length - 1] }
+  })
 
   // Info for visible pages & pagination
 
@@ -63,7 +68,6 @@ export const queryBlogIndex = async () => {
       slug: toSlug(entry!._sys.filename, "blog"),
     }
   })
-  const pageInfo = indexPostsResponse.data.postConnection.pageInfo
 
   // History & archive data
 
@@ -112,7 +116,7 @@ export const queryBlogIndex = async () => {
       months: entry.months.sort((prev, next) => next.month - prev.month),
     }))
 
-  return { page, categories, pages, posts: pagePosts, pageInfo, history }
+  return { page, categories, pages, posts: pagePosts, history }
 }
 
 // blog post

@@ -24,7 +24,7 @@ export const ClientPage = ({ page, entries }: PageProps) => {
 
   return (
     <>
-      <Hero heading={data.title} description={data.description} variant="display" />
+      <Hero heading={data.title} description={data.description} />
       <WorkList items={entries} />
       <ActionList {...workProps.actionsProps} />
     </>

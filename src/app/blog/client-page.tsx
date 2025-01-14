@@ -32,7 +32,7 @@ export const ClientPage = ({ page, pages, posts, categories, history }: PageProp
 
   return (
     <>
-      <Hero heading={data.title} description={data.description} variant="display" />
+      <Hero heading={data.title} description={data.description} />
       <PostIndex posts={posts} categories={categories} history={history} pages={pages} />
       <ActionList {...blogProps.actionsProps} />
     </>

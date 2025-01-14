@@ -23,7 +23,7 @@ export const ClientPage = ({ page }: PageProps) => {
 
   return (
     <>
-      <Hero heading={data.title} description={data.description} variant="display" />
+      <Hero heading={data.title} description={data.description} />
       <ActionList {...contactProps.scheduleActionsProps} />
       <RecaptchaVerifyWrapper>
         <ContactForm {...contactProps.contactFormProps} />

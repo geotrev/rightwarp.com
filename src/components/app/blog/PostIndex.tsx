@@ -1,4 +1,4 @@
-import { MouseEvent, MouseEventHandler, useCallback, useState } from "react"
+import { MouseEvent, MouseEventHandler, useCallback, useRef, useState } from "react"
 
 import { Container } from "@/components/core"
 import { queryPosts } from "@/tina/client-queries"
@@ -23,6 +23,7 @@ interface PostIndexProps {
 }
 
 export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps) => {
+  const containerRef = useRef<HTMLElement>(null)
   const isLarge = useIsLarge()
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isLoading, setIsLoading] = useState(false)
@@ -31,6 +32,10 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
     posts,
     currentPage: 0,
   })
+
+  const scrollToTop = useCallback(() => {
+    window?.scrollTo({ behavior: "smooth", top: 0 })
+  }, [])
 
   const handlePageClick: (e: MouseEvent<HTMLButtonElement>, page: number) => void = useCallback(
     async (e, page) => {
@@ -53,8 +58,9 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
       }
 
       setIsLoading(false)
+      scrollToTop()
     },
-    [pageData.currentPage, pages],
+    [pageData.currentPage, pages, scrollToTop],
   )
 
   const handleNewestClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {
@@ -75,11 +81,52 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
     }
 
     setIsLoading(false)
-  }, [pageData.currentPage])
+    scrollToTop()
+  }, [pageData.currentPage, scrollToTop])
 
-  const handlePreviousClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {}, [])
+  const handlePreviousClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {
+    if (pageData.currentPage === 0) return
 
-  const handleNextClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {}, [])
+    setIsLoading(true)
+
+    const result = await queryPosts({
+      sort: "publishDate",
+      last: POST_PAGE_SIZE,
+      before: pages?.[pageData.currentPage - 2]?.end,
+    })
+
+    if (result.posts) {
+      setPageData({
+        ...result,
+        currentPage: pageData.currentPage - 1,
+      })
+    }
+
+    setIsLoading(false)
+    scrollToTop()
+  }, [pageData.currentPage, pages, scrollToTop])
+
+  const handleNextClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {
+    if (pages?.length && pageData.currentPage === pages.length - 1) return
+
+    setIsLoading(true)
+
+    const result = await queryPosts({
+      sort: "publishDate",
+      last: POST_PAGE_SIZE,
+      before: pages?.[pageData.currentPage]?.end,
+    })
+
+    if (result.posts) {
+      setPageData({
+        ...result,
+        currentPage: pageData.currentPage + 1,
+      })
+    }
+
+    setIsLoading(false)
+    scrollToTop()
+  }, [pageData.currentPage, pages, scrollToTop])
 
   const handleOldestClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {
     if (pages?.length && pageData.currentPage === pages.length - 1) return
@@ -100,13 +147,14 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
     }
 
     setIsLoading(false)
-  }, [pageData.currentPage, pages])
+    scrollToTop()
+  }, [pageData.currentPage, pages, scrollToTop])
 
   return (
     <>
-      <Container className="mb-16 lg:mb-24" tag="section">
+      <Container className="mb-16 lg:mb-24" tag="section" ref={containerRef}>
         <div className="grid gap-12 lg:grid-cols-4 lg:gap-8">
-          <aside className="order-1 col-span-4 lg:order-2 lg:col-span-1">
+          <aside className="order-1 lg:order-2 lg:col-span-1">
             <div>
               <h3 className="display mb-4 text-black lg:text-2xl dark:text-white">Categories</h3>
               <CategoryList categories={categories} asLinks />
@@ -121,7 +169,7 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
               </>
             )}
           </aside>
-          <div className="order-2 col-span-3 grid lg:order-1">
+          <div className="order-2 grid lg:order-1 lg:col-span-3">
             {isLoading ? (
               <div>Loading...</div>
             ) : (

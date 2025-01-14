@@ -37,7 +37,7 @@ export const ClientPage = ({
 
   return (
     <>
-      <Hero heading={data.title} description={data.description} variant="display" />
+      <Hero heading={data.title} description={data.description} />
       <Intro {...staticProps.introProps} />
       <LogoMarquee {...staticProps.marqueeProps} />
       <SkillCategories {...staticProps.skillProps} />

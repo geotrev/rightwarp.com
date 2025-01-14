@@ -48,7 +48,7 @@ export const Pagination = ({
   )
 
   return (
-    <nav className="mt-4">
+    <nav>
       <div className="mb-4 flex justify-center">
         Page {currentPage + 1} of {totalPages}
       </div>

@@ -17,7 +17,6 @@ export const SEOField: TinaField = {
       name: "description",
       label: "Description",
       type: "string",
-      required: true,
     },
     {
       name: "keywords",

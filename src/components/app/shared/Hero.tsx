@@ -4,7 +4,7 @@ import React from "react"
 export interface HeroProps {
   heading: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  description?: string
+  description?: string | null
   variant?: "standard" | "display"
   details?: React.ReactNode
 }

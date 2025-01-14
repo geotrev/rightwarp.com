@@ -1,4 +1,6 @@
-import { MouseEvent, MouseEventHandler, useCallback, useRef, useState } from "react"
+"use client"
+
+import { MouseEvent, MouseEventHandler, useCallback, useState } from "react"
 
 import { Container } from "@/components/core"
 import { queryPosts } from "@/tina/client-queries"
@@ -6,10 +8,11 @@ import { POST_PAGE_SIZE } from "@/tina/helpers"
 import { useIsLarge } from "@/utils/useMediaQuery"
 
 import { CategoryList } from "../shared/CategoryList"
-import { MediaCard, MediaCardProps } from "../shared/MediaCard"
+import { MediaCardProps } from "../shared/MediaCard"
 
 import { Pagination } from "./Pagination"
 import { PostHistory, PostHistoryProps } from "./PostHistory"
+import { PostList } from "./PostList"
 
 interface PostIndexProps {
   categories?: {
@@ -23,7 +26,6 @@ interface PostIndexProps {
 }
 
 export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps) => {
-  const containerRef = useRef<HTMLElement>(null)
   const isLarge = useIsLarge()
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isLoading, setIsLoading] = useState(false)
@@ -152,7 +154,7 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
 
   return (
     <>
-      <Container className="mb-16 lg:mb-24" tag="section" ref={containerRef}>
+      <Container className="mb-16 lg:mb-24" tag="section">
         <div className="grid gap-12 lg:grid-cols-4 lg:gap-8">
           <aside className="order-1 lg:order-2 lg:col-span-1">
             <div>
@@ -169,12 +171,11 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
               </>
             )}
           </aside>
-          <div className="order-2 grid lg:order-1 lg:col-span-3">
-            {isLoading ? (
-              <div>Loading...</div>
-            ) : (
-              <div className="mb-8 grid gap-6 lg:mb-16 2xl:grid-cols-2">
-                {pageData.posts?.map((post) => <MediaCard key={post.slug} {...post} />)}
+          <div className="order-2 grid gap-8 lg:order-1 lg:col-span-3">
+            <PostList posts={pageData.posts} />
+            {isLoading && (
+              <div className="flex justify-center gap-4">
+                <span className="loading" /> Loading Posts
               </div>
             )}
             {pages && (

@@ -23,7 +23,6 @@ export const Page: Collection = {
       type: "string",
       name: "description",
       label: "Page Description",
-      required: true,
     },
     SEOField,
     OpenGraphField,

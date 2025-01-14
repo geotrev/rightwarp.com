@@ -10,6 +10,7 @@ seo:
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:
+  - categoryRef: src/content/categories/consulting.json
   - categoryRef: src/content/categories/design.json
   - categoryRef: src/content/categories/content-strategy.json
 ---

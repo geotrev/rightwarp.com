@@ -1,4 +1,4 @@
-import { Page, Settings, Work } from "@tina/__generated__/types"
+import { Page, Post, Settings, Work } from "@tina/__generated__/types"
 import { Metadata } from "next"
 
 import { querySiteSettings } from "@/tina/queries"
@@ -17,6 +17,12 @@ type OgType =
   | "video.episode"
   | "video.tv_show"
   | "video.other"
+
+type MetaOverrides = {
+  title?: string
+  description?: string
+  canonicalUrl?: string
+}
 
 const getPageTitle = (siteName?: string, pageTitle?: string) =>
   pageTitle ? `${siteName} • ${pageTitle}` : siteName ? siteName : "Needs Title"
@@ -59,9 +65,19 @@ const getIcons = (rootSettings: Settings) => {
   return icons
 }
 
-export async function generatePageMeta(page?: Page | Work): Promise<Metadata> {
+export async function generatePageMeta(
+  page?: Page | Post | Work,
+  overrides?: MetaOverrides,
+): Promise<Metadata> {
   const result = await querySiteSettings()
   const rootSettings = result.data.settings
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const dynamicTitle = overrides?.title
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const dynamicDescription = overrides?.description
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const dynamicCanonical = overrides?.canonicalUrl
 
   // base metadata
   const title = getPageTitle(rootSettings.siteName, page?.seo?.title || rootSettings.seo?.title)

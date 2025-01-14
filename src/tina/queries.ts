@@ -1,10 +1,7 @@
 import client from "@tina/__generated__/client"
 import "server-only"
 
-import {
-  // getPostPreviews,
-  getWorkPreviews,
-} from "./helpers"
+import { getPostPreviews, getWorkPreviews } from "./helpers"
 
 // site settings
 
@@ -18,28 +15,20 @@ export const querySiteSettings = async () => {
 
 export const queryHome = async () => {
   const page = await client.queries.page({ relativePath: "home.json" })
-  // const posts = await getPostPreviews()
+  const posts = await getPostPreviews()
   const work = await getWorkPreviews()
 
-  return {
-    page,
-    work,
-    // posts
-  }
+  return { page, work, posts }
 }
 
 // about
 
 export const queryAbout = async () => {
   const page = await client.queries.page({ relativePath: "about.json" })
-  // const posts = await getPostPreviews()
+  const posts = await getPostPreviews()
   const work = await getWorkPreviews()
 
-  return {
-    page,
-    work,
-    // posts
-  }
+  return { page, work, posts }
 }
 
 // contact
@@ -57,3 +46,7 @@ export * from "./queries/work"
 // blog
 
 export * from "./queries/blog"
+
+// blog category
+
+export * from "./queries/blog-category"

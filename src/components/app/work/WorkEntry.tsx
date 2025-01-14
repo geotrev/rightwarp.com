@@ -1,9 +1,9 @@
+import { Work } from "@tina/__generated__/types"
 import Image from "next/image"
 import { TinaMarkdown } from "tinacms/dist/rich-text"
 
 import { Container, SubContainer } from "@/components/core"
 
-import { Work } from "../../../../tina/__generated__/types"
 import { WorkComponentsBody, WorkComponentsBodyIntro } from "../shared/MarkdownComponents"
 
 import { WorkMetadata } from "./WorkMetadata"

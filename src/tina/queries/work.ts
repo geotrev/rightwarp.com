@@ -1,7 +1,7 @@
+import client from "@tina/__generated__/client"
+import { WorkCategories } from "@tina/__generated__/types"
 import "server-only"
 
-import client from "../../../tina/__generated__/client"
-import { WorkCategories } from "../../../tina/__generated__/types"
 import { PostVisibility, toCategories, toSlug } from "../helpers"
 
 export const queryWorkIndex = async () => {

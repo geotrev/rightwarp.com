@@ -1,11 +1,11 @@
-import client from "../../tina/__generated__/client"
+import client from "@tina/__generated__/client"
 import {
   PostAuthors,
   PostCategories,
   WorkCategories,
   WorkImages,
   WorkServices,
-} from "../../tina/__generated__/types"
+} from "@tina/__generated__/types"
 
 export const PREVIEW_LIMIT = 2
 

@@ -1,12 +1,11 @@
 "use client"
 
+import { Work, WorkQuery } from "@tina/__generated__/types"
 import { useTina } from "tinacms/dist/react"
 
 import { workProps } from "@/app/_static/workPage"
 import { ActionList, Hero, WorkEntry } from "@/components/app"
 import { BrowseButtons } from "@/components/app/shared/BrowseButtons"
-
-import { Work, WorkQuery } from "../../../../tina/__generated__/types"
 
 interface PageProps {
   data: WorkQuery

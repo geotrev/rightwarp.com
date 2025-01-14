@@ -1,9 +1,9 @@
+import client from "@tina/__generated__/client"
+import { PostAuthors, PostCategories } from "@tina/__generated__/types"
 import "server-only"
 
 import { PostHistoryItem } from "@/components/app"
 
-import client from "../../../tina/__generated__/client"
-import { PostAuthors, PostCategories } from "../../../tina/__generated__/types"
 import {
   POST_PAGE_SIZE,
   PostVisibility,

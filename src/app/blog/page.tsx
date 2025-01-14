@@ -1,7 +1,7 @@
+import { Page } from "@tina/__generated__/types"
+
 import { queryBlogIndex } from "@/tina/queries"
 import { generatePageMeta } from "@/utils/generatePageMetadata"
-
-import { Page } from "../../../tina/__generated__/types"
 
 import { ClientPage } from "./client-page"
 

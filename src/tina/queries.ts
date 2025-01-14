@@ -1,6 +1,5 @@
+import client from "@tina/__generated__/client"
 import "server-only"
-
-import client from "../../tina/__generated__/client"
 
 import {
   // getPostPreviews,

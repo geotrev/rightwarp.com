@@ -1,5 +1,6 @@
 "use client"
 
+import { PageQuery } from "@tina/__generated__/types"
 import { useTina } from "tinacms/dist/react"
 
 import {
@@ -10,8 +11,6 @@ import {
   LogoMarquee,
   MediaCardProps,
 } from "@/components/app"
-
-import { PageQuery } from "../../tina/__generated__/types"
 
 import { homeProps } from "./_static/homePage"
 

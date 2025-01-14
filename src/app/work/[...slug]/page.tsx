@@ -1,9 +1,8 @@
+import { Work } from "@tina/__generated__/types"
 import { notFound } from "next/navigation"
 
 import { queryWorkEntry, queryWorkStaticParams } from "@/tina/queries"
 import { generatePageMeta } from "@/utils/generatePageMetadata"
-
-import { Work } from "../../../../tina/__generated__/types"
 
 import { ClientPage } from "./client-page"
 

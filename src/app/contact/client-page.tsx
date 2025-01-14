@@ -1,10 +1,10 @@
 "use client"
 
+import { PageQuery } from "@tina/__generated__/types"
 import { useTina } from "tinacms/dist/react"
 
 import { ActionList, ContactForm, Hero, RecaptchaVerifyWrapper } from "@/components/app"
 
-import { PageQuery } from "../../../tina/__generated__/types"
 import { contactProps } from "../_static/contactPage"
 
 interface PageProps {

@@ -1,11 +1,11 @@
 "use client"
 
+import { PageQuery } from "@tina/__generated__/types"
 import { useTina } from "tinacms/dist/react"
 
 import { ActionList, Hero, MediaCardProps, PostHistoryProps } from "@/components/app"
 import { PostIndex } from "@/components/app/blog/PostIndex"
 
-import { PageQuery } from "../../../tina/__generated__/types"
 import { blogProps } from "../_static/blogProps"
 
 interface PageProps {

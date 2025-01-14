@@ -1,8 +1,7 @@
+import { Page, Settings, Work } from "@tina/__generated__/types"
 import { Metadata } from "next"
 
 import { querySiteSettings } from "@/tina/queries"
-
-import { Page, Settings, Work } from "../../tina/__generated__/types"
 
 // Because Metadata['openGraph']['type'] is not accessible in the Next.js
 type OgType =

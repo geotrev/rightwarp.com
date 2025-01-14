@@ -53,10 +53,18 @@ export const Pagination = ({
         Page {currentPage + 1} of {totalPages}
       </div>
       <div className="flex items-center justify-center gap-4">
-        <button className="btn btn-outline" type="button" onClick={handleNewestClick}>
+        <button
+          className="btn btn-outline size-12 min-h-0 p-0"
+          type="button"
+          onClick={handleNewestClick}
+        >
           <span className="sr-only">Newest posts</span> <ChevronFirst size={20} />
         </button>
-        <button className="btn btn-outline" type="button" onClick={handlePreviousClick}>
+        <button
+          className="btn btn-outline size-12 min-h-0 p-0"
+          type="button"
+          onClick={handlePreviousClick}
+        >
           <span className="sr-only">Previous posts</span>
           <ChevronLeft size={20} />
         </button>
@@ -64,7 +72,7 @@ export const Pagination = ({
           typeof page === "number" ? (
             <button
               key={page}
-              className={cn("btn", {
+              className={cn("btn size-12 min-h-0 p-0", {
                 "btn-ghost": page !== currentPage,
                 "btn-primary text-white dark:text-black": page === currentPage,
               })}
@@ -80,11 +88,19 @@ export const Pagination = ({
             </div>
           ),
         )}
-        <button className="btn btn-outline" type="button" onClick={handleNextClick}>
+        <button
+          className="btn btn-outline size-12 min-h-0 p-0"
+          type="button"
+          onClick={handleNextClick}
+        >
           <span className="sr-only">Older posts</span>
           <ChevronRight size={20} />
         </button>
-        <button className="btn btn-outline" type="button" onClick={handleOldestClick}>
+        <button
+          className="btn btn-outline size-12 min-h-0 p-0"
+          type="button"
+          onClick={handleOldestClick}
+        >
           <span className="sr-only">Oldest posts</span> <ChevronLast size={20} />
         </button>
       </div>

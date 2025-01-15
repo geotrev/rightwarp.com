@@ -1,7 +1,7 @@
 "use client"
 
 import cn from "classnames"
-import { ArrowRight, SquareArrowOutUpRight } from "lucide-react"
+import { Mail, SquareArrowOutUpRight } from "lucide-react"
 import Link from "next/link"
 
 import { Container } from "@/components/core"
@@ -36,7 +36,7 @@ export const actionTypes = {
         "btn btn-primary w-full text-white lg:btn-lg md:w-[50%] lg:w-full dark:text-black",
       )}
     >
-      Warp Zone <ArrowRight className="size-5 lg:size-6" />
+      Warp Zone <Mail className="size-5 lg:size-6" />
     </Link>
   ),
   newsletter: <SubscribeForm />,

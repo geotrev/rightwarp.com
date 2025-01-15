@@ -1,7 +1,7 @@
 "use client"
 
 import cn from "classnames"
-import { ArrowRight, Sparkle } from "lucide-react"
+import { Mail, Sparkle } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef } from "react"
@@ -71,7 +71,7 @@ export const Header = () => {
                 "btn btn-primary btn-sm text-white sm:btn-md md:me-2 lg:me-10 dark:text-black",
               )}
             >
-              Warp Zone <ArrowRight className="size-4 lg:size-5" />
+              Warp Zone <Mail className="size-4 lg:size-5" />
             </Link>
             <div className="me-3 hidden text-sm xl:block">
               inquire about a project or just say hi

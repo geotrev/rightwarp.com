@@ -6,7 +6,7 @@ interface BlogProps {
 
 // WIP should be block components
 
-export const blogProps: BlogProps = {
+export const staticProps: BlogProps = {
   actionsProps: {
     actions: [
       {

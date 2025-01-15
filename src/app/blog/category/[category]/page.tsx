@@ -27,7 +27,6 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }: { params: Promise<{ category: string }> }) {
   const { category } = await params
-
   const query = await queryCategory(`${category}`)
 
   if (!query) {

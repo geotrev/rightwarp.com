@@ -6,7 +6,7 @@ import { useTina } from "tinacms/dist/react"
 import { ActionList, Hero, MediaCardProps, PostHistoryProps } from "@/components/app"
 import { PostIndex } from "@/components/app/blog/PostIndex"
 
-import { blogProps } from "../_static/blogProps"
+import { staticProps } from "../_static/blogPage"
 
 interface PageProps {
   page: {
@@ -34,7 +34,7 @@ export const ClientPage = ({ page, pages, posts, categories, history }: PageProp
     <>
       <Hero heading={data.title} description={data.description} />
       <PostIndex posts={posts} categories={categories} history={history} pages={pages} />
-      <ActionList {...blogProps.actionsProps} />
+      <ActionList {...staticProps.actionsProps} />
     </>
   )
 }

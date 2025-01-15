@@ -16,6 +16,8 @@ export const PostVisibility = {
   DRAFT: "Draft",
 }
 
+export const toMonth = (date: Date) => date.toLocaleString("en", { month: "long" })
+
 export const toPublishDate = (date: string) => {
   return new Date(date).toLocaleDateString()
 }

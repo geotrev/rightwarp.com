@@ -9,11 +9,10 @@ import {
   PostVisibility,
   toAuthors,
   toCategories,
+  toMonth,
   toPublishDate,
   toSlug,
 } from "../helpers"
-
-const toMonth = (date: Date) => date.toLocaleString("en", { month: "long" })
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const chunk = (size: number, arr?: any[]) =>
@@ -122,6 +121,7 @@ export const queryBlogIndex = async () => {
 // blog post
 
 export const queryPostStaticParams = async () => {
+  // DO NOT filter this by visibility – drafts need to be accessible, but not navigable
   const pages = await client.queries.postConnection()
   const paths = pages.data?.postConnection?.edges?.map((edge) => ({
     slug: edge?.node?._sys.breadcrumbs,

@@ -1,6 +1,6 @@
 import { TinaField } from "tinacms"
 
-import { KEYWORD_MIN } from "../constants"
+const KEYWORD_MIN = 3
 
 export const SEOField: TinaField = {
   type: "object",

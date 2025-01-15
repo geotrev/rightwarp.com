@@ -10,7 +10,7 @@ seo:
   description: >-
     Another Coors, a seldom precise bottle, and a barely sloshed ice house are
     what made America great!
-  canonicalUrl: /blog/a-bombed-brewers-reserve-ceases-to-exist
+  url: /blog/a-bombed-brewers-reserve-ceases-to-exist
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:

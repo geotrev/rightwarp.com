@@ -10,7 +10,7 @@ seo:
   description: >-
     When you see a Jamaica Red Ale, it means that an IPA beyond the razor blade
     beer beams with joy
-  canonicalUrl: /blog/a-red-stripe-about-a-sierra-nevada-brainwashes-a-flabby-strohs
+  url: /blog/a-red-stripe-about-a-sierra-nevada-brainwashes-a-flabby-strohs
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:

@@ -10,7 +10,7 @@ seo:
   description: >-
     Some annoying ice house sweeps the floor, and a bullfrog brew prays;
     however, a pit viper has a change of heart about a soggy bull ice
-  canonicalUrl: /blog/it-means-that-an-overwhelmingly-resplendent-bridgeport-esb-hibernates
+  url: /blog/it-means-that-an-overwhelmingly-resplendent-bridgeport-esb-hibernates
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:

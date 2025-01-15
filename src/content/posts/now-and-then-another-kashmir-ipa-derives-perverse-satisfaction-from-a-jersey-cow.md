@@ -14,7 +14,7 @@ seo:
   description: >-
     Pilsner indicates that a hammered bottle of beer dances with the Rolling
     Rock living with a Hoptoberfest
-  canonicalUrl: >-
+  url: >-
     /blog/now-and-then-another-kashmir-ipa-derives-perverse-satisfaction-from-a-jersey-cow
 authors:
   - authorRef: src/content/authors/george-treviranus.json

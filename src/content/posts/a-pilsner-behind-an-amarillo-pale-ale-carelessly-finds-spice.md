@@ -12,7 +12,7 @@ seo:
   description: >-
     Any Christmas Ale can eat the Lone Star around a coors light, but it takes a
     real colt 45 to slurly give the last beer to the grizzly beer over a Miller
-  canonicalUrl: >-
+  url: >-
     /blog/a-pilsner-behind-an-amarillo-pale-ale-carelessly-finds-lice-on-the-christmas-ale-related-to-another-yuengling
 authors:
   - authorRef: src/content/authors/george-treviranus.json

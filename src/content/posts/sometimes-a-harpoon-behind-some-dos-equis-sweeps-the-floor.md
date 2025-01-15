@@ -6,7 +6,7 @@ description: Hoptoberfest around a blood clot always graduates from the Sam Adam
 seo:
   title: Sometimes a Harpoon behind some Dos Equis sweeps the floor
   description: Hoptoberfest around a blood clot always graduates from the Sam Adams
-  canonicalUrl: /blog/sometimes-a-harpoon-behind-some-dos-equis-sweeps-the-floor
+  url: /blog/sometimes-a-harpoon-behind-some-dos-equis-sweeps-the-floor
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:

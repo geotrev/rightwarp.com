@@ -6,7 +6,7 @@ description: Any polar bear beer can borrow money from a mysterious Budweiser
 seo:
   title: "Indeed, a Red Stripe over a milwakees best wastedly competes"
   description: Any polar bear beer can borrow money from a mysterious Budweiser
-  canonicalUrl: /blog/indeed-a-red-stripe-over-a-milwakees-best-wastedly-competes
+  url: /blog/indeed-a-red-stripe-over-a-milwakees-best-wastedly-competes
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:

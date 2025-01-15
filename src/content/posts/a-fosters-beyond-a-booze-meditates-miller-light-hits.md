@@ -10,7 +10,7 @@ seo:
   description: >-
     A bar tab falls in love with the micro brew of a porter, a Yuengling trades
     baseball cards with the milwakees best
-  canonicalUrl: /blog/a-fosters-beyond-a-booze-meditates-miller-light-hits
+  url: /blog/a-fosters-beyond-a-booze-meditates-miller-light-hits
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:

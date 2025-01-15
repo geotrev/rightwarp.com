@@ -24,7 +24,7 @@ export const ClientPage = ({ page: _page, posts, categoryName }: PageProps) => {
 
   return (
     <>
-      <Hero heading={`${page.title}: ${categoryName}`} />
+      <Hero heading={`${page.title} ${categoryName}`} />
       <Container>
         <PostList posts={posts} />
       </Container>

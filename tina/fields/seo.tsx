@@ -32,7 +32,7 @@ export const SEOField: TinaField = {
       },
     },
     {
-      name: "canonicalUrl",
+      name: "url",
       label: "Canonical URL Or Path",
       type: "string",
       description: "E.g., https://google.com or /blog",

@@ -10,7 +10,7 @@ seo:
   description: >-
     A sake bomb from the pool table indicates that the malt from some Sierra
     Nevada
-  canonicalUrl: /blog/the-smashed-spudgun-rejoices
+  url: /blog/the-smashed-spudgun-rejoices
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:

@@ -21,7 +21,7 @@ type OgType =
 type MetaOverrides = {
   title?: string
   description?: string
-  canonicalUrl?: string
+  url?: string
 }
 
 const getPageTitle = (siteName?: string, pageTitle?: string) =>
@@ -72,63 +72,79 @@ export async function generatePageMeta(
   const result = await querySiteSettings()
   const rootSettings = result.data.settings
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dynamicTitle = overrides?.title
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dynamicDescription = overrides?.description
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const dynamicCanonical = overrides?.canonicalUrl
+  const dynamicCanonical = overrides?.url
 
   // base metadata
-  const title = getPageTitle(rootSettings.siteName, page?.seo?.title || rootSettings.seo?.title)
-  const description = page?.seo?.description || rootSettings.seo?.description
+  const title = getPageTitle(
+    rootSettings.siteName,
+    dynamicTitle || page?.seo?.title || rootSettings.seo?.title,
+  )
+  const description = dynamicDescription || page?.seo?.description || rootSettings.seo?.description
   const keywords = page?.seo?.keywords || rootSettings?.seo?.keywords
 
+  // Root metadata url base - used by all metadata fields
+  // to enable relative paths
   let metadataBase: string | URL
   if (process.env.NODE_ENV === "development") {
     metadataBase = new URL(process.env.CONFIG_CANONICAL_URL_DEV!)
-  } else if (rootSettings?.seo?.canonicalUrl) {
-    metadataBase = new URL(rootSettings.seo.canonicalUrl)
+  } else if (rootSettings?.seo?.url) {
+    metadataBase = new URL(rootSettings.seo.url)
   } else {
     metadataBase = new URL("https://placehold.co")
   }
 
-  const canonical = page?.seo?.canonicalUrl || metadataBase
+  const canonical = dynamicCanonical || page?.seo?.url || metadataBase
 
   // open graph
-  const openGraph = page?.openGraph || rootSettings.openGraph
-  const ogImage = openGraph?.image
+  const pageOpenGraph = page?.openGraph
+  const rootOpenGraph = rootSettings.openGraph
+  const ogImage = pageOpenGraph?.image || rootOpenGraph?.image
   const ogTitle = getPageTitle(
     rootSettings.siteName,
-    openGraph?.title || page?.seo?.title || rootSettings.seo?.title,
+    dynamicTitle ||
+      pageOpenGraph?.title ||
+      page?.seo?.title ||
+      rootOpenGraph?.title ||
+      rootSettings.seo?.title ||
+      "Needs Title",
   )
   const ogDescription =
-    openGraph?.description ||
+    dynamicDescription ||
+    pageOpenGraph?.description ||
     page?.seo?.description ||
+    rootOpenGraph?.description ||
     rootSettings?.seo?.description ||
     "Needs Description"
+
   const ogUrl =
-    process.env.NODE_ENV === "development"
-      ? process.env.CONFIG_CANONICAL_URL_DEV!
-      : openGraph?.url || page?.seo?.canonicalUrl || rootSettings?.seo?.canonicalUrl || "Needs URL"
-  const ogType = openGraph?.type as OgType
-  const openGraphMetadata: Partial<Metadata> = {
-    openGraph: {
-      siteName: rootSettings.siteName,
-      title: ogTitle,
-      description: ogDescription,
-      url: ogUrl,
-      type: ogType,
-      images: [
-        {
-          url: ogImage!,
-          width: 1200,
-          height: 630,
-          alt: ogDescription,
-        },
-      ],
-    },
-  }
+    dynamicCanonical ||
+    pageOpenGraph?.url ||
+    page?.seo?.url ||
+    rootOpenGraph?.url ||
+    rootSettings?.seo?.url ||
+    "https://placehold.co"
+
+  const ogType = (pageOpenGraph?.type || rootOpenGraph?.type) as OgType
+
+  const openGraph: Metadata["openGraph"] = ogImage
+    ? {
+        siteName: rootSettings.siteName,
+        title: ogTitle,
+        description: ogDescription,
+        url: ogUrl,
+        type: ogType,
+        images: [
+          {
+            url: ogImage!,
+            width: 1200,
+            height: 630,
+            alt: ogDescription,
+          },
+        ],
+      }
+    : null
 
   // icons
   const icons = getIcons(rootSettings as Settings)
@@ -141,6 +157,6 @@ export async function generatePageMeta(
     alternates: { canonical },
     icons,
     appleWebApp: { title: rootSettings.siteName! },
-    ...(ogImage && openGraphMetadata),
+    openGraph,
   }
 }

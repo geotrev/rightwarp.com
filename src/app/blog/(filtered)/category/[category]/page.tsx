@@ -10,8 +10,15 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   const { category } = await params
   const query = await queryCategory(`${category}`)
   const page = query?.page.data.page
+  const categoryName = query?.categoryName
+  const urlBase = page?.seo?.url
 
-  return generatePageMeta(page as PageType)
+  const options = {
+    title: `${page?.title} ${categoryName}`,
+    url: `${urlBase}/${category}`,
+  }
+
+  return generatePageMeta(page as PageType, options)
 }
 
 export async function generateStaticParams() {
@@ -21,7 +28,6 @@ export async function generateStaticParams() {
 export default async function Page({ params }: { params: Promise<{ category: string }> }) {
   const { category } = await params
 
-  console.log({ category })
   const query = await queryCategory(`${category}`)
 
   if (!query) {

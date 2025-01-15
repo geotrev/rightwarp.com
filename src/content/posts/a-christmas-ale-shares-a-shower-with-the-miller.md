@@ -10,7 +10,7 @@ seo:
   description: >-
     Sometimes the Labatts beyond another bottle hides, but a familiar keg always
     competes
-  canonicalUrl: /blog/a-christmas-ale-shares-a-shower-with-the-miller
+  url: /blog/a-christmas-ale-shares-a-shower-with-the-miller
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:

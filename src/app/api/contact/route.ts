@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server"
 
-import { MailData, sendEmail } from "@/server/sendMail"
 import { FormStatus } from "@/utils/helpers"
+
+import { MailData, sendEmail } from "./sendMail"
 
 export async function POST(req: Request) {
   const formData = await req.json()

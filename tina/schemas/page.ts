@@ -11,6 +11,17 @@ export const Page: Collection = {
   format: "json",
   ui: {
     ...slugify("title"),
+    router: ({ document }) => {
+      switch (document._sys.filename) {
+        case "home":
+          return "/"
+        case "category":
+        case "archive":
+          return undefined
+        default:
+          return document._sys.filename
+      }
+    },
   },
   fields: [
     {

@@ -57,10 +57,11 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
           ...result,
           currentPage: page,
         })
+
+        scrollToTop()
       }
 
       setIsLoading(false)
-      scrollToTop()
     },
     [pageData.currentPage, pages, scrollToTop],
   )
@@ -80,10 +81,11 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
         ...result,
         currentPage: 0,
       })
+
+      scrollToTop()
     }
 
     setIsLoading(false)
-    scrollToTop()
   }, [pageData.currentPage, scrollToTop])
 
   const handlePreviousClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {
@@ -102,10 +104,11 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
         ...result,
         currentPage: pageData.currentPage - 1,
       })
+
+      scrollToTop()
     }
 
     setIsLoading(false)
-    scrollToTop()
   }, [pageData.currentPage, pages, scrollToTop])
 
   const handleNextClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {
@@ -124,10 +127,11 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
         ...result,
         currentPage: pageData.currentPage + 1,
       })
+
+      scrollToTop()
     }
 
     setIsLoading(false)
-    scrollToTop()
   }, [pageData.currentPage, pages, scrollToTop])
 
   const handleOldestClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {
@@ -146,10 +150,11 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
         ...result,
         currentPage: pages!.length - 1,
       })
+
+      scrollToTop()
     }
 
     setIsLoading(false)
-    scrollToTop()
   }, [pageData.currentPage, pages, scrollToTop])
 
   return (

@@ -12,9 +12,6 @@ export const TAILWIND_THEME: Partial<CustomThemeConfig> = {
       },
     },
   },
-  transitionDuration: {
-    DEFAULT: "400ms",
-  },
   keyframes: {
     "marquee-start": {
       "0%": { transform: "translateX(0)" },

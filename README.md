@@ -4,11 +4,14 @@ Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
 
 ### v2
 
+- [ ] Logo should have some logotype
+- [ ] Better contact CTA text/icon?
+- [ ] Skill badges less clicky-looking?
 - [x] Blog index
   - [x] Pagination
 - [ ] Blog post (with placeholder)
 - [x] Blog category subpage
-- [ ] Blog archive subpage
+- [x] Blog archive subpage
 - [ ] Add at least three (relatively simple) blog posts (to start)
 - [ ] Add testimonials (x3)
 - [ ] Move static content to CMS

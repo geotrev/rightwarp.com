@@ -3,7 +3,7 @@
 import { PageQuery } from "@tina/__generated__/types"
 
 import { staticProps } from "@/app/_static/blogPage"
-import { ActionList, Hero, MediaCardProps } from "@/components/app"
+import { ActionList, BrowseButtons, Hero, MediaCardProps } from "@/components/app"
 import { PostList } from "@/components/app/blog/PostList"
 import { Container } from "@/components/core"
 
@@ -30,6 +30,7 @@ export const ClientPage = ({ page: _page, posts, range }: PageProps) => {
       <Container>
         <PostList posts={posts} />
       </Container>
+      <BrowseButtons {...staticProps.browseButtonsProps} />
       <ActionList {...staticProps.actionsProps} />
     </>
   )

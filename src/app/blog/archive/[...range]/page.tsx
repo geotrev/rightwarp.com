@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ range: st
 
   const options = {
     title: `${page?.title} ${month} ${year}`,
-    url: `${urlBase}/${year}/${month}`,
+    url: `${urlBase}/${year}/${range[1]}`,
   }
 
   return generatePageMeta(page as PageType, options)

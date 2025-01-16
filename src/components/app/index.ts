@@ -37,3 +37,4 @@ export * from "./work/WorkEntry"
 
 export * from "./blog/PostIndex"
 export * from "./blog/PostHistory"
+export * from "./blog/Post"

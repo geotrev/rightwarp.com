@@ -124,7 +124,7 @@ export const queryPostStaticParams = async () => {
   // DO NOT filter this by visibility – drafts need to be accessible, but not navigable
   const pages = await client.queries.postConnection()
   const paths = pages.data?.postConnection?.edges?.map((edge) => ({
-    slug: edge?.node?._sys.breadcrumbs,
+    slug: edge?.node?._sys.filename,
   }))
 
   return paths || []

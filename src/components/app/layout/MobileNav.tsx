@@ -102,12 +102,14 @@ export const MobileNav = ({ theme }: { theme: string }) => {
                 })}
               </ul>
             </nav>
-            <Link
-              href={Routes.CONTACT}
-              className="btn btn-primary btn-block text-white dark:text-black"
-            >
-              Warp Zone <Mail size={20} />
-            </Link>
+            <Dialog.Close asChild>
+              <Link
+                href={Routes.CONTACT}
+                className="btn btn-primary btn-block text-white dark:text-black"
+              >
+                Warp Zone <Mail size={20} />
+              </Link>
+            </Dialog.Close>
           </div>
         </Dialog.Content>
       </Dialog.Portal>

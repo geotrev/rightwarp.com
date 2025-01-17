@@ -3,6 +3,8 @@ import { TinaMarkdown } from "tinacms/dist/rich-text"
 
 import { Container } from "@/components/core"
 
+import { PostMetadata } from "./PostMetadata"
+
 export interface PostProps {
   post: PostType
   relatedPosts?: {
@@ -14,27 +16,19 @@ export interface PostProps {
 
 export const Post = ({ post, relatedPosts }: PostProps) => {
   return (
-    <Container isRaised isConstrained className="grid gap-8 xl:grid-cols-4">
-      <article className="xl:col-span-3">
-        <h1>{post.title}</h1>
-        <p>{post.description}</p>
-        <div className="prose">
+    <Container isRaised isConstrained className="grid gap-8 lg:grid-cols-4 lg:gap-12">
+      <div className="lg:col-span-3">
+        <div className="prose xl:prose-lg dark:prose-invert">
           <TinaMarkdown content={post.body} />
         </div>
-      </article>
-      {relatedPosts && (
-        <aside className="xl:col-span-1">
-          <h2>Related Posts</h2>
-          <ul>
-            {relatedPosts.map((relatedPost) => (
-              <li key={relatedPost.slug}>
-                <a href={`/blog/${relatedPost.slug}`}>{relatedPost.title}</a>
-                <p>{relatedPost.date}</p>
-              </li>
-            ))}
-          </ul>
-        </aside>
-      )}
+      </div>
+      <div className="lg:col-span-1">
+        <PostMetadata
+          relatedPosts={relatedPosts}
+          authors={post.authors}
+          publishDate={post.publishDate}
+        />
+      </div>
     </Container>
   )
 }

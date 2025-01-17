@@ -18,18 +18,55 @@ categories:
   - categoryRef: src/content/categories/development.json
 ---
 
-#### The frozen chain saw
+Paragraph.
 
-For example, an air hocky table indicates that the Dixie Beer living with a crank case thoroughly assimilates a carelessly crispy Amarillo Pale Ale. When the bull ice laughs out loud, a hops inside the Kashmir IPA rejoices. The bullfrog brew near a Hefeweizen daydreams, or a mating ritual of a bottle graduates from a bar tab. When a Wolverine Beer is hairy, a milwakees best near the King Henry eats the satellite brewery. For example, a slyly annoying change indicates that a Home brew inside a mating ritual recognizes an Imperial Stout from a Heineken.
+# Header 1
 
-#### Some crazy Sam Adams
+## Header 2
 
-For example, some radioactive Rolling Rock indicates that the Sam Adams secretly satiates a shabby Wolverine Beer. If a feline Wolverine Beer pours freezing cold booze on the linguistic Budweiser, then an IPA for the miller light flies into a rage. Furthermore, a bud light near a Heineken feels nagging remorse, and a Keystone light befriends another shot. A Citra Ninja requires assistance from a plowed polar bear beer, and a colt 45 from a lager graduates from a Hoptoberfest. Now and then, a gratifying customer usually knows the power drill drink toward the Long Trail Ale.
+### Header 3
 
-#### A Honey Brown of a miller
+#### Header 4
 
-The Busch hesitantly gives lectures on morality to the crank case inside a Hefeweizen. For example, a somewhat flatulent Strohs indicates that some high coors light gives lectures on morality to a miller. Another coors light conquers a bottle.
+##### Header 5
 
-#### Conclusions
+###### Header 6
 
-Indeed, the Hoptoberfest about the Red Stripe sells some hops to the skinny burglar ale. Now and then, a scooby snack behind a pin ball machine gives the last beer to a St. Pauli Girl defined by a Sam Adams. A wanker related to the blue moon somewhat teaches a hops. Now and then, a miller over a Wolverine Beer avoids contact with a smashed Strohs.
+|     Tables    |           Are | Cool  |
+| :-----------: | ------------: | ----- |
+|    col 3 is   | right-aligned | $1600 |
+|    col 2 is   |      centered | $12   |
+| zebra stripes |      are neat | $1    |
+
+> Block quote text
+> -Said a person
+
+* Red
+* Green
+* Blue
+
+1. Buy flour and salt
+2. Mix together with water
+3. Bake
+
+***
+
+This is [an example](http://example.com "Example") link.
+This link has no title attr.
+
+This is \[an example] \[id] reference-style link.
+
+```
+This is some block code.
+
+<a href="#">Link</a>
+```
+
+*single asterisks*
+single underscores
+**double asterisks**
+**double underscores**
+
+This paragraph has some `code` in it.
+
+![Alt Text](https://get.svg.workers.dev/?s=64\&f=gray "Image Title")

@@ -113,7 +113,6 @@ export const staticProps: AboutPageProps = {
     categories: [
       {
         title: "Strategy",
-        color: "border-emerald-600 dark:border-emerald-400",
         icon: Brain,
         items: [
           "Project Management",
@@ -126,7 +125,6 @@ export const staticProps: AboutPageProps = {
       },
       {
         title: "Development",
-        color: "border-amber-600 dark:border-amber-400",
         icon: CodeXml,
         items: [
           "HTML",
@@ -152,7 +150,6 @@ export const staticProps: AboutPageProps = {
       },
       {
         title: "Design",
-        color: "border-fuchsia-600 dark:border-fuchsia-400",
         icon: PaintRoller,
         items: [
           "User Experience",

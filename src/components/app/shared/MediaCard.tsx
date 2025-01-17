@@ -67,16 +67,16 @@ export const MediaCard = ({
           </HeadingTag>
           <p className="media-card-description">{description}</p>
           {authors && (
-            <div className="mb-2 flex flex-row flex-wrap gap-4">
+            <ul className="mb-2 flex flex-row flex-wrap gap-4">
               {authors.map((author) => (
-                <div className="avatar flex items-center gap-2" key={author.name}>
-                  <div className="mask mask-squircle relative size-10">
+                <li className="flex items-center gap-2" key={author.name}>
+                  <div className="avatar mask mask-squircle relative size-10">
                     <Image src={author.image} fill alt="" />
                   </div>
                   <span className="text-black dark:text-white">{author.name}</span>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           )}
           <div className="media-card-actions">
             <CategoryList categories={categories} />

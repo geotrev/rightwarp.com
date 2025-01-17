@@ -163,7 +163,9 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
         <div className="grid gap-12 lg:grid-cols-4 lg:gap-8">
           <aside className="order-1 lg:order-2 lg:col-span-1">
             <div>
-              <h3 className="display mb-4 text-black lg:text-2xl dark:text-white">Categories</h3>
+              <h3 className="display mb-4 text-xl text-black lg:text-2xl dark:text-white">
+                Categories
+              </h3>
               <CategoryList categories={categories} asLinks />
             </div>
             {isLarge && history && (

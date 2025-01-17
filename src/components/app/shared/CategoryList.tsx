@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { CSSProperties } from "react"
 
 export const CategoryList = ({
@@ -32,8 +33,8 @@ export const CategoryList = ({
   const categoryButtons = categories?.map(({ color, slug, name }) => {
     return (
       <li key={name}>
-        <a
-          href={slug}
+        <Link
+          href={slug!}
           style={
             color
               ? ({
@@ -44,7 +45,7 @@ export const CategoryList = ({
           className="btn btn-sm text-black dark:text-white"
         >
           {name}
-        </a>
+        </Link>
       </li>
     )
   })

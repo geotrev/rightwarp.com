@@ -54,10 +54,7 @@ export const SkillCategories = ({
                     <li
                       key={item}
                       className={cn(
-                        "border-1 badge badge-outline badge-lg rounded-md px-4 py-4 text-black dark:text-white",
-                        {
-                          [category.color]: true,
-                        },
+                        "border-1 badge badge-outline badge-lg rounded-md border-black/20 px-4 py-4 dark:border-white/20",
                       )}
                     >
                       {item}

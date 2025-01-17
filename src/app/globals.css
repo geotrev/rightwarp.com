@@ -11,7 +11,7 @@
   }
 
   .fg-body {
-    @apply text-purple-950 dark:text-purple-200;
+    @apply text-purple-950 dark:text-purple-100;
   }
 
   /* fonts */

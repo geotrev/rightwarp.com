@@ -23,8 +23,12 @@ export const ClientPage = ({ post, relatedPosts }: PageProps) => {
 
   return (
     <>
-      <Hero heading={data.title} description={data.description} />
-      <Post post={data as PostType} relatedPosts={relatedPosts} />
+      <article>
+        <header>
+          <Hero heading={data.title} description={data.description} />
+        </header>
+        <Post post={data as PostType} relatedPosts={relatedPosts} />
+      </article>
       <BrowseButtons {...staticProps.browseButtonsProps} />
       <ActionList {...staticProps.actionsProps} />
     </>

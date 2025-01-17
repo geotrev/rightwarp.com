@@ -52,57 +52,63 @@ export const Pagination = ({
       <div className="mb-4 flex justify-center">
         Page {currentPage + 1} of {totalPages}
       </div>
-      <div className="flex items-center justify-center gap-4">
-        <button
-          className="btn btn-outline size-12 min-h-0 p-0"
-          type="button"
-          onClick={handleNewestClick}
-        >
-          <span className="sr-only">Newest posts</span> <ChevronFirst size={20} />
-        </button>
-        <button
-          className="btn btn-outline size-12 min-h-0 p-0"
-          type="button"
-          onClick={handlePreviousClick}
-        >
-          <span className="sr-only">Previous posts</span>
-          <ChevronLeft size={20} />
-        </button>
-        {visiblePages.map((page, i) =>
-          typeof page === "number" ? (
-            <button
-              key={page}
-              className={cn("btn size-12 min-h-0 p-0", {
-                "btn-ghost": page !== currentPage,
-                "btn-primary text-white dark:text-black": page === currentPage,
-              })}
-              type="button"
-              onClick={handlePageClick}
-              data-page={page}
-            >
-              {page + 1}
-            </button>
-          ) : (
-            <div className="leading-[16px]" key={`${i}${page}`}>
-              {page}
-            </div>
-          ),
-        )}
-        <button
-          className="btn btn-outline size-12 min-h-0 p-0"
-          type="button"
-          onClick={handleNextClick}
-        >
-          <span className="sr-only">Older posts</span>
-          <ChevronRight size={20} />
-        </button>
-        <button
-          className="btn btn-outline size-12 min-h-0 p-0"
-          type="button"
-          onClick={handleOldestClick}
-        >
-          <span className="sr-only">Oldest posts</span> <ChevronLast size={20} />
-        </button>
+      <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
+        <div className="flex items-center gap-4">
+          <button
+            className="btn btn-ghost size-12 min-h-0 p-0"
+            type="button"
+            onClick={handleNewestClick}
+          >
+            <span className="sr-only">Newest posts</span> <ChevronFirst size={20} />
+          </button>
+          <button
+            className="btn btn-ghost size-12 min-h-0 p-0"
+            type="button"
+            onClick={handlePreviousClick}
+          >
+            <span className="sr-only">Previous posts</span>
+            <ChevronLeft size={20} />
+          </button>
+        </div>
+        <div className="flex items-center gap-4">
+          {visiblePages.map((page, i) =>
+            typeof page === "number" ? (
+              <button
+                key={page}
+                className={cn("btn size-12 min-h-0 p-0", {
+                  "btn-ghost": page !== currentPage,
+                  "btn-primary text-white dark:text-black": page === currentPage,
+                })}
+                type="button"
+                onClick={handlePageClick}
+                data-page={page}
+              >
+                {page + 1}
+              </button>
+            ) : (
+              <div className="leading-[16px]" key={`${i}${page}`}>
+                {page}
+              </div>
+            ),
+          )}
+        </div>
+        <div className="flex items-center gap-4">
+          <button
+            className="btn btn-ghost size-12 min-h-0 p-0"
+            type="button"
+            onClick={handleNextClick}
+          >
+            <span className="sr-only">Older posts</span>
+            <ChevronRight size={20} />
+          </button>
+          <button
+            className="btn btn-ghost size-12 min-h-0 p-0"
+            type="button"
+            onClick={handleOldestClick}
+          >
+            <span className="sr-only">Oldest posts</span> <ChevronLast size={20} />
+          </button>
+        </div>
       </div>
     </nav>
   )

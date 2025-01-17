@@ -4,14 +4,16 @@ import { CustomThemeConfig } from "tailwindcss/types/config"
 // Tailwind Theme overrides & additions
 
 export const TAILWIND_THEME: Partial<CustomThemeConfig> = {
-  typography: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  typography: ({ theme }: Record<string, any>) => ({
     DEFAULT: {
       css: {
-        color: "inherit",
         maxWidth: "100%",
+        "--tw-prose-body": theme("colors.purple[950]"),
+        "--tw-prose-invert-body": theme("colors.purple[100]"),
       },
     },
-  },
+  }),
   keyframes: {
     "marquee-start": {
       "0%": { transform: "translateX(0)" },

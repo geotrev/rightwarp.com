@@ -35,7 +35,7 @@ export const staticProps: AboutPageProps = {
     },
     heading: "Hello from Wisconsin!",
     textStart:
-      "Right Warp is a boutique design & development studio currently operated by one person: George Treviranus. Let's switch to first person for a few moments: I've been designing and building digital products for a little over 10 years (longer if you count photoshopping in high school). I've worked at and helped scale som pretty cool websites and tools, including:",
+      "Right Warp is a boutique design & development studio currently operated by one person: George Treviranus. Let's switch to first person for a few moments: I've been designing and building digital products for a little over 10 years (longer if you count photoshopping in high school). I've worked at and helped scale some pretty cool websites and tools, including:",
     textEnd:
       "Right Warp is guided by principles of empathy, inclusivity, and sustainability. All projects are approached with a focus on custom-tailored user experience. In other words, no two projects will look the same, ensuring brand recognition and attention to detail.",
     experienceItems: [

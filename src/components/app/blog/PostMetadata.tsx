@@ -1,6 +1,7 @@
 import { Post, PostAuthors } from "@tina/__generated__/types"
-import Image from "next/image"
 import Link from "next/link"
+
+import { Author } from "../shared/Author"
 
 interface PostMetadataProps {
   relatedPosts?: {
@@ -32,23 +33,18 @@ export const PostMetadata = ({
       <hr className="my-6 block w-full border-dashed border-purple-950/25 lg:my-10 dark:border-purple-100/25" />
       <h2 className="sr-only">Authors</h2>
       {authors && (
-        <ul className="flex flex-col flex-wrap gap-2">
-          {authors.map((author) => (
-            <li
-              className="flex flex-row items-center gap-2 lg:flex-col lg:items-start xl:flex-row xl:items-center"
-              key={author.authorRef.name}
-            >
-              <div className="avatar mask mask-squircle relative size-10">
-                <Image src={author.authorRef.image} fill alt="" />
-              </div>
-              <span className="flex flex-col">
-                <span className="font-bold text-black dark:text-white">
-                  {author.authorRef.name}
-                </span>
-              </span>
-            </li>
-          ))}
-        </ul>
+        <>
+          <h2 className="display mb-4 text-xl text-black lg:text-2xl dark:text-white">
+            Written by
+          </h2>
+          <ul className="flex flex-col flex-wrap gap-2">
+            {authors.map((author) => (
+              <li key={author.authorRef._sys.filename}>
+                <Author name={author.authorRef.name} image={author.authorRef.image} />
+              </li>
+            ))}
+          </ul>
+        </>
       )}
       {relatedPosts && (
         <>

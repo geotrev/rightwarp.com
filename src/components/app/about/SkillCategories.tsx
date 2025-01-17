@@ -12,7 +12,6 @@ export interface SkillCategoriesProps {
   icon: LucideIcon
   categories: {
     title: string
-    color: string
     icon: LucideIcon
     items: string[]
   }[]

@@ -1,19 +1,18 @@
 import { dark, light } from "daisyui/src/theming/themes"
 import { CustomThemeConfig } from "tailwindcss/types/config"
 
+import { tailwindTypography } from "./tailwind-typography"
+
 // Tailwind Theme overrides & additions
 
 export const TAILWIND_THEME: Partial<CustomThemeConfig> = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  typography: ({ theme }: Record<string, any>) => ({
+  typography: {
     DEFAULT: {
       css: {
-        maxWidth: "100%",
-        "--tw-prose-body": theme("colors.purple[950]"),
-        "--tw-prose-invert-body": theme("colors.purple[100]"),
+        ...tailwindTypography,
       },
     },
-  }),
+  },
   keyframes: {
     "marquee-start": {
       "0%": { transform: "translateX(0)" },
@@ -23,11 +22,11 @@ export const TAILWIND_THEME: Partial<CustomThemeConfig> = {
       "0%": { transform: "translateX(100%)" },
       "100%": { transform: "translateX(0%)" },
     },
-    overlayShow: {
+    "overlay-show": {
       from: { opacity: "0" },
       to: { opacity: "1" },
     },
-    contentShow: {
+    "content-show": {
       from: {
         opacity: "0",
         transform: "translate(-50%, -48%) scale(0.96)",
@@ -38,8 +37,8 @@ export const TAILWIND_THEME: Partial<CustomThemeConfig> = {
   animation: {
     "marquee-start": "marquee-start 30s linear infinite",
     "marquee-end": "marquee-end 30s linear infinite",
-    overlayShow: "overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
-    contentShow: "contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+    "overlay-show": "overlay-show 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+    "content-show": "content-show 150ms cubic-bezier(0.16, 1, 0.3, 1)",
   },
 }
 

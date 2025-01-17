@@ -42,7 +42,7 @@ export const WorkEntry = (props: Work) => {
           />
         </div>
       )}
-      <SubContainer isConstrained className="prose xl:prose-lg dark:prose-invert">
+      <SubContainer isConstrained className="prose prose-slate xl:prose-lg dark:prose-invert">
         <TinaMarkdown content={props.body} components={WorkComponentsBody} />
       </SubContainer>
       {restImages.length > 0 &&

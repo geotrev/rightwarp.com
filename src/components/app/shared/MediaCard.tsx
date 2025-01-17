@@ -2,6 +2,7 @@ import { MotionConfig } from "motion/react"
 import * as motion from "motion/react-client"
 import Image from "next/image"
 
+import { Author } from "./Author"
 import { CategoryList } from "./CategoryList"
 
 export type MediaCardProps = {
@@ -69,11 +70,8 @@ export const MediaCard = ({
           {authors && (
             <ul className="mb-2 flex flex-row flex-wrap gap-4">
               {authors.map((author) => (
-                <li className="flex items-center gap-2" key={author.name}>
-                  <div className="avatar mask mask-squircle relative size-10">
-                    <Image src={author.image} fill alt="" />
-                  </div>
-                  <span className="text-black dark:text-white">{author.name}</span>
+                <li key={author.name}>
+                  <Author name={author.name} image={author.image} />
                 </li>
               ))}
             </ul>

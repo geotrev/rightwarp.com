@@ -3,6 +3,8 @@ import { TinaMarkdown } from "tinacms/dist/rich-text"
 
 import { Container } from "@/components/core"
 
+import { MarkdownComponents } from "../shared/MarkdownComponents"
+
 import { PostMetadata } from "./PostMetadata"
 
 export interface PostProps {
@@ -18,8 +20,8 @@ export const Post = ({ post, relatedPosts }: PostProps) => {
   return (
     <Container isRaised isConstrained className="grid gap-8 lg:grid-cols-4 lg:gap-12">
       <div className="lg:col-span-3">
-        <div className="prose xl:prose-lg dark:prose-invert">
-          <TinaMarkdown content={post.body} />
+        <div className="prose prose-slate xl:prose-lg">
+          <TinaMarkdown content={post.body} components={MarkdownComponents} />
         </div>
       </div>
       <div className="lg:col-span-1">

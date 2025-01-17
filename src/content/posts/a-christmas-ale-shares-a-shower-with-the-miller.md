@@ -32,24 +32,24 @@ Paragraph.
 
 ###### Header 6
 
-|     Tables    |           Are | Cool  |
-| :-----------: | ------------: | ----- |
-|    col 3 is   | right-aligned | $1600 |
-|    col 2 is   |      centered | $12   |
-| zebra stripes |      are neat | $1    |
+| **Tables**    | **Are**       | **Cool** |
+| ------------- | ------------- | -------- |
+| col 3 is      | right-aligned | $1600    |
+| col 2 is      | centered      | $12      |
+| zebra stripes | are neat      | $1       |
 
 > Block quote text
 > -Said a person
 
-* Red
-* Green
-* Blue
+- Red
+- Green
+- Blue
 
 1. Buy flour and salt
 2. Mix together with water
 3. Bake
 
-***
+---
 
 This is [an example](http://example.com "Example") link.
 This link has no title attr.
@@ -62,11 +62,9 @@ This is some block code.
 <a href="#">Link</a>
 ```
 
-*single asterisks*
+_single asterisks_
 single underscores
 **double asterisks**
 **double underscores**
 
 This paragraph has some `code` in it.
-
-![Alt Text](https://get.svg.workers.dev/?s=64\&f=gray "Image Title")

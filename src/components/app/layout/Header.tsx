@@ -71,7 +71,7 @@ export const Header = () => {
                 "btn btn-primary btn-sm text-white sm:btn-md md:me-2 lg:me-10 dark:text-black",
               )}
             >
-              Warp Zone <Mail className="size-4 lg:size-5" />
+              Contact Us <Mail className="size-4 lg:size-5" />
             </Link>
             <div className="me-3 hidden text-sm xl:block">
               inquire about a project or just say hi

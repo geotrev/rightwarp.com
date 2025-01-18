@@ -36,7 +36,7 @@ export const actionTypes = {
         "btn btn-primary w-full text-white lg:btn-lg md:w-[50%] lg:w-full dark:text-black",
       )}
     >
-      Warp Zone <Mail className="size-5 lg:size-6" />
+      Contact Us <Mail className="size-5 lg:size-6" />
     </Link>
   ),
   newsletter: <SubscribeForm />,

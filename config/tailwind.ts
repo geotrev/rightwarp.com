@@ -6,13 +6,9 @@ import { tailwindTypography } from "./tailwind-typography"
 // Tailwind Theme overrides & additions
 
 export const TAILWIND_THEME: Partial<CustomThemeConfig> = {
-  typography: {
-    DEFAULT: {
-      css: {
-        ...tailwindTypography,
-      },
-    },
-  },
+  typography: ({ theme }: { theme: (path: string) => string }) => ({
+    ...tailwindTypography(theme),
+  }),
   keyframes: {
     "marquee-start": {
       "0%": { transform: "translateX(0)" },

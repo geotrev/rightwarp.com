@@ -31,13 +31,12 @@ export const PostMetadata = ({
       <h2 className="display mb-4 text-xl text-black lg:text-2xl dark:text-white">Published</h2>
       <time dateTime={publishDate}>{publishDateLong}</time>
       <hr className="my-6 block w-full border-dashed border-purple-950/25 lg:my-10 dark:border-purple-100/25" />
-      <h2 className="sr-only">Authors</h2>
       {authors && (
         <>
           <h2 className="display mb-4 text-xl text-black lg:text-2xl dark:text-white">
-            Written by
+            {authors.length > 1 ? "Authors" : "Author"}
           </h2>
-          <ul className="flex flex-col flex-wrap gap-2">
+          <ul className="flex flex-row flex-wrap gap-4 lg:flex-col lg:gap-2">
             {authors.map((author) => (
               <li key={author.authorRef._sys.filename}>
                 <Author name={author.authorRef.name} image={author.authorRef.image} />

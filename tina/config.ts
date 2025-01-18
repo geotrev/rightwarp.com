@@ -39,16 +39,16 @@ export default defineConfig({
       // Singletons
       Settings,
 
+      // Documents
+      Page,
+      Post,
+      Work,
+
       // Blocks
       Category,
       Service,
       Author,
       // Component,
-
-      // Documents
-      Page,
-      Post,
-      Work,
     ],
   },
 })

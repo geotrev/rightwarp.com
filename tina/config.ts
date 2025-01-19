@@ -6,6 +6,7 @@ import { Page } from "./schemas/page"
 import { Post } from "./schemas/post"
 import { Service } from "./schemas/service"
 import { Settings } from "./schemas/settings"
+import { Testimonial } from "./schemas/testimonial"
 import { Work } from "./schemas/work"
 
 const branch =
@@ -36,18 +37,16 @@ export default defineConfig({
   },
   schema: {
     collections: [
-      // Singletons
       Settings,
 
-      // Documents
       Page,
       Post,
       Work,
 
-      // Blocks
-      Category,
+      Testimonial,
       Service,
       Author,
+      Category,
       // Component,
     ],
   },

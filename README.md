@@ -11,10 +11,17 @@ Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
 - [ ] Blog post (with placeholder)
 - [x] Blog category subpage
 - [x] Blog archive subpage
-- [ ] Use services on work thumbnails (remove categories / decouple from blog)
+- [x] Use services on work thumbnails (remove categories / decouple from blog)
 - [ ] Add at least three (relatively simple) blog posts (to start)
 - [ ] Add testimonials (x3)
-- [ ] Move static content to CMS
+
+#### v2 merge checklist
+
+- [ ] Remove HEAD env variable
+
+### v3
+
+- [ ] Move any static prop content to CMS
 
 ### v1
 

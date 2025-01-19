@@ -6,15 +6,10 @@ import { Container, SubContainer } from "@/components/core"
 
 import { WorkComponentsBody, WorkComponentsBodyIntro } from "../shared/MarkdownComponents"
 
-import { WorkMetadata } from "./WorkMetadata"
+import { WorkOverview } from "./WorkOverview"
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const WorkEntry = (props: Work) => {
-  const categories = props.categories!.map((category) => ({
-    name: category!.categoryRef.name!,
-    color: category!.categoryRef.color!,
-  }))
-
   const services = props.services!.map((service) => ({
     name: service!.serviceRef.name!,
   }))
@@ -24,14 +19,13 @@ export const WorkEntry = (props: Work) => {
   return (
     <Container isRaised collapseHorizontalPadding>
       <SubContainer isConstrained>
-        <WorkMetadata services={services} categories={categories} />
+        <WorkOverview services={services}>
+          <TinaMarkdown content={props.bodyIntro} components={WorkComponentsBodyIntro} />
+        </WorkOverview>
       </SubContainer>
       <div className="relative h-96 w-full lg:h-[40rem]">
         <Image src={leadImage.src} alt={leadImage.alt} fill style={{ objectFit: "cover" }} />
       </div>
-      <SubContainer isConstrained className="prose">
-        <TinaMarkdown content={props.bodyIntro} components={WorkComponentsBodyIntro} />
-      </SubContainer>
       {secondaryImage && (
         <div className="relative h-96 w-full lg:h-[40rem]">
           <Image

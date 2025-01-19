@@ -10,7 +10,7 @@ import {
 
 import { MediaCardProps } from "@/components/app"
 
-import { PostVisibility, toAuthors, toCategories, toPublishDate, toSlug } from "./helpers"
+import { Visibility, toAuthors, toCategories, toPublishDate, toSlug } from "./helpers"
 
 // Queries posts from TinaCMS on the client to support pagination
 
@@ -27,7 +27,7 @@ export async function queryPosts(
   const pages = await client.queries.postConnection({
     ...options,
     filter: {
-      visibility: { eq: PostVisibility.PUBLIC },
+      visibility: { eq: Visibility.PUBLIC },
     },
   })
 

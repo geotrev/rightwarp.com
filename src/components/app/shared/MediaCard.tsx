@@ -4,6 +4,7 @@ import Image from "next/image"
 
 import { Author } from "./Author"
 import { CategoryList } from "./CategoryList"
+import { ServiceList } from "./ServiceList"
 
 export type MediaCardProps = {
   image?: {
@@ -17,9 +18,12 @@ export type MediaCardProps = {
   date?: string
   title: string
   description: string
-  categories: {
+  categories?: {
     name: string
     color: string
+  }[]
+  services?: {
+    name: string
   }[]
   slug: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -37,6 +41,7 @@ export const MediaCard = ({
   title,
   description,
   categories,
+  services,
   slug,
   headingTag: HeadingTag = "h3",
 }: MediaCardProps) => {
@@ -77,7 +82,8 @@ export const MediaCard = ({
             </ul>
           )}
           <div className="media-card-actions">
-            <CategoryList categories={categories} />
+            {categories?.length && <CategoryList categories={categories} />}
+            {services?.length && <ServiceList services={services} />}
           </div>
         </div>
       </motion.div>

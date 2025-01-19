@@ -1,15 +1,15 @@
 import client from "@tina/__generated__/client"
-import { WorkCategories } from "@tina/__generated__/types"
+import { WorkServices } from "@tina/__generated__/types"
 import "server-only"
 
-import { PostVisibility, toCategories, toSlug } from "../helpers"
+import { Visibility, toServices, toSlug } from "../helpers"
 
 export const queryWorkIndex = async () => {
   const page = await client.queries.page({ relativePath: "work.json" })
   const _entries = await client.queries.workConnection({
     sort: "date",
     filter: {
-      visibility: { eq: PostVisibility.PUBLIC },
+      visibility: { eq: Visibility.PUBLIC },
     },
   })
 
@@ -19,7 +19,7 @@ export const queryWorkIndex = async () => {
       return {
         title: entry!.title,
         description: entry!.description,
-        categories: toCategories(entry!.categories as WorkCategories[]),
+        services: toServices(entry!.services as WorkServices[]),
         image: {
           src: entry!.images[0].src,
           alt: entry!.images[0].alt,

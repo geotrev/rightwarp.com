@@ -1,13 +1,13 @@
 import client from "@tina/__generated__/client"
 import { PostAuthors, PostCategories } from "@tina/__generated__/types"
 
-import { PostVisibility, toAuthors, toCategories, toMonth, toPublishDate, toSlug } from "../helpers"
+import { Visibility, toAuthors, toCategories, toMonth, toPublishDate, toSlug } from "../helpers"
 
 export const queryArchiveStaticParams = async () => {
   const posts = await client.queries.postConnection({
     sort: "publishDate",
     filter: {
-      visibility: { eq: PostVisibility.PUBLIC },
+      visibility: { eq: Visibility.PUBLIC },
     },
   })
   const paths = posts.data?.postConnection?.edges?.reduce<{ slug: (string | number)[] }[]>(
@@ -35,7 +35,7 @@ export const queryArchive = async (range: string[]) => {
   const postsResponse = await client.queries.postConnection({
     sort: "publishDate",
     filter: {
-      visibility: { eq: PostVisibility.PUBLIC },
+      visibility: { eq: Visibility.PUBLIC },
     },
   })
   const posts = postsResponse.data?.postConnection?.edges

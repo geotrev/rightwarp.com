@@ -45,24 +45,6 @@ export const Work: Collection = {
     OpenGraphField,
     {
       type: "object",
-      name: "categories",
-      label: "Categories",
-      list: true,
-      ui: {
-        itemProps: (item) => ({ ...toReferenceLabel(item.categoryRef) }),
-      },
-      fields: [
-        {
-          type: "reference",
-          name: "categoryRef",
-          label: "Category",
-          collections: ["category"],
-          required: true,
-        },
-      ],
-    },
-    {
-      type: "object",
       name: "services",
       label: "Services",
       list: true,

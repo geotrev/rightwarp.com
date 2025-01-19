@@ -2,7 +2,7 @@ import cn from "classnames"
 import { PropsWithChildren } from "react"
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, PropsWithChildren {
-  variant?: "primary" | "secondary" | "accent" | "ghost"
+  variant?: "primary" | "secondary" | "accent" | "ghost" | "outline"
   size?: "sm" | "md" | "lg"
   isCta?: boolean
 }
@@ -17,6 +17,8 @@ const getVariant = (variant: ButtonProps["variant"]) => {
       return "btn-accent dark:text-black text-white"
     case "ghost":
       return "btn-ghost dark:text-white text-black"
+    case "outline":
+      return "btn-outline dark:text-white text-black"
     default:
       return ""
   }

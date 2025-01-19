@@ -6,7 +6,7 @@ import { PostHistoryItem } from "@/components/app"
 
 import {
   POST_PAGE_SIZE,
-  PostVisibility,
+  Visibility,
   toAuthors,
   toCategories,
   toMonth,
@@ -39,7 +39,7 @@ export const queryBlogIndex = async () => {
   const allPosts = await client.queries.postConnection({
     sort: "publishDate",
     filter: {
-      visibility: { eq: PostVisibility.PUBLIC },
+      visibility: { eq: Visibility.PUBLIC },
     },
   })
   const cursors = allPosts.data.postConnection.edges?.map((edge) => edge?.cursor).reverse()
@@ -53,7 +53,7 @@ export const queryBlogIndex = async () => {
     sort: "publishDate",
     last: POST_PAGE_SIZE,
     filter: {
-      visibility: { eq: PostVisibility.PUBLIC },
+      visibility: { eq: Visibility.PUBLIC },
     },
   })
   const pagePosts = indexPostsResponse.data.postConnection.edges?.map((edge) => {
@@ -140,7 +140,7 @@ export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
     const allPosts = await client.queries.postConnection({
       sort: "publishDate",
       filter: {
-        visibility: { eq: PostVisibility.PUBLIC },
+        visibility: { eq: Visibility.PUBLIC },
       },
     })
     const categories = post.data.post.categories.map((category) => category.categoryRef.name)

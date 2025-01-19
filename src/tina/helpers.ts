@@ -1,17 +1,11 @@
 import client from "@tina/__generated__/client"
-import {
-  PostAuthors,
-  PostCategories,
-  WorkCategories,
-  WorkImages,
-  WorkServices,
-} from "@tina/__generated__/types"
+import { PostAuthors, PostCategories, WorkImages, WorkServices } from "@tina/__generated__/types"
 
 export const PREVIEW_LIMIT = 2
 
 export const POST_PAGE_SIZE = 4
 
-export const PostVisibility = {
+export const Visibility = {
   PUBLIC: "Public",
   DRAFT: "Draft",
 }
@@ -26,7 +20,7 @@ export const toSlug = (filename: string, subpath?: string) => {
   return subpath ? `/${subpath}/${filename}` : `/${filename}`
 }
 
-export const toCategories = (categories: (WorkCategories | PostCategories)[]) => {
+export const toCategories = (categories: PostCategories[]) => {
   return categories.map((category) => ({
     color: category!.categoryRef.color!,
     name: category!.categoryRef.name!,
@@ -58,7 +52,7 @@ export const getPostPreviews = async () => {
     sort: "publishDate",
     last: PREVIEW_LIMIT,
     filter: {
-      visibility: { eq: PostVisibility.PUBLIC },
+      visibility: { eq: Visibility.PUBLIC },
     },
   })
 
@@ -80,7 +74,7 @@ export const getPostByCategory = async (category: string) => {
   const posts = await client.queries.postConnection({
     sort: "publishDate",
     filter: {
-      visibility: { eq: PostVisibility.PUBLIC },
+      visibility: { eq: Visibility.PUBLIC },
     },
   })
 
@@ -117,7 +111,7 @@ export const getWorkPreviews = async () => {
     sort: "date",
     last: PREVIEW_LIMIT,
     filter: {
-      visibility: { eq: PostVisibility.PUBLIC },
+      visibility: { eq: Visibility.PUBLIC },
     },
   })
 
@@ -127,7 +121,7 @@ export const getWorkPreviews = async () => {
     return {
       title: entry!.title,
       description: entry!.description,
-      categories: toCategories(entry!.categories as WorkCategories[]),
+      services: toServices(entry!.services as WorkServices[]),
       image: {
         src: entry!.images[0].src,
         alt: entry!.images[0].alt,

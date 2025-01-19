@@ -30,20 +30,10 @@ export const CategoryList = ({
     )
   })
 
-  const categoryButtons = categories?.map(({ color, slug, name }) => {
+  const categoryButtons = categories?.map(({ slug, name }) => {
     return (
       <li key={name}>
-        <Link
-          href={slug!}
-          style={
-            color
-              ? ({
-                  borderColor: color,
-                } as CSSProperties)
-              : undefined
-          }
-          className="btn btn-sm text-black dark:text-white"
-        >
+        <Link href={slug!} className="btn btn-outline btn-sm text-black dark:text-white">
           {name}
         </Link>
       </li>

@@ -68,8 +68,8 @@ export const WorkList = ({ items }: WorkListProps) => {
   }, [items, filteredServices, noneFiltered])
 
   return (
-    <Container tag="section" isConstrained className="grid gap-8 md:grid-cols-2">
-      <div className="col-span-2 flex flex-col gap-2">
+    <Container tag="section" isConstrained className="grid gap-8">
+      <div className="flex flex-col gap-2">
         <div className="text-sm font-bold uppercase">Filter by Service</div>
         <div className="flex flex-col justify-between gap-2 lg:flex-row lg:gap-4">
           <ServiceList asButtons services={filteredServices} onClick={handleClick} />
@@ -80,7 +80,9 @@ export const WorkList = ({ items }: WorkListProps) => {
           )}
         </div>
       </div>
-      {filteredItems?.map((item) => <MediaCard key={item.title} headingTag="h2" {...item} />)}
+      <div className="grid grid-cols-1 gap-8 xl:grid-cols-2">
+        {filteredItems?.map((item) => <MediaCard key={item.title} headingTag="h2" {...item} />)}
+      </div>
     </Container>
   )
 }

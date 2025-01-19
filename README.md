@@ -8,12 +8,12 @@ Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
 - [x] Skill badges less clicky-looking?
 - [x] Blog index
   - [x] Pagination
-- [ ] Blog post (with placeholder)
+- [x] Blog post (with placeholder)
 - [x] Blog category subpage
 - [x] Blog archive subpage
 - [x] Use services on work thumbnails (remove categories / decouple from blog)
 - [x] Remove color from blog index category buttons
-- [ ] Sort blogs by date on category and archive blog pages
+- [x] Sort blogs by date on category and archive blog pages
 - [ ] Add at least three (relatively simple) blog posts (to start)
 - [ ] Add testimonials (x3)
 

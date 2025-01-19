@@ -70,42 +70,6 @@ export const getPostPreviews = async () => {
   })
 }
 
-export const getPostByCategory = async (category: string) => {
-  const posts = await client.queries.postConnection({
-    sort: "publishDate",
-    filter: {
-      visibility: { eq: Visibility.PUBLIC },
-    },
-  })
-
-  return posts.data.postConnection.edges
-    ?.filter((edge) => {
-      const categories = edge?.node?.categories
-
-      if (categories) {
-        for (const _category of categories) {
-          if (_category.categoryRef._sys.filename === category) {
-            return true
-          }
-        }
-      }
-
-      return false
-    })
-    .map((edge) => {
-      const post = edge?.node
-
-      return {
-        title: post!.title,
-        description: post!.description,
-        categories: toCategories(post!.categories as PostCategories[]),
-        slug: toSlug(post!._sys.filename, "blog"),
-        authors: toAuthors(post!.authors as PostAuthors[]),
-        date: toPublishDate(post!.publishDate),
-      }
-    })
-}
-
 export const getWorkPreviews = async () => {
   const entries = await client.queries.workConnection({
     sort: "date",

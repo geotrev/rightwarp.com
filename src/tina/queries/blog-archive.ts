@@ -58,6 +58,7 @@ export const queryArchive = async (range: string[]) => {
         slug: toSlug(post!._sys.filename, "blog"),
       }
     })
+    .reverse()
 
   if (!posts?.length) {
     return null

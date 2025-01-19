@@ -21,8 +21,12 @@ export const ClientPage = (props: PageProps) => {
 
   return (
     <>
-      <Hero heading={data.title} description={data.description} />
-      <WorkEntry {...(data as Omit<Work, "values">)} />
+      <article>
+        <header>
+          <Hero heading={data.title} description={data.description} />
+        </header>
+        <WorkEntry {...(data as Omit<Work, "values">)} />
+      </article>
       <BrowseButtons {...workProps.browseButtonsProps} />
       <ActionList {...workProps.actionsProps} />
     </>

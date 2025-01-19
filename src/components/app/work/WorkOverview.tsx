@@ -10,7 +10,7 @@ export const WorkOverview = ({
     <aside className="grid grid-cols-1 gap-8 xl:grid-cols-4">
       <div className="xl:col-span-3">
         <h2 className="display mb-4 text-xl text-black lg:text-2xl dark:text-white">Overview</h2>
-        <p className="prose">{children}</p>
+        <div className="prose">{children}</div>
       </div>
       <div>
         <h2 className="display mb-4 text-xl text-black lg:text-2xl dark:text-white">Services</h2>

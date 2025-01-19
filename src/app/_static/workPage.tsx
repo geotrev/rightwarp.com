@@ -16,11 +16,11 @@ export const workProps: WorkProps = {
         label: "Browse More Work",
         href: Routes.WORK,
       },
-      {
-        type: "secondary",
-        label: "Browse Blog",
-        href: Routes.BLOG,
-      },
+      // {
+      //   type: "secondary",
+      //   label: "Browse Blog",
+      //   href: Routes.BLOG,
+      // },
     ],
   },
   actionsProps: {

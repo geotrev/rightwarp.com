@@ -28,10 +28,10 @@ export const NavItems = [
     label: "Work",
     href: Routes.WORK,
   },
-  {
-    label: "Blog",
-    href: Routes.BLOG,
-  },
+  // {
+  //   label: "Blog",
+  //   href: Routes.BLOG,
+  // },
 ]
 
 export const EMAIL_REGEXP: RegExp =

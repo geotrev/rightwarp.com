@@ -37,7 +37,7 @@ export const queryWorkIndex = async () => {
 export const queryWorkStaticParams = async () => {
   const pages = await client.queries.workConnection()
   const paths = pages.data?.workConnection?.edges?.map((edge) => ({
-    slug: edge?.node?._sys.breadcrumbs,
+    slug: edge?.node?._sys.filename,
   }))
 
   return paths || []

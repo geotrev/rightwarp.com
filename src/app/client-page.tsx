@@ -26,7 +26,11 @@ interface PageProps {
   posts?: MediaCardProps[]
 }
 
-export const ClientPage = ({ page, work, posts }: PageProps) => {
+export const ClientPage = ({
+  page,
+  work,
+  // posts
+}: PageProps) => {
   const { data: _data } = useTina(page)
   const data = _data.page
 
@@ -36,7 +40,7 @@ export const ClientPage = ({ page, work, posts }: PageProps) => {
       <LogoMarquee {...homeProps.logoMarqueeProps} />
       <CardGrid {...homeProps.workProps} entries={work} />
       <Expertise {...homeProps.expertiseProps} />
-      <CardGrid {...homeProps.blogProps} entries={posts} />
+      {/* <CardGrid {...homeProps.blogProps} entries={posts} /> */}
       <ActionList {...homeProps.actionsProps} />
     </>
   )

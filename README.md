@@ -16,6 +16,7 @@ Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
 - [x] Sort blogs by date on category and archive blog pages
 - [ ] Add at least three (relatively simple) blog posts (to start)
 - [ ] Add testimonials (x3)
+- [ ] Add mouse animation effect in hero
 
 #### v2 merge checklist
 

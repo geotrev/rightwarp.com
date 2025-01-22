@@ -24,6 +24,7 @@ Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
 
 ### v3
 
+- [ ] Hero CTA
 - [ ] Add personalized note
 - [ ] "Book A Call" CTA text
 - [ ] Terms of use page

@@ -3,7 +3,6 @@ Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
 ## TODO
 
 - [x] Add testimonials (x3)
-- [ ] Add founder's note below testimonials
 - [ ] Rewrite work intros with deliverable details
 - [ ] Hero CTA
 - [ ] Expand Footer to include all nav links
@@ -12,6 +11,7 @@ Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
 - [ ] Add mouse animation effect in hero
 - [ ] Add at least three (relatively simple) blog posts (to start)
 - [ ] Make blog public 🚀
+- [ ] Add founder's note below testimonials
 
 ### v1
 

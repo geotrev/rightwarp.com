@@ -38,7 +38,14 @@ export const Hero = ({ heading, description, details, variant = "standard" }: He
         {heading}
       </h1>
       {description && (
-        <p className="text-md tracking-tight sm:text-lg md:text-xl lg:text-3xl lg:leading-[3rem]">
+        <p
+          className={cn(
+            "text-md tracking-tight sm:text-lg md:text-xl lg:text-3xl lg:leading-[3rem]",
+            {
+              "mb-6 md:mb-10 lg:mb-12": !!details,
+            },
+          )}
+        >
           {description}
         </p>
       )}

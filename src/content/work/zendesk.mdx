@@ -4,7 +4,7 @@ date: 2024-09-15T05:00:00.000Z
 title: Zendesk
 description: Design Systems
 seo:
-  title: 'Case Study: Zendesk'
+  title: "Case Study: Zendesk"
   description: Design Systems
   url: /work/zendesk
 services:
@@ -14,7 +14,7 @@ services:
 images:
   - src: /uploads/zendesk-work-image.jpg
     alt: Zendesk components
-bodyIntro: >
+overview: >
   Planned and implemented platform-wide dark mode, improved accessibility, and
   created standardized drag & drop components in Garden design system
 ---
@@ -25,9 +25,9 @@ In 2022, Garden was in the midst of updating its design system offering to meet 
 
 Among many projects, there were three focus areas that needed close attention:
 
-* Creating a standardized component-set for drag & drop (DnD) functionality
-* Rewriting a prominent menu component to meet modern accessibility expectations
-* Helping plan and implement platform-wide dark mode with existing technologies ([Styled Components](https://styled-components.com/))
+- Creating a standardized component-set for drag & drop (DnD) functionality
+- Rewriting a prominent menu component to meet modern accessibility expectations
+- Helping plan and implement platform-wide dark mode with existing technologies ([Styled Components](https://styled-components.com/))
 
 Right Warp, specifically George, worked on these projects actively and acted as lead web engineer for the first two.
 
@@ -35,7 +35,10 @@ Right Warp, specifically George, worked on these projects actively and acted as 
 
 As a customer service platform, drag and drop is a prolific UI pattern used by agents in their day-to-day Zendesk workflows. At the time, drag and drop libraries saw only a few popular options. Instead of implementing its own drag and drop library, Garden instead focused on library interoperability. This way a developer can use Garden for the right UI experience, and choose their own implementation to suit their specific use case.
 
-<CallToAction href="https://garden.zendesk.com/components/draggable" label="View Drag and Drop Component" />
+<CallToAction
+  href="https://garden.zendesk.com/components/draggable"
+  label="View Drag and Drop Component"
+/>
 
 Interactive examples use [dnd-kit](https://dndkit.com/).
 
@@ -55,13 +58,19 @@ Menu is backed by a robust [useMenu](https://github.com/zendeskgarden/react-cont
 
 Enabling system-wide theming on any platform can be challenging. Thankfully, there are great industry patterns (e.g., [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) with [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)) to inspire architectural directions.
 
-<CallToAction href="https://garden.zendesk.com/components/theme-provider" label="View Theming Documentation" />
+<CallToAction
+  href="https://garden.zendesk.com/components/theme-provider"
+  label="View Theming Documentation"
+/>
 
 In Garden’s case, a v1 for dark & light mode meant leaning into Styled Components theming capabilities, along with powerful custom-written theming utilities, to allow all of Garden’s components to utilize either color scheme. Each component was rewritten to enable various buckets of colors to receive the correct colors depending on the chosen theme.
 
 Variable buckets included border, foreground (e.g., text, icons), background, and shadows.
 
-<CallToAction href="https://garden.zendesk.com/components/theme-object" label="View Theme Variables" />
+<CallToAction
+  href="https://garden.zendesk.com/components/theme-object"
+  label="View Theme Variables"
+/>
 
 From the start, the team decided to avoid specifying excessive numbers of variables to cover things like interactive states. Having too wide of a token surface area can easily spell death for a design system by overwhelming consumers and creating pitfalls and bottlenecks, causing a maintenance nightmare.
 

@@ -87,7 +87,7 @@ export const Work: Collection = {
     },
     {
       type: "rich-text",
-      name: "bodyIntro",
+      name: "overview",
       label: "Body Intro",
       required: true,
     },

@@ -20,7 +20,7 @@ export const WorkEntry = (props: Work) => {
     <Container isRaised collapseHorizontalPadding>
       <SubContainer isConstrained>
         <WorkOverview services={services}>
-          <TinaMarkdown content={props.bodyIntro} components={WorkComponentsBodyIntro} />
+          <TinaMarkdown content={props.overview} components={WorkComponentsBodyIntro} />
         </WorkOverview>
       </SubContainer>
       <div className="relative h-96 w-full lg:h-[40rem]">

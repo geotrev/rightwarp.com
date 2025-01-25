@@ -9,6 +9,7 @@ interface ContainerProps extends PropsWithChildren<HTMLAttributes<HTMLElement>> 
   isConstrained?: boolean
   collapseHorizontalPadding?: boolean
   animationDisabled?: boolean
+  outerStyles?: string
   children: React.ReactNode
 }
 
@@ -18,6 +19,7 @@ export const Container = forwardRef<HTMLElement, ContainerProps>(
       children,
       tag: Tag = "div",
       className,
+      outerStyles,
       isRaised,
       isConstrained,
       collapseHorizontalPadding,
@@ -33,7 +35,7 @@ export const Container = forwardRef<HTMLElement, ContainerProps>(
           whileInView: { opacity: 1, y: 0 },
           viewport: { once: true },
         })}
-        className="my-16 lg:my-24"
+        className={cn("my-16 lg:my-24", outerStyles)}
       >
         {isRaised && (
           <div

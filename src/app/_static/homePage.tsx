@@ -1,4 +1,4 @@
-import { Hammer, NotebookText } from "lucide-react"
+import { Hammer, NotebookText, PencilRuler, UserPen } from "lucide-react"
 
 import Codecov from "@/app/_assets/logos/codecov.svg"
 import Musicnotes from "@/app/_assets/logos/musicnotes.svg"
@@ -11,6 +11,7 @@ import type {
   CardGridProps,
   ActionListProps,
 } from "@/components/app"
+import { TestimonialsProps } from "@/components/app/shared/Testimonials"
 import { Routes } from "@/utils/helpers"
 
 interface HomeProps {
@@ -18,6 +19,7 @@ interface HomeProps {
   expertiseProps: ExpertiseProps
   blogProps: CardGridProps
   workProps: CardGridProps
+  testimonialProps: Omit<TestimonialsProps, "testimonials">
   actionsProps: ActionListProps
 }
 
@@ -37,6 +39,7 @@ export const homeProps: HomeProps = {
     heading: "Expertise",
     subheading:
       "10+ years of hardened, design-minded web development experience at your finger-tips",
+    icon: PencilRuler,
     items: [
       {
         isRaised: true,
@@ -94,11 +97,17 @@ export const homeProps: HomeProps = {
     actionHref: Routes.WORK,
     icon: Hammer,
   },
+  testimonialProps: {
+    heading: "Testimonials",
+    subheading: "What former colleagues and clients have to say",
+    icon: UserPen,
+  },
   actionsProps: {
     actions: [
       {
-        heading: "Need help on a project?",
-        description: "Whether it's brand new or needs some renewed attention, we can help",
+        heading: "Ready to build the future?",
+        description:
+          "Whether your project is brand new or needs some renewed attention, we can help",
         action: "button",
       },
       {

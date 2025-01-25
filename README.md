@@ -14,19 +14,22 @@ Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
 - [x] Use services on work thumbnails (remove categories / decouple from blog)
 - [x] Remove color from blog index category buttons
 - [x] Sort blogs by date on category and archive blog pages
-- [ ] Add at least three (relatively simple) blog posts (to start)
 - [ ] Add testimonials (x3)
+- [ ] Add founder's note below testimonials
+- [ ] Rewrite work intros with deliverable details
 
 ### v3
 
-- [ ] Rewrite work intros with deliverable details
-- [ ] Add mouse animation effect in hero
 - [ ] Hero CTA
-- [ ] Add personalized note
-- [ ] "Book A Call" CTA text
-- [ ] Terms of use page
-- [ ] Privacy policy page
-- [ ] Move any static prop content to CMS
+- [ ] Expand Footer to include all nav links
+- [ ] Terms of use & privacy policy pages (GetTerms)
+- [ ] Move reusable static prop content into CMS collections
+- [ ] Add mouse animation effect in hero
+
+### v4
+
+- [ ] Add at least three (relatively simple) blog posts (to start)
+- [ ] Make blog public 🚀
 
 ### v1
 

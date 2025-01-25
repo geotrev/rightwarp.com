@@ -29,11 +29,9 @@ export const CardGrid = ({
 
   return (
     <section>
-      <Container>
-        <SectionHeading icon={icon} subheading={subheading}>
-          {heading}
-        </SectionHeading>
-      </Container>
+      <SectionHeading icon={icon} subheading={subheading}>
+        {heading}
+      </SectionHeading>
       <Container isConstrained>
         <div className="grid gap-8 pb-8 md:grid-cols-2">
           {entries.map((entry) => entry && <MediaCard key={entry.title} {...entry} />)}

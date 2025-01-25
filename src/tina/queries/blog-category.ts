@@ -1,7 +1,7 @@
 import client from "@tina/__generated__/client"
 import { PostAuthors, PostCategories } from "@tina/__generated__/types"
 
-import { toAuthors, toCategories, toPublishDate, toSlug, Visibility } from "../helpers"
+import { toAuthors, toCategories, toPublishDate, toSlug, Visibility } from "./helpers"
 
 const getPostByCategory = async (category: string) => {
   const posts = await client.queries.postConnection({

@@ -1,7 +1,7 @@
 "use client"
 
 import cn from "classnames"
-import { Asterisk, CheckCircle, Send } from "lucide-react"
+import { Asterisk, CheckCircle, LucideIcon, Send } from "lucide-react"
 import { useCallback, useState } from "react"
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
@@ -13,6 +13,7 @@ import { SectionHeading } from "../shared/SectionHeading"
 export interface ContactFormProps {
   heading: string
   subheading: string
+  icon: LucideIcon
   contact: {
     label: string
     name: string
@@ -80,11 +81,9 @@ export const ContactForm = (props: ContactFormProps) => {
 
   return (
     <section>
-      <Container>
-        <SectionHeading icon={Send} subheading={props.subheading}>
-          {props.heading}
-        </SectionHeading>
-      </Container>
+      <SectionHeading icon={props.icon} subheading={props.subheading}>
+        {props.heading}
+      </SectionHeading>
       <Container className="mb-16" isConstrained>
         {state !== FormStatus.SUCCESS && (
           <>

@@ -22,6 +22,8 @@ export const Header = () => {
   const ref = useRef<HTMLElement | null>(null)
   const isLarge = useIsLarge()
 
+  // In order to ensure blurred background works on scroll,
+  // remove border radius from top corners
   useEffect(() => {
     let observer: IntersectionObserver
 
@@ -71,7 +73,7 @@ export const Header = () => {
                 "btn btn-primary btn-sm text-white sm:btn-md md:me-2 lg:me-10 dark:text-black",
               )}
             >
-              Contact Us <Mail className="size-4 lg:size-5" />
+              Book A Call <Mail className="size-4 lg:size-5" />
             </Link>
             <div className="me-3 hidden text-sm xl:block">
               inquire about a project or just say hi

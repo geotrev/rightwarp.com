@@ -26,8 +26,9 @@ export const workProps: WorkProps = {
   actionsProps: {
     actions: [
       {
-        heading: "Need help on a project?",
-        description: "Whether it's brand new or needs some renewed attention, we can help",
+        heading: "Ready to build the future?",
+        description:
+          "Whether your project is brand new or needs some renewed attention, we can help",
         action: "button",
       },
       {

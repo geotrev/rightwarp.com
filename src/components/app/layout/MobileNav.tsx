@@ -107,7 +107,7 @@ export const MobileNav = ({ theme }: { theme: string }) => {
                 href={Routes.CONTACT}
                 className="btn btn-primary btn-block text-white dark:text-black"
               >
-                Contact Us <Mail size={20} />
+                Book A Call <Mail size={20} />
               </Link>
             </Dialog.Close>
           </div>

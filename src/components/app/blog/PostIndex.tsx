@@ -4,7 +4,7 @@ import { MouseEvent, MouseEventHandler, useCallback, useState } from "react"
 
 import { Container } from "@/components/core"
 import { queryPosts } from "@/tina/client-queries"
-import { POST_PAGE_SIZE } from "@/tina/helpers"
+import { POST_PAGE_SIZE } from "@/tina/queries/helpers"
 import { useIsLarge } from "@/utils/useMediaQuery"
 
 import { CategoryList } from "../shared/CategoryList"

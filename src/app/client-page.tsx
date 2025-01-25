@@ -11,6 +11,7 @@ import {
   LogoMarquee,
   MediaCardProps,
 } from "@/components/app"
+import { Testimonials, TestimonialsProps } from "@/components/app/shared/Testimonials"
 
 import { homeProps } from "./_static/homePage"
 
@@ -24,11 +25,13 @@ interface PageProps {
   }
   work?: MediaCardProps[]
   posts?: MediaCardProps[]
+  testimonials?: TestimonialsProps["testimonials"]
 }
 
 export const ClientPage = ({
   page,
   work,
+  testimonials,
   // posts
 }: PageProps) => {
   const { data: _data } = useTina(page)
@@ -40,6 +43,7 @@ export const ClientPage = ({
       <LogoMarquee {...homeProps.logoMarqueeProps} />
       <CardGrid {...homeProps.workProps} entries={work} />
       <Expertise {...homeProps.expertiseProps} />
+      <Testimonials {...homeProps.testimonialProps} testimonials={testimonials} />
       {/* <CardGrid {...homeProps.blogProps} entries={posts} /> */}
       <ActionList {...homeProps.actionsProps} />
     </>

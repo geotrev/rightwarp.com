@@ -26,11 +26,9 @@ export const SkillCategories = ({
 }: SkillCategoriesProps) => {
   return (
     <>
-      <Container>
-        <SectionHeading icon={icon} subheading={subheading}>
-          {heading}
-        </SectionHeading>
-      </Container>
+      <SectionHeading icon={icon} subheading={subheading}>
+        {heading}
+      </SectionHeading>
       <Container tag="section" isConstrained>
         <div className="grid gap-8">
           {categories.map((category) => {

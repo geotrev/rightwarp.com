@@ -47,6 +47,21 @@ export const toImages = (images: WorkImages[]) => {
   }))
 }
 
+export const getTestimonials = async () => {
+  const testimonials = await client.queries.testimonialConnection()
+
+  return testimonials.data.testimonialConnection.edges?.map((edge) => {
+    const item = edge?.node
+
+    return {
+      image: item?.image,
+      name: item?.name,
+      position: item?.position,
+      content: item?.content,
+    }
+  })
+}
+
 export const getPostPreviews = async () => {
   const posts = await client.queries.postConnection({
     sort: "publishDate",

@@ -1,4 +1,4 @@
-import { PencilRuler } from "lucide-react"
+import { LucideIcon } from "lucide-react"
 
 import BrowserBuildIcon from "@/app/_assets/skill-icons/browser-build.svg"
 import DesktopCheckIcon from "@/app/_assets/skill-icons/desktop-check.svg"
@@ -14,6 +14,7 @@ import { Skill } from "./Skill"
 export interface ExpertiseProps {
   heading: string
   subheading: string
+  icon: LucideIcon
   items: {
     isRaised?: boolean
     isReversed?: boolean
@@ -32,14 +33,12 @@ const skillIcons: Record<string, React.FC> = {
   WrenchIcon,
 }
 
-export const Expertise = ({ heading, subheading, items }: ExpertiseProps) => {
+export const Expertise = ({ heading, icon, subheading, items }: ExpertiseProps) => {
   return (
     <section>
-      <Container>
-        <SectionHeading icon={PencilRuler} subheading={subheading}>
-          {heading}
-        </SectionHeading>
-      </Container>
+      <SectionHeading icon={icon} subheading={subheading}>
+        {heading}
+      </SectionHeading>
       {items.map((item) => {
         const Icon = skillIcons[item.icon]
 

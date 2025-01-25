@@ -1,7 +1,7 @@
 import client from "@tina/__generated__/client"
 import { PostAuthors, PostCategories } from "@tina/__generated__/types"
 
-import { Visibility, toAuthors, toCategories, toMonth, toPublishDate, toSlug } from "../helpers"
+import { Visibility, toAuthors, toCategories, toMonth, toPublishDate, toSlug } from "./helpers"
 
 export const queryArchiveStaticParams = async () => {
   const posts = await client.queries.postConnection({

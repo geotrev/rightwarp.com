@@ -1,3 +1,5 @@
+import { Send } from "lucide-react"
+
 import { ActionListProps, ContactFormProps } from "@/components/app"
 
 interface ContactProps {
@@ -23,6 +25,7 @@ export const contactProps: ContactProps = {
     heading: "Message Us",
     subheading:
       "Once we receive your message, we'll review the project and be in touch within a few days",
+    icon: Send,
     contact: [
       {
         label: "Name",

@@ -2,7 +2,7 @@ import client from "@tina/__generated__/client"
 import { WorkServices } from "@tina/__generated__/types"
 import "server-only"
 
-import { Visibility, toServices, toSlug } from "../helpers"
+import { Visibility, toServices, toSlug } from "./helpers"
 
 export const queryWorkIndex = async () => {
   const page = await client.queries.page({ relativePath: "work.json" })

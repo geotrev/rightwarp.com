@@ -12,7 +12,7 @@ import {
   toMonth,
   toPublishDate,
   toSlug,
-} from "../helpers"
+} from "./helpers"
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const chunk = (size: number, arr?: any[]) =>

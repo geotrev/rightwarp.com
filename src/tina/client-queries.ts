@@ -10,7 +10,7 @@ import {
 
 import { MediaCardProps } from "@/components/app"
 
-import { Visibility, toAuthors, toCategories, toPublishDate, toSlug } from "./helpers"
+import { Visibility, toAuthors, toCategories, toPublishDate, toSlug } from "./queries/helpers"
 
 // Queries posts from TinaCMS on the client to support pagination
 

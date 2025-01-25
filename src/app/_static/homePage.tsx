@@ -106,8 +106,7 @@ export const homeProps: HomeProps = {
     actions: [
       {
         heading: "Ready to build the future?",
-        description:
-          "Whether your project is brand new or needs some renewed attention, we can help",
+        description: "Whether your project is brand new or needs some renewed attention",
         action: "button",
       },
       {

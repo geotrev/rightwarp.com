@@ -2,32 +2,14 @@ Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
 
 ## TODO
 
-### v2
-
-- [x] Better contact CTA text/icon?
-- [x] Skill badges less clicky-looking?
-- [x] Blog index
-  - [x] Pagination
-- [x] Blog post (with placeholder)
-- [x] Blog category subpage
-- [x] Blog archive subpage
-- [x] Use services on work thumbnails (remove categories / decouple from blog)
-- [x] Remove color from blog index category buttons
-- [x] Sort blogs by date on category and archive blog pages
-- [ ] Add testimonials (x3)
+- [x] Add testimonials (x3)
 - [ ] Add founder's note below testimonials
 - [ ] Rewrite work intros with deliverable details
-
-### v3
-
 - [ ] Hero CTA
 - [ ] Expand Footer to include all nav links
 - [ ] Terms of use & privacy policy pages (GetTerms)
 - [ ] Move reusable static prop content into CMS collections
 - [ ] Add mouse animation effect in hero
-
-### v4
-
 - [ ] Add at least three (relatively simple) blog posts (to start)
 - [ ] Make blog public 🚀
 
@@ -75,3 +57,16 @@ Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
 - [x] Not found page
 - [x] Newsletter (mailerlite)
 - [x] Contact
+
+### v2
+
+- [x] Better contact CTA text/icon?
+- [x] Skill badges less clicky-looking?
+- [x] Blog index
+  - [x] Pagination
+- [x] Blog post (with placeholder)
+- [x] Blog category subpage
+- [x] Blog archive subpage
+- [x] Use services on work thumbnails (remove categories / decouple from blog)
+- [x] Remove color from blog index category buttons
+- [x] Sort blogs by date on category and archive blog pages

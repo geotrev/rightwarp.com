@@ -35,9 +35,9 @@ export const staticProps: AboutPageProps = {
     },
     heading: "Hello from Wisconsin!",
     textStart:
-      "Right Warp is a boutique design & development studio currently operated by one person: George Treviranus. Let's switch to first person for a few moments: I've been designing and building digital products for a little over 10 years (longer if you count photoshopping in high school). I've worked at and helped scale some pretty cool websites and tools, including:",
+      "Welcome to Right Warp, a boutique design & development studio currently operated by me: George Treviranus. I've been designing and building digital products for a little over 10 years (longer if you count excessive photoshopping in high school). I've worked at and helped scale some pretty cool websites and tools, including:",
     textEnd:
-      "Right Warp is guided by principles of empathy, inclusivity, and sustainability. All projects are approached with a focus on custom-tailored user experience. In other words, no two projects will look the same, ensuring brand recognition and attention to detail.",
+      "Right Warp is guided by principles of empathy, inclusivity, and sustainability. All projects are approached with a focus on user experience. Every project is unique, ensuring brand recognition and attention to detail, without sacrificing standards-based development practices of accessibility and research-driven interface design.",
     experienceItems: [
       {
         id: "zendesk",
@@ -108,8 +108,7 @@ export const staticProps: AboutPageProps = {
   skillProps: {
     heading: "Skills",
     icon: Feather,
-    subheading:
-      "We bring a combination of expertise to ensure project success; if a subject isn't here, ask us about it!",
+    subheading: "Bringing a unique combination of skills & expertise to ensure project success",
     categories: [
       {
         title: "Strategy",
@@ -183,8 +182,7 @@ export const staticProps: AboutPageProps = {
     actions: [
       {
         heading: "Ready to build the future?",
-        description:
-          "Whether your project is brand new or needs some renewed attention, we can help",
+        description: "Whether your project is brand new or needs some renewed attention",
         action: "button",
       },
       {

@@ -15,16 +15,14 @@ export const contactProps: ContactProps = {
     actions: [
       {
         heading: "Schedule a call",
-        description:
-          "Share 30 minutes to discuss your project(s). Fair warning: we'll ask a lot of questions.",
+        description: "Share 30 minutes to discuss your project(s) and answer some questions.",
         action: "call",
       },
     ],
   },
   contactFormProps: {
     heading: "Message Us",
-    subheading:
-      "Once we receive your message, we'll review the project and be in touch within a few days",
+    subheading: "Share some details about your project—the more, the better!",
     icon: Send,
     contact: [
       {

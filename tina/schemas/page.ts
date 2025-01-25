@@ -1,8 +1,27 @@
-import { Collection } from "tinacms"
+import { Collection, Template } from "tinacms"
 
 import { OpenGraphField } from "../fields/openGraph"
 import { SEOField } from "../fields/seo"
 import { slugify } from "../plugins/slugify"
+
+const FoundersNoteBlock: Template = {
+  name: "foundersNote",
+  label: "Founder's Note",
+  fields: [
+    {
+      type: "string",
+      name: "title",
+      label: "Title",
+      required: true,
+    },
+    {
+      type: "rich-text",
+      name: "content",
+      label: "Content",
+      required: true,
+    },
+  ],
+}
 
 export const Page: Collection = {
   name: "page",
@@ -34,6 +53,13 @@ export const Page: Collection = {
       type: "string",
       name: "description",
       label: "Page Description",
+    },
+    {
+      type: "object",
+      name: "blocks",
+      label: "Blocks",
+      list: true,
+      templates: [FoundersNoteBlock],
     },
     SEOField,
     OpenGraphField,

@@ -180,7 +180,7 @@ export const ContactForm = (props: ContactFormProps) => {
               <CheckCircle size={24} />{" "}
             </span>
             <span className="text-black dark:text-white">
-              Your message has been sent and we&apos;ll be in touch soon!
+              Your message has been sent, thank you!
             </span>
           </p>
         )}

@@ -1,5 +1,5 @@
 import * as Dialog from "@radix-ui/react-dialog"
-import { ChevronRight, Mail, X } from "lucide-react"
+import { ChevronRight, Handshake, X } from "lucide-react"
 import { Menu } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -107,7 +107,7 @@ export const MobileNav = ({ theme }: { theme: string }) => {
                 href={Routes.CONTACT}
                 className="btn btn-primary btn-block text-white dark:text-black"
               >
-                Book A Call <Mail size={20} />
+                Book A Call <Handshake size={20} />
               </Link>
             </Dialog.Close>
           </div>

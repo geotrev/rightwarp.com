@@ -68,7 +68,7 @@ const TestimonialContent = ({
         )}
         <div>
           <h3 className="text-lg font-bold">{name}</h3>
-          <p className="text-sm text-gray-500">{position}</p>
+          <p className="text-sm">{position}</p>
         </div>
       </div>
     </div>

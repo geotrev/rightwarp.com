@@ -60,5 +60,16 @@ export const Settings: Collection = {
         },
       ],
     },
+    {
+      name: "privacyPolicy",
+      label: "Privacy Policy",
+      type: "rich-text",
+    },
+
+    {
+      name: "termsOfService",
+      label: "Terms of Service",
+      type: "rich-text",
+    },
   ],
 }

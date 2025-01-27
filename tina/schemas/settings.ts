@@ -61,15 +61,21 @@ export const Settings: Collection = {
       ],
     },
     {
-      name: "privacyPolicy",
-      label: "Privacy Policy",
-      type: "rich-text",
-    },
-
-    {
-      name: "termsOfService",
-      label: "Terms of Service",
-      type: "rich-text",
+      name: "policies",
+      label: "Policies",
+      type: "object",
+      fields: [
+        {
+          name: "privacyPolicy",
+          label: "Privacy Policy",
+          type: "rich-text",
+        },
+        {
+          name: "termsOfService",
+          label: "Terms of Service",
+          type: "rich-text",
+        },
+      ],
     },
   ],
 }

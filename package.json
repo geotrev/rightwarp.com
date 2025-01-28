@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\"",
     "build": "tinacms build && next build",
+    "postbuild": "next-sitemap --config ./next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --check --ignore-path .gitignore .",
@@ -18,6 +19,7 @@
     "lucide-react": "0.468.0",
     "motion": "11.14.4",
     "next": "15.1.2",
+    "next-sitemap": "4.2.3",
     "nodemailer": "6.9.16",
     "posthog-js": "1.205.0",
     "react": "18.3.1",

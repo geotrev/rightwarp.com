@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.rightwarp.com/
+
+# Sitemaps
+Sitemap: https://www.rightwarp.com/sitemap.xml

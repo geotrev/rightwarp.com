@@ -1,0 +1,7 @@
+Sitemap: https://www.rightwarp.com/sitemap.xml
+
+User-agent: *
+Allow: /*
+
+Disallow: /api/*
+Disallow: /admin/*

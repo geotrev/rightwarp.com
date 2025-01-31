@@ -1,18 +1,37 @@
+import { Compass, MessageCircleHeart } from "lucide-react"
+
 import { Container, Link } from "@/components/core"
+
+import { NavigationHeading } from "../shared/NavigationHeading"
 
 export const Footer = () => {
   return (
     <Container
       tag="footer"
-      className="my-16 grid gap-4 text-center text-sm lg:my-24"
+      className="my-16 grid text-center text-sm lg:my-24"
       animationDisabled
     >
-      <div className="grid sm:grid-cols-3">
-        <div className="col-span-1">Foo</div>
-        <div className="col-span-1">Bar</div>
-        <div className="col-span-1">Baz</div>
+      <div className="mb-16 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-0">
+        <div className="col-span-1 flex">
+          <NavigationHeading
+            label="Stay in touch"
+            icon={
+              <MessageCircleHeart
+                size={24}
+                className="flex-shrink-0 text-white/50"
+              />
+            }
+          />
+        </div>
+        <div className="hidden md:col-span-1 md:flex" aria-hidden="true"></div>
+        <div className="col-span-1 flex">
+          <NavigationHeading
+            label="Navigation"
+            icon={<Compass size={24} className="flex-shrink-0 text-white/50" />}
+          />
+        </div>
       </div>
-      <div className="flex flex-col items-center justify-center gap-4 opacity-75 md:flex-row">
+      <div className="mb-4 flex flex-col items-center justify-center gap-4 opacity-75 md:flex-row">
         <div className="h-[1.6875rem] w-[3.75rem]">
           <svg
             width="100%"

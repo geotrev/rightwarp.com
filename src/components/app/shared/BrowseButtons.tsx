@@ -22,7 +22,8 @@ export const BrowseButtons = ({ actions }: BrowseButtonsProps) => {
       <div className="mx-auto flex w-fit flex-col gap-4 sm:flex-row lg:gap-8">
         {actions.map(({ type, label, href }) => (
           <Link key={label} href={href} className={styles[type]}>
-            {type === "primary" && <ArrowLeft className="size-4 lg:size-5" />} {label}
+            {type === "primary" && <ArrowLeft className="size-4 lg:size-5" />}{" "}
+            {label}
           </Link>
         ))}
       </div>

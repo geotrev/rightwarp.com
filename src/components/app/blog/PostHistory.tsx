@@ -15,7 +15,9 @@ export interface PostHistoryProps {
 export const PostHistory = ({ history }: PostHistoryProps) => {
   return (
     <div>
-      <h3 className="display mb-4 text-xl text-black lg:text-2xl dark:text-white">Post History</h3>
+      <h3 className="display mb-4 text-xl text-black lg:text-2xl dark:text-white">
+        Post History
+      </h3>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
         {history?.map((item, index) => (
           <div key={index} className="flex flex-col gap-1">
@@ -28,7 +30,10 @@ export const PostHistory = ({ history }: PostHistoryProps) => {
                   href={`/blog/archive/${item.year}/${month.label.toLowerCase()}`}
                 >
                   {month.label} ({month.count}){" "}
-                  <ChevronRight size={16} className="text-black dark:text-white" />
+                  <ChevronRight
+                    size={16}
+                    className="text-black dark:text-white"
+                  />
                 </a>
               ))}
             </div>

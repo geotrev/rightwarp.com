@@ -8,7 +8,11 @@ import { Footer } from "@/components/app/layout/Footer"
 import PostHogPageView from "@/components/context/PostHogPageView"
 import { useTheme } from "@/utils/useThemeContext"
 
-export const ClientBodyWrapper = ({ children }: { children: React.ReactNode }) => {
+export const ClientBodyWrapper = ({
+  children,
+}: {
+  children: React.ReactNode
+}) => {
   const { theme } = useTheme()
 
   return (

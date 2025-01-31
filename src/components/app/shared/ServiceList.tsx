@@ -11,7 +11,11 @@ export type ServiceListProps = {
   }[]
 }
 
-export const ServiceList = ({ asButtons = false, onClick, services }: ServiceListProps) => {
+export const ServiceList = ({
+  asButtons = false,
+  onClick,
+  services,
+}: ServiceListProps) => {
   const handleClick: MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
       if (typeof onClick === "function") {
@@ -52,5 +56,9 @@ export const ServiceList = ({ asButtons = false, onClick, services }: ServiceLis
     return null
   }
 
-  return <ul className="flex flex-wrap gap-2">{asButtons ? serviceButtons : serviceListItems}</ul>
+  return (
+    <ul className="flex flex-wrap gap-2">
+      {asButtons ? serviceButtons : serviceListItems}
+    </ul>
+  )
 }

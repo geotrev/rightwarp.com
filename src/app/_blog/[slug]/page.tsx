@@ -6,7 +6,11 @@ import { generatePageMeta } from "@/utils/generatePageMetadata"
 
 import { ClientPage } from "./client-page"
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string[] }>
+}) {
   const { slug } = await params
   const query = await queryBlogPost(`${slug}`)
   const page = query?.post.data.post
@@ -18,7 +22,11 @@ export async function generateStaticParams() {
   return queryPostStaticParams()
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string[] }>
+}) {
   const { slug } = await params
   const query = await queryBlogPost(`${slug}`)
 

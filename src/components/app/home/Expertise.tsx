@@ -33,7 +33,12 @@ const skillIcons: Record<string, React.FC> = {
   WrenchIcon,
 }
 
-export const Expertise = ({ heading, icon, subheading, items }: ExpertiseProps) => {
+export const Expertise = ({
+  heading,
+  icon,
+  subheading,
+  items,
+}: ExpertiseProps) => {
   return (
     <section>
       <SectionHeading icon={icon} subheading={subheading}>

@@ -1,5 +1,10 @@
 import cn from "classnames"
-import { ChevronFirst, ChevronLast, ChevronLeft, ChevronRight } from "lucide-react"
+import {
+  ChevronFirst,
+  ChevronLast,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react"
 import { MouseEvent, MouseEventHandler, useCallback, useMemo } from "react"
 
 export interface PaginationProps {
@@ -35,13 +40,24 @@ export const Pagination = ({
       return [1, "...", ...pages.slice(-4)]
     }
 
-    return [1, "...", currentPage - 1, currentPage, currentPage + 1, "...", totalPages]
+    return [
+      1,
+      "...",
+      currentPage - 1,
+      currentPage,
+      currentPage + 1,
+      "...",
+      totalPages,
+    ]
   }, [totalPages, currentPage])
 
   const handlePageClick: MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
       if (_handlePageClick) {
-        _handlePageClick(e, parseInt((e.target as HTMLButtonElement).dataset.page!))
+        _handlePageClick(
+          e,
+          parseInt((e.target as HTMLButtonElement).dataset.page!),
+        )
       }
     },
     [_handlePageClick],
@@ -59,7 +75,8 @@ export const Pagination = ({
             type="button"
             onClick={handleNewestClick}
           >
-            <span className="sr-only">Newest posts</span> <ChevronFirst size={20} />
+            <span className="sr-only">Newest posts</span>{" "}
+            <ChevronFirst size={20} />
           </button>
           <button
             className="btn btn-ghost size-12 min-h-0 p-0"
@@ -77,7 +94,8 @@ export const Pagination = ({
                 key={page}
                 className={cn("btn size-12 min-h-0 p-0", {
                   "btn-ghost": page !== currentPage,
-                  "btn-primary text-white dark:text-black": page === currentPage,
+                  "btn-primary text-white dark:text-black":
+                    page === currentPage,
                 })}
                 type="button"
                 onClick={handlePageClick}
@@ -106,7 +124,8 @@ export const Pagination = ({
             type="button"
             onClick={handleOldestClick}
           >
-            <span className="sr-only">Oldest posts</span> <ChevronLast size={20} />
+            <span className="sr-only">Oldest posts</span>{" "}
+            <ChevronLast size={20} />
           </button>
         </div>
       </div>

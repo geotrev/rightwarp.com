@@ -14,7 +14,10 @@ import {
   LogoMarquee,
   MediaCardProps,
 } from "@/components/app"
-import { Testimonials, TestimonialsProps } from "@/components/app/shared/Testimonials"
+import {
+  Testimonials,
+  TestimonialsProps,
+} from "@/components/app/shared/Testimonials"
 import { Routes } from "@/utils/helpers"
 
 import { homeProps } from "./_static/homePage"
@@ -50,7 +53,9 @@ export const ClientPage = ({
         details={
           <Link
             href={Routes.CONTACT}
-            className={cn("btn btn-primary w-fit !px-20 text-white lg:btn-lg dark:text-black")}
+            className={cn(
+              "btn btn-primary w-fit !px-20 text-white lg:btn-lg dark:text-black",
+            )}
           >
             Book A Call <Handshake className="size-5 lg:size-6" />
           </Link>
@@ -59,7 +64,10 @@ export const ClientPage = ({
       <LogoMarquee {...homeProps.logoMarqueeProps} />
       <CardGrid {...homeProps.workProps} entries={work} />
       <Expertise {...homeProps.expertiseProps} />
-      <Testimonials {...homeProps.testimonialProps} testimonials={testimonials} />
+      <Testimonials
+        {...homeProps.testimonialProps}
+        testimonials={testimonials}
+      />
       {/* <CardGrid {...homeProps.blogProps} entries={posts} /> */}
       <ActionList {...homeProps.actionsProps} />
     </>

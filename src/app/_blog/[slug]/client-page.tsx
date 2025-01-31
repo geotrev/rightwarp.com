@@ -4,7 +4,13 @@ import { Post as PostType, PostQuery } from "@tina/__generated__/types"
 import { useTina } from "tinacms/dist/react"
 
 import { staticProps } from "@/app/_static/blogPage"
-import { ActionList, Post, BrowseButtons, Hero, PostProps } from "@/components/app"
+import {
+  ActionList,
+  Post,
+  BrowseButtons,
+  Hero,
+  PostProps,
+} from "@/components/app"
 
 interface PageProps {
   post: {

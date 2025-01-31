@@ -27,12 +27,14 @@ export const workProps: WorkProps = {
     actions: [
       {
         heading: "Ready to build the future?",
-        description: "Whether your project is brand new or needs some renewed attention",
+        description:
+          "Whether your project is brand new or needs some renewed attention",
         action: "button",
       },
       {
         heading: "Subscribe to the newsletter",
-        description: "Get occasional emails about blog posts & industry happenings",
+        description:
+          "Get occasional emails about blog posts & industry happenings",
         action: "newsletter",
       },
     ],

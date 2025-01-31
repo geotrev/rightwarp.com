@@ -2,7 +2,8 @@ import cn from "classnames"
 import * as motion from "motion/react-client"
 import React, { forwardRef, HTMLAttributes, PropsWithChildren } from "react"
 
-interface ContainerProps extends PropsWithChildren<HTMLAttributes<HTMLElement>> {
+interface ContainerProps
+  extends PropsWithChildren<HTMLAttributes<HTMLElement>> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tag?: any
   isRaised?: boolean
@@ -45,11 +46,15 @@ export const Container = forwardRef<HTMLElement, ContainerProps>(
           />
         )}
         <Tag
-          className={cn("flex flex-col transition-[colors,padding]", className, {
-            "gap-16 bg-base-300 py-16 lg:py-24": isRaised,
-            "2xl:px-[15%]": isConstrained && !collapseHorizontalPadding,
-            "px-6 md:px-12 lg:px-24": !collapseHorizontalPadding,
-          })}
+          className={cn(
+            "flex flex-col transition-[colors,padding]",
+            className,
+            {
+              "gap-16 bg-base-300 py-16 lg:py-24": isRaised,
+              "2xl:px-[15%]": isConstrained && !collapseHorizontalPadding,
+              "px-6 md:px-12 lg:px-24": !collapseHorizontalPadding,
+            },
+          )}
           {...props}
           ref={ref}
         >

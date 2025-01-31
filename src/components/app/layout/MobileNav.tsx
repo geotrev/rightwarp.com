@@ -73,7 +73,9 @@ export const MobileNav = ({ theme }: { theme: string }) => {
                 className="w-full border-purple-950/25 dark:border-purple-100/25"
                 aria-hidden="true"
               />
-              <span className="display text-xs uppercase text-primary">Discover</span>
+              <span className="display text-xs uppercase text-primary">
+                Discover
+              </span>
               <hr
                 className="w-full border-purple-950/25 dark:border-purple-100/25"
                 aria-hidden="true"

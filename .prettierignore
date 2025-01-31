@@ -1,7 +1,13 @@
-.next
-.cache
 package-lock.json
-public
-node_modules
 next-env.d.ts
 next.config.ts
+
+# next
+.next
+.cache
+node_modules
+
+# tina
+public/admin
+tina/__generated__
+tina/tina-lock.json

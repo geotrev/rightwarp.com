@@ -35,16 +35,20 @@ export const WorkList = ({ items }: WorkListProps) => {
     [defaultFilterState],
   )
 
-  const handleClick: ServiceListProps["onClick"] = useCallback((name: string) => {
-    setFilteredServices((services) => {
-      return (
-        services?.map((service) => ({
-          ...service,
-          isSelected: service.name === name ? !service.isSelected : service.isSelected,
-        })) || services
-      )
-    })
-  }, [])
+  const handleClick: ServiceListProps["onClick"] = useCallback(
+    (name: string) => {
+      setFilteredServices((services) => {
+        return (
+          services?.map((service) => ({
+            ...service,
+            isSelected:
+              service.name === name ? !service.isSelected : service.isSelected,
+          })) || services
+        )
+      })
+    },
+    [],
+  )
 
   const noneFiltered = useMemo(
     () => !filteredServices?.some((service) => service.isSelected),
@@ -72,7 +76,11 @@ export const WorkList = ({ items }: WorkListProps) => {
       <div className="flex flex-col gap-2">
         <div className="text-sm font-bold uppercase">Filter by Service</div>
         <div className="flex flex-col justify-between gap-2 lg:flex-row lg:gap-4">
-          <ServiceList asButtons services={filteredServices} onClick={handleClick} />
+          <ServiceList
+            asButtons
+            services={filteredServices}
+            onClick={handleClick}
+          />
           {!noneFiltered && (
             <Button onClick={handleResetClick} variant="ghost" size="sm">
               <X size={16} /> Reset Filter
@@ -81,7 +89,9 @@ export const WorkList = ({ items }: WorkListProps) => {
         </div>
       </div>
       <div className="grid grid-cols-1 gap-8 xl:grid-cols-2">
-        {filteredItems?.map((item) => <MediaCard key={item.title} headingTag="h2" {...item} />)}
+        {filteredItems?.map((item) => (
+          <MediaCard key={item.title} headingTag="h2" {...item} />
+        ))}
       </div>
     </Container>
   )

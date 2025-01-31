@@ -1,5 +1,10 @@
 import client from "@tina/__generated__/client"
-import { PostAuthors, PostCategories, WorkImages, WorkServices } from "@tina/__generated__/types"
+import {
+  PostAuthors,
+  PostCategories,
+  WorkImages,
+  WorkServices,
+} from "@tina/__generated__/types"
 
 export const PREVIEW_LIMIT = 2
 
@@ -10,7 +15,8 @@ export const Visibility = {
   DRAFT: "Draft",
 }
 
-export const toMonth = (date: Date) => date.toLocaleString("en", { month: "long" })
+export const toMonth = (date: Date) =>
+  date.toLocaleString("en", { month: "long" })
 
 export const toPublishDate = (date: string) => {
   return new Date(date).toLocaleDateString()

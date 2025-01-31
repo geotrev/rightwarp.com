@@ -7,6 +7,11 @@ export const Footer = () => {
       className="my-16 grid gap-4 text-center text-sm lg:my-24"
       animationDisabled
     >
+      <div className="grid sm:grid-cols-3">
+        <div className="col-span-1">Foo</div>
+        <div className="col-span-1">Bar</div>
+        <div className="col-span-1">Baz</div>
+      </div>
       <div className="flex flex-col items-center justify-center gap-4 opacity-75 md:flex-row">
         <div className="h-[1.6875rem] w-[3.75rem]">
           <svg

@@ -1,8 +1,29 @@
 import { Compass, MessageCircleHeart } from "lucide-react"
+import { SocialIcon } from "react-social-icons"
 
 import { Container, Link } from "@/components/core"
+import { Routes } from "@/utils/helpers"
 
 import { NavigationHeading } from "../shared/NavigationHeading"
+
+const FooterLinks = [
+  {
+    label: "Home",
+    href: Routes.HOME,
+  },
+  {
+    label: "About",
+    href: Routes.CONTACT,
+  },
+  {
+    label: "Services",
+    href: Routes.ABOUT,
+  },
+  {
+    label: "Work",
+    href: Routes.WORK,
+  },
+]
 
 export const Footer = () => {
   return (
@@ -11,8 +32,8 @@ export const Footer = () => {
       className="my-16 grid text-center text-sm lg:my-24"
       animationDisabled
     >
-      <div className="mb-16 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-0">
-        <div className="col-span-1 flex">
+      <div className="mb-16 grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3 md:gap-0">
+        <div className="col-span-1 flex flex-col gap-4">
           <NavigationHeading
             label="Stay in touch"
             icon={
@@ -22,13 +43,39 @@ export const Footer = () => {
               />
             }
           />
+          <ul className="flex flex-wrap gap-3">
+            <li className="text-white/50 hover:text-white/25">
+              <SocialIcon
+                bgColor="currentColor"
+                target="_blank"
+                style={{ height: 32, width: 32 }}
+                url="https://www.linkedin.com/company/right-warp"
+              />
+            </li>
+            <li className="text-white/50 hover:text-white/25">
+              <SocialIcon
+                bgColor="currentColor"
+                style={{ height: 32, width: 32 }}
+                url="mailto:wave@rightwarp.com"
+              />
+            </li>
+          </ul>
         </div>
         <div className="hidden md:col-span-1 md:flex" aria-hidden="true"></div>
-        <div className="col-span-1 flex">
+        <div className="col-span-1 flex flex-col gap-4">
           <NavigationHeading
             label="Navigation"
             icon={<Compass size={24} className="flex-shrink-0 text-white/50" />}
           />
+          <ul className="grid grid-cols-2 gap-2 text-start">
+            {FooterLinks.map((link) => (
+              <li key={link.label}>
+                <Link href={link.href} className="no-underline hover:underline">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
       <div className="mb-4 flex flex-col items-center justify-center gap-4 opacity-75 md:flex-row">

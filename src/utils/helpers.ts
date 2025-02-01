@@ -13,6 +13,8 @@ export const Routes = {
   WORK: "/work",
   BLOG: "/blog",
   CONTACT: "/contact",
+  PRIVACY: "/privacy",
+  TERMS: "/terms",
 }
 
 export const NavItems = [

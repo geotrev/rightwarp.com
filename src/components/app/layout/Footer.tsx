@@ -39,12 +39,12 @@ export const Footer = () => {
             icon={
               <MessageCircleHeart
                 size={24}
-                className="flex-shrink-0 text-white/50"
+                className="flex-shrink-0 opacity-50"
               />
             }
           />
           <ul className="flex flex-wrap gap-3">
-            <li className="text-white/50 hover:text-white/25">
+            <li className="text-black/50 hover:text-black/75 dark:text-white/25 dark:hover:text-white/15">
               <SocialIcon
                 bgColor="currentColor"
                 target="_blank"
@@ -52,7 +52,7 @@ export const Footer = () => {
                 url="https://www.linkedin.com/company/right-warp"
               />
             </li>
-            <li className="text-white/50 hover:text-white/25">
+            <li className="text-black/50 hover:text-black/75 dark:text-white/25 dark:hover:text-white/15">
               <SocialIcon
                 bgColor="currentColor"
                 style={{ height: 32, width: 32 }}
@@ -65,7 +65,7 @@ export const Footer = () => {
         <div className="col-span-1 flex flex-col gap-4">
           <NavigationHeading
             label="Navigation"
-            icon={<Compass size={24} className="flex-shrink-0 text-white/50" />}
+            icon={<Compass size={24} className="flex-shrink-0 opacity-50" />}
           />
           <ul className="grid grid-cols-2 gap-2 text-start">
             {FooterLinks.map((link) => (

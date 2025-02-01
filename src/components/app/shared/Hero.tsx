@@ -9,7 +9,12 @@ export interface HeroProps {
   details?: React.ReactNode
 }
 
-export const Hero = ({ heading, description, details, variant = "standard" }: HeroProps) => {
+export const Hero = ({
+  heading,
+  description,
+  details,
+  variant = "standard",
+}: HeroProps) => {
   const fontStyles: Record<string, string> = {
     standard: cn(
       "mb-4 text-3xl leading-[3rem] tracking-tight md:mb-8 md:text-4xl md:leading-[3.5rem] md:tracking-tighter lg:text-[4rem] lg:leading-[5rem]",
@@ -26,9 +31,12 @@ export const Hero = ({ heading, description, details, variant = "standard" }: He
 
   return (
     <section
-      className={cn("flex flex-col justify-center px-6 transition-[padding] md:px-12 lg:px-24", {
-        [sizeStyles[variant]]: true,
-      })}
+      className={cn(
+        "flex flex-col justify-center px-6 transition-[padding] md:px-12 lg:px-24",
+        {
+          [sizeStyles[variant]]: true,
+        },
+      )}
     >
       <h1
         className={cn("display text-black dark:text-white", {

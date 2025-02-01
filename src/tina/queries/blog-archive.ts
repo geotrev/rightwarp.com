@@ -1,7 +1,14 @@
 import client from "@tina/__generated__/client"
 import { PostAuthors, PostCategories } from "@tina/__generated__/types"
 
-import { Visibility, toAuthors, toCategories, toMonth, toPublishDate, toSlug } from "./helpers"
+import {
+  Visibility,
+  toAuthors,
+  toCategories,
+  toMonth,
+  toPublishDate,
+  toSlug,
+} from "./helpers"
 
 export const queryArchiveStaticParams = async () => {
   const posts = await client.queries.postConnection({
@@ -10,22 +17,25 @@ export const queryArchiveStaticParams = async () => {
       visibility: { eq: Visibility.PUBLIC },
     },
   })
-  const paths = posts.data?.postConnection?.edges?.reduce<{ slug: (string | number)[] }[]>(
-    (entries, edge) => {
-      const post = edge!.node!
-      const publishDate = new Date(post.publishDate)
-      const year = publishDate.getFullYear()
-      const monthName = toMonth(publishDate).toLowerCase()
-      const path = [year, monthName]
+  const paths = posts.data?.postConnection?.edges?.reduce<
+    { slug: (string | number)[] }[]
+  >((entries, edge) => {
+    const post = edge!.node!
+    const publishDate = new Date(post.publishDate)
+    const year = publishDate.getFullYear()
+    const monthName = toMonth(publishDate).toLowerCase()
+    const path = [year, monthName]
 
-      if (!entries.find((entry) => entry.slug[0] === year && entry.slug[1] === monthName)) {
-        entries.push({ slug: path })
-      }
+    if (
+      !entries.find(
+        (entry) => entry.slug[0] === year && entry.slug[1] === monthName,
+      )
+    ) {
+      entries.push({ slug: path })
+    }
 
-      return entries
-    },
-    [],
-  )
+    return entries
+  }, [])
 
   return paths || []
 }

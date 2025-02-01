@@ -49,7 +49,10 @@ export const MediaCard = ({
 
   return (
     <MotionConfig transition={{ duration: 0.2 }}>
-      <motion.div className="media-card relative w-full" whileHover={{ y: -10 }}>
+      <motion.div
+        className="media-card relative w-full"
+        whileHover={{ y: -10 }}
+      >
         {/* [1] */}
         <a
           href={slug}

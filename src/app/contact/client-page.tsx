@@ -3,7 +3,12 @@
 import { PageQuery } from "@tina/__generated__/types"
 import { useTina } from "tinacms/dist/react"
 
-import { ActionList, ContactForm, Hero, RecaptchaVerifyWrapper } from "@/components/app"
+import {
+  ActionList,
+  ContactForm,
+  Hero,
+  RecaptchaVerifyWrapper,
+} from "@/components/app"
 
 import { contactProps } from "../_static/contactPage"
 

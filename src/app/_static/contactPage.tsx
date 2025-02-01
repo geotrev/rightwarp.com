@@ -15,7 +15,8 @@ export const contactProps: ContactProps = {
     actions: [
       {
         heading: "Schedule a call",
-        description: "Share 30 minutes to discuss your project(s) and answer some questions.",
+        description:
+          "Share 30 minutes to discuss your project(s) and answer some questions.",
         action: "call",
       },
     ],
@@ -65,7 +66,8 @@ export const contactProps: ContactProps = {
     actions: [
       {
         heading: "Subscribe to the newsletter",
-        description: "Get occasional emails about blog posts & industry happenings",
+        description:
+          "Get occasional emails about blog posts & industry happenings",
         action: "newsletter",
       },
     ],

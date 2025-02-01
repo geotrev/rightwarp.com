@@ -28,11 +28,13 @@ export const queryBlogIndex = async () => {
   // All categories
 
   const categoriesResponse = await client.queries.categoryConnection()
-  const categories = categoriesResponse.data.categoryConnection.edges?.map((edge) => ({
-    name: edge!.node!.name,
-    color: edge!.node!.color!,
-    slug: toSlug(edge!.node!._sys.filename, "blog/category"),
-  }))
+  const categories = categoriesResponse.data.categoryConnection.edges?.map(
+    (edge) => ({
+      name: edge!.node!.name,
+      color: edge!.node!.color!,
+      slug: toSlug(edge!.node!._sys.filename, "blog/category"),
+    }),
+  )
 
   // Info for all posts
 
@@ -42,7 +44,9 @@ export const queryBlogIndex = async () => {
       visibility: { eq: Visibility.PUBLIC },
     },
   })
-  const cursors = allPosts.data.postConnection.edges?.map((edge) => edge?.cursor).reverse()
+  const cursors = allPosts.data.postConnection.edges
+    ?.map((edge) => edge?.cursor)
+    .reverse()
   const pages = chunk(POST_PAGE_SIZE, cursors).map((group) => {
     return { start: group[0], end: group[group.length - 1] }
   })
@@ -56,17 +60,19 @@ export const queryBlogIndex = async () => {
       visibility: { eq: Visibility.PUBLIC },
     },
   })
-  const pagePosts = indexPostsResponse.data.postConnection.edges?.map((edge) => {
-    const entry = edge?.node
-    return {
-      title: entry!.title,
-      description: entry!.description,
-      authors: toAuthors(entry!.authors as PostAuthors[]),
-      date: toPublishDate(entry!.publishDate),
-      categories: toCategories(entry!.categories as PostCategories[]),
-      slug: toSlug(entry!._sys.filename, "blog"),
-    }
-  })
+  const pagePosts = indexPostsResponse.data.postConnection.edges?.map(
+    (edge) => {
+      const entry = edge?.node
+      return {
+        title: entry!.title,
+        description: entry!.description,
+        authors: toAuthors(entry!.authors as PostAuthors[]),
+        date: toPublishDate(entry!.publishDate),
+        categories: toCategories(entry!.categories as PostCategories[]),
+        slug: toSlug(entry!._sys.filename, "blog"),
+      }
+    },
+  )
 
   // History & archive data
 
@@ -81,7 +87,9 @@ export const queryBlogIndex = async () => {
       const match = entries.find((item) => item.year === entryYear)
 
       if (match) {
-        const matchMonth = match.months.find((item) => item.month === entryMonth)
+        const matchMonth = match.months.find(
+          (item) => item.month === entryMonth,
+        )
 
         if (!matchMonth) {
           match.months.push({
@@ -143,7 +151,9 @@ export const queryBlogPost = async (slug: string, relatedPostLimit = 3) => {
         visibility: { eq: Visibility.PUBLIC },
       },
     })
-    const categories = post.data.post.categories.map((category) => category.categoryRef.name)
+    const categories = post.data.post.categories.map(
+      (category) => category.categoryRef.name,
+    )
     const relatedPosts = allPosts.data.postConnection.edges
       ?.filter((edge) => {
         const _post = edge?.node

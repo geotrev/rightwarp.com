@@ -10,7 +10,11 @@ import { Testimonial } from "./schemas/testimonial"
 import { Work } from "./schemas/work"
 
 const branch =
-  process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main"
+  process.env.TINA_BRANCH ||
+  process.env.GITHUB_BRANCH ||
+  process.env.VERCEL_GIT_COMMIT_REF ||
+  process.env.HEAD ||
+  "main"
 
 export default defineConfig({
   branch,

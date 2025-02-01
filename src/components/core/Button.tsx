@@ -1,7 +1,9 @@
 import cn from "classnames"
 import { PropsWithChildren } from "react"
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, PropsWithChildren {
+interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    PropsWithChildren {
   variant?: "primary" | "secondary" | "accent" | "ghost" | "outline"
   size?: "sm" | "md" | "lg"
   isCta?: boolean
@@ -46,7 +48,11 @@ export const Button = ({
   const size = getSize(_size)
 
   return (
-    <button type="button" className={cn(`btn font-bold`, variant, size, className)} {...props}>
+    <button
+      type="button"
+      className={cn(`btn font-bold`, variant, size, className)}
+      {...props}
+    >
       {children}
     </button>
   )

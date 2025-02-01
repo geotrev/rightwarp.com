@@ -1,12 +1,19 @@
 import { Page as PageType } from "@tina/__generated__/types"
 import { notFound } from "next/navigation"
 
-import { queryArchive, queryArchiveStaticParams } from "@/tina/queries/blog-archive"
+import {
+  queryArchive,
+  queryArchiveStaticParams,
+} from "@/tina/queries/blog-archive"
 import { generatePageMeta } from "@/utils/generatePageMetadata"
 
 import { ClientPage } from "./client-page"
 
-export async function generateMetadata({ params }: { params: Promise<{ range: string[] }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ range: string[] }>
+}) {
   const { range } = await params
   const query = await queryArchive(range)
   const page = query?.page.data.page
@@ -26,7 +33,11 @@ export async function generateStaticParams() {
   return queryArchiveStaticParams()
 }
 
-export default async function Page({ params }: { params: Promise<{ range: string[] }> }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ range: string[] }>
+}) {
   const { range } = await params
   const query = await queryArchive(range)
 

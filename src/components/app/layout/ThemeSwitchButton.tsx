@@ -6,7 +6,12 @@ import { useEffect, useState } from "react"
 
 import { useTheme } from "@/utils/useThemeContext"
 
-export const ThemeSwitchButton = ({ isLarge }: { isLarge?: boolean; theme?: string }) => {
+export const ThemeSwitchButton = ({
+  isLarge,
+}: {
+  isLarge?: boolean
+  theme?: string
+}) => {
   const { theme, toggleTheme } = useTheme()
   const size = isLarge ? 32 : 24
   const [isMounted, setIsMounted] = useState(false)
@@ -34,7 +39,8 @@ export const ThemeSwitchButton = ({ isLarge }: { isLarge?: boolean; theme?: stri
           "opacity-100": isMounted,
         })}
       >
-        {isMounted && (theme === "dark" ? <MoonStar size={size} /> : <Sun size={size} />)}
+        {isMounted &&
+          (theme === "dark" ? <MoonStar size={size} /> : <Sun size={size} />)}
       </span>
       <span className="sr-only">Toggle theme (current theme: {theme})</span>
     </button>

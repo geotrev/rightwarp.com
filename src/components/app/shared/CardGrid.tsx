@@ -34,9 +34,14 @@ export const CardGrid = ({
       </SectionHeading>
       <Container isConstrained>
         <div className="grid gap-8 pb-8 md:grid-cols-2">
-          {entries.map((entry) => entry && <MediaCard key={entry.title} {...entry} />)}
+          {entries.map(
+            (entry) => entry && <MediaCard key={entry.title} {...entry} />,
+          )}
         </div>
-        <Link href={actionHref} className="btn btn-outline btn-secondary mx-auto max-w-56">
+        <Link
+          href={actionHref}
+          className="btn btn-outline btn-secondary mx-auto max-w-56"
+        >
           {actionLabel || "More Items"} <ArrowRight size="20" />
         </Link>
       </Container>

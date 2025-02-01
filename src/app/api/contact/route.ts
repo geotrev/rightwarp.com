@@ -45,7 +45,10 @@ export async function POST(req: Request) {
     } as MailData,
   )
 
-  if (process.env.NODE_ENV === "production" || process.env.CONTACT_EMAIL_ENABLE_DEV === "true") {
+  if (
+    process.env.NODE_ENV === "production" ||
+    process.env.CONTACT_EMAIL_ENABLE_DEV === "true"
+  ) {
     try {
       const isOk = await sendEmail(data)
 

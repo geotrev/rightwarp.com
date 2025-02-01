@@ -59,7 +59,10 @@ export const ContactForm = (props: ContactFormProps) => {
 
       const gRecaptchaToken = await verifyRecaptcha()
       const formData = new FormData(e.target as HTMLFormElement)
-      const formValues = [...formData.entries()].map(([key, value]) => [key, value.toString()])
+      const formValues = [...formData.entries()].map(([key, value]) => [
+        key,
+        value.toString(),
+      ])
 
       const res = await fetch("/api/contact", {
         method: "post",
@@ -89,32 +92,45 @@ export const ContactForm = (props: ContactFormProps) => {
           <>
             <p className="mb-8 flex items-center gap-4 italic">
               <Asterisk size="20" className="dark:text-white" />
-              <span className="opacity-75">Fields with an asterisk are required</span>
+              <span className="opacity-75">
+                Fields with an asterisk are required
+              </span>
             </p>
             <form className="grid gap-12" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                {props.contact.map(({ label, name, type, placeholder, required }) => (
-                  <div key={name} className="form-control">
-                    <label htmlFor={name} className="label">
-                      <span className="label-text flex items-center gap-1">
-                        {label}
-                        {required && <Asterisk className="inline" size={16} />}
-                      </span>
-                    </label>
-                    <input
-                      readOnly={state === FormStatus.PENDING}
-                      id={name}
-                      name={name}
-                      type={type}
-                      placeholder={placeholder}
-                      required={required}
-                      value={fieldValues[name]}
-                      onChange={(e) => setFieldValues({ ...fieldValues, [name]: e.target.value })}
-                      className="input input-secondary w-full"
-                      {...(type === "tel" && { pattern: "[0-9]{3}-?[0-9]{3}-?[0-9]{4}" })}
-                    />
-                  </div>
-                ))}
+                {props.contact.map(
+                  ({ label, name, type, placeholder, required }) => (
+                    <div key={name} className="form-control">
+                      <label htmlFor={name} className="label">
+                        <span className="label-text flex items-center gap-1">
+                          {label}
+                          {required && (
+                            <Asterisk className="inline" size={16} />
+                          )}
+                        </span>
+                      </label>
+                      <input
+                        readOnly={state === FormStatus.PENDING}
+                        id={name}
+                        name={name}
+                        type={type}
+                        placeholder={placeholder}
+                        required={required}
+                        value={fieldValues[name]}
+                        onChange={(e) =>
+                          setFieldValues({
+                            ...fieldValues,
+                            [name]: e.target.value,
+                          })
+                        }
+                        className="input input-secondary w-full"
+                        {...(type === "tel" && {
+                          pattern: "[0-9]{3}-?[0-9]{3}-?[0-9]{4}",
+                        })}
+                      />
+                    </div>
+                  ),
+                )}
               </div>
               <fieldset>
                 <legend className="label">
@@ -130,11 +146,16 @@ export const ContactForm = (props: ContactFormProps) => {
                           name={name}
                           checked={selectedTopics[name]}
                           onChange={(e) =>
-                            setSelectedTopics({ ...selectedTopics, [name]: e.target.checked })
+                            setSelectedTopics({
+                              ...selectedTopics,
+                              [name]: e.target.checked,
+                            })
                           }
                           className="checkbox-secondary checkbox"
                         />
-                        <span className="label-text text-purple-950 dark:text-white">{label}</span>
+                        <span className="label-text text-purple-950 dark:text-white">
+                          {label}
+                        </span>
                       </label>
                     </div>
                   ))}
@@ -148,7 +169,9 @@ export const ContactForm = (props: ContactFormProps) => {
                   </span>
                 </label>
                 <p className="label" id={`${props.details.name}-hint`}>
-                  <span className="label-text text-xs">{props.details.hint}</span>
+                  <span className="label-text text-xs">
+                    {props.details.hint}
+                  </span>
                 </p>
                 <textarea
                   readOnly={state === FormStatus.PENDING}
@@ -158,7 +181,10 @@ export const ContactForm = (props: ContactFormProps) => {
                   required
                   value={fieldValues[props.details.name]}
                   onChange={(e) =>
-                    setFieldValues({ ...fieldValues, [props.details.name]: e.target.value })
+                    setFieldValues({
+                      ...fieldValues,
+                      [props.details.name]: e.target.value,
+                    })
                   }
                   className="textarea textarea-secondary min-h-[8rem] w-full"
                 />

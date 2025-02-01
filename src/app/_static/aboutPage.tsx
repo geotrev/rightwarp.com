@@ -1,4 +1,11 @@
-import { Brain, CodeXml, Feather, Hammer, NotebookText, PaintRoller } from "lucide-react"
+import {
+  Brain,
+  CodeXml,
+  Feather,
+  Hammer,
+  NotebookText,
+  PaintRoller,
+} from "lucide-react"
 
 import SelfImage from "@/app/_assets/its-a-me.jpg"
 import Codecov from "@/app/_assets/logos/codecov.svg"
@@ -108,7 +115,8 @@ export const staticProps: AboutPageProps = {
   skillProps: {
     heading: "Skills",
     icon: Feather,
-    subheading: "Bringing a unique combination of skills & expertise to ensure project success",
+    subheading:
+      "Bringing a unique combination of skills & expertise to ensure project success",
     categories: [
       {
         title: "Strategy",
@@ -182,12 +190,14 @@ export const staticProps: AboutPageProps = {
     actions: [
       {
         heading: "Ready to build the future?",
-        description: "Whether your project is brand new or needs some renewed attention",
+        description:
+          "Whether your project is brand new or needs some renewed attention",
         action: "button",
       },
       {
         heading: "Subscribe to the newsletter",
-        description: "Get occasional emails about blog posts & industry happenings",
+        description:
+          "Get occasional emails about blog posts & industry happenings",
         action: "newsletter",
       },
     ],

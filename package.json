@@ -8,8 +8,8 @@
     "postbuild": "next-sitemap --config ./next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --check --ignore-path .gitignore .",
-    "format:fix": "prettier --write --ignore-path .gitignore .",
+    "format": "prettier --check --ignore-path .prettierignore .",
+    "format:fix": "prettier --write --ignore-path .prettierignore .",
     "prepare": "husky"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-google-recaptcha-v3": "1.10.1",
+    "react-social-icons": "^6.22.0",
     "server-only": "0.0.1",
     "slug": "10.0.0",
     "tinacms": "2.6.0",

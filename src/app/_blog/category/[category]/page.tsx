@@ -6,7 +6,11 @@ import { generatePageMeta } from "@/utils/generatePageMetadata"
 
 import { ClientPage } from "./client-page"
 
-export async function generateMetadata({ params }: { params: Promise<{ category: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ category: string }>
+}) {
   const { category } = await params
   const query = await queryCategory(`${category}`)
   const page = query?.page.data.page
@@ -25,7 +29,11 @@ export async function generateStaticParams() {
   return queryCategoryStaticParams()
 }
 
-export default async function Page({ params }: { params: Promise<{ category: string }> }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ category: string }>
+}) {
   const { category } = await params
   const query = await queryCategory(`${category}`)
 

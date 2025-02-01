@@ -33,7 +33,10 @@ export const CategoryList = ({
   const categoryButtons = categories?.map(({ slug, name }) => {
     return (
       <li key={name}>
-        <Link href={slug!} className="btn btn-outline btn-sm text-black dark:text-white">
+        <Link
+          href={slug!}
+          className="btn btn-outline btn-sm text-black dark:text-white"
+        >
           {name}
         </Link>
       </li>
@@ -44,5 +47,9 @@ export const CategoryList = ({
     return null
   }
 
-  return <ul className="flex flex-wrap gap-2">{asLinks ? categoryButtons : categoryListItems}</ul>
+  return (
+    <ul className="flex flex-wrap gap-2">
+      {asLinks ? categoryButtons : categoryListItems}
+    </ul>
+  )
 }

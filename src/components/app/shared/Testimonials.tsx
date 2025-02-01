@@ -54,10 +54,12 @@ const TestimonialContent = ({
 }: TestimonialContentProps) => {
   return (
     <div
-      className={cn("flex flex-col items-center gap-8", { invisible: isHidden })}
+      className={cn("flex flex-col items-center gap-8", {
+        invisible: isHidden,
+      })}
       aria-hidden={isHidden ? true : undefined}
     >
-      <blockquote className="text-center italic md:text-lg">
+      <blockquote className="text-center italic md:text-xl">
         <TinaMarkdown content={content!} />
       </blockquote>
       <div className="flex items-center gap-6">
@@ -89,7 +91,12 @@ const Testimonial = (props: Testimonial) => {
   )
 }
 
-export const Testimonials = ({ heading, subheading, icon, testimonials }: TestimonialsProps) => {
+export const Testimonials = ({
+  heading,
+  subheading,
+  icon,
+  testimonials,
+}: TestimonialsProps) => {
   const [page, setPage] = useState<number>(0)
 
   useEffect(() => {
@@ -110,9 +117,13 @@ export const Testimonials = ({ heading, subheading, icon, testimonials }: Testim
       <Container isConstrained outerStyles="lg:px-28">
         <div className="relative">
           <AnimatePresence>
-            {testimonials[page] && <Testimonial key={page} {...testimonials[page]} />}
+            {testimonials[page] && (
+              <Testimonial key={page} {...testimonials[page]} />
+            )}
             {/* hidden copy of the testimonial to ensure the right size is used for the container */}
-            {testimonials[page] && <TestimonialContent {...testimonials[page]} isHidden />}
+            {testimonials[page] && (
+              <TestimonialContent {...testimonials[page]} isHidden />
+            )}
           </AnimatePresence>
         </div>
       </Container>

@@ -81,7 +81,10 @@ export async function generatePageMeta(
     rootSettings.siteName,
     dynamicTitle || page?.seo?.title || rootSettings.seo?.title,
   )
-  const description = dynamicDescription || page?.seo?.description || rootSettings.seo?.description
+  const description =
+    dynamicDescription ||
+    page?.seo?.description ||
+    rootSettings.seo?.description
   const keywords = page?.seo?.keywords || rootSettings?.seo?.keywords
 
   // Root metadata url base - used by all metadata fields

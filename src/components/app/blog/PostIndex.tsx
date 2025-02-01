@@ -25,7 +25,12 @@ interface PostIndexProps {
   pages?: { start: string; end: string }[]
 }
 
-export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps) => {
+export const PostIndex = ({
+  posts,
+  pages,
+  categories,
+  history,
+}: PostIndexProps) => {
   const isLarge = useIsLarge()
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isLoading, setIsLoading] = useState(false)
@@ -39,7 +44,10 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
     window?.scrollTo({ behavior: "smooth", top: 0 })
   }, [])
 
-  const handlePageClick: (e: MouseEvent<HTMLButtonElement>, page: number) => void = useCallback(
+  const handlePageClick: (
+    e: MouseEvent<HTMLButtonElement>,
+    page: number,
+  ) => void = useCallback(
     async (e, page) => {
       if (pageData.currentPage === page) return
 
@@ -66,96 +74,100 @@ export const PostIndex = ({ posts, pages, categories, history }: PostIndexProps)
     [pageData.currentPage, pages, scrollToTop],
   )
 
-  const handleNewestClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {
-    if (pageData.currentPage === 0) return
+  const handleNewestClick: MouseEventHandler<HTMLButtonElement> =
+    useCallback(async () => {
+      if (pageData.currentPage === 0) return
 
-    setIsLoading(true)
+      setIsLoading(true)
 
-    const result = await queryPosts({
-      sort: "publishDate",
-      last: POST_PAGE_SIZE,
-    })
-
-    if (result.posts) {
-      setPageData({
-        ...result,
-        currentPage: 0,
+      const result = await queryPosts({
+        sort: "publishDate",
+        last: POST_PAGE_SIZE,
       })
 
-      scrollToTop()
-    }
+      if (result.posts) {
+        setPageData({
+          ...result,
+          currentPage: 0,
+        })
 
-    setIsLoading(false)
-  }, [pageData.currentPage, scrollToTop])
+        scrollToTop()
+      }
 
-  const handlePreviousClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {
-    if (pageData.currentPage === 0) return
+      setIsLoading(false)
+    }, [pageData.currentPage, scrollToTop])
 
-    setIsLoading(true)
+  const handlePreviousClick: MouseEventHandler<HTMLButtonElement> =
+    useCallback(async () => {
+      if (pageData.currentPage === 0) return
 
-    const result = await queryPosts({
-      sort: "publishDate",
-      last: POST_PAGE_SIZE,
-      before: pages?.[pageData.currentPage - 2]?.end,
-    })
+      setIsLoading(true)
 
-    if (result.posts) {
-      setPageData({
-        ...result,
-        currentPage: pageData.currentPage - 1,
+      const result = await queryPosts({
+        sort: "publishDate",
+        last: POST_PAGE_SIZE,
+        before: pages?.[pageData.currentPage - 2]?.end,
       })
 
-      scrollToTop()
-    }
+      if (result.posts) {
+        setPageData({
+          ...result,
+          currentPage: pageData.currentPage - 1,
+        })
 
-    setIsLoading(false)
-  }, [pageData.currentPage, pages, scrollToTop])
+        scrollToTop()
+      }
 
-  const handleNextClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {
-    if (pages?.length && pageData.currentPage === pages.length - 1) return
+      setIsLoading(false)
+    }, [pageData.currentPage, pages, scrollToTop])
 
-    setIsLoading(true)
+  const handleNextClick: MouseEventHandler<HTMLButtonElement> =
+    useCallback(async () => {
+      if (pages?.length && pageData.currentPage === pages.length - 1) return
 
-    const result = await queryPosts({
-      sort: "publishDate",
-      last: POST_PAGE_SIZE,
-      before: pages?.[pageData.currentPage]?.end,
-    })
+      setIsLoading(true)
 
-    if (result.posts) {
-      setPageData({
-        ...result,
-        currentPage: pageData.currentPage + 1,
+      const result = await queryPosts({
+        sort: "publishDate",
+        last: POST_PAGE_SIZE,
+        before: pages?.[pageData.currentPage]?.end,
       })
 
-      scrollToTop()
-    }
+      if (result.posts) {
+        setPageData({
+          ...result,
+          currentPage: pageData.currentPage + 1,
+        })
 
-    setIsLoading(false)
-  }, [pageData.currentPage, pages, scrollToTop])
+        scrollToTop()
+      }
 
-  const handleOldestClick: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {
-    if (pages?.length && pageData.currentPage === pages.length - 1) return
+      setIsLoading(false)
+    }, [pageData.currentPage, pages, scrollToTop])
 
-    setIsLoading(true)
+  const handleOldestClick: MouseEventHandler<HTMLButtonElement> =
+    useCallback(async () => {
+      if (pages?.length && pageData.currentPage === pages.length - 1) return
 
-    const result = await queryPosts({
-      sort: "publishDate",
-      last: POST_PAGE_SIZE,
-      before: pages?.[pages!.length - 2]?.end,
-    })
+      setIsLoading(true)
 
-    if (result.posts) {
-      setPageData({
-        ...result,
-        currentPage: pages!.length - 1,
+      const result = await queryPosts({
+        sort: "publishDate",
+        last: POST_PAGE_SIZE,
+        before: pages?.[pages!.length - 2]?.end,
       })
 
-      scrollToTop()
-    }
+      if (result.posts) {
+        setPageData({
+          ...result,
+          currentPage: pages!.length - 1,
+        })
 
-    setIsLoading(false)
-  }, [pageData.currentPage, pages, scrollToTop])
+        scrollToTop()
+      }
+
+      setIsLoading(false)
+    }, [pageData.currentPage, pages, scrollToTop])
 
   return (
     <>

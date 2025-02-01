@@ -65,14 +65,16 @@ export const homeProps: HomeProps = {
       },
       {
         heading: "User Experience",
-        description: "Delight customers with an intuitive product and research-driven design",
+        description:
+          "Delight customers with an intuitive product and research-driven design",
         icon: "SingleUserNeutralIcon",
       },
       {
         isRaised: true,
         isReversed: true,
         heading: "Audits, Testing & Quality",
-        description: "Temper your product development with stronger testing infrastructure.",
+        description:
+          "Temper your product development with stronger testing infrastructure.",
         icon: "DesktopCheckIcon",
       },
       {
@@ -106,12 +108,14 @@ export const homeProps: HomeProps = {
     actions: [
       {
         heading: "Ready to build the future?",
-        description: "Whether your project is brand new or needs some renewed attention",
+        description:
+          "Whether your project is brand new or needs some renewed attention",
         action: "button",
       },
       {
         heading: "Subscribe to the newsletter",
-        description: "Get occasional emails about blog posts & industry happenings",
+        description:
+          "Get occasional emails about blog posts & industry happenings",
         action: "newsletter",
       },
     ],

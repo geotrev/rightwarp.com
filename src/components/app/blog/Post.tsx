@@ -18,7 +18,11 @@ export interface PostProps {
 
 export const Post = ({ post, relatedPosts }: PostProps) => {
   return (
-    <Container isRaised isConstrained className="grid gap-8 lg:grid-cols-4 lg:gap-12">
+    <Container
+      isRaised
+      isConstrained
+      className="grid gap-8 lg:grid-cols-4 lg:gap-12"
+    >
       <div className="lg:col-span-3">
         <div className="prose prose-slate xl:prose-lg">
           <TinaMarkdown content={post.body} components={MarkdownComponents} />

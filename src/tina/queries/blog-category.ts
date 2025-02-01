@@ -1,7 +1,13 @@
 import client from "@tina/__generated__/client"
 import { PostAuthors, PostCategories } from "@tina/__generated__/types"
 
-import { toAuthors, toCategories, toPublishDate, toSlug, Visibility } from "./helpers"
+import {
+  toAuthors,
+  toCategories,
+  toPublishDate,
+  toSlug,
+  Visibility,
+} from "./helpers"
 
 const getPostByCategory = async (category: string) => {
   const posts = await client.queries.postConnection({
@@ -51,7 +57,9 @@ export const queryCategoryStaticParams = async () => {
 
 export const queryCategory = async (category: string) => {
   const page = await client.queries.page({ relativePath: "category.json" })
-  const categoryResponse = await client.queries.category({ relativePath: `${category}.json` })
+  const categoryResponse = await client.queries.category({
+    relativePath: `${category}.json`,
+  })
   const categoriesResponse = await client.queries.categoryConnection()
   const categories = categoriesResponse.data?.categoryConnection?.edges?.map(
     (edge) => edge?.node?._sys.filename,

@@ -12,6 +12,8 @@ import { NavItems, Routes } from "@/utils/helpers"
 import { useIsLarge } from "@/utils/useMediaQuery"
 import { useTheme } from "@/utils/useThemeContext"
 
+import { NavigationHeading } from "../shared/NavigationHeading"
+
 import { MobileNav } from "./MobileNav"
 import { ThemeSwitchButton } from "./ThemeSwitchButton"
 
@@ -59,9 +61,19 @@ export const Header = () => {
             className="btn relative flex h-9 min-h-0 w-16 items-center border-none !bg-transparent p-0 shadow-none md:w-20"
           >
             {theme === "dark" ? (
-              <Image src={LogoDark} fill style={{ objectFit: "contain" }} alt="Right Warp, home" />
+              <Image
+                src={LogoDark}
+                fill
+                style={{ objectFit: "contain" }}
+                alt="Right Warp, home"
+              />
             ) : (
-              <Image src={LogoLight} fill style={{ objectFit: "contain" }} alt="Right Warp, home" />
+              <Image
+                src={LogoLight}
+                fill
+                style={{ objectFit: "contain" }}
+                alt="Right Warp, home"
+              />
             )}
           </Link>
         </div>
@@ -81,13 +93,7 @@ export const Header = () => {
             <span className="hidden text-2xl xl:block">👋</span>
           </div>
           <div className="hidden flex-col md:flex">
-            <div className="flex w-full items-center gap-4">
-              <span className="display text-[0.625rem] uppercase text-primary">Discover</span>
-              <hr
-                className="w-full border-purple-950/25 dark:border-purple-100/25"
-                aria-hidden="true"
-              />
-            </div>
+            <NavigationHeading label="Discover" />
             <div className="flex gap-6">
               <nav className="flex items-end">
                 <ul>
@@ -96,7 +102,10 @@ export const Header = () => {
                     const marginClass = { "me-4": isLastItem }
 
                     return (
-                      <li className={cn("inline-block", marginClass)} key={item.label}>
+                      <li
+                        className={cn("inline-block", marginClass)}
+                        key={item.label}
+                      >
                         <Link
                           href={item.href}
                           className={cn(

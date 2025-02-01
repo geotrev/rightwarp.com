@@ -35,7 +35,10 @@ export const SkillCategories = ({
             const Icon = category.icon
 
             return (
-              <div className="card gap-4 rounded-xl bg-base-300 p-8" key={category.title}>
+              <div
+                className="card gap-4 rounded-xl bg-base-300 p-8"
+                key={category.title}
+              >
                 <div className="flex w-full items-center gap-4">
                   <h3 className="display text-xl tracking-tight text-black md:text-2xl dark:text-white">
                     {category.title}

@@ -1,6 +1,12 @@
 import cn from "classnames"
 import { CheckCircle } from "lucide-react"
-import { ChangeEventHandler, FormEventHandler, useCallback, useRef, useState } from "react"
+import {
+  ChangeEventHandler,
+  FormEventHandler,
+  useCallback,
+  useRef,
+  useState,
+} from "react"
 
 import { Button } from "@/components/core"
 import { EMAIL_REGEXP, FormState, FormStatus } from "@/utils/helpers"
@@ -60,7 +66,10 @@ export const SubscribeForm = () => {
   return (
     <>
       {state !== FormStatus.SUCCESS && (
-        <form onSubmit={handleSubmit} className="flex w-full flex-col gap-2 sm:flex-row sm:gap-4">
+        <form
+          onSubmit={handleSubmit}
+          className="flex w-full flex-col gap-2 sm:flex-row sm:gap-4"
+        >
           <input
             ref={inputRef}
             type="email"
@@ -92,7 +101,9 @@ export const SubscribeForm = () => {
           <span className="text-green-500 dark:text-green-400">
             <CheckCircle size={24} />{" "}
           </span>
-          <span className="text-black dark:text-white">Thank you for subscribing!</span>
+          <span className="text-black dark:text-white">
+            Thank you for subscribing!
+          </span>
         </p>
       )}
     </>

@@ -15,6 +15,7 @@ export const Category: Collection = {
       type: "string",
       name: "name",
       label: "Category Name",
+      isTitle: true,
       required: true,
     },
     {

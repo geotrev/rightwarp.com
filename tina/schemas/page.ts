@@ -46,13 +46,14 @@ export const Page: Collection = {
     {
       type: "string",
       name: "title",
-      label: "Page Title",
+      label: "Title",
+      isTitle: true,
       required: true,
     },
     {
       type: "string",
       name: "description",
-      label: "Page Description",
+      label: "Description",
     },
     {
       type: "object",

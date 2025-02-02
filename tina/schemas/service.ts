@@ -15,6 +15,7 @@ export const Service: Collection = {
       type: "string",
       name: "name",
       label: "Service Name",
+      isTitle: true,
       required: true,
     },
   ],

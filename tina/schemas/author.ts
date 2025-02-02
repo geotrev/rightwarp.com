@@ -21,6 +21,7 @@ export const Author: Collection = {
       type: "string",
       name: "name",
       label: "Author Name",
+      isTitle: true,
       required: true,
     },
     {

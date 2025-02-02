@@ -39,6 +39,13 @@ export const TAILWIND_THEME: Partial<CustomThemeConfig> = {
 }
 
 // DaisyUI custom themes
+// TODO: add light and dark prose vars to themes,
+//       remove colors from tailwind-typography.ts
+
+// "--tw-prose-body": theme("colors.black/80%"),
+// "--tw-prose-headings": theme("colors.purple.950"),
+// "--tw-prose-pre-bg": theme("colors.slate.100"),
+// "--tw-prose-pre-code": theme("colors.slate.950"),
 
 export const LIGHT_THEME = {
   ...light,
@@ -49,6 +56,11 @@ export const LIGHT_THEME = {
   "base-200": "#ECEFFF",
   "base-300": "#D3DAFF",
 }
+
+// "--tw-prose-body": theme("colors.white/80%"),
+// "--tw-prose-headings": theme("colors.purple.100"),
+// "--tw-prose-pre-bg": theme("colors.slate.950"),
+// "--tw-prose-pre-code": theme("colors.slate.300"),
 
 export const DARK_THEME = {
   ...dark,

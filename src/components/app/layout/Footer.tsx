@@ -12,12 +12,24 @@ const FooterLinks = [
     href: Routes.HOME,
   },
   {
+    label: "Privacy Policy",
+    href: Routes.PRIVACY,
+  },
+  {
     label: "About",
     href: Routes.CONTACT,
   },
   {
+    label: "Terms of Service",
+    href: Routes.TERMS,
+  },
+  {
     label: "Services",
     href: Routes.ABOUT,
+  },
+  {
+    label: "Contact",
+    href: Routes.CONTACT,
   },
   {
     label: "Work",

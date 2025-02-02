@@ -28,20 +28,4 @@ export const tailwindTypography = (theme: (path: string) => string) => ({
       },
     },
   },
-  // light: {
-  //   css: {
-  //     "--tw-prose-body": theme("colors.black/80%"),
-  //     "--tw-prose-headings": theme("colors.purple.950"),
-  //     "--tw-prose-pre-bg": theme("colors.slate.100"),
-  //     "--tw-prose-pre-code": theme("colors.slate.950"),
-  //   },
-  // },
-  // dark: {
-  //   css: {
-  //     "--tw-prose-body": theme("colors.white/80%"),
-  //     "--tw-prose-headings": theme("colors.purple.100"),
-  //     "--tw-prose-pre-bg": theme("colors.slate.950"),
-  //     "--tw-prose-pre-code": theme("colors.slate.300"),
-  //   },
-  // },
 })

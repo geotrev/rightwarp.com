@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: "https://www.rightwarp.com/",
-  exclude: ["/api/*", "/admin/*"],
+  exclude: ["/api/*", "/admin/*", "/blog/*"],
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   robotsTxtOptions: {
@@ -9,7 +9,7 @@ module.exports = {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/*", "/admin/*"],
+        disallow: ["/api/*", "/admin/*", "/blog/*"],
       },
     ],
   },

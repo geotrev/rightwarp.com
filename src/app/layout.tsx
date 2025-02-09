@@ -1,10 +1,8 @@
-import { Metadata } from "next"
 import { Public_Sans, Krona_One } from "next/font/google"
 
 import { ClientBodyWrapper } from "@/components/app/layout/ClientBodyWrapper"
 import { PostHogProvider } from "@/components/context/PostHogProvider"
 import { ThemeProvider } from "@/components/context/ThemeProvider"
-import { generatePageMeta } from "@/utils/generatePageMetadata"
 
 import "./globals.css"
 
@@ -18,13 +16,6 @@ const kronaOne = Krona_One({
   subsets: ["latin"],
   variable: "--font-krona-one",
 })
-
-/**
- * Root site metadata
- */
-export async function generateMetadata(): Promise<Metadata> {
-  return generatePageMeta()
-}
 
 export default async function RootLayout({
   children,

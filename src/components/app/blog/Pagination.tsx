@@ -73,6 +73,7 @@ export const Pagination = ({
           <button
             className="btn btn-ghost size-12 min-h-0 p-0"
             type="button"
+            disabled={currentPage === 0}
             onClick={handleNewestClick}
           >
             <span className="sr-only">Newest posts</span>{" "}
@@ -81,6 +82,7 @@ export const Pagination = ({
           <button
             className="btn btn-ghost size-12 min-h-0 p-0"
             type="button"
+            disabled={currentPage === 0}
             onClick={handlePreviousClick}
           >
             <span className="sr-only">Previous posts</span>
@@ -114,6 +116,7 @@ export const Pagination = ({
           <button
             className="btn btn-ghost size-12 min-h-0 p-0"
             type="button"
+            disabled={currentPage === totalPages - 1}
             onClick={handleNextClick}
           >
             <span className="sr-only">Older posts</span>
@@ -122,6 +125,7 @@ export const Pagination = ({
           <button
             className="btn btn-ghost size-12 min-h-0 p-0"
             type="button"
+            disabled={currentPage === totalPages - 1}
             onClick={handleOldestClick}
           >
             <span className="sr-only">Oldest posts</span>{" "}

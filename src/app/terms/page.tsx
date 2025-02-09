@@ -9,7 +9,7 @@ export async function generateMetadata() {
   const query = await queryPolicy("terms")
   const page = query.page.data.page
 
-  return generatePageMeta(page as Page)
+  return generatePageMeta(page as Page, { path: "/terms" })
 }
 
 export default async function Terms() {

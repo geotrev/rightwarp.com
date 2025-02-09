@@ -19,11 +19,10 @@ export async function generateMetadata({
   const page = query?.page.data.page
   const year = range[0]
   const month = range[1].charAt(0).toUpperCase() + range[1].slice(1)
-  const urlBase = page?.seo?.url
 
   const options = {
     title: `${page?.title} ${month} ${year}`,
-    url: `${urlBase}/${year}/${range[1]}`,
+    path: `/blog/archive/${year}/${range[1]}`,
   }
 
   return generatePageMeta(page as PageType, options)

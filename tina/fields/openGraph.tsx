@@ -21,23 +21,5 @@ export const OpenGraphField: TinaField = {
         defaultValue: "website",
       },
     },
-    {
-      name: "title",
-      label: "Title",
-      description: "Defaults to site meta title.",
-      type: "string",
-    },
-    {
-      name: "description",
-      label: "Description",
-      description: "Defaults to site meta description.",
-      type: "string",
-    },
-    {
-      name: "url",
-      label: "URL",
-      description: "Defaults to site meta canonical URL.",
-      type: "string",
-    },
   ],
 }

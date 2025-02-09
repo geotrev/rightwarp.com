@@ -15,11 +15,10 @@ export async function generateMetadata({
   const query = await queryCategory(`${category}`)
   const page = query?.page.data.page
   const categoryName = query?.categoryName
-  const urlBase = page?.seo?.url
 
   const options = {
     title: `${page?.title} ${categoryName}`,
-    url: `${urlBase}/${category}`,
+    path: `/blog/category/${category}`,
   }
 
   return generatePageMeta(page as PageType, options)

@@ -1,7 +1,6 @@
+import client from "@tina/__generated__/client"
 import { Page, Post, Settings, Work } from "@tina/__generated__/types"
 import { Metadata } from "next"
-
-import { querySiteSettings } from "@/tina/queries"
 
 // Because Metadata['openGraph']['type'] is not accessible in the Next.js
 type OgType =
@@ -18,47 +17,51 @@ type OgType =
   | "video.tv_show"
   | "video.other"
 
-type MetaOverrides = {
+type MetaConfig = {
   title?: string
   description?: string
-  url?: string
+  path?: string
 }
 
 const getPageTitle = (siteName?: string, pageTitle?: string) =>
-  pageTitle ? `${siteName} • ${pageTitle}` : siteName ? siteName : "Needs Title"
+  pageTitle && siteName
+    ? `${pageTitle} | ${siteName}`
+    : siteName
+      ? siteName
+      : "Site Title"
 
-const getIcons = (rootSettings: Settings) => {
+const getIcons = (settings: Settings) => {
   const icons: Metadata["icons"] = []
 
-  if (rootSettings?.icons?.baseIcon) {
+  if (settings?.icons?.baseIcon) {
     icons.push({
       rel: "shortcut icon",
-      url: rootSettings.icons.baseIcon,
+      url: settings.icons.baseIcon,
     })
   }
 
-  if (rootSettings?.icons?.denseIcon) {
+  if (settings?.icons?.denseIcon) {
     icons.push({
       rel: "icon",
       type: "image/png",
-      url: rootSettings.icons.denseIcon,
+      url: settings.icons.denseIcon,
       sizes: "96x96",
     })
   }
 
-  if (rootSettings?.icons?.svgIcon) {
+  if (settings?.icons?.svgIcon) {
     icons.push({
       rel: "icon",
       type: "image/svg+xml",
-      url: rootSettings.icons.svgIcon,
+      url: settings.icons.svgIcon,
     })
   }
 
-  if (rootSettings?.icons?.appleIcon) {
+  if (settings?.icons?.appleIcon) {
     icons.push({
       rel: "apple-touch-icon",
       sizes: "180x180",
-      url: rootSettings.icons.appleIcon,
+      url: settings.icons.appleIcon,
     })
   }
 
@@ -66,81 +69,84 @@ const getIcons = (rootSettings: Settings) => {
 }
 
 export async function generatePageMeta(
-  page?: Page | Post | Work,
-  overrides?: MetaOverrides,
+  page?: Page | Work | Post,
+  metaConfig?: MetaConfig,
 ): Promise<Metadata> {
-  const result = await querySiteSettings()
-  const rootSettings = result.data.settings
+  const result = await client.queries.settings({
+    relativePath: "settings.json",
+  })
 
-  const dynamicTitle = overrides?.title
-  const dynamicDescription = overrides?.description
-  const dynamicCanonical = overrides?.url
+  const settings = result.data.settings
+
+  const dynamicTitle = metaConfig?.title
+  const dynamicDescription = metaConfig?.description
+  const pagePath = metaConfig?.path
 
   // base metadata
-  const title = getPageTitle(
-    rootSettings.siteName,
-    dynamicTitle || page?.seo?.title || rootSettings.seo?.title,
-  )
+
+  const title =
+    dynamicTitle ||
+    getPageTitle(settings.siteName, page?.seo?.title || settings.seo?.title)
   const description =
     dynamicDescription ||
     page?.seo?.description ||
-    rootSettings.seo?.description
-  const keywords = page?.seo?.keywords || rootSettings?.seo?.keywords
+    settings.seo?.description ||
+    "Site description"
+  const keywords = page?.seo?.keywords || settings?.seo?.keywords
 
-  // Root metadata url base - used by all metadata fields
-  // to enable relative paths
-  let metadataBase: string | URL
-  if (process.env.NODE_ENV === "development") {
-    metadataBase = new URL(process.env.CONFIG_CANONICAL_URL_DEV!)
-  } else if (rootSettings?.seo?.url) {
-    metadataBase = new URL(rootSettings.seo.url)
+  // These are Netlify environment variables but can be replaced for any env var
+  const PROD_OR_DEPLOY_URL =
+    process.env.URL || process.env.DEPLOY_PRIME_URL || process.env.DEPLOY_URL
+
+  let metadataBase: string | URL = "localhost:3000"
+  if (
+    process.env.NODE_ENV === "development" &&
+    process.env.DEV_METADATA_BASE_URL
+  ) {
+    metadataBase = new URL(metadataBase!)
+  } else if (PROD_OR_DEPLOY_URL) {
+    metadataBase = new URL(PROD_OR_DEPLOY_URL)
   } else {
     metadataBase = new URL("https://placehold.co")
   }
 
-  const canonical = dynamicCanonical || page?.seo?.url || metadataBase
+  const canonical = `${metadataBase.href}${pagePath ? `${pagePath}` : ""}`
 
   // open graph
+
   const pageOpenGraph = page?.openGraph
-  const rootOpenGraph = rootSettings.openGraph
-  const ogImage = pageOpenGraph?.image || rootOpenGraph?.image
-  const ogTitle = getPageTitle(
-    rootSettings.siteName,
+  const globalOpenGraph = settings.openGraph
+
+  const _ogImage = pageOpenGraph?.image || globalOpenGraph?.image
+
+  const ogImage =
+    process.env.NODE_ENV === "development"
+      ? `${metadataBase.href}${_ogImage}`
+      : _ogImage
+  const ogTitle =
     dynamicTitle ||
-      pageOpenGraph?.title ||
-      page?.seo?.title ||
-      rootOpenGraph?.title ||
-      rootSettings.seo?.title ||
-      "Needs Title",
-  )
+    getPageTitle(
+      settings.siteName,
+      page?.seo?.title || settings.seo?.title || "Site Title",
+    )
   const ogDescription =
     dynamicDescription ||
-    pageOpenGraph?.description ||
     page?.seo?.description ||
-    rootOpenGraph?.description ||
-    rootSettings?.seo?.description ||
-    "Needs Description"
-
-  const ogUrl =
-    dynamicCanonical ||
-    pageOpenGraph?.url ||
-    page?.seo?.url ||
-    rootOpenGraph?.url ||
-    rootSettings?.seo?.url ||
-    "https://placehold.co"
-
-  const ogType = (pageOpenGraph?.type || rootOpenGraph?.type) as OgType
+    settings?.seo?.description ||
+    "Site Description"
+  const ogUrl = canonical
+  const ogType = (pageOpenGraph?.type || globalOpenGraph?.type) as OgType
 
   const openGraph: Metadata["openGraph"] = ogImage
     ? {
-        siteName: rootSettings.siteName,
+        siteName: settings.siteName,
         title: ogTitle,
         description: ogDescription,
         url: ogUrl,
         type: ogType,
         images: [
           {
-            url: ogImage!,
+            url: ogImage,
             width: 1200,
             height: 630,
             alt: ogDescription,
@@ -150,7 +156,8 @@ export async function generatePageMeta(
     : null
 
   // icons
-  const icons = getIcons(rootSettings as Settings)
+
+  const icons = getIcons(settings as Settings)
 
   return {
     metadataBase,
@@ -159,7 +166,7 @@ export async function generatePageMeta(
     keywords,
     alternates: { canonical },
     icons,
-    appleWebApp: { title: rootSettings.siteName! },
+    appleWebApp: { title: settings.siteName! },
     openGraph,
   }
 }

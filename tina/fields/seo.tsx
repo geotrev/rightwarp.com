@@ -31,18 +31,5 @@ export const SEOField: TinaField = {
         },
       },
     },
-    {
-      name: "url",
-      label: "Canonical URL Or Path",
-      type: "string",
-      description: "E.g., https://google.com or /blog",
-      ui: {
-        validate: (input) => {
-          if (input && !input.startsWith("/") && !input.startsWith("http")) {
-            return "Must be a valid URL or relative path"
-          }
-        },
-      },
-    },
   ],
 }

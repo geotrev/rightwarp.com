@@ -9,7 +9,7 @@ export async function generateMetadata() {
   const query = await queryWorkIndex()
   const page = query.page.data.page
 
-  return generatePageMeta(page as Page)
+  return generatePageMeta(page as Page, { path: "/work" })
 }
 
 export default async function Work() {

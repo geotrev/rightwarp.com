@@ -1,5 +1,4 @@
-import { Compass, MessageCircleHeart } from "lucide-react"
-import { SocialIcon } from "react-social-icons"
+import { Compass, Linkedin, Mail, MessageCircleHeart } from "lucide-react"
 
 import { Container, Link } from "@/components/core"
 import { Routes } from "@/utils/helpers"
@@ -23,17 +22,17 @@ const FooterLinks = [
     label: "Terms of Service",
     href: Routes.TERMS,
   },
+  // {
+  //   label: "Blog",
+  //   href: Routes.BLOG,
+  // },
   {
-    label: "Services",
-    href: Routes.ABOUT,
+    label: "Work",
+    href: Routes.WORK,
   },
   {
     label: "Contact",
     href: Routes.CONTACT,
-  },
-  {
-    label: "Work",
-    href: Routes.WORK,
   },
 ]
 
@@ -42,6 +41,7 @@ export const Footer = () => {
     <Container
       tag="footer"
       className="my-16 grid text-center text-sm lg:my-24"
+      isConstrained
       animationDisabled
     >
       <div className="mb-16 grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3 md:gap-0">
@@ -55,21 +55,23 @@ export const Footer = () => {
               />
             }
           />
-          <ul className="flex flex-wrap gap-3">
-            <li className="text-black/50 hover:text-black/75 dark:text-white/25 dark:hover:text-white/15">
-              <SocialIcon
-                bgColor="currentColor"
-                target="_blank"
-                style={{ height: 32, width: 32 }}
-                url="https://www.linkedin.com/company/right-warp"
-              />
+          <ul className="flex flex-col items-start gap-4">
+            <li className="flex items-center gap-2">
+              <span className="opacity-75">
+                <Linkedin className="size-5" />
+              </span>
+              <Link
+                isExternal
+                href="https://www.linkedin.com/company/right-warp"
+              >
+                Follow On LinkedIn
+              </Link>
             </li>
-            <li className="text-black/50 hover:text-black/75 dark:text-white/25 dark:hover:text-white/15">
-              <SocialIcon
-                bgColor="currentColor"
-                style={{ height: 32, width: 32 }}
-                url="mailto:wave@rightwarp.com"
-              />
+            <li className="flex items-center gap-2">
+              <span className="opacity-75">
+                <Mail className="size-5" />
+              </span>
+              <Link href="mailto:wave@rightwarp.com">wave@rightwarp.com</Link>
             </li>
           </ul>
         </div>

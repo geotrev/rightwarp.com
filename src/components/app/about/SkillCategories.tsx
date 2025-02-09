@@ -48,6 +48,7 @@ const Categories = [
       "Node",
       "Next JS",
       "VCS / Git",
+      "Headless CMS",
     ],
   },
   {

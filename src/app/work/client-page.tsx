@@ -5,8 +5,6 @@ import { useTina } from "tinacms/dist/react"
 
 import { ActionList, Hero, MediaCardProps, WorkList } from "@/components/app"
 
-import { workProps } from "../_static/workPage"
-
 interface PageProps {
   page: {
     data: PageQuery
@@ -26,7 +24,7 @@ export const ClientPage = ({ page, entries }: PageProps) => {
     <>
       <Hero heading={data.title} description={data.description} />
       <WorkList items={entries} />
-      <ActionList {...workProps.actionsProps} />
+      <ActionList actions={["button", "newsletter"]} />
     </>
   )
 }

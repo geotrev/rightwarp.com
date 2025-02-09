@@ -34,7 +34,7 @@ export const ClientPage = ({ page: _page, posts, categoryName }: PageProps) => {
         <PostList posts={posts} />
       </Container>
       <BrowseButtons {...staticProps.browseButtonsProps} />
-      <ActionList {...staticProps.actionsProps} />
+      <ActionList actions={["button", "newsletter"]} />
     </>
   )
 }

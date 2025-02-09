@@ -7,6 +7,23 @@ interface ActionProps
   description: string
 }
 
+export const ButtonAction = {
+  heading: "Ready to build the future?",
+  description:
+    "Whether your project is brand new or needs some renewed attention",
+}
+
+export const NewsletterAction = {
+  heading: "Subscribe to the newsletter",
+  description: "Get occasional emails about blog posts & industry happenings",
+}
+
+export const CallAction = {
+  heading: "Schedule a call",
+  description:
+    "Share 30 minutes to discuss your project(s) and answer some questions.",
+}
+
 export const Action = ({
   children,
   heading,

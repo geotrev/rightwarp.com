@@ -1,10 +1,6 @@
 import { Hammer, NotebookText, PencilRuler, UserPen } from "lucide-react"
 
-import type {
-  ExpertiseProps,
-  CardGridProps,
-  ActionListProps,
-} from "@/components/app"
+import type { ExpertiseProps, CardGridProps } from "@/components/app"
 import { TestimonialsProps } from "@/components/app/shared/Testimonials"
 import { Routes } from "@/utils/helpers"
 
@@ -13,7 +9,6 @@ interface HomeProps {
   blogProps: CardGridProps
   workProps: CardGridProps
   testimonialProps: Omit<TestimonialsProps, "testimonials">
-  actionsProps: ActionListProps
 }
 
 // WIP should be block components
@@ -43,21 +38,5 @@ export const homeProps: HomeProps = {
     heading: "Testimonials",
     subheading: "What former colleagues and clients have to say",
     icon: UserPen,
-  },
-  actionsProps: {
-    actions: [
-      {
-        heading: "Ready to build the future?",
-        description:
-          "Whether your project is brand new or needs some renewed attention",
-        action: "button",
-      },
-      {
-        heading: "Subscribe to the newsletter",
-        description:
-          "Get occasional emails about blog posts & industry happenings",
-        action: "newsletter",
-      },
-    ],
   },
 }

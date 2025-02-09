@@ -28,7 +28,7 @@ export const ClientPage = (props: PageProps) => {
         <WorkEntry {...(data as Omit<Work, "values">)} />
       </article>
       <BrowseButtons {...workProps.browseButtonsProps} />
-      <ActionList {...workProps.actionsProps} />
+      <ActionList actions={["button", "newsletter"]} />
     </>
   )
 }

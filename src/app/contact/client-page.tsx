@@ -29,11 +29,11 @@ export const ClientPage = ({ page }: PageProps) => {
   return (
     <>
       <Hero heading={data.title} description={data.description} />
-      <ActionList {...contactProps.scheduleActionsProps} />
+      <ActionList actions={["call"]} />
       <RecaptchaVerifyWrapper>
         <ContactForm {...contactProps.contactFormProps} />
       </RecaptchaVerifyWrapper>
-      <ActionList {...contactProps.endActionsProps} />
+      <ActionList actions={["newsletter"]} />
     </>
   )
 }

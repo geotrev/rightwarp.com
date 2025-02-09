@@ -7,18 +7,20 @@ import Link from "next/link"
 import { Container } from "@/components/core"
 import { Routes } from "@/utils/helpers"
 
-import { Action } from "./Action"
+import { Action, ButtonAction, CallAction, NewsletterAction } from "./Action"
 import { SubscribeForm } from "./Subscribe"
 
 export interface ActionListProps {
-  actions: {
-    heading: string
-    description: string
-    action: "button" | "newsletter" | "call"
-  }[]
+  actions: ("button" | "newsletter" | "call")[]
 }
 
-export const actionTypes = {
+const Actions = {
+  button: ButtonAction,
+  newsletter: NewsletterAction,
+  call: CallAction,
+}
+
+export const ActionTriggers = {
   call: (
     <Link
       href="https://cal.com/rightwarp/30min"
@@ -47,9 +49,9 @@ export const actionTypes = {
 export const ActionList = ({ actions }: ActionListProps) => {
   return (
     <Container isRaised isConstrained tag="section">
-      {actions.map(({ heading, description, action }) => (
-        <Action key={heading} {...{ heading, description }}>
-          {actionTypes[action]}
+      {actions.map((action) => (
+        <Action key={action} {...Actions[action]}>
+          {ActionTriggers[action]}
         </Action>
       ))}
     </Container>

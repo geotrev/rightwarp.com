@@ -11,8 +11,6 @@ import {
 } from "@/components/app"
 import { PostIndex } from "@/components/app/blog/PostIndex"
 
-import { staticProps } from "../_static/blogPage"
-
 interface PageProps {
   page: {
     data: PageQuery
@@ -50,7 +48,7 @@ export const ClientPage = ({
         history={history}
         pages={pages}
       />
-      <ActionList {...staticProps.actionsProps} />
+      <ActionList actions={["button", "newsletter"]} />
     </>
   )
 }

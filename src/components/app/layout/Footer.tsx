@@ -16,7 +16,7 @@ const FooterLinks = [
   },
   {
     label: "About",
-    href: Routes.CONTACT,
+    href: Routes.ABOUT,
   },
   {
     label: "Terms of Service",

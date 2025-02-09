@@ -69,7 +69,7 @@ export const ClientPage = ({
         testimonials={testimonials}
       />
       {/* <CardGrid {...homeProps.blogProps} entries={posts} /> */}
-      <ActionList {...homeProps.actionsProps} />
+      <ActionList actions={["button", "newsletter"]} />
     </>
   )
 }

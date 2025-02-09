@@ -2,7 +2,13 @@
 
 import { PageQuery } from "@tina/__generated__/types"
 import cn from "classnames"
-import { Handshake } from "lucide-react"
+import {
+  Hammer,
+  Handshake,
+  // NotebookText,
+  PencilRuler,
+  UserPen,
+} from "lucide-react"
 import Link from "next/link"
 import { useTina } from "tinacms/dist/react"
 
@@ -19,8 +25,6 @@ import {
   TestimonialsProps,
 } from "@/components/app/shared/Testimonials"
 import { Routes } from "@/utils/helpers"
-
-import { homeProps } from "./_static/homePage"
 
 interface PageProps {
   page: {
@@ -62,13 +66,33 @@ export const ClientPage = ({
         }
       />
       <LogoMarquee />
-      <CardGrid {...homeProps.workProps} entries={work} />
-      <Expertise {...homeProps.expertiseProps} />
+      <CardGrid
+        heading="Work"
+        subheading="Always updating work samples to inspire your next project"
+        actionLabel="More Work"
+        actionHref={Routes.WORK}
+        icon={Hammer}
+        entries={work}
+      />
+      <Expertise
+        heading="Expertise"
+        subheading="10+ years of hardened, design-minded web development experience at your finger-tips"
+        icon={PencilRuler}
+      />
       <Testimonials
-        {...homeProps.testimonialProps}
+        heading="Testimonials"
+        subheading="What former colleagues and clients have to say"
+        icon={UserPen}
         testimonials={testimonials}
       />
-      {/* <CardGrid {...homeProps.blogProps} entries={posts} /> */}
+      {/* <CardGrid
+        heading="Thoughts"
+        subheading="Ramblings about tech, web development, and design"
+        actionLabel="More Posts"
+        actionHref={Routes.BLOG}
+        icon={NotebookText}
+        entries={posts}
+      /> */}
       <ActionList actions={["button", "newsletter"]} />
     </>
   )

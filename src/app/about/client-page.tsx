@@ -38,7 +38,7 @@ export const ClientPage = ({
   return (
     <>
       <Hero heading={data.title} description={data.description} />
-      <Intro {...staticProps.introProps} />
+      <Intro />
       <LogoMarquee />
       <SkillCategories {...staticProps.skillProps} />
       <CardGrid {...staticProps.workProps} entries={work} />

@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from "next/image"
 
+import SelfImage from "@/app/_assets/its-a-me.jpg"
 import { Container, Link } from "@/components/core"
 
 export interface IntroProps {
@@ -70,25 +71,32 @@ const ExperienceItems = [
   },
 ]
 
-export const Intro = (props: IntroProps) => {
+export const Intro = () => {
   return (
     <Container tag="section" isConstrained className="mb-24 sm:mb-36">
       <div className="flex flex-col gap-8 lg:flex-row">
-        <figure className="relative h-48 w-48 overflow-hidden rounded-full lg:h-[19.125rem] lg:w-[19.125rem] lg:flex-shrink-0">
-          <Image src={props.bioImage.src} fill alt="" />
-          <figcaption className="sr-only">{props.bioImage.alt}</figcaption>
-        </figure>
+        <div className="relative h-48 w-48 overflow-hidden rounded-full lg:h-[19.125rem] lg:w-[19.125rem] lg:flex-shrink-0">
+          <Image src={SelfImage} fill alt="George Treviranus" />
+        </div>
         <div className="text-black lg:flex-grow lg:pt-16 dark:text-white">
           <h2 className="display mb-4 text-2xl tracking-tighter lg:mb-12 lg:text-4xl">
-            {props.heading}
+            Hello from Wisconsin!
           </h2>
-          <p className="mb-8 leading-7">{props.textStart}</p>
+          <p className="mb-8 leading-7">
+            {
+              "Welcome to Right Warp, a boutique design & development studio currently operated by me: George Treviranus. I've been designing and building digital products for a little over 10 years (longer if you count excessive photoshopping in high school). I've worked at and helped scale some pretty cool websites and tools, including:"
+            }
+          </p>
           <ul className="mb-8 list-disc ps-4 leading-7">
             {ExperienceItems.map((item) => (
               <li key={item.id}>{item.content}</li>
             ))}
           </ul>
-          <p className="leading-7">{props.textEnd}</p>
+          <p className="leading-7">
+            {
+              "Right Warp is guided by principles of empathy, inclusivity, and sustainability. All projects are approached with a focus on user experience. Every project is unique, ensuring brand recognition and attention to detail, without sacrificing standards-based development practices of accessibility and research-driven interface design."
+            }
+          </p>
         </div>
       </div>
     </Container>

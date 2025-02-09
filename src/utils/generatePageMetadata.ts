@@ -110,7 +110,7 @@ export async function generatePageMeta(
     metadataBase = new URL("https://placehold.co")
   }
 
-  const canonical = `${metadataBase}${pagePath ? `${pagePath}` : ""}`
+  const canonical = `${metadataBase}${pagePath || ""}`
 
   // open graph
 

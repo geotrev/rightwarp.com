@@ -9,7 +9,7 @@ export async function generateMetadata() {
   const query = await queryHome()
   const page = query.page.data.page
 
-  return generatePageMeta(page as Page, { path: "" })
+  return generatePageMeta(page as Page)
 }
 
 export default async function Home() {

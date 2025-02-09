@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image"
 
-import { Container } from "@/components/core"
+import { Container, Link } from "@/components/core"
 
 export interface IntroProps {
   bioImage: {
@@ -10,11 +10,65 @@ export interface IntroProps {
   heading: string
   textStart: string
   textEnd: string
-  experienceItems: {
-    id: string
-    content: React.ReactNode
-  }[]
 }
+
+const ExperienceItems = [
+  {
+    id: "zendesk",
+    content: (
+      <>
+        {"Zendesk's "}
+        <Link isExternal href="https://garden.zendesk.com/">
+          Garden design system
+        </Link>
+      </>
+    ),
+  },
+  {
+    id: "servicenow",
+    content: (
+      <>
+        {"ServiceNow's "}
+        <Link isExternal href="https://horizon.servicenow.com/">
+          Horizon design system
+        </Link>
+      </>
+    ),
+  },
+  {
+    id: "scribd",
+    content: (
+      <>
+        {"Scribd's "}
+        <Link isExternal href="https://www.scribd.com/">
+          Ruby on Rails web app
+        </Link>
+      </>
+    ),
+  },
+  {
+    id: "codecov",
+    content: (
+      <>
+        {"Codecov's "}
+        <Link isExternal href="https://about.codecov.io/">
+          visual identity & logo design
+        </Link>
+      </>
+    ),
+  },
+  {
+    id: "musicnotes",
+    content: (
+      <>
+        {"Musicnotes' "}
+        <Link isExternal href="https://www.musicnotes.com/">
+          web and mobile app design
+        </Link>
+      </>
+    ),
+  },
+]
 
 export const Intro = (props: IntroProps) => {
   return (
@@ -30,7 +84,7 @@ export const Intro = (props: IntroProps) => {
           </h2>
           <p className="mb-8 leading-7">{props.textStart}</p>
           <ul className="mb-8 list-disc ps-4 leading-7">
-            {props.experienceItems.map((item) => (
+            {ExperienceItems.map((item) => (
               <li key={item.id}>{item.content}</li>
             ))}
           </ul>

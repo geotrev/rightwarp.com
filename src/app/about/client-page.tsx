@@ -39,7 +39,7 @@ export const ClientPage = ({
     <>
       <Hero heading={data.title} description={data.description} />
       <Intro {...staticProps.introProps} />
-      <LogoMarquee {...staticProps.marqueeProps} />
+      <LogoMarquee />
       <SkillCategories {...staticProps.skillProps} />
       <CardGrid {...staticProps.workProps} entries={work} />
       {/* <CardGrid {...staticProps.blogProps} entries={posts} /> */}

@@ -13,7 +13,7 @@ Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
     https://examples.motion.dev/react/motion-path
   - Hover with CSS filter using mouse follow effect to reveal easter eggs?
     https://codepen.io/clementGir/pen/RQqvQx
-- [ ] Add at least three (relatively simple) blog posts (to start)
+- [ ] Add two blog posts
 - [ ] Add founder's note below testimonials
 - [ ] Make blog elements public 🚀
 - [ ] Move reusable static prop content into page blocks

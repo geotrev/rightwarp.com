@@ -15,13 +15,6 @@ export interface ExpertiseProps {
   heading: string
   subheading: string
   icon: LucideIcon
-  items: {
-    isRaised?: boolean
-    isReversed?: boolean
-    heading: string
-    description: string
-    icon: string
-  }[]
 }
 
 const skillIcons: Record<string, React.FC> = {
@@ -33,18 +26,58 @@ const skillIcons: Record<string, React.FC> = {
   WrenchIcon,
 }
 
-export const Expertise = ({
-  heading,
-  icon,
-  subheading,
-  items,
-}: ExpertiseProps) => {
+const ExpertiseItems = [
+  {
+    isRaised: true,
+    isReversed: true,
+    heading: "Design Systems",
+    description:
+      "Scale faster, impress users and developers alike with scalable design patterns, tokens, components, and consistent UX",
+    icon: "ModulePuzzleIcon",
+  },
+  {
+    heading: "WCAG-Compliant Accessibility",
+    description:
+      "Enshrine customer trust and market presence with inclusive experiences for people of all abilities",
+    icon: "WheelchairIcon",
+  },
+  {
+    isRaised: true,
+    isReversed: true,
+    heading: "Business Websites",
+    description:
+      "Expand your reach or breathe new life into your digital footprint with a renewed & modernized digital experience for customers",
+    icon: "BrowserBuildIcon",
+  },
+  {
+    heading: "User Experience",
+    description:
+      "Delight customers with an intuitive product and research-driven design",
+    icon: "SingleUserNeutralIcon",
+  },
+  {
+    isRaised: true,
+    isReversed: true,
+    heading: "Audits, Testing & Quality",
+    description:
+      "Temper your product development with stronger testing infrastructure.",
+    icon: "DesktopCheckIcon",
+  },
+  {
+    heading: "Support & Maintenance",
+    description:
+      "Support an ongoing content strategy, performance, search engine optimization (SEO), security, and more.",
+    icon: "WrenchIcon",
+  },
+]
+
+export const Expertise = ({ heading, icon, subheading }: ExpertiseProps) => {
   return (
     <section>
       <SectionHeading icon={icon} subheading={subheading}>
         {heading}
       </SectionHeading>
-      {items.map((item) => {
+      {ExpertiseItems.map((item) => {
         const Icon = skillIcons[item.icon]
 
         return (

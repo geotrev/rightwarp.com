@@ -61,7 +61,7 @@ export const ClientPage = ({
           </Link>
         }
       />
-      <LogoMarquee {...homeProps.logoMarqueeProps} />
+      <LogoMarquee />
       <CardGrid {...homeProps.workProps} entries={work} />
       <Expertise {...homeProps.expertiseProps} />
       <Testimonials

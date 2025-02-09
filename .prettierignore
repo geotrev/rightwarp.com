@@ -11,3 +11,4 @@ node_modules
 public/admin
 tina/__generated__
 tina/tina-lock.json
+src/content

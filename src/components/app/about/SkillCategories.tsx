@@ -1,5 +1,5 @@
 import cn from "classnames"
-import { LucideIcon } from "lucide-react"
+import { Brain, CodeXml, LucideIcon, PaintRoller } from "lucide-react"
 import React from "react"
 
 import { Container } from "@/components/core"
@@ -10,19 +10,68 @@ export interface SkillCategoriesProps {
   heading: string
   subheading: string
   icon: LucideIcon
-  categories: {
-    title: string
-    icon: LucideIcon
-    items: string[]
-  }[]
 }
+
+const Categories = [
+  {
+    title: "Strategy",
+    icon: Brain,
+    items: [
+      "Project Management",
+      "User Research",
+      "Content Planning",
+      "Agile",
+      "Scrum",
+      "Technical Design",
+    ],
+  },
+  {
+    title: "Development",
+    icon: CodeXml,
+    items: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Unit & E2E Testing",
+      "Bash",
+      "Ruby",
+      "Search Engine Optimization",
+      "Performance",
+      "Open Source",
+      "Monorepos",
+      "Content Management Systems",
+      "React",
+      "Ruby on Rails",
+      "Tailwind",
+      "Styled Components",
+      "Node",
+      "Next JS",
+      "VCS / Git",
+    ],
+  },
+  {
+    title: "Design",
+    icon: PaintRoller,
+    items: [
+      "User Experience",
+      "User Interface Design",
+      "Design Systems",
+      "Branding & Graphic Design",
+      "Quality Assurance",
+      "Iconography",
+      "Typography",
+      "Layout Design",
+      "Theming",
+    ],
+  },
+]
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const SkillCategories = ({
   heading,
   icon,
   subheading,
-  categories,
 }: SkillCategoriesProps) => {
   return (
     <>
@@ -31,7 +80,7 @@ export const SkillCategories = ({
       </SectionHeading>
       <Container tag="section" isConstrained>
         <div className="grid gap-8">
-          {categories.map((category) => {
+          {Categories.map((category) => {
             const Icon = category.icon
 
             return (

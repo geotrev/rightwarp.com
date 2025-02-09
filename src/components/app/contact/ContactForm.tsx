@@ -14,30 +14,55 @@ export interface ContactFormProps {
   heading: string
   subheading: string
   icon: LucideIcon
-  contact: {
-    label: string
-    name: string
-    type: string
-    placeholder?: string
-    required?: boolean
-  }[]
-  topics: { label: string; name: string }[]
-  details: {
-    label: string
-    name: string
-    type: string
-    hint: string
-  }
+}
+
+const ContactFields = [
+  {
+    label: "Name",
+    name: "name",
+    type: "text",
+    placeholder: "Mario",
+    required: true,
+  },
+  {
+    label: "Email",
+    name: "email",
+    type: "email",
+    placeholder: "mario@bros.com",
+    required: true,
+  },
+  {
+    label: "Phone",
+    name: "phone",
+    type: "tel",
+    placeholder: "555-123-4567",
+  },
+]
+
+const Topics = [
+  { label: "Design", name: "topic-design" },
+  { label: "Development", name: "topic-development" },
+  { label: "UI / UX", name: "topic-ui-ux" },
+  { label: "Design Systems", name: "topic-design-systems" },
+  { label: "Accessibility", name: "topic-a11y" },
+  { label: "Other", name: "topic-other" },
+]
+
+const DetailsField = {
+  label: "Details",
+  name: "details",
+  type: "textarea",
+  hint: "Share some more details about the project: problem, goals, timeline, etc.",
 }
 
 export const ContactForm = (props: ContactFormProps) => {
   const [state, setState] = useState(FormStatus.IDLE)
   const [fieldValues, setFieldValues] = useState<Record<string, string>>({
-    ...props.contact.reduce((acc, { name }) => ({ ...acc, [name]: "" }), {}),
-    [props.details.name]: "",
+    ...ContactFields.reduce((acc, { name }) => ({ ...acc, [name]: "" }), {}),
+    [DetailsField.name]: "",
   })
   const [selectedTopics, setSelectedTopics] = useState<Record<string, boolean>>(
-    props.topics.reduce((acc, { name }) => ({ ...acc, [name]: false }), {}),
+    Topics.reduce((acc, { name }) => ({ ...acc, [name]: false }), {}),
   )
   const { executeRecaptcha } = useGoogleReCaptcha()
 
@@ -98,7 +123,7 @@ export const ContactForm = (props: ContactFormProps) => {
             </p>
             <form className="grid gap-12" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                {props.contact.map(
+                {ContactFields.map(
                   ({ label, name, type, placeholder, required }) => (
                     <div key={name} className="form-control">
                       <label htmlFor={name} className="label">
@@ -137,7 +162,7 @@ export const ContactForm = (props: ContactFormProps) => {
                   <span className="label-text">I need help with...</span>
                 </legend>
                 <div className="grid grid-cols-2 gap-2 md:grid-cols-3 xl:max-w-[75%] 2xl:max-w-[52rem]">
-                  {props.topics.map(({ label, name }) => (
+                  {Topics.map(({ label, name }) => (
                     <div key={name} className="form-control">
                       <label className="label cursor-pointer justify-start gap-4">
                         <input
@@ -162,28 +187,28 @@ export const ContactForm = (props: ContactFormProps) => {
                 </div>
               </fieldset>
               <div className="form-control">
-                <label htmlFor={props.details.name} className="label pb-0">
+                <label htmlFor={DetailsField.name} className="label pb-0">
                   <span className="label-text flex items-center gap-1">
-                    {props.details.label}
+                    {DetailsField.label}
                     <Asterisk className="inline" size={16} />
                   </span>
                 </label>
-                <p className="label" id={`${props.details.name}-hint`}>
+                <p className="label" id={`${DetailsField.name}-hint`}>
                   <span className="label-text text-xs">
-                    {props.details.hint}
+                    {DetailsField.hint}
                   </span>
                 </p>
                 <textarea
                   readOnly={state === FormStatus.PENDING}
-                  id={props.details.name}
-                  name={props.details.name}
-                  aria-describedby={`${props.details.name}-hint`}
+                  id={DetailsField.name}
+                  name={DetailsField.name}
+                  aria-describedby={`${DetailsField.name}-hint`}
                   required
-                  value={fieldValues[props.details.name]}
+                  value={fieldValues[DetailsField.name]}
                   onChange={(e) =>
                     setFieldValues({
                       ...fieldValues,
-                      [props.details.name]: e.target.value,
+                      [DetailsField.name]: e.target.value,
                     })
                   }
                   className="textarea textarea-secondary min-h-[8rem] w-full"

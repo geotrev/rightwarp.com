@@ -3,9 +3,9 @@
 import { Work, WorkQuery } from "@tina/__generated__/types"
 import { useTina } from "tinacms/dist/react"
 
-import { workProps } from "@/app/_static/workPage"
 import { ActionList, Hero, WorkEntry } from "@/components/app"
 import { BrowseButtons } from "@/components/app/shared/BrowseButtons"
+import { Routes } from "@/utils/helpers"
 
 interface PageProps {
   data: WorkQuery
@@ -27,7 +27,20 @@ export const ClientPage = (props: PageProps) => {
         </header>
         <WorkEntry {...(data as Omit<Work, "values">)} />
       </article>
-      <BrowseButtons {...workProps.browseButtonsProps} />
+      <BrowseButtons
+        actions={[
+          {
+            type: "primary",
+            label: "Browse More Work",
+            href: Routes.WORK,
+          },
+          // {
+          //   type: "secondary",
+          //   label: "View Blog",
+          //   href: Routes.BLOG,
+          // },
+        ]}
+      />
       <ActionList actions={["button", "newsletter"]} />
     </>
   )

@@ -1,6 +1,7 @@
 "use client"
 
 import { PageQuery } from "@tina/__generated__/types"
+import { Send } from "lucide-react"
 import { useTina } from "tinacms/dist/react"
 
 import {
@@ -9,8 +10,6 @@ import {
   Hero,
   RecaptchaVerifyWrapper,
 } from "@/components/app"
-
-import { contactProps } from "../_static/contactPage"
 
 interface PageProps {
   page: {
@@ -31,7 +30,11 @@ export const ClientPage = ({ page }: PageProps) => {
       <Hero heading={data.title} description={data.description} />
       <ActionList actions={["call"]} />
       <RecaptchaVerifyWrapper>
-        <ContactForm {...contactProps.contactFormProps} />
+        <ContactForm
+          heading="Message Us"
+          subheading="Share some details about your project—the more, the better!"
+          icon={Send}
+        />
       </RecaptchaVerifyWrapper>
       <ActionList actions={["newsletter"]} />
     </>

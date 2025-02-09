@@ -3,7 +3,6 @@
 import { Post as PostType, PostQuery } from "@tina/__generated__/types"
 import { useTina } from "tinacms/dist/react"
 
-import { staticProps } from "@/app/_static/blogPage"
 import {
   ActionList,
   Post,
@@ -11,6 +10,7 @@ import {
   Hero,
   PostProps,
 } from "@/components/app"
+import { Routes } from "@/utils/helpers"
 
 interface PageProps {
   post: {
@@ -35,7 +35,20 @@ export const ClientPage = ({ post, relatedPosts }: PageProps) => {
         </header>
         <Post post={data as PostType} relatedPosts={relatedPosts} />
       </article>
-      <BrowseButtons {...staticProps.browseButtonsProps} />
+      <BrowseButtons
+        actions={[
+          {
+            type: "primary",
+            label: "Browse More Posts",
+            href: Routes.BLOG,
+          },
+          {
+            type: "secondary",
+            label: "View Work",
+            href: Routes.WORK,
+          },
+        ]}
+      />
       <ActionList actions={["button", "newsletter"]} />
     </>
   )

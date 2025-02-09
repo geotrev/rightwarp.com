@@ -2,7 +2,6 @@
 
 import { PageQuery } from "@tina/__generated__/types"
 
-import { staticProps } from "@/app/_static/blogPage"
 import {
   ActionList,
   BrowseButtons,
@@ -11,6 +10,7 @@ import {
 } from "@/components/app"
 import { PostList } from "@/components/app/blog/PostList"
 import { Container } from "@/components/core"
+import { Routes } from "@/utils/helpers"
 
 interface PageProps {
   page: {
@@ -35,7 +35,20 @@ export const ClientPage = ({ page: _page, posts, range }: PageProps) => {
       <Container>
         <PostList posts={posts} />
       </Container>
-      <BrowseButtons {...staticProps.browseButtonsProps} />
+      <BrowseButtons
+        actions={[
+          {
+            type: "primary",
+            label: "Browse More Posts",
+            href: Routes.BLOG,
+          },
+          {
+            type: "secondary",
+            label: "View Work",
+            href: Routes.WORK,
+          },
+        ]}
+      />
       <ActionList actions={["button", "newsletter"]} />
     </>
   )

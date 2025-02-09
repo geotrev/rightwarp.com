@@ -110,7 +110,7 @@ export async function generatePageMeta(
     metadataBase = new URL("https://placehold.co")
   }
 
-  const canonical = `${metadataBase.href}${pagePath ? `${pagePath}` : ""}`
+  const canonical = `${metadataBase}${pagePath ? `${pagePath}` : ""}`
 
   // open graph
 
@@ -121,7 +121,7 @@ export async function generatePageMeta(
 
   const ogImage =
     process.env.NODE_ENV === "development"
-      ? `${metadataBase.href}${_ogImage}`
+      ? `${metadataBase}${_ogImage}`
       : _ogImage
   const ogTitle =
     dynamicTitle ||

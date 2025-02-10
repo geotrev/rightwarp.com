@@ -31,7 +31,7 @@ export const ClientPage = ({ page }: PageProps) => {
       <ActionList actions={["call"]} />
       <RecaptchaVerifyWrapper>
         <ContactForm
-          heading="Message Us"
+          heading="Drop A Line"
           subheading="Share some details about your project—the more, the better!"
           icon={Send}
         />

@@ -2,20 +2,19 @@ Right Warp is a Next JS application, deployed to Netlify, with Tina CMS.
 
 ## TODO
 
+- [ ] Add mouse animation effect in hero
+  - Multiple animated SVG paths that span hero width, offset from eachother:
+    https://examples.motion.dev/react/motion-path
+  - Hover with CSS filter using mouse follow effect to reveal easter eggs?
+    https://codepen.io/clementGir/pen/RQqvQx
+- [ ] Add two blog posts (one draft, one launch)
+- [ ] Add founder's note below testimonials
 - [x] Add testimonials (x3)
 - [x] Rewrite work intros with deliverable details
 - [x] Hero CTA
 - [x] Expand Footer to include all nav links
 - [x] Add terms & privacy content + page to Tina
 - [x] Terms of use & privacy policy pages (GetTerms)
-- [ ] Add mouse animation effect in hero
-  - Multiple animated SVG paths that span hero width, offset from eachother:
-    https://examples.motion.dev/react/motion-path
-  - Hover with CSS filter using mouse follow effect to reveal easter eggs?
-    https://codepen.io/clementGir/pen/RQqvQx
-- [ ] Add two blog posts
-- [ ] Add founder's note below testimonials
-- [ ] Make blog elements public 🚀
 
 ### v1
 

@@ -25,17 +25,6 @@ const chunk = (size: number, arr?: any[]) =>
 export const queryBlogIndex = async () => {
   const page = await client.queries.page({ relativePath: "blog.json" })
 
-  // All categories
-
-  const categoriesResponse = await client.queries.categoryConnection()
-  const categories = categoriesResponse.data.categoryConnection.edges?.map(
-    (edge) => ({
-      name: edge!.node!.name,
-      color: edge!.node!.color!,
-      slug: toSlug(edge!.node!._sys.filename, "blog/category"),
-    }),
-  )
-
   // Info for all posts
 
   const allPosts = await client.queries.postConnection({
@@ -60,16 +49,36 @@ export const queryBlogIndex = async () => {
       visibility: { eq: Visibility.PUBLIC },
     },
   })
+
+  // Categories to be added while formatting post data. We only want
+  // categories that are actually used in posts.
+  let categories: { name: string; color: string; slug: string }[] = []
+
   const pagePosts = indexPostsResponse.data.postConnection.edges?.map(
     (edge) => {
-      const entry = edge?.node
+      const entry = edge!.node!
+
+      // Get unique categories
+      const postCategories = entry.categories.map((_postCategory) => ({
+        name: _postCategory.categoryRef.name,
+        color: _postCategory.categoryRef.color!,
+        slug: toSlug(_postCategory.categoryRef._sys.filename, "blog/category"),
+      }))
+      categories = [
+        ...categories,
+        ...postCategories.filter(
+          (category) =>
+            !categories.some((_category) => _category.name === category.name),
+        ),
+      ]
+
       return {
-        title: entry!.title,
-        description: entry!.description,
-        authors: toAuthors(entry!.authors as PostAuthors[]),
-        date: toPublishDate(entry!.publishDate),
-        categories: toCategories(entry!.categories as PostCategories[]),
-        slug: toSlug(entry!._sys.filename, "blog"),
+        title: entry.title,
+        description: entry.description,
+        authors: toAuthors(entry.authors as PostAuthors[]),
+        date: toPublishDate(entry.publishDate),
+        categories: toCategories(entry.categories as PostCategories[]),
+        slug: toSlug(entry._sys.filename, "blog"),
       }
     },
   )

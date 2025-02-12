@@ -18,7 +18,7 @@ const Logos = [
 
 export const LogoMarquee = () => {
   return (
-    <section className="relative flex h-10 max-w-full items-center overflow-x-hidden text-purple-950 md:gap-3 lg:gap-12 dark:text-purple-100">
+    <section className="relative flex h-10 max-w-full items-center overflow-x-hidden text-purple-950 opacity-75 md:gap-3 lg:gap-12 dark:text-purple-100">
       {/* animation start */}
       <div className="absolute left-0 top-0 flex w-full min-w-[max-content] animate-marquee-start items-center justify-around">
         {Logos.map(({ Logo, name }) => (

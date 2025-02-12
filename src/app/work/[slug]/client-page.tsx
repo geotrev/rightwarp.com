@@ -34,11 +34,11 @@ export const ClientPage = (props: PageProps) => {
             label: "Browse More Work",
             href: Routes.WORK,
           },
-          // {
-          //   type: "secondary",
-          //   label: "View Blog",
-          //   href: Routes.BLOG,
-          // },
+          {
+            type: "secondary",
+            label: "View Blog",
+            href: Routes.BLOG,
+          },
         ]}
       />
       <ActionList actions={["button", "newsletter"]} />

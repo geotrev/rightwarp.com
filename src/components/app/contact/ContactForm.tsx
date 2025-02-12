@@ -232,7 +232,7 @@ export const ContactForm = (props: ContactFormProps) => {
             </span>
             <span className="text-black dark:text-white">
               Your message has been sent! Be sure to add{" "}
-              <strong>ave@rightwarp.com</strong> to your contact list.
+              <strong>wave@rightwarp.com</strong> to your contact list.
             </span>
           </p>
         )}

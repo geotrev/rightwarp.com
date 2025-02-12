@@ -101,7 +101,9 @@ export async function generatePageMeta(
   const fallbackDevUrl = "http://localhost:3000"
   let metadataBase: string | URL
   if (process.env.NODE_ENV === "development") {
-    metadataBase = new URL(process.env.DEV_METADATA_BASE_URL || fallbackDevUrl)
+    metadataBase = new URL(
+      process.env.NEXT_PUBLIC_METADATA_BASE_URL_DEV || fallbackDevUrl,
+    )
   } else if (PROD_OR_DEPLOY_URL) {
     metadataBase = new URL(PROD_OR_DEPLOY_URL)
   } else {

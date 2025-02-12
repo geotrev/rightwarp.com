@@ -31,8 +31,8 @@ The easiest way to consider how I might be able to help you is to think about ho
 I can jump in to strategize and/or collaborate these issues directly with my experiences in:
 
 * **Custom Websites:** The bedrock brand tool, complete with strong SEO, tracking & services integrations, and performant across devices.
-* \*\*Design Systems: \*\*A product strategy popularized in recent years for its massive customer benefits, providing clear and concise digital experiences.
-* \*\*Front-End Architecture: \*\*Planning and orchestrating standard tools needed for modern web apps, including build pipelines, meta frameworks, testing, automation, and UI strategy.
+* **Design Systems:** A product strategy popularized in recent years for its massive customer benefits, providing clear and concise digital experiences.
+* **Front-End Architecture:** Planning and orchestrating standard tools needed for modern web apps, including build pipelines, meta frameworks, testing, automation, and UI strategy.
 
 With over a decade of experience building digital products, including research-backed user experience best practices, I can provide both unique and inclusive digital experience that builds customer trust.
 
@@ -76,7 +76,7 @@ A: I’m excited to share both my work and knowledge with folks in the form of b
 
 ### Q: "How can we get in touch?"
 
-A: The easiest way is on my contact page. Whether it’s to strategize on a project or just connect / meet-and-greet, my inbox is open. If anything, I can recommend a trusted member of my network to you, should my skills not overlap. 
+A: The easiest way is on my contact page. Whether it’s to strategize on a project or just connect / meet-and-greet, my inbox is open. If anything, I can recommend a trusted member of my network to you, should my skills not overlap.
 
 ## I’m here to help!
 

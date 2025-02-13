@@ -59,10 +59,10 @@ const TestimonialContent = ({
       })}
       aria-hidden={isHidden ? true : undefined}
     >
-      <blockquote className="text-center italic md:text-xl">
+      <blockquote className="text-start italic sm:text-center md:text-2xl">
         <TinaMarkdown content={content!} />
       </blockquote>
-      <div className="flex items-center gap-6">
+      <div className="flex items-start gap-6 sm:items-center">
         {image && (
           <div className="overflow-hidden rounded-full">
             <Image src={image} alt={name!} width={48} height={48} />

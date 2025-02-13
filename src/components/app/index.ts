@@ -17,6 +17,7 @@ export * from "./shared/MediaCard"
 // Home
 
 export * from "./home/Expertise"
+export * from "./home/FoundersNote"
 
 // Contact
 

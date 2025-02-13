@@ -2,7 +2,7 @@
 visibility: Public
 publishDate: 2025-02-12T06:00:00.000Z
 title: Right Warp is open for business!
-description: An intro to the owner and professional services
+description: 'Learn about the owner, history, and motivations for the launch'
 seo:
   title: Right Warp is open for business
   description: A brief history & introduction

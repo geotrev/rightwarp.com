@@ -17,6 +17,7 @@ import {
   ActionList,
   CardGrid,
   Expertise,
+  FoundersNote,
   Hero,
   LogoMarquee,
   MediaCardProps,
@@ -75,6 +76,7 @@ export const ClientPage = ({ page, work, testimonials, posts }: PageProps) => {
         subheading="10+ years of hardened, design-minded web development experience at your finger-tips"
         icon={PencilRuler}
       />
+      <FoundersNote />
       <Testimonials
         heading="Testimonials"
         subheading="What former colleagues and clients have to say"

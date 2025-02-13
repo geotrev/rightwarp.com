@@ -12,7 +12,7 @@ export const SectionHeading = ({
   children?: React.ReactNode
 }) => {
   return (
-    <Container outerStyles="my-12 sm:my-16 md:my-24 lg:my-36">
+    <Container outerStyles="mb-12 mt-40 sm:mb-16 md:mb-24 lg:my-36">
       <div className="flex flex-col gap-4 md:gap-8 lg:gap-4 xl:flex-row xl:items-center">
         <div className="flex w-full flex-col gap-4 md:flex-row">
           <h2 className="display whitespace-nowrap text-2xl tracking-tight text-black sm:text-4xl xl:tracking-tighter 2xl:text-6xl dark:text-white">

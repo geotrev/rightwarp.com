@@ -15,9 +15,9 @@ categories:
   - categoryRef: src/content/categories/meta.json
 ---
 
-Hello there! My name is George. If you’re reading this post, thanks for taking an opportunity to learn about my newest adventure: launching Right Warp!
-
 Right Warp is here to serve businesses of any size by building or enhancing their web presence. My primary offerings include custom websites, design systems consulting, and front-end development.
+
+Thanks for taking an opportunity to learn about my newest adventure!
 
 ## Why trust me?
 
@@ -80,6 +80,6 @@ A: The easiest way is on my contact page. Whether it’s to strategize on a proj
 
 ## I’m here to help!
 
-If you made it to the end of the post, thank you! I’m grateful for your interest and support. If you or someone yo know is in need of my services, don’t hesitate to share a link to my website. :)
+If you made it to the end of the post, thank you! I’m grateful for your interest and support. If you or someone yo know is in need of my services, don’t hesitate to share a link to my website. 🙂
 
 See you around!

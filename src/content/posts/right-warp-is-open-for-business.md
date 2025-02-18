@@ -29,25 +29,23 @@ Thanks for taking an opportunity to learn about my newest adventure!
 The easiest way to consider how I might be able to help you is to think about how these problems may be affecting your business:
 
 * Hard to maintain website content and services, such as scattered content management, unoptimized SEO, and poor performance.
-* Disjointed website design that is inaccessible and bug-prone, resulting in lost customer trust, revenue, and/or legal compliance.
+* Disjointed website design that is inaccessible and bug-prone, resulting in lost customer trust, revenue, and/or legal risk.
 * Complex digital product UI that are decoupled, inconsistent, or unintuitive.
 * Legacy front-end development environments that drag product & business output
 
 I can jump in to strategize and/or collaborate these issues directly with my experiences in:
 
 * **Custom Websites:** The bedrock brand tool, complete with strong SEO, tracking & services integrations, and performant across devices.
-* **Design Systems:** A product strategy popularized in recent years for its massive customer benefits, providing clear and concise digital experiences.
-* **Front-End Architecture:** Planning and orchestrating standard tools needed for modern web apps, including build pipelines, meta frameworks, testing, automation, and UI strategy.
+* **Design Systems:** A product strategy popularized in recent years for its massive customer benefits, providing clear and consistent product experiences.
+* **Front-End Architecture:** Planning and orchestrating standard tools needed for modern web apps, including UI architecture, build pipelines, end-to-end testing, automation, and more.
 
-With over a decade of experience building digital products, including research-backed user experience best practices, I can provide both unique and inclusive digital experience that builds customer trust.
-
-My process is enabled by a suite of industry-standard tools for various infrastructure needs—such as web hosting, content management, analytics, and more.
+With over a decade of experience building digital product experiences with industry best practices, I'm confident I can help you achieve your goals (or find someone who can from my network).
 
 ## My professional story
 
 ### TL;DR
 
-I’ve worked as a designer and developer in varying capacities since around 2013. No matter where I’ve worked, I’ve had the pleasure of meeting and collaborating with some truly talented and smart people. I’m deeply grateful for my opportunities to learn from them!
+I’ve worked as a designer and developer in varying capacities since around 2013. No matter where I’ve worked, I’ve had the pleasure of meeting and collaborating with some truly talented and smart people. I’m deeply grateful for my opportunities to learn (and keep learning) from them!
 
 ### The Long Version
 
@@ -59,7 +57,7 @@ I've helped scale some pretty cool websites and tools, collaborating across prod
 * Codecov's [visual identity & logo design](https://about.codecov.io/)
 * Musicnotes' [web and mobile app design](https://www.musicnotes.com/)
 
-Many of my skills, from the technical or collaborative, can be attributed in one way or another to my amazing friends & colleagues in prior roles. I’m happy to bring the tools and insights I’ve gathered to more than just technology companies, but any company that is seeking web design & development expertise.
+Since the very beginning, I've had a strong curiosity to learn things and find solutions to some of these really difficult challenges we face in the technical sphere. Even as far back as high school, where I probably spent a little too long in Photoshop.
 
 ## What does Right Warp mean?
 

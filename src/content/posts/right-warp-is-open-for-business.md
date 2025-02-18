@@ -54,7 +54,7 @@ I've helped scale some pretty cool websites and tools, collaborating across prod
 * Zendesk's [Garden design system](https://garden.zendesk.com/)
 * ServiceNow's [Horizon design system](https://horizon.servicenow.com/)
 * Scribd's [Ruby on Rails web app](https://www.scribd.com/)
-* Codecov's [visual identity & logo design](https://about.codecov.io/)
+* Codecov's [visual identity & logo design](https://web.archive.org/web/20170602153304/https://codecov.io/)
 * Musicnotes' [web and mobile app design](https://www.musicnotes.com/)
 
 Since the very beginning, I've had a strong curiosity to learn things and find solutions to some of these really difficult challenges we face in the technical sphere. Even as far back as high school, where I probably spent a little too long in Photoshop.

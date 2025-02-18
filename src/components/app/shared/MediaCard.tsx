@@ -70,7 +70,14 @@ export const MediaCard = ({
           </figure>
         )}
         <div className="media-card-body">
-          {date && <span className="tracking-wider">{date}</span>}
+          {date && (
+            <time
+              className="mb-4 tracking-wider"
+              dateTime={new Date(date).toISOString().slice(0, -1)}
+            >
+              {date}
+            </time>
+          )}
           <HeadingTag className="media-card-title" id={postId}>
             {title}
           </HeadingTag>

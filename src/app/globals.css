@@ -18,6 +18,7 @@
 
   .display {
     font-family: var(--font-krona-one);
+    font-weight: 400;
   }
 }
 
@@ -37,11 +38,11 @@
   }
 
   .media-card-title {
-    @apply card-title display text-xl leading-8 tracking-tight text-black sm:text-2xl sm:leading-10 dark:text-white;
+    @apply card-title display text-xl font-normal tracking-tight text-black sm:text-2xl dark:text-white;
   }
 
   .media-card-description {
-    @apply mb-4 pb-2 text-base sm:text-xl;
+    @apply mb-4 pb-4 text-base sm:text-xl;
   }
 
   .media-card-actions {

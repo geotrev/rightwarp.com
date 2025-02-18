@@ -2,13 +2,18 @@
 visibility: Public
 publishDate: 2025-02-12T06:00:00.000Z
 title: Right Warp is open for business!
-description: 'Learn about the owner, history, and motivations for the launch'
+description: >-
+  Over a year in the making, I'm happy to share the next chapter in what I hope
+  is a fun, opportunity-filled venture
 seo:
   title: Right Warp is open for business
   description: A brief history & introduction
   keywords: >-
     web design, web development, business, business launch, consulting, blog,
     blog post, post
+openGraph:
+  image: /uploads/og-image-rw-open-for-biz.png
+  type: article
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:

@@ -84,7 +84,7 @@ export const Intro = () => {
           </h2>
           <p className="mb-8 leading-7">
             {
-              "Welcome to Right Warp, a boutique design & development studio currently operated by me: George Treviranus. I've been designing and building digital products for a little over 10 years (longer if you count excessive photoshopping in high school). I've worked at and helped scale some pretty cool websites and tools, including:"
+              "Welcome to Right Warp, a boutique design & development studio currently operated by me: George Treviranus. I've been designing and building digital products professionally for a little over 10 years. I've worked at and helped scale some pretty cool websites and tools, including:"
             }
           </p>
           <ul className="mb-8 list-disc ps-4 leading-7">
@@ -94,7 +94,7 @@ export const Intro = () => {
           </ul>
           <p className="leading-7">
             {
-              "Right Warp is guided by principles of empathy, inclusivity, and sustainability. All projects are approached with a focus on user experience. Every project is unique, ensuring brand recognition and attention to detail, without sacrificing standards-based development practices of accessibility and research-driven interface design."
+              "Right Warp is guided by principles of empathy, inclusivity, and sustainability. When I work with clients, my goal is to foster a relationship of trust. All projects are approached with a focus on intuitive, accessible user experiences."
             }
           </p>
         </div>

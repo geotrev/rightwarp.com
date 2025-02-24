@@ -48,7 +48,7 @@ export const Hero = ({
       {description && (
         <p
           className={cn(
-            "text-md tracking-tight sm:text-lg md:text-xl lg:text-3xl lg:leading-[3rem]",
+            "text-lg tracking-tight md:text-xl lg:text-3xl lg:leading-[3rem]",
             {
               "mb-6 md:mb-10 lg:mb-12": !!details,
             },

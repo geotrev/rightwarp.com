@@ -197,7 +197,7 @@ export const PostIndex = ({
                 <span className="loading" /> Loading Posts
               </div>
             )}
-            {pages && (
+            {pages && pages.length > 1 && (
               <Pagination
                 currentPage={pageData.currentPage}
                 totalPages={pages?.length}

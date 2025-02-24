@@ -52,7 +52,7 @@ export const PostMetadata = ({
           </ul>
         </>
       )}
-      {relatedPosts && (
+      {relatedPosts && relatedPosts.length > 0 && (
         <>
           <hr className="my-6 block w-full border-dashed border-purple-950/25 lg:my-10 dark:border-purple-100/25" />
           <aside>

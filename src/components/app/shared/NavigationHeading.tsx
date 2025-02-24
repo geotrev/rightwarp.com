@@ -7,9 +7,9 @@ export const NavigationHeading = ({
 }) => {
   return (
     <div className="flex w-full items-center gap-4">
-      <span className="display text-nowrap text-[0.625rem] uppercase text-primary">
+      <h3 className="display text-nowrap text-[0.625rem] uppercase text-primary">
         {label}
-      </span>
+      </h3>
       <hr
         className="w-full border-purple-950/25 dark:border-purple-100/25"
         aria-hidden="true"

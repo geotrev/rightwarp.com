@@ -9,6 +9,7 @@ export const tailwindTypography = (theme: (path: string) => string) => ({
       // heading fonts
       "h1, h2, h3, h4, h5, h6": {
         fontFamily: "Krona One, sans-serif",
+        fontWeight: "400",
         letterSpacing: "-0.025em",
         color: theme("colors.purple.950"),
       },

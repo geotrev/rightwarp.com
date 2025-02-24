@@ -11,7 +11,7 @@ export const Post: Collection = {
   path: "src/content/posts",
   format: "md",
   ui: {
-    // router: ({ document }) => `/blog/${document._sys.filename}`,
+    router: ({ document }) => `/blog/${document._sys.filename}`,
     ...slugify("title"),
   },
   fields: [

@@ -98,8 +98,8 @@ export const Header = () => {
               <nav className="flex items-end">
                 <ul>
                   {NavItems.map((item) => {
-                    const isLastItem = lastNavItemLabel !== item.label
-                    const marginClass = { "me-4": isLastItem }
+                    const isLastItem = lastNavItemLabel === item.label
+                    const marginClass = { "me-4": !isLastItem }
 
                     return (
                       <li
@@ -115,7 +115,7 @@ export const Header = () => {
                         >
                           {item.label}
                         </Link>
-                        {isLastItem && (
+                        {!isLastItem && (
                           <Sparkle
                             aria-hidden="true"
                             size={12}

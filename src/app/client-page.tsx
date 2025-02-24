@@ -5,6 +5,7 @@ import cn from "classnames"
 import {
   Hammer,
   Handshake,
+  NotebookText,
   // NotebookText,
   PencilRuler,
   UserPen,
@@ -16,6 +17,7 @@ import {
   ActionList,
   CardGrid,
   Expertise,
+  FoundersNote,
   Hero,
   LogoMarquee,
   MediaCardProps,
@@ -39,12 +41,7 @@ interface PageProps {
   testimonials?: TestimonialsProps["testimonials"]
 }
 
-export const ClientPage = ({
-  page,
-  work,
-  testimonials,
-  // posts
-}: PageProps) => {
+export const ClientPage = ({ page, work, testimonials, posts }: PageProps) => {
   const { data: _data } = useTina(page)
   const data = _data.page
 
@@ -79,20 +76,21 @@ export const ClientPage = ({
         subheading="10+ years of hardened, design-minded web development experience at your finger-tips"
         icon={PencilRuler}
       />
+      <FoundersNote />
       <Testimonials
         heading="Testimonials"
         subheading="What former colleagues and clients have to say"
         icon={UserPen}
         testimonials={testimonials}
       />
-      {/* <CardGrid
+      <CardGrid
         heading="Thoughts"
         subheading="Ramblings about tech, web development, and design"
         actionLabel="More Posts"
         actionHref={Routes.BLOG}
         icon={NotebookText}
         entries={posts}
-      /> */}
+      />
       <ActionList actions={["button", "newsletter"]} />
     </>
   )

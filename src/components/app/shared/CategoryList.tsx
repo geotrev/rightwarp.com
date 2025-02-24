@@ -23,7 +23,7 @@ export const CategoryList = ({
               } as CSSProperties)
             : undefined
         }
-        className={`badge badge-lg rounded-md text-xs font-bold uppercase text-white dark:text-black`}
+        className={`badge badge-lg rounded-md border-none text-xs font-bold uppercase text-white dark:text-black`}
       >
         {name}
       </li>

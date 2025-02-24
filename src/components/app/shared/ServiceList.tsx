@@ -29,7 +29,7 @@ export const ServiceList = ({
     return (
       <li
         key={name}
-        className={`badge badge-neutral badge-lg h-fit rounded-md border-0 bg-black/10 py-1 text-xs font-bold uppercase text-black/80 dark:bg-white/10 dark:text-white/80`}
+        className={`badge badge-neutral badge-lg h-fit rounded-md border-0 border-none bg-black/10 py-1 text-xs font-bold uppercase text-black/80 dark:bg-white/10 dark:text-white/80`}
       >
         {name}
       </li>

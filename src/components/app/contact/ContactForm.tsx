@@ -231,7 +231,8 @@ export const ContactForm = (props: ContactFormProps) => {
               <CheckCircle size={24} />{" "}
             </span>
             <span className="text-black dark:text-white">
-              Your message has been sent, thank you!
+              Your message has been sent! Be sure to add{" "}
+              <strong>wave@rightwarp.com</strong> to your contact list.
             </span>
           </p>
         )}

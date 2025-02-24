@@ -4,6 +4,7 @@ import { PageQuery } from "@tina/__generated__/types"
 import {
   Feather,
   Hammer,
+  NotebookText,
   // NotebookText
 } from "lucide-react"
 import { useTina } from "tinacms/dist/react"
@@ -31,11 +32,7 @@ interface PageProps {
   work?: MediaCardProps[]
 }
 
-export const ClientPage = ({
-  page,
-  work,
-  // posts
-}: PageProps) => {
+export const ClientPage = ({ page, work, posts }: PageProps) => {
   const { data: _data } = useTina(page)
   const data = _data.page
 
@@ -57,14 +54,14 @@ export const ClientPage = ({
         icon={Hammer}
         entries={work}
       />
-      {/* <CardGrid
+      <CardGrid
         heading="Thoughts"
         subheading="Ramblings about tech, web development, and design"
         actionLabel="More Posts"
         actionHref={Routes.BLOG}
         icon={NotebookText}
         entries={posts}
-      /> */}
+      />
       <ActionList actions={["button", "newsletter"]} />
     </>
   )

@@ -26,11 +26,11 @@
   /* media-card extends daisyui card */
 
   .media-card {
-    @apply card z-10 overflow-hidden rounded-xl bg-base-300 transition-colors md:rounded-xl;
+    @apply card z-10 rounded-xl bg-base-300 transition-colors;
   }
 
   .media-card-image {
-    @apply relative h-56;
+    @apply relative h-56 overflow-hidden rounded-t-xl;
   }
 
   .media-card-body {

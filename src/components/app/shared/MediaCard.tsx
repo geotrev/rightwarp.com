@@ -57,7 +57,7 @@ export const MediaCard = ({
         <a
           href={slug}
           aria-labelledby={postId}
-          className="absolute inset-0 z-10 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-purple-800 md:rounded-3xl dark:focus-visible:ring-purple-100"
+          className="absolute inset-0 z-10 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-800 focus-visible:ring-offset-2 focus-visible:ring-offset-base-200 dark:focus-visible:ring-purple-100"
         ></a>
         {image && (
           <figure className="media-card-image">

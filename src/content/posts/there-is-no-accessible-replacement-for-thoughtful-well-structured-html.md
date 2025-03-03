@@ -21,6 +21,10 @@ categories:
 
 In January of this year, accessibility overlay provider accessiBe [came under fire](https://www.accessibility.works/blog/avoid-accessibility-overlay-tools-toolbar-plugins/) through the FTC for false advertising. This isn’t terribly surprising, considering:
 
+> In 2021, more than 400 companies with an accessibility widget or overlay on their website were sued over accessibility, per digital accessibility provider [UsableNet](https://f.hubspotusercontent30.net/hubfs/3280432/Remediated-2021-Year-End-Report-FINAL.pdf).\
+> \
+> \- Kyle Wiggers, [TechCrunch](https://techcrunch.com/2025/01/03/ftc-orders-ai-accessibility-startup-accessibe-to-pay-1m-for-misleading-advertising/)
+
 I’m sure these tools work to an extent, but I feel the need to reiterate something I and several of my industry colleagues have been expressing for years: you can’t fix what’s already broken, and there’s no replacement for well structured HTML. A properly built web site is screen reader friendly by its nature, UI complexity be damned.
 
 I’d even go a step further and say no AI or automation tool can fix asemantic, generic HTML in any given UI beyond a certain point. Code that is too generic will inevitably require human intervention, and AI is far from perfect at having context awareness.

@@ -1,5 +1,5 @@
 ---
-visibility: Draft
+visibility: Public
 publishDate: 2025-03-03T06:00:00.000Z
 title: 'There is no accessible replacement for thoughtful, well-structured HTML'
 description: 'As expected, accessibility overlays can’t fix what’s already broken'

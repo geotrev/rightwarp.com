@@ -31,8 +31,8 @@ export const TAILWIND_THEME: Partial<CustomThemeConfig> = {
     },
   },
   animation: {
-    "marquee-start": "marquee-start 30s linear infinite",
-    "marquee-end": "marquee-end 30s linear infinite",
+    "marquee-start": "marquee-start 45s linear infinite",
+    "marquee-end": "marquee-end 45s linear infinite",
     "overlay-show": "overlay-show 150ms cubic-bezier(0.16, 1, 0.3, 1)",
     "content-show": "content-show 150ms cubic-bezier(0.16, 1, 0.3, 1)",
   },

@@ -1,6 +1,7 @@
 import { MotionConfig } from "motion/react"
 import * as motion from "motion/react-client"
 import Image from "next/image"
+import { default as toSlug } from "slug"
 
 import { Author } from "./Author"
 import { CategoryList } from "./CategoryList"
@@ -45,7 +46,7 @@ export const MediaCard = ({
   slug,
   headingTag: HeadingTag = "h3",
 }: MediaCardProps) => {
-  const postId = title.toLowerCase().replace(/^[a-zA-Z][\w:_.-]*$/g, "-")
+  const postId = toSlug(title)
 
   return (
     <MotionConfig transition={{ duration: 0.2 }}>

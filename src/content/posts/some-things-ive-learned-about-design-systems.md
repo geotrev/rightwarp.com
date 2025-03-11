@@ -1,10 +1,10 @@
 ---
 visibility: Public
 publishDate: 2025-03-10T05:00:00.000Z
-title: Some Things I’ve Learned About Design Systems
+title: Some things I've learned about design systems
 description: A tiny (but heartfelt) mash of design system wisdom to start your week
 seo:
-  title: Some Things I’ve Learned About Design Systems
+  title: Some things I've learned about design systems
   description: A tiny (but heartfelt) mash of design system wisdom to start your week
   keywords: >-
     design systems, web design, ui, ux, user experience, user interface design,

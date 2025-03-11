@@ -23,7 +23,7 @@ const Actions = {
 export const ActionTriggers = {
   call: (
     <Link
-      href="https://cal.com/rightwarp/30min"
+      href="https://right-warp.moxieapp.com/public/right-warp/30-minute-meeting"
       className={cn(
         "btn btn-primary w-full text-white lg:btn-lg md:w-[75%] dark:text-black",
       )}

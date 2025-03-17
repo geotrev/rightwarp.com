@@ -94,22 +94,22 @@ closeButton.addEventListener("click", () => dialog.close());
 
 ## Anchors
 
-The `anchor()` CSS function can be used to attach one element to another. Combine with position-anchor and position-area properties to create native tooltips.
+Anchors comprise a series of CSS features used to attach one element to another on a page. You can use the `anchor()` CSS function with `position-anchor`, `position-area`, and absolute positioning to achieve a tooltip or popover, for instance. 
 
 Given the following HTML:
 
 ```html
-<button type="button" class="anchor">Anchor element</div>
-<p class="positionedElement">Positioned element.</p>
+<button type="button" class="trigger">Tooltip trigger</div>
+<p class="tooltip">Some tooltip content.</p>
 ```
 
-You can provide CSS like the following, which absolutely positions the paragraph to the button:
+You can then provide CSS like the following (visual styles omitted for brevity), which absolutely positions a paragraph to the button:
 
 ```css
-.anchor {
+.trigger {
   anchor-name: --infobox;
 }
-.positionedElement {
+.tooltip {
   position: absolute;
   position-anchor: --infobox;
   top: anchor(top);
@@ -120,7 +120,7 @@ You can provide CSS like the following, which absolutely positions the paragraph
 
 **Support level:** Limited (Unsupported in Safari and Firefox)
 
-[Read about position anchoring on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/anchor)
+[Read about anchoring on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/anchor)
 
 ## Animation Timelines
 
@@ -130,9 +130,13 @@ The feature combines with the animation-timeline CSS property:
 
 animation-timeline: view(\<axis>, \<inset>);
 
-Use with keyframes to define your animation style.
+Use with keyframes to define your animation style.\\
 
-[Read about animation timelines on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline/view)
+More reading:
+
+* [`anchor()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline/view)
+* [`position-anchor` property](https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor)
+* [`position-area` property](https://developer.mozilla.org/en-US/docs/Web/CSS/position-area)
 
 ## View Transition API
 
@@ -140,26 +144,29 @@ Natively animate between website views using JavaScript. This can work with eith
 
 This feature solves a long-standing issue of apps using fairly complex JavaScript and CSS to transition page elements between views. If you’ve ever implemented this, you know exactly what I mean!
 
-As shown by [Google](https://developer.chrome.com/docs/web-platform/view-transitions/), you can trigger a same-document view transition using document.startViewTransition:
+You can trigger a same-document view transition using `document.startViewTransition` (example courtesy of [Google](https://developer.chrome.com/docs/web-platform/view-transitions/)):
 
+```javascript
 function handleClick(e) {
-// Fallback for browsers that don't support this API:
-if (!document.startViewTransition) {
-updateTheDOMSomehow();
-return;
+  // Fallback for browsers that don't support this API:
+  if (!document.startViewTransition) {
+    updateTheDOMSomehow();
+    return;
+  }
+  // With a view transition:
+  document.startViewTransition(() => updateTheDOMSomehow());
 }
-
-// With a View Transition:
-document.startViewTransition(() => updateTheDOMSomehow());
-}
+```
 
 For [cross-document transitions](https://developer.chrome.com/docs/web-platform/view-transitions/cross-document), you can opt-in with CSS:
 
+```css
 @view-transition {
-&#x9;navigation: auto;
+  navigation: auto;
 }
+```
 
-Then write your custom animations tied into [pageswap](https://developer.mozilla.org/en-US/docs/Web/API/PageSwapEvent) and/or [pagereveal](https://developer.mozilla.org/en-US/docs/Web/API/PageRevealEvent) events.
+Then write your custom animation tied into [pageswap](https://developer.mozilla.org/en-US/docs/Web/API/PageSwapEvent) and/or [pagereveal](https://developer.mozilla.org/en-US/docs/Web/API/PageRevealEvent) events.
 
 [Read about view transitions on MDN](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API)
 

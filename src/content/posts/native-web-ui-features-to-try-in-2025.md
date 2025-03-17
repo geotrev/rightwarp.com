@@ -71,7 +71,7 @@ showButton.addEventListener("click", () => dialog.showModal());
 closeButton.addEventListener("click", () => dialog.close());
 ```
 
-**Support level: **All browsers
+**Support level:** All browsers
 
 [Read about `<dialog>` on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
 

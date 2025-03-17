@@ -46,7 +46,7 @@ Support level: All browsers
 
 ## Dialog
 
-The \<dialog> element creates a modal or non-modal dialog, useful for things like alerts, disclosure dialogs, picture-in-picture, and more.
+The `<dialog>` element creates a modal or non-modal dialog, useful for things like alerts, disclosure dialogs, picture-in-picture, and more.
 
 ```html
 < !--trigger element-- >
@@ -120,7 +120,11 @@ You can then provide CSS like the following (visual styles omitted for brevity),
 
 **Support level:** Limited (Unsupported in Safari and Firefox)
 
-[Read about anchoring on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/anchor)
+More reading:
+
+* [`anchor() function`](https://developer.mozilla.org/en-US/docs/Web/CSS/anchor)
+* [`position-anchor` property](https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor)
+* [`position-area` property](https://developer.mozilla.org/en-US/docs/Web/CSS/position-area)
 
 ## Animation Timelines
 
@@ -128,15 +132,17 @@ The view() CSS function enables a scroll progress animation using the nearest sc
 
 The feature combines with the animation-timeline CSS property:
 
-animation-timeline: view(\<axis>, \<inset>);
+```css
+.element {
+  animation-timeline: view(<axis>, <inset>);
+}
+```
 
-Use with keyframes to define your animation style.\\
+Use keyframes to define your specific animation style.
 
-More reading:
+**Support level:** Limited (Unsupported in Safari and Firefox)
 
-* [`anchor()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline/view)
-* [`position-anchor` property](https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor)
-* [`position-area` property](https://developer.mozilla.org/en-US/docs/Web/CSS/position-area)
+[Read more about animation timelines on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline/view)
 
 ## View Transition API
 
@@ -168,6 +174,8 @@ For [cross-document transitions](https://developer.chrome.com/docs/web-platform/
 
 Then write your custom animation tied into [pageswap](https://developer.mozilla.org/en-US/docs/Web/API/PageSwapEvent) and/or [pagereveal](https://developer.mozilla.org/en-US/docs/Web/API/PageRevealEvent) events.
 
+**Support level:** Limited (Unsupported in Firefox)
+
 [Read about view transitions on MDN](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API)
 
 ## Popover API
@@ -186,6 +194,8 @@ Or use JavaScript: `popoverElement.togglePopover()`
 You can style various parts of the element, like the `::backdrop` pseudo-element and `:popover-open` pseudo-class.
 
 A big thing to note, too: you can even [create nested popovers](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using#nested_popovers)!
+
+**Support level:** All browsers (barring `hint` attribute in Firefox and Safari)
 
 [Read about popovers on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
 

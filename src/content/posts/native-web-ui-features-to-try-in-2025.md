@@ -42,7 +42,7 @@ The `<menu>` tag is an alternate to `<ul>`, which defines a set of list items as
 
 Support level: All browsers
 
-[Read about \<menu> on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu)
+[Read about `<menu>` on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu)
 
 ## Dialog
 
@@ -73,7 +73,7 @@ closeButton.addEventListener("click", () => dialog.close());
 
 **Support level: **All browsers
 
-[Read about \<dialog> on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
+[Read about `<dialog>` on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
 
 ## Details
 
@@ -88,9 +88,9 @@ closeButton.addEventListener("click", () => dialog.close());
 
 **Pro-tip:** Give each `<details>` element in a series the same name attribute value to prevent more than one from opening at a time.
 
-Support level: All browsers ([some accessibility caveats apply](https://blog.learningtoo.eu/expanding-summary-details-accessibly))
+**Support level:** All browsers ([some accessibility caveats apply](https://blog.learningtoo.eu/expanding-summary-details-accessibly))
 
-[Read about \<details> on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
+[Read about `<details>` on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
 
 ## Anchors
 

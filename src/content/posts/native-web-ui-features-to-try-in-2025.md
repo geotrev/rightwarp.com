@@ -1,5 +1,5 @@
 ---
-visibility: Draft
+visibility: Public
 publishDate: 2025-03-17T05:00:00.000Z
 title: Native web UI features to try in 2025
 description: >-

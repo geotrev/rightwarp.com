@@ -201,4 +201,4 @@ A big thing to note, too: you can even [create nested popovers](https://develope
 
 ***
 
-There's a ton more coming up, too. Since HTML5's inception (over 15 years ago... lordy), it's been a blast watching popular UI conventions migrate into browsers. The ones we’re discussing above aren't necessarily even new by industry standards, but it’s great to see growing (or even complete) support for these very necessary UI patterns.
+There's a ton more coming up, too. Since HTML5's inception (over 15 years ago... lordy), it's been a blast watching popular UI conventions migrate into browsers. The ones discussed above aren't necessarily even new by industry standards, but it’s great to see growing (or even complete) support for these very necessary UI patterns.

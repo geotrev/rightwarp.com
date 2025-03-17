@@ -130,7 +130,7 @@ More reading:
 
 The view() CSS function enables a scroll progress animation using the nearest scrollable parent element. A good use-case to consider is a visual scroll indicator or to show/hide a menubar as a user scrolls down a page.
 
-The feature combines with the animation-timeline CSS property:
+The feature combines with the `animation-timeline` CSS property:
 
 ```css
 .element {

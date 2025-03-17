@@ -174,17 +174,16 @@ Then write your custom animation tied into [pageswap](https://developer.mozilla.
 
 Create interactive popovers with only HTML and minimal JavaScript. Style every aspect of the popover, including the backdrop and open/close animations. Popovers can be either modal or non-modal, depending on your use-case.
 
-Use popovertarget, popovertargetaction, and popover attributes in HTML
+Use `popovertarget`, `popovertargetaction`, and `popover` attributes in HTML
 
-\<button popovertarget="mypopover">Toggle the popover\</button>
+```html
+<button popovertarget="mypopover">Toggle the popover</button>
+<div id="mypopover" popover>Popover content</div>
+```
 
-\<div id="mypopover" popover>Popover content\</div>
+Or use JavaScript: `popoverElement.togglePopover()`
 
-Or use JavaScript:
-
-popoverElement.togglePopover()
-
-You can style various parts of the element, like the ::backdrop pseudo-element and the :popover-open pseudo-class.
+You can style various parts of the element, like the `::backdrop` pseudo-element and `:popover-open` pseudo-class.
 
 A big thing to note, too: you can even [create nested popovers](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using#nested_popovers)!
 

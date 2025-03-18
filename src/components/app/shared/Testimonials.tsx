@@ -209,7 +209,7 @@ export const Testimonials = ({
             onBlur={() => setIsHovered(false)}
           >
             {isPaused ? <Play size={16} /> : <Pause size={16} />}
-            {isPaused ? "Enable auto-transition" : "Pause auto-transition"}
+            {isPaused ? "Enable carousel" : "Pause carousel"}
           </button>
         </div>
       </Container>

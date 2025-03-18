@@ -1,6 +1,15 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
+  "extends": ["config:recommended"],
+  "rebaseWhen": "behind-base-branch",
+  "ignorePaths": ["**/node_modules/**"],
+  "schedule": ["on Monday every 9 weeks of the year starting on the 6th week"],
+  "postUpdateOptions": ["npmDedupe"],
+  "packageRules": [
+    {
+      "matchFileNames": ["package.json"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "groupName": "non-major shared dependencies",
+      "groupSlug": "shared-minor-patch"
+    }
   ]
 }

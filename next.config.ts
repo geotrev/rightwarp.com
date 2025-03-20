@@ -37,7 +37,6 @@ const nextConfig: NextConfig = {
       test: /\.svg$/,
       use: ["@svgr/webpack"]
     });
-
     return config;
   }
 }

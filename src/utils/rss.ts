@@ -34,7 +34,6 @@ export default function generateRssFeed(posts: Posts) {
 
   const feed = new RSS(feedOptions)
 
-  // Add each individual post to the feed.
   posts.map((post) => {
     feed.item({
       title: post.title,
@@ -46,6 +45,5 @@ export default function generateRssFeed(posts: Posts) {
     })
   })
 
-  // Write the RSS feed to a file as XML.
   fs.writeFileSync("./public/rss.xml", feed.xml({ indent: true }))
 }

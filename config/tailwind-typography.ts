@@ -27,6 +27,11 @@ export const tailwindTypography = (theme: (path: string) => string) => ({
         backgroundColor: theme("colors.slate.950/50%"),
         color: theme("colors.slate.300"),
       },
+
+      // ensure long code lines don't stretch past viewport width
+      code: {
+        textWrapMode: "wrap",
+      },
     },
   },
 })

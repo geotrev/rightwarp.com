@@ -15,6 +15,7 @@ openGraph:
 authors:
   - authorRef: src/content/authors/george-treviranus.json
 categories:
+  - categoryRef: src/content/categories/artificial-intelligence.json
   - categoryRef: src/content/categories/content-strategy.json
 ---
 

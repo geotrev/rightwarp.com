@@ -1,5 +1,5 @@
 ---
-visibility: Draft
+visibility: Public
 publishDate: 2025-03-28T05:00:00.000Z
 title: You can only sort of opt-out of AI crawlers
 description: A fast-evolving AI landscape means limited self-protection pathways

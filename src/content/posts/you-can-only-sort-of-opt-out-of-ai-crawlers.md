@@ -27,13 +27,17 @@ Naturally, there's a hot debate on the ethics and copyright implications of open
 
 Other businesses, like Cloudflare, are [turning AI against itself](https://arstechnica.com/ai/2025/03/cloudflare-turns-ai-against-itself-with-endless-maze-of-irrelevant-facts/) by redirecting bots to unrelated web content when website owners disable AI access.
 
+Sadly, all of these feel like reactions to a "break everything and go fast" tech culture.
+
 ***
 
-So what can you do to protect your data? Unfortunately, the only bulletproof option is user authentication.
+So what can you do to protect your data?
 
-You should also consider updating your website's `robots.txt` file. The downside of this, unfortunately, is that the file is essentially a polite request. Your robots file can still be completely ignored with no immediate penalty, and copyright case law is lagging on settling this once and for all, so having paper trails on your side will only help you.
+Unfortunately, the only bulletproof option is user authentication.
 
-For now, I'd recommend documenting most common AI bots and learning how to optimize your site content for them. [More about this on botify](https://www.botify.com/insight/ai-crawler-bots).
+You can also update your website's `robots.txt` file, but the downside of this, unfortunately, is that the file is essentially a polite request. Though having paper trails on your side will only help you, so why not update it anyway?
+
+For now, I'd recommend documenting the most common AI bots and learning how to optimize your site content for them. [More about this on botify](https://www.botify.com/insight/ai-crawler-bots).
 
 Here's a sample robots file that disallows crawlers (source: [techpays.com/robots.txt](https://techpays.com/robots.txt)):
 
@@ -94,4 +98,8 @@ User - agent: DotBot
 Disallow: /
 ```
 
-The owner of techpays recently discussed on LinkedIn how, despite having this file, his monthly hosting bill has been spiking due to bots. That said, this file can at least serve as a paper trail for when you see crawlers in your web logs, then send a cease and desist. Will they listen? Hard to say, but that's the way the wild west of AI is these days.
+The owner of techpays recently discussed on LinkedIn how, despite having this file, his monthly hosting bill has been spiking due to these bots.
+
+Not all bots are so reckless, though, so it's an acceptable puzzle piece in a larger solution.
+
+As more options come to light, I'll update this post. Consider it a work in progress.

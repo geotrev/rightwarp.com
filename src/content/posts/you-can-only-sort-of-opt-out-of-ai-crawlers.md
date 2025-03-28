@@ -43,58 +43,58 @@ Here's a sample robots file that disallows crawlers (source: [techpays.com/robot
 
 ```
 # GPTBot is OpenAI's web crawler
-User - agent: GPTBot
+User-agent: GPTBot
 Disallow: /
 
 # Google Bard & Gemini
-User - agent: Google - Extended
+User-agent: Google - Extended
 Disallow: /
 
 # ChatGPT - User is OpenAI's web crawler
-User - agent: ChatGPT - User
+User-agent: ChatGPT - User
 Disallow: /
 
 # Common Crawl bot
-User - agent: CCBot
+User-agent: CCBot
 Disallow: /
 
 # PiplBot is PiplBot's web crawler
-User - agent: PiplBot
+User-agent: PiplBot
 Disallow: /
 
 # anthropic - ai is Anthropic's web crawler
-User - agent: anthropic - ai
+User-agent: anthropic - ai
 Disallow: /
 
 # Claude - Web is Claude's web crawler
-User - agent: Claude - Web
+User-agent: Claude - Web
 Disallow: /
 
 # TurnitinBot is Turnitin's web crawler
-User - agent: TurnitinBot
+User-agent: TurnitinBot
 Disallow: /
 
 # PetalBot is Petal's web crawler
-User - agent: PetalBot
+User-agent: PetalBot
 Disallow: /
 
 # MoodleBot is Moodl's web crawler
-User - agent: MoodleBot
+User-agent: MoodleBot
 Disallow: /
 
 # magpie - crawler is Brandwatch.com's web crawler
-User - agent: magpie - crawler
+User-agent: magpie - crawler
 Disallow: /
 
 # Meta
-User - agent: meta - externalagent
+User-agent: meta - externalagent
 Disallow: /
 
-User - agent: ImagesiftBot
+User-agent: ImagesiftBot
 Disallow: /
 
 # DotBot is OpenSiteExplorer's web crawler
-User - agent: DotBot
+User-agent: DotBot
 Disallow: /
 ```
 

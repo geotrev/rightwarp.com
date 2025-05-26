@@ -86,9 +86,20 @@ Allowing CSS transitions to be interruptible is part of what makes them **robust
 
 In JavaScript, user motion preferences can be detected with the [matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) method in browsers.
 
-matchMedia example
+```javascript
+const isMotionReduced =
+  window.matchMedia('(prefers-reduced-motion: reduce)')
 
-Furthermore, utilizing the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Web_Animations_API_Concepts) can be very powerful in making very custom animations. Most developers (myself included) like use third party tools like [Motion](https://motion.dev), [GSAP](https://gsap.com), and [React Spring](https://react-spring.dev), as they do most of the heavy lifting and optimization for you.
+if (isMotionReduced) {
+  // handle low- or no-motion alternative
+} else {
+  // handle animation
+}
+```
+
+As an aside, the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Web_Animations_API_Concepts) has become quite robust and feature-full in the last few years.
+
+If you're like me, you probably don't want to code custom animations in JavaScript every time, and thankfully third party tools like [Motion](https://motion.dev), [GSAP](https://gsap.com), and [React Spring](https://react-spring.dev) provide a better developer experience.
 
 Speaking of performance…
 

@@ -1,5 +1,5 @@
 ---
-visibility: Draft
+visibility: Public
 publishDate: 2025-05-26T05:00:00.000Z
 title: 'Web accessibility & animations: strategies for success'
 description: 'Hey, web animations can be accessible, too!'
@@ -60,11 +60,11 @@ Animations can be **automatic** (e.g., without user interaction) or **interactiv
 
 ### Technical Details
 
-#### CSS Features
+#### CSS
 
 Currently, CSS is the most common and approachable entry point for creating web animations.
 
-##### Respecting User Preference
+##### User Preference
 
 No better place to start than by acknowledging the `prefers-reduced-motion` media query. Don't forget to have a fallback!
 
@@ -93,11 +93,11 @@ The quick note I'll make is to be aware of *how* your animation can be interrupt
 
 Emil Kowalski did a [write up](https://emilkowal.ski/ui/building-a-toast-component) of his work building a React component that initially had this exact problem. Worth the read if you're interested in the coding side.
 
-In his case, using `keyframes` caused the animation to "snap" to the last frame of the animation when interrupted (in this case, rendering multiple UI elements quickly and successively), causing frame drops/skipping. Once he switched to using the `transition` property, the problem was fixed.
+In his case, using `keyframes` caused the animation to "snap" to the last frame of the animation when interrupted (in this case, rendering multiple UI elements quickly and successively), causing frame drops/skipping. Once he switched to using the `transition` property, the animations became fluid again.
 
 Allowing CSS transitions to be interruptible is part of what makes them **robust** and **resilient** (calling back to the POUR principles from the beginning). Without this consideration, users are likely to consider your website/product low quality, or worse, feel confused or succumb to physical effects.
 
-#### JavaScript APIs
+#### JavaScript
 
 In JavaScript, user motion preferences can be detected with the [matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) method in browsers.
 
@@ -128,9 +128,15 @@ One way to work within the constraints of browsers is to prioritize hardware-acc
 
 Normally, animations use your computer's CPU. This is fine for simple animations, but what about the complex ones? CSS properties that benefit from hardware-acceleration include `opacity`, `transition`, and `filter`. More are slated to be supported, but these are the big ones right now.
 
-If you aren't seeing the performance you expect from these properties, you can try using `will-change`; especially if your animation uses 3D-space (e.g., `transform-style: preserve-3d`).
+If you aren't seeing the performance you expect from these properties, you can try using [`will-change`](https://developer.mozilla.org/en-US/docs/Web/CSS/will-change); especially if your animation uses 3D-space, for example:
 
-*will-transform example*
+```css
+.3d-element {
+  will-change: transform;
+  transform-style: preserve-3d;
+  transform: /* value */;
+}
+```
 
 Some suggestions with this feature:
 

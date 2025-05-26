@@ -2,7 +2,7 @@
 visibility: Draft
 publishDate: 2025-05-26T05:00:00.000Z
 title: 'Web accessibility & animations: strategies for success'
-description: 'Hey, web animations can be accessible, too'
+description: 'Hey, web animations can be accessible, too!'
 seo:
   title: 'Web accessibility & animations: strategies for success'
   description: 'Hey, web animations can be accessible, too'
@@ -28,7 +28,9 @@ First, we'll cover authoritative requirements on web accessibility, then we'll e
 
 ## WCAG Requirements
 
-A key mantra of accessibility is ensuring digital experiences are perceivable, operable, understandable, and robust ([POUR](https://www.wcag.com/resource/what-is-wcag/#What_is_POUR_and_why_is_it_critical_to_WCAG_standards) for short). In laymans terms: a well-designed website or application is naturally accessible and doesn't distract from a user's goal.
+A key mantra of accessibility is ensuring digital experiences are perceivable, operable, understandable, and robust ([POUR](https://www.wcag.com/resource/what-is-wcag/#What_is_POUR_and_why_is_it_critical_to_WCAG_standards) for short).
+
+In layman's terms: a well-designed website or application is naturally accessible and doesn't distract from a user's goal.
 
 The key requirements to think about include SC [2.3.1](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html), [2.3.2](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes.html), and [2.3.3](https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions.html):
 

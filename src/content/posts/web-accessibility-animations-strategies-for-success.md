@@ -74,12 +74,16 @@ No better place to start than by acknowledging the `prefers-reduced-motion` medi
   transform: rotateY(45deg);
 }
 
-@media (prefers-reduced-motion: no-preference) {
+/* reduce animation effect */
+@media (prefers-reduced-motion: reduce) {
   .animated-element:hover {
-    transition: 
+    transition: transform 0.1s ease;
+    transform: rotateY(10deg);
   }
 }
 ```
+
+Alternatively, you can completely prevent the animation; although it's reduce, not stop, after all.
 
 ##### Redirectable Animations
 

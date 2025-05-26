@@ -26,30 +26,29 @@ For the purposes of this article, we'll focus only on the web, but it's worth po
 
 First, we'll cover authoritative requirements on web accessibility, then we'll explore specifics of tools and strategies you can use. There are also extra resources at the end for further learning.
 
-## Web Content Accessibility Guidelines
+## Web Content Accessibility Guidelines (WCAG)
 
-A key mantra of accessibility is ensuring digital experiences are perceivable, operable, understandable, and robust ([POUR](https://www.wcag.com/resource/what-is-wcag/#What_is_POUR_and_why_is_it_critical_to_WCAG_standards) for short).
+The key component to understanding web accessibility is ensuring it complies with [POUR](https://www.wcag.com/resource/what-is-wcag/#What_is_POUR_and_why_is_it_critical_to_WCAG_standards). There are three levels of compliance: A, AA, and AAA. In general, AA is the preferred minimum and [the ADA recognizes WCAG](https://www.ada.gov/resources/web-guidance/) in its requirements.
 
-In layman's terms: a well-designed website or application is naturally accessible and doesn't distract from a user's goal.
+For animations, key requirements to think about include SC [2.3.1](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html), [2.3.2](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes.html), and [2.3.3](https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions.html):
 
-The key requirements to think about include SC [2.3.1](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html), [2.3.2](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes.html), and [2.3.3](https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions.html):
+The key points are:
 
-* Hide, pause, and stop: Give users the ability to control the animation by stopping or hiding it completely.
-* Flashing: Stop animations from flashing excessively. The rule of thumb is no more than 3 times in a 1 second period, or is below the general flash and red flash threshold.
+* **Hide, pause, and stop (2.3.3):** Give users the ability to control an animation by stopping or hiding it completely.
+* Avoid flashing (2.3.1): Avoid content that flashes or ensure it's within the allowed threshold.
+* Flashing threshold (2.3.2): Ensure flashing doesn't exceed 3 times in 1 second.
 
-While the broader WCAG Success Criterion may also apply (keyboard operability, contrast, text alternatives, etc), it's critical to give users power in managing a given animation (although they make exceptions) and respectfully applying them. This isn't the 90s internet anymore!
+There are some exceptions, in particular for SC 2.3.3, where animations minimal enough or critical to an interaction can be permitted (although they still can't violate the other two criterion).
 
-These options can also be augmented/overridden with user settings, although this can present pitfalls. It's better to respect the OS setting by default.
-
-***
+### Impact
 
 What about real world impact? What types of disabilities/illnesses affected by animations?
 
 Some individuals have a vestibular (inner-ear) disorder, giving them sensitivities to motion, causing nausea, vertigo, dizziness, and headaches.
 
-Others have cognitive disabilities, where animations can actively confuse and disorient them, preventing access to information or using the website altogether.
+Others have cognitive disabilities, where animations can actively confuse and disorient them, preventing their access to information or from using the website altogether.
 
-## Anatomy of Web Animations
+## Enter Animations
 
 If you've been on the internet for more than five minutes, you've probably seen all sorts of animations. Chances are you've also encountered accessibility, even if you didn't realize it.
 

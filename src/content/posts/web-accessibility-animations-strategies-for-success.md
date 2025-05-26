@@ -97,7 +97,7 @@ In his case, using `keyframes` caused the animation to "snap" to the last frame 
 
 Allowing CSS transitions to be interruptible is part of what makes them **robust** and **resilient** (calling back to the POUR principles from the beginning). Without this consideration, users are likely to consider your website/product low quality, or worse, feel confused or succumb to physical effects.
 
-This is all to say that animations that feel like they belong to an interface actually go a long way in not distracting a user from accomplishing their goal.
+This is all to say that animations that feel natural actually go a long way in not distracting a user from accomplishing their goal.
 
 #### JavaScript
 

@@ -68,7 +68,18 @@ Currently, CSS is the most common and approachable entry point for creating web 
 
 No better place to start than by acknowledging the `prefers-reduced-motion` media query. Don't forget to have a fallback!
 
-Media Query example code
+```css
+.animated-element:hover {
+  transition: transform 0.3s ease;
+  transform: rotateY(45deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animated-element:hover {
+    transition: 
+  }
+}
+```
 
 ##### Redirectable Animations
 
@@ -99,29 +110,40 @@ if (isMotionReduced) {
 
 As an aside, the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Web_Animations_API_Concepts) has become quite robust and feature-full in the last few years.
 
-If you're like me, you probably don't want to code custom animations in JavaScript every time, and thankfully third party tools like [Motion](https://motion.dev), [GSAP](https://gsap.com), and [React Spring](https://react-spring.dev) provide a better developer experience.
+If you're like me, you probably don't want to code custom animations in JavaScript every time. Thankfully third party tools like [Motion](https://motion.dev), [GSAP](https://gsap.com), and [React Spring](https://react-spring.dev) provide a better developer experience.
 
 Speaking of performance…
 
 ### A Note on Performance
 
-Writing a performant and well-designed animation contributes to its accessibility, too. A poor performing animation can make your website look broken and cause confusion. You've probably seen such animations in the wild.
+Writing a performant and well-designed animation contributes to accessibility, believe it or not!
 
-One way to work within the constraints of browsers is to prioritize hardware-acceleration (using your machine's graphics card).
+A poor performing animation can make your website look broken and cause confusion. You've probably seen such animations in the wild.
 
-Normally, animations use your computer's CPU. This is fine for simple animations, but what about the complex ones? CSS properties that benefit from hardware-acceleration include opacity, transition, and filter. More are slated to be supported, but these are the big ones right now.
+One way to work within the constraints of browsers is to prioritize hardware-acceleration (moving the operation to your machine's graphics card).
 
-If you aren't seeing the performance you expect from these properties, you can try setting will-change: \<property-name>, especially if your animation uses 3D-space (e.g., using transform-style: preserve-3d). Keep in mind, however:You shouldn't overuse it.Remove your will-change declaration after animations complete.
+Normally, animations use your computer's CPU. This is fine for simple animations, but what about the complex ones? CSS properties that benefit from hardware-acceleration include `opacity`, `transition`, and `filter`. More are slated to be supported, but these are the big ones right now.
 
-will-transform example
+If you aren't seeing the performance you expect from these properties, you can try using `will-change`; especially if your animation uses 3D-space (e.g., `transform-style: preserve-3d`).
 
-Over-using hardware-acceleration can ironically cause further performance degradation. In general, your browser is pretty smart and will do the right thing by default.
+*will-transform example*
 
-Also be aware of [layout shift](https://developer.mozilla.org/en-US/docs/Web/API/LayoutShift). If your animation affects surrounding elements, the browser will need to do extra work to re-render content constantly, taking up excess memory.
+Some suggestions with this feature:
 
-## Accessibility is an opportunity to enhance
+* You shouldn't overuse it.
+* Remove your `will-change` declaration after animations complete.
 
-Designed carefully along technical constraints and in line with WCAG, animations can be accessible. Not only that, they can be a joy for those who like them, and easily managed by those who don't.
+Over-using hardware-acceleration can ironically cause further performance degradation. That said, browsers generally handle this intelligently and will do the right thing by default.
+
+Finally, be aware of [layout shift](https://developer.mozilla.org/en-US/docs/Web/API/LayoutShift). If your animation affects surrounding elements, the browser will need to do extra work to re-render content constantly, taking up more memory and causing jitter (we could write an entire post just about the render lifecycle of a browser, but for now, we'll keep it light 😉).
+
+## Closing thoughts
+
+If you should take away anything from this post, it's this: **accessibility is an opportunity to enhance the user experience.**
+
+We carry a deep responsibility to help users and customers succeed when using our websites and products.
+
+As Don Norman said: Human error? No, bad design.
 
 ## Additional resources
 

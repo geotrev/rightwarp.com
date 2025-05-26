@@ -26,7 +26,7 @@ For the purposes of this article, we'll focus only on the web, but it's worth po
 
 First, we'll cover authoritative requirements on web accessibility, then we'll explore specifics of tools and strategies you can use. There are also extra resources at the end for further learning.
 
-## WCAG Requirements
+## Web Content Accessibility Guidelines
 
 A key mantra of accessibility is ensuring digital experiences are perceivable, operable, understandable, and robust ([POUR](https://www.wcag.com/resource/what-is-wcag/#What_is_POUR_and_why_is_it_critical_to_WCAG_standards) for short).
 

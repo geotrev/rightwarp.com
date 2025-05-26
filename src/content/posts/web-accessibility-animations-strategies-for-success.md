@@ -50,11 +50,13 @@ Others have cognitive disabilities, where animations can actively confuse and di
 
 ## Enter Animations
 
-If you've been on the internet for more than five minutes, you've probably seen all sorts of animations. Chances are you've also encountered accessibility, even if you didn't realize it.
+If you've been on the internet for more than five minutes, you've probably seen all sorts of animations.
 
 Animations are obvious, visual features, whereas accessibility is often more subtle for folks without disabilities. Accessibility aids individuals with issues like vision, motor, and/or cognitive impairments.
 
-On the web, animations utilize HTML, CSS, and JavaScript to create movements in user interfaces. HTML adds semantic structure, whereas CSS and JavaScript define the specific logic. Animations can be automatic (e.g., without user interaction) or in response to specific events (e.g., a button press).
+On the web, animations utilize HTML, CSS, and JavaScript to create movements in user interfaces. HTML adds semantic structure, whereas CSS and JavaScript define the structure of an animation.
+
+Animations can be **automatic** (e.g., without user interaction) or **interactive** (e.g., a button press).
 
 ### Technical Details
 
@@ -64,19 +66,25 @@ Currently, CSS is the most common and approachable entry point for creating web 
 
 ##### Respecting User Preference
 
-No better place to start than by acknowledging the prefers-reduced-motion media query. It's as easy as wrapping your animation logic within it. Don't forget to have a fallback!
+No better place to start than by acknowledging the `prefers-reduced-motion` media query. Don't forget to have a fallback!
 
 Media Query example code
 
 ##### Redirectable Animations
 
-The more complex your animation, the more you need to consider specific methodologies around how users can interrupt and cause elements to be redirected in the interface.The quick note I'll make is to be aware of how your animation can be interrupted. If a user quickly cancels or interacts with something else on a page, causing elements to change mid-animation, the elements can otherwise jump or drop frames (rightfully causing confusion!).Emil Kowalski did a [write up](https://emilkowal.ski/ui/building-a-toast-component) of his work building a React component that initially had this exact problem. Worth the read!
+The more complex your animation, the more you need to consider specific methodologies around how users can interrupt and cause elements to be redirected in the interface.
 
-In his case, using keyframes caused the animation to "snap" to the last frame of the animation if it were interrupted, causing frame drops/skipping. Once he switched to using the transition property, the problem was fixed.Allowing CSS transitions to be interruptible is part of what makes them robust and resilient (calling back to the POUR principles from the beginning). Without this consideration, users are likely to consider your website/product low quality, or worse, feel confused / succumb to physical effects.
+The quick note I'll make is to be aware of *how* your animation can be interrupted. If a user quickly cancels or interacts with something else on a page, causing elements to change mid-animation, the elements can otherwise jump or drop frames (rightfully causing confusion!).
+
+Emil Kowalski did a [write up](https://emilkowal.ski/ui/building-a-toast-component) of his work building a React component that initially had this exact problem. Worth the read if you're interested in the coding side.
+
+In his case, using `keyframes` caused the animation to "snap" to the last frame of the animation when interrupted (in this case, rendering multiple UI elements quickly and successively), causing frame drops/skipping. Once he switched to using the `transition` property, the problem was fixed.
+
+Allowing CSS transitions to be interruptible is part of what makes them **robust** and **resilient** (calling back to the POUR principles from the beginning). Without this consideration, users are likely to consider your website/product low quality, or worse, feel confused or succumb to physical effects.
 
 #### JavaScript APIs
 
-You can also check motion preferences using the [matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) method.
+In JavaScript, user motion preferences can be detected with the [matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) method in browsers.
 
 matchMedia example
 

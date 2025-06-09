@@ -30,44 +30,16 @@ const ExpertiseItems = [
   {
     isRaised: true,
     isReversed: true,
-    heading: "Design Systems",
+    heading: "Custom Websites",
     description:
-      "Scale faster, impress users and developers alike with scalable design patterns, tokens, components, and consistent UX",
-    icon: "ModulePuzzleIcon",
-  },
-  {
-    heading: "WCAG-Compliant Accessibility",
-    description:
-      "Enshrine customer trust and market presence with inclusive experiences for people of all abilities",
-    icon: "WheelchairIcon",
-  },
-  {
-    isRaised: true,
-    isReversed: true,
-    heading: "Business Websites",
-    description:
-      "Expand your reach or breathe new life into your digital footprint with a renewed & modernized digital experience for customers",
+      "Build trust and establish a strong brand presence. We work with you to build a user-friendly and high-converting website.",
     icon: "BrowserBuildIcon",
   },
   {
-    heading: "User Experience",
+    heading: "Web Accessibility Consulting",
     description:
-      "Delight customers with an intuitive product and research-driven design",
-    icon: "SingleUserNeutralIcon",
-  },
-  {
-    isRaised: true,
-    isReversed: true,
-    heading: "Audits, Testing & Quality",
-    description:
-      "Temper your product development with stronger testing infrastructure.",
-    icon: "DesktopCheckIcon",
-  },
-  {
-    heading: "Support & Maintenance",
-    description:
-      "Support an ongoing content strategy, performance, search engine optimization (SEO), security, and more.",
-    icon: "WrenchIcon",
+      "Make your website accessible to people of all abilities. We’ll help you find usability gaps, make a plan, and remediate the issues.",
+    icon: "WheelchairIcon",
   },
 ]
 

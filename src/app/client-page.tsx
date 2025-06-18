@@ -6,7 +6,6 @@ import {
   Hammer,
   Handshake,
   NotebookText,
-  // NotebookText,
   PencilRuler,
   UserPen,
 } from "lucide-react"
@@ -19,7 +18,7 @@ import {
   Expertise,
   FoundersNote,
   Hero,
-  LogoMarquee,
+  // LogoMarquee,
   MediaCardProps,
 } from "@/components/app"
 import {
@@ -62,7 +61,7 @@ export const ClientPage = ({ page, work, testimonials, posts }: PageProps) => {
           </Link>
         }
       />
-      <LogoMarquee />
+      {/* <LogoMarquee /> */}
       <CardGrid
         heading="Work"
         subheading="Always updating work samples to inspire your next project"

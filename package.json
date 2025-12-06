@@ -7,7 +7,8 @@
     "build": "tinacms build && next build",
     "postbuild": "next-sitemap --config ./next-sitemap.config.js",
     "start": "next start",
-    "lint": "next lint",
+    "lint:types": "tsc --noEmit",
+    "lint": "npm run lint:types && next lint",
     "format": "prettier --check --ignore-path .prettierignore .",
     "format:fix": "prettier --write --ignore-path .prettierignore .",
     "prepare": "husky"
@@ -18,7 +19,7 @@
     "classnames": "2.5.1",
     "lucide-react": "0.468.0",
     "motion": "11.14.4",
-    "next": "15.1.9",
+    "next": "15.5.7",
     "next-sitemap": "4.2.3",
     "nodemailer": "6.9.16",
     "posthog-js": "1.205.0",

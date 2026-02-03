@@ -39,7 +39,7 @@
     "@tailwindcss/forms": "0.5.9",
     "@tailwindcss/typography": "0.5.15",
     "@tinacms/cli": "1.7.0",
-    "@trivago/prettier-plugin-sort-imports": "5.2.0",
+    "@trivago/prettier-plugin-sort-imports": "6.0.2",
     "@types/node": "20.17.10",
     "@types/nodemailer": "6.4.17",
     "@types/react": "18.3.18",

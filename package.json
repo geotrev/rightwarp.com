@@ -38,7 +38,7 @@
     "@svgr/webpack": "8.1.0",
     "@tailwindcss/forms": "0.5.9",
     "@tailwindcss/typography": "0.5.15",
-    "@tinacms/cli": "1.7.0",
+    "@tinacms/cli": "2.1.4",
     "@trivago/prettier-plugin-sort-imports": "5.2.0",
     "@types/node": "20.17.10",
     "@types/nodemailer": "6.4.17",
